@@ -403,8 +403,28 @@
   /* ANIMATIONS */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes lightSweep { from { left: -100%; } to { left: 200%; } }
   .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal .section-title { transform: scale(0.95); transition: transform 0.7s ease 0.15s; }
+  .reveal.visible .section-title { transform: scale(1); }
+
+  /* PROGRESS BAR */
+  #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); width: 0%; z-index: 9999; pointer-events: none; transition: width 0.1s linear; }
+
+  /* CURSOR FOLLOWER */
+  .cursor-follower { width: 20px; height: 20px; border: 1px solid var(--rose); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: left 0.08s ease, top 0.08s ease; transform: translate(-50%, -50%); top: -40px; left: -40px; }
+
+  /* CARD LIGHT SWEEP */
+  .angebot-card { position: relative; overflow: hidden; }
+  .kurs-card::after, .angebot-card::after, .problem-card::after {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+    transform: skewX(-15deg); pointer-events: none;
+  }
+  .kurs-card:hover::after, .angebot-card:hover::after, .problem-card:hover::after {
+    animation: lightSweep 0.6s ease forwards;
+  }
 
   /* MOBILE */
   @media (max-width: 900px) {
@@ -423,6 +443,7 @@
 </style>
 </head>
 <body>
+<div id="progress-bar"></div>
 
 <!-- NAV -->
 <nav>
@@ -737,17 +758,75 @@
   <p class="footer-text">© 2025 · Sprechwissenschaftlerin · Dozentin · Coach</p>
 </footer>
 
+<div class="cursor-follower"></div>
 <script>
+  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // Kurs expand toggle
   function toggleKurs(btn) {
     const d = btn.nextElementSibling;
     d.classList.toggle('open');
     btn.textContent = d.classList.contains('open') ? 'Schließen ↑' : 'Weiterlesen ↓';
   }
+
+  // 1) Parallax hero image
+  window.addEventListener('scroll', () => {
+    const img = document.querySelector('.hero-right img');
+    if (img) img.style.transform = `translateY(${window.scrollY * 0.15}px)`;
+  });
+
+  // 2) Magnetic hover on buttons
+  document.querySelectorAll('.btn-primary, .kurs-cta, .form-submit').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.15;
+      const y = (e.clientY - r.top - r.height / 2) * 0.15;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+
+  // 3) Stat counter animation
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const raw = el.textContent.trim();
+      const num = parseInt(raw);
+      if (isNaN(num)) return;
+      const suffix = raw.slice(String(num).length);
+      let startTime = null;
+      const duration = 1200;
+      const tick = ts => {
+        if (!startTime) startTime = ts;
+        const progress = Math.min((ts - startTime) / duration, 1);
+        el.textContent = Math.floor(progress * num) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      countObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-number').forEach(el => countObserver.observe(el));
+
+  // 4) Cursor follower
+  const cursor = document.querySelector('.cursor-follower');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  // 7) Scroll progress bar
+  const progressBar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const scrolled = document.documentElement.scrollTop;
+    const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    progressBar.style.width = (scrolled / total * 100) + '%';
+  });
 </script>
 </body>
 </html>
