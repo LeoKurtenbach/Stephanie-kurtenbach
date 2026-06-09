@@ -224,43 +224,35 @@
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 
   .kurs-card {
-    background: white; padding: 2.5rem; border: 1px solid var(--sand);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    background: white; border: 1px solid var(--sand);
+    transition: border-color 0.3s, box-shadow 0.3s; overflow: hidden;
   }
   .kurs-card:hover {
     border-color: var(--plum-light);
     box-shadow: 0 8px 32px rgba(122, 92, 138, 0.08);
   }
+  .kurs-header { padding: 2rem 2.5rem; }
   .kurs-tag {
     font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--plum); margin-bottom: 1rem;
   }
   .kurs-title {
     font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400;
-    color: var(--deep); margin-bottom: 1rem; line-height: 1.3;
+    color: var(--deep); margin-bottom: 0.75rem; line-height: 1.3;
+  }
+  .kurs-teaser {
+    font-size: 0.88rem; color: var(--mid); line-height: 1.7;
   }
   .kurs-hook {
-    font-size: 0.9rem; font-style: italic; color: var(--mid); margin-bottom: 0; line-height: 1.7;
+    font-size: 0.9rem; font-style: italic; color: var(--mid); margin-bottom: 1rem; line-height: 1.7;
   }
-
-  /* expand toggle */
   .kurs-toggle {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--rose); cursor: pointer; background: none; border: none;
-    font-family: var(--font-sans); padding: 0; margin-top: 1.2rem;
-    border-bottom: 1px solid rgba(196,139,170,0.3); padding-bottom: 2px;
-    transition: border-color 0.2s, color 0.2s;
+    width: 100%; padding: 1rem 2rem; background: none; border: none;
+    border-top: 1px solid #EAE0F2; text-align: left; cursor: pointer;
+    font-family: inherit; font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #C48BAA;
   }
-  .kurs-toggle:hover { border-color: var(--rose); }
-  .kurs-toggle .arrow {
-    display: inline-block; transition: transform 0.25s ease; font-style: normal;
-  }
-  .kurs-toggle.open .arrow { transform: rotate(180deg); }
-
-  .kurs-details {
-    display: none; margin-top: 1.5rem;
-  }
+  .kurs-details { display: none; padding: 1.5rem 2rem; background: #F3EEF8; border-top: 1px solid #EAE0F2; }
   .kurs-details.open { display: block; }
 
   .kurs-inhalte { list-style: none; margin-bottom: 1.5rem; }
@@ -533,13 +525,14 @@
     <div class="kurse-grid" style="margin-top: 2.5rem;">
 
       <div class="kurs-card reveal">
-        <p class="kurs-tag">Sensorische Integration</p>
-        <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
-        <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen — trotz sorgfältiger Planung greifen bewährte Methoden nicht."</p>
-        <button class="kurs-toggle" onclick="toggleKurs(this)">
-          Weiterlesen <span class="arrow">↓</span>
-        </button>
+        <div class="kurs-header">
+          <p class="kurs-tag">Sensorische Integration</p>
+          <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
+          <p class="kurs-teaser">Warum greifen bewährte Methoden bei manchen Kindern nicht — trotz sorgfältiger Planung? Dieser Kurs zeigt, wie Sensorische Integration die Sprachtherapie grundlegend verändern kann.</p>
+        </div>
+        <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen ↓</button>
         <div class="kurs-details">
+          <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen — trotz sorgfältiger Planung greifen bewährte Methoden nicht."</p>
           <ul class="kurs-inhalte">
             <li>Bedeutung der Sensorischen Integration für das Lernen</li>
             <li>Haut, Gleichgewicht und Tiefenwahrnehmung als Grundpfeiler</li>
@@ -552,13 +545,14 @@
       </div>
 
       <div class="kurs-card reveal">
-        <p class="kurs-tag">Elterntraining</p>
-        <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
-        <p class="kurs-hook">„Suchst du nach einer strukturierten Möglichkeit, Eltern aktiv in die Sprachförderung einzubeziehen?"</p>
-        <button class="kurs-toggle" onclick="toggleKurs(this)">
-          Weiterlesen <span class="arrow">↓</span>
-        </button>
+        <div class="kurs-header">
+          <p class="kurs-tag">Elterntraining</p>
+          <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
+          <p class="kurs-teaser">Eltern als aktive Partner in der Sprachförderung einbeziehen — strukturiert und praxisnah. Mit vollständigen Materialien für sofortige eigenständige Umsetzung.</p>
+        </div>
+        <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen ↓</button>
         <div class="kurs-details">
+          <p class="kurs-hook">„Suchst du nach einer strukturierten Möglichkeit, Eltern aktiv in die Sprachförderung einzubeziehen?"</p>
           <ul class="kurs-inhalte">
             <li>Alltagsnahe Sprachlehrstrategien für Eltern</li>
             <li>Vollständige Materialien: Skript, Begleitheft, Flyer, Vorlagen</li>
@@ -571,13 +565,14 @@
       </div>
 
       <div class="kurs-card reveal">
-        <p class="kurs-tag">Frühe Intervention</p>
-        <h3 class="kurs-title">Frühe Dialogtherapie – Kommunikative Basisfähigkeiten bei kleinen Kindern</h3>
-        <p class="kurs-hook">„Hast du auch Kinder in der Praxis, bei denen gängige Methoden nicht funktionieren, weil das Fundament fehlt?"</p>
-        <button class="kurs-toggle" onclick="toggleKurs(this)">
-          Weiterlesen <span class="arrow">↓</span>
-        </button>
+        <div class="kurs-header">
+          <p class="kurs-tag">Frühe Intervention</p>
+          <h3 class="kurs-title">Frühe Dialogtherapie – Kommunikative Basisfähigkeiten bei kleinen Kindern</h3>
+          <p class="kurs-teaser">Was tun, wenn das Fundament für Sprache fehlt und gängige Methoden nicht greifen? Dieser Kurs gibt konkrete Methoden für die frühe Intervention an die Hand.</p>
+        </div>
+        <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen ↓</button>
         <div class="kurs-details">
+          <p class="kurs-hook">„Hast du auch Kinder in der Praxis, bei denen gängige Methoden nicht funktionieren, weil das Fundament fehlt?"</p>
           <ul class="kurs-inhalte">
             <li>Kommunikative Vorläuferfähigkeiten als Fundament</li>
             <li>Praxiserprobte Diagnostik und Methodik</li>
@@ -590,13 +585,14 @@
       </div>
 
       <div class="kurs-card reveal">
-        <p class="kurs-tag">Webinar</p>
-        <h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3>
-        <p class="kurs-hook">„Kinder, die sich kaum konzentrieren können, schnell ermüden — manchmal liegt der Schlüssel in frühkindlichen Reflexen."</p>
-        <button class="kurs-toggle" onclick="toggleKurs(this)">
-          Weiterlesen <span class="arrow">↓</span>
-        </button>
+        <div class="kurs-header">
+          <p class="kurs-tag">Webinar</p>
+          <h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3>
+          <p class="kurs-teaser">Nicht integrierte frühkindliche Reflexe können Sprache und Lernen blockieren — subtil und oft übersehen. Dieser Kurs schärft den Blick für diese Zusammenhänge.</p>
+        </div>
+        <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen ↓</button>
         <div class="kurs-details">
+          <p class="kurs-hook">„Kinder, die sich kaum konzentrieren können, schnell ermüden — manchmal liegt der Schlüssel in frühkindlichen Reflexen."</p>
           <ul class="kurs-inhalte">
             <li>Entwicklung und Funktion frühkindlicher Reflexe</li>
             <li>Mögliche Folgen nicht vollständig integrierter Reflexe</li>
@@ -732,11 +728,9 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   function toggleKurs(btn) {
-    const details = btn.nextElementSibling;
-    const isOpen = details.classList.contains('open');
-    details.classList.toggle('open', !isOpen);
-    btn.classList.toggle('open', !isOpen);
-    btn.childNodes[0].textContent = isOpen ? 'Weiterlesen ' : 'Weniger anzeigen ';
+    const d = btn.nextElementSibling;
+    d.classList.toggle('open');
+    btn.textContent = d.classList.contains('open') ? 'Schließen ↑' : 'Weiterlesen ↓';
   }
 </script>
 </body>
