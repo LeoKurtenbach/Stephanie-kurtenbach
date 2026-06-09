@@ -6,12 +6,12 @@
 <title>Dr. Stephanie Kurtenbach – Kommunikation. Stimme. Verbindung.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #FAF7FB;
-    --warm-white: #F4EFF7;
-    --sand: #E5D8ED;
+    --cream: #FEFEFE;
+    --warm-white: #F8F5FA;
+    --sand: #E8DCF0;
     --rose: #C48BAA;
     --rose-light: #DDB8CB;
     --rose-dark: #8F5A75;
@@ -19,15 +19,12 @@
     --plum: #7A5C8A;
     --plum-light: #B89EC8;
     --plum-pale: #EDE5F5;
-    --green: #6E9477;
-    --green-light: #A3C4A8;
-    --green-pale: #E6F0E8;
     --grey: #C8C0D0;
-    --grey-light: #EBE7EF;
+    --grey-light: #F2EEF6;
     --deep: #2A2035;
     --mid: #5A4868;
     --muted: #9888A8;
-    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'DM Sans', sans-serif;
   }
 
@@ -47,7 +44,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1.25rem 4rem;
-    background: rgba(250, 247, 251, 0.92);
+    background: rgba(254, 254, 254, 0.94);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(196, 139, 170, 0.12);
   }
@@ -125,7 +122,7 @@
   }
   .hero-quote {
     position: absolute; bottom: 3rem; left: 2rem; z-index: 3;
-    background: rgba(250, 247, 251, 0.93); backdrop-filter: blur(8px);
+    background: rgba(254, 254, 254, 0.95); backdrop-filter: blur(8px);
     border-left: 2px solid var(--rose); padding: 1.2rem 1.5rem; max-width: 340px;
     opacity: 0; animation: fadeUp 0.8s ease 1s forwards;
   }
@@ -189,7 +186,7 @@
     color: var(--deep); line-height: 1.7; margin-bottom: 1.5rem;
   }
   .problem-response {
-    font-size: 0.88rem; color: var(--green); font-weight: 400;
+    font-size: 0.88rem; color: var(--plum); font-weight: 400;
     border-top: 1px solid var(--sand); padding-top: 1rem;
   }
 
@@ -204,12 +201,6 @@
     transition: border-color 0.3s, transform 0.3s; background: white;
   }
   .angebot-card:hover { border-color: var(--rose); transform: translateY(-4px); }
-  .angebot-card.featured { border-color: var(--rose); background: var(--rose-pale); }
-  .angebot-badge {
-    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose);
-    background: rgba(196, 139, 170, 0.12); display: inline-block; padding: 0.3rem 0.75rem;
-    margin-bottom: 1.5rem; align-self: flex-start; border-radius: 2px;
-  }
   .angebot-number {
     font-family: var(--font-serif); font-size: 3rem; font-weight: 700;
     color: var(--sand); line-height: 1; margin-bottom: 0.5rem;
@@ -231,8 +222,9 @@
   .kurse-subsection .section-title { font-size: 2rem; }
   .kurse-subsection .section-body { margin-bottom: 2.5rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
   .kurs-card {
-    background: var(--plum-pale); padding: 2.5rem; border: 1px solid var(--sand);
+    background: white; padding: 2.5rem; border: 1px solid var(--sand);
     transition: border-color 0.3s, box-shadow 0.3s;
   }
   .kurs-card:hover {
@@ -241,15 +233,36 @@
   }
   .kurs-tag {
     font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--green); margin-bottom: 1rem;
+    color: var(--plum); margin-bottom: 1rem;
   }
   .kurs-title {
     font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700;
     color: var(--deep); margin-bottom: 1rem; line-height: 1.3;
   }
   .kurs-hook {
-    font-size: 0.9rem; font-style: italic; color: var(--mid); margin-bottom: 1.2rem; line-height: 1.7;
+    font-size: 0.9rem; font-style: italic; color: var(--mid); margin-bottom: 0; line-height: 1.7;
   }
+
+  /* expand toggle */
+  .kurs-toggle {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--rose); cursor: pointer; background: none; border: none;
+    font-family: var(--font-sans); padding: 0; margin-top: 1.2rem;
+    border-bottom: 1px solid rgba(196,139,170,0.3); padding-bottom: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .kurs-toggle:hover { border-color: var(--rose); }
+  .kurs-toggle .arrow {
+    display: inline-block; transition: transform 0.25s ease; font-style: normal;
+  }
+  .kurs-toggle.open .arrow { transform: rotate(180deg); }
+
+  .kurs-details {
+    display: none; margin-top: 1.5rem;
+  }
+  .kurs-details.open { display: block; }
+
   .kurs-inhalte { list-style: none; margin-bottom: 1.5rem; }
   .kurs-inhalte li {
     font-size: 0.85rem; color: var(--muted); padding: 0.35rem 0;
@@ -257,8 +270,8 @@
   }
   .kurs-inhalte li::before { content: '—'; position: absolute; left: 0; color: var(--rose-light); }
   .kurs-outcome {
-    font-size: 0.82rem; color: var(--green); background: var(--green-pale);
-    padding: 0.75rem 1rem; border-left: 2px solid var(--green); line-height: 1.6; margin-bottom: 1.5rem;
+    font-size: 0.82rem; color: var(--plum); background: var(--plum-pale);
+    padding: 0.75rem 1rem; border-left: 2px solid var(--plum-light); line-height: 1.6; margin-bottom: 1.5rem;
   }
   .kurs-cta {
     font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose);
@@ -340,7 +353,7 @@
     font-size: 0.9rem; color: var(--mid); font-style: italic; line-height: 1.75; margin-bottom: 1rem;
   }
   .testimonial-highlight {
-    font-size: 0.75rem; color: var(--green); font-style: normal; font-weight: 400;
+    font-size: 0.75rem; color: var(--plum); font-style: normal; font-weight: 400;
     letter-spacing: 0.06em; border-top: 1px solid var(--sand); padding-top: 0.75rem;
   }
 
@@ -490,8 +503,7 @@
     <p class="section-body reveal" style="color: var(--muted);">In meiner Arbeit begegne ich Menschen auf Augenhöhe und schaffe einen vertrauensvollen Rahmen, in dem kommunikative Entwicklung entstehen kann. Es geht mir darum, grundlegende Überzeugungen zu verankern und Ressourcen herauszuarbeiten — damit Menschen in ihren Bedarfen mehr Selbstwirksamkeit erleben.</p>
   </div>
   <div class="angebote-grid reveal">
-    <div class="angebot-card featured">
-      <span class="angebot-badge">Schwerpunkt</span>
+    <div class="angebot-card">
       <div class="angebot-number">01</div>
       <h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3>
       <p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining — online und in Präsenz.</p>
@@ -519,58 +531,83 @@
       <p class="section-body">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
     </div>
     <div class="kurse-grid" style="margin-top: 2.5rem;">
+
       <div class="kurs-card reveal">
         <p class="kurs-tag">Sensorische Integration</p>
         <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
         <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen — trotz sorgfältiger Planung greifen bewährte Methoden nicht."</p>
-        <ul class="kurs-inhalte">
-          <li>Bedeutung der Sensorischen Integration für das Lernen</li>
-          <li>Haut, Gleichgewicht und Tiefenwahrnehmung als Grundpfeiler</li>
-          <li>Wahrnehmungsstörungen und ihre Auswirkungen auf Sprache</li>
-          <li>Anamnese mit dem SI-Elternfragebogen</li>
-        </ul>
-        <p class="kurs-outcome">Nach diesem Kurs kannst du sprachliche Auffälligkeiten im Zusammenhang mit der Gesamtentwicklung betrachten und Therapien konkret mit SI-Elementen planen.</p>
-        <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+        <button class="kurs-toggle" onclick="toggleKurs(this)">
+          Weiterlesen <span class="arrow">↓</span>
+        </button>
+        <div class="kurs-details">
+          <ul class="kurs-inhalte">
+            <li>Bedeutung der Sensorischen Integration für das Lernen</li>
+            <li>Haut, Gleichgewicht und Tiefenwahrnehmung als Grundpfeiler</li>
+            <li>Wahrnehmungsstörungen und ihre Auswirkungen auf Sprache</li>
+            <li>Anamnese mit dem SI-Elternfragebogen</li>
+          </ul>
+          <p class="kurs-outcome">Nach diesem Kurs kannst du sprachliche Auffälligkeiten im Zusammenhang mit der Gesamtentwicklung betrachten und Therapien konkret mit SI-Elementen planen.</p>
+          <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+        </div>
       </div>
+
       <div class="kurs-card reveal">
         <p class="kurs-tag">Elterntraining</p>
         <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
         <p class="kurs-hook">„Suchst du nach einer strukturierten Möglichkeit, Eltern aktiv in die Sprachförderung einzubeziehen?"</p>
-        <ul class="kurs-inhalte">
-          <li>Alltagsnahe Sprachlehrstrategien für Eltern</li>
-          <li>Vollständige Materialien: Skript, Begleitheft, Flyer, Vorlagen</li>
-          <li>Anschreiben für Krankenkassen inklusive</li>
-          <li>Zertifikat-Vorlagen für Teilnehmende</li>
-        </ul>
-        <p class="kurs-outcome">Du erhältst alles, was du brauchst, um das Elterntraining eigenständig und professionell umzusetzen.</p>
-        <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+        <button class="kurs-toggle" onclick="toggleKurs(this)">
+          Weiterlesen <span class="arrow">↓</span>
+        </button>
+        <div class="kurs-details">
+          <ul class="kurs-inhalte">
+            <li>Alltagsnahe Sprachlehrstrategien für Eltern</li>
+            <li>Vollständige Materialien: Skript, Begleitheft, Flyer, Vorlagen</li>
+            <li>Anschreiben für Krankenkassen inklusive</li>
+            <li>Zertifikat-Vorlagen für Teilnehmende</li>
+          </ul>
+          <p class="kurs-outcome">Du erhältst alles, was du brauchst, um das Elterntraining eigenständig und professionell umzusetzen.</p>
+          <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+        </div>
       </div>
+
       <div class="kurs-card reveal">
         <p class="kurs-tag">Frühe Intervention</p>
         <h3 class="kurs-title">Frühe Dialogtherapie – Kommunikative Basisfähigkeiten bei kleinen Kindern</h3>
         <p class="kurs-hook">„Hast du auch Kinder in der Praxis, bei denen gängige Methoden nicht funktionieren, weil das Fundament fehlt?"</p>
-        <ul class="kurs-inhalte">
-          <li>Kommunikative Vorläuferfähigkeiten als Fundament</li>
-          <li>Praxiserprobte Diagnostik und Methodik</li>
-          <li>Frühe Dialogtherapie: Struktur und Umsetzung</li>
-          <li>Authentische Videobeispiele aus der Praxis</li>
-        </ul>
-        <p class="kurs-outcome">Du lernst ein systematisches Vorgehen in der frühen Intervention und kannst Therapien konkret mit dieser Methode planen.</p>
-        <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+        <button class="kurs-toggle" onclick="toggleKurs(this)">
+          Weiterlesen <span class="arrow">↓</span>
+        </button>
+        <div class="kurs-details">
+          <ul class="kurs-inhalte">
+            <li>Kommunikative Vorläuferfähigkeiten als Fundament</li>
+            <li>Praxiserprobte Diagnostik und Methodik</li>
+            <li>Frühe Dialogtherapie: Struktur und Umsetzung</li>
+            <li>Authentische Videobeispiele aus der Praxis</li>
+          </ul>
+          <p class="kurs-outcome">Du lernst ein systematisches Vorgehen in der frühen Intervention und kannst Therapien konkret mit dieser Methode planen.</p>
+          <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+        </div>
       </div>
+
       <div class="kurs-card reveal">
         <p class="kurs-tag">Webinar</p>
         <h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3>
         <p class="kurs-hook">„Kinder, die sich kaum konzentrieren können, schnell ermüden — manchmal liegt der Schlüssel in frühkindlichen Reflexen."</p>
-        <ul class="kurs-inhalte">
-          <li>Entwicklung und Funktion frühkindlicher Reflexe</li>
-          <li>Mögliche Folgen nicht vollständig integrierter Reflexe</li>
-          <li>Reflexintegrationsprogramme: Grundlagen und Grenzen</li>
-          <li>Aktuelle Studienlage und wissenschaftliche Einordnung</li>
-        </ul>
-        <p class="kurs-outcome">Du verstehst die Rolle frühkindlicher Reflexe differenzierter und gewinnst neue Perspektiven für deine Arbeit.</p>
-        <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+        <button class="kurs-toggle" onclick="toggleKurs(this)">
+          Weiterlesen <span class="arrow">↓</span>
+        </button>
+        <div class="kurs-details">
+          <ul class="kurs-inhalte">
+            <li>Entwicklung und Funktion frühkindlicher Reflexe</li>
+            <li>Mögliche Folgen nicht vollständig integrierter Reflexe</li>
+            <li>Reflexintegrationsprogramme: Grundlagen und Grenzen</li>
+            <li>Aktuelle Studienlage und wissenschaftliche Einordnung</li>
+          </ul>
+          <p class="kurs-outcome">Du verstehst die Rolle frühkindlicher Reflexe differenzierter und gewinnst neue Perspektiven für deine Arbeit.</p>
+          <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -693,6 +730,14 @@
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function toggleKurs(btn) {
+    const details = btn.nextElementSibling;
+    const isOpen = details.classList.contains('open');
+    details.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.childNodes[0].textContent = isOpen ? 'Weiterlesen ' : 'Weniger anzeigen ';
+  }
 </script>
 </body>
 </html>
