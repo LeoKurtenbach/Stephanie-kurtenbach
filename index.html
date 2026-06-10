@@ -6,457 +6,158 @@
 <title>Dr. Stephanie Kurtenbach – Kommunikation. Stimme. Verbindung.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
   :root {
-    --cream: #FEFEFE;
-    --warm-white: #F8F5FA;
-    --sand: #EAE0F2;
-    --rose: #C48BAA;
-    --rose-light: #DDB8CB;
-    --rose-dark: #8F5A75;
-    --rose-pale: #F5EAF1;
+    --white: #FFFFFF;
+    --off: #F9F7FA;
+    --sand: #EEE8F4;
+    --rose: #B8728A;
+    --rose-dark: #8F4D68;
+    --rose-pale: #F7EEF2;
     --plum: #7A5C8A;
-    --plum-light: #B89EC8;
-    --plum-pale: #EDE5F5;
-    --grey: #C8C0D0;
-    --grey-light: #F2EEF6;
-    --deep: #2A2035;
-    --mid: #5A4868;
-    --muted: #9888A8;
+    --plum-pale: #F2EEF7;
+    --deep: #1A1025;
+    --mid: #4A3858;
+    --muted: #9080A0;
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'DM Sans', sans-serif;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    background: var(--cream);
-    color: var(--deep);
-    font-family: var(--font-sans);
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.25rem 4rem;
-    background: rgba(254, 254, 254, 0.94);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(196, 139, 170, 0.12);
-  }
-  .nav-logo {
-    font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
-    color: var(--deep); letter-spacing: 0.02em; text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.82rem; font-weight: 400; color: var(--mid);
-    text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s;
-  }
+  body { background: var(--white); color: var(--deep); font-family: var(--font-sans); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(122,92,138,0.08); }
+  .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
+  .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
+  .nav-links a { font-size: 0.78rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--rose); }
-  .nav-cta {
-    color: var(--rose) !important; border: 1px solid var(--rose);
-    padding: 0.5rem 1.2rem; border-radius: 2px; transition: all 0.2s;
-  }
-  .nav-cta:hover { background: var(--rose); color: white !important; }
-
-  /* HERO */
-  #hero {
-    min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
-    padding-top: 80px; overflow: hidden;
-  }
-  .hero-left {
-    display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem;
-  }
-  .hero-overline {
-    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--rose); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
-  }
-  .hero-headline {
-    font-family: var(--font-serif); font-size: clamp(2.8rem, 4vw, 4.2rem); font-weight: 400;
-    line-height: 1.15; color: var(--deep); margin-bottom: 1.8rem;
-    opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
-  }
+  .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--rose-dark) !important; }
+  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; overflow: hidden; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; }
+  .hero-overline { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 2rem; }
+  .hero-headline { font-family: var(--font-serif); font-size: clamp(2.8rem, 4vw, 4.8rem); font-weight: 400; line-height: 1.1; color: var(--deep); margin-bottom: 2.5rem; }
   .hero-headline em { font-style: italic; color: var(--rose); }
-  .hero-sub {
-    font-size: 1rem; font-weight: 300; color: var(--mid); line-height: 1.8;
-    max-width: 440px; margin-bottom: 2.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards;
-  }
-  .hero-tags {
-    display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem;
-    opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
-  }
-  .tag {
-    font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--muted); border: 1px solid var(--sand); padding: 0.35rem 0.85rem; border-radius: 2px;
-  }
-  .hero-actions {
-    display: flex; gap: 1rem; align-items: center;
-    opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
-  }
-  .btn-primary {
-    display: inline-block; background: var(--rose); color: white;
-    font-family: var(--font-sans); font-size: 0.82rem; font-weight: 400;
-    letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
-    padding: 1rem 2rem; border-radius: 2px; transition: background 0.2s, transform 0.2s;
-  }
-  .btn-primary:hover { background: var(--rose-dark); transform: translateY(-1px); }
-  .btn-secondary {
-    font-size: 0.82rem; font-weight: 400; color: var(--mid); text-decoration: none;
-    letter-spacing: 0.06em; border-bottom: 1px solid var(--sand); padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-  }
+  .hero-sub { font-size: 1rem; font-weight: 300; color: var(--mid); line-height: 1.85; max-width: 420px; margin-bottom: 3rem; }
+  .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--sand); padding: 0.4rem 1rem; border-radius: 2px; }
+  .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
+  .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.2rem; border-radius: 2px; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--rose-dark); }
+  .btn-secondary { font-size: 0.8rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.08em; border-bottom: 1px solid var(--sand); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
   .btn-secondary:hover { color: var(--rose); border-color: var(--rose); }
   .hero-right { position: relative; overflow: hidden; }
-  .hero-right img {
-    width: 100%; height: 100%; object-fit: cover; object-position: center top;
-    opacity: 0; animation: fadeIn 1.2s ease 0.3s forwards;
-  }
-  .hero-right::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to right, var(--cream) 0%, transparent 20%); z-index: 1;
-  }
-  .hero-quote {
-    position: absolute; bottom: 3rem; left: 2rem; z-index: 3;
-    background: rgba(254, 254, 254, 0.95); backdrop-filter: blur(8px);
-    border-left: 2px solid var(--rose); padding: 1.2rem 1.5rem; max-width: 340px;
-    opacity: 0; animation: fadeUp 0.8s ease 1s forwards;
-  }
-  .hero-quote p {
-    font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 700;
-    color: var(--deep); line-height: 1.6; margin-bottom: 0.4rem;
-  }
-  .hero-quote cite {
-    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); font-style: normal;
-  }
-
-  /* STATS BAR */
-  .stats-bar {
-    background: var(--deep); display: grid; grid-template-columns: repeat(4, 1fr); padding: 2rem 4rem;
-  }
-  .stat-item {
-    text-align: center; padding: 0.5rem 1rem; border-right: 1px solid rgba(255,255,255,0.1);
-  }
-  .stat-item:last-child { border-right: none; }
-  .stat-number {
-    font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700;
-    color: var(--rose-light); display: block; line-height: 1.2;
-  }
-  .stat-label {
-    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: rgba(255,255,255,0.5); margin-top: 0.25rem;
-  }
-
-  /* SHARED */
-  section { padding: 6rem 4rem; }
-  .section-overline {
-    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--rose); margin-bottom: 0.75rem;
-  }
-  .section-title {
-    font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3rem); font-weight: 400;
-    line-height: 1.2; color: var(--deep); margin-bottom: 1.5rem;
-  }
-  .section-body { font-size: 1rem; color: var(--mid); line-height: 1.85; max-width: 600px; }
-
-  /* PROBLEME */
-  #probleme { background: var(--grey-light); }
-  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 3rem; }
-  .problem-card {
-    background: var(--cream); padding: 2.5rem 2rem; position: relative; overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  .problem-card:hover { transform: translateY(-4px); }
-  .problem-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: var(--sand); transition: background 0.3s;
-  }
-  .problem-card:hover::before { background: var(--rose); }
-  .problem-audience {
-    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--rose); margin-bottom: 1rem;
-  }
-  .problem-quote {
-    font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; font-weight: 700;
-    color: var(--deep); line-height: 1.7; margin-bottom: 1.5rem;
-  }
-  .problem-response {
-    font-size: 0.88rem; color: var(--plum); font-weight: 400;
-    border-top: 1px solid var(--sand); padding-top: 1rem;
-  }
-
-  /* ANGEBOTE + KURSE TOGETHER */
-  #angebote { background: var(--cream); }
-  .angebote-intro {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem;
-  }
-  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 5rem; }
-  .angebot-card {
-    border: 1px solid var(--sand); padding: 2.5rem 2rem; display: flex; flex-direction: column;
-    transition: border-color 0.3s, transform 0.3s; background: white;
-  }
-  .angebot-card:hover { border-color: var(--rose); transform: translateY(-4px); }
-  .angebot-number {
-    font-family: var(--font-serif); font-size: 3rem; font-weight: 700;
-    color: var(--sand); line-height: 1; margin-bottom: 0.5rem;
-  }
-  .angebot-title {
-    font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400;
-    color: var(--deep); margin-bottom: 1rem; line-height: 1.3;
-  }
-  .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.75; flex: 1; margin-bottom: 1.5rem; }
-  .angebot-link {
-    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose);
-    text-decoration: none; border-bottom: 1px solid rgba(196,139,170,0.3); padding-bottom: 2px;
-    align-self: flex-start; transition: border-color 0.2s;
-  }
+  .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; will-change: transform; }
+  .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--white) 0%, transparent 18%); z-index: 1; }
+  .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; }
+  .hero-quote p { font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 0.5rem; }
+  .hero-quote cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-style: normal; }
+  .stats-bar { background: var(--deep); display: grid; grid-template-columns: repeat(4, 1fr); padding: 3rem 5rem; }
+  .stat-item { text-align: center; padding: 0.5rem 2rem; }
+  .stat-number { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; color: var(--rose); display: block; line-height: 1; }
+  .stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.5rem; display: block; }
+  section { padding: 9rem 5rem; }
+  .section-overline { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; display: block; }
+  .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 400; line-height: 1.15; color: var(--deep); margin-bottom: 2rem; }
+  .section-body { font-size: 1rem; color: var(--mid); line-height: 1.85; max-width: 580px; }
+  #probleme { background: var(--off); }
+  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 4rem; }
+  .problem-card { background: var(--white); padding: 3rem 2.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 2px solid transparent; }
+  .problem-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(26,16,37,0.06); border-top-color: var(--rose); }
+  .problem-audience { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.25rem; display: block; }
+  .problem-quote { font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.75; margin-bottom: 2rem; }
+  .problem-response { font-size: 0.85rem; color: var(--plum); font-weight: 400; border-top: 1px solid var(--sand); padding-top: 1.25rem; }
+  #angebote { background: var(--white); }
+  .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; }
+  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 7rem; }
+  .angebot-card { border: 1px solid var(--sand); padding: 3rem 2.5rem; display: flex; flex-direction: column; background: var(--white); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s; }
+  .angebot-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(26,16,37,0.07); border-color: var(--rose); }
+  .angebot-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--deep); margin-bottom: 1.25rem; line-height: 1.3; }
+  .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.8; flex: 1; margin-bottom: 2rem; }
+  .angebot-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; align-self: flex-start; transition: border-color 0.2s; }
   .angebot-link:hover { border-color: var(--rose); }
-
-  /* KURSE as subsection inside Angebote */
-  .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 4rem; }
-  .kurse-subsection .section-title { font-size: 2rem; }
-  .kurse-subsection .section-body { margin-bottom: 2.5rem; }
-  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-
-  .kurs-card {
-    background: white; border: 1px solid var(--sand);
-    transition: border-color 0.3s, box-shadow 0.3s; overflow: hidden;
-  }
-  .kurs-card:hover {
-    border-color: var(--plum-light);
-    box-shadow: 0 8px 32px rgba(122, 92, 138, 0.08);
-  }
-  .kurs-header { padding: 2rem 2.5rem; }
-  .kurs-tag {
-    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--plum); margin-bottom: 1rem;
-  }
-  .kurs-title {
-    font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400;
-    color: var(--deep); margin-bottom: 0.75rem; line-height: 1.3;
-  }
-  .kurs-teaser {
-    font-size: 0.88rem; color: var(--mid); line-height: 1.7;
-  }
-  .kurs-hook {
-    font-size: 0.9rem; font-style: italic; color: var(--mid); margin-bottom: 1rem; line-height: 1.7;
-  }
-  .kurs-toggle {
-    width: 100%; padding: 1rem 2rem; background: none; border: none;
-    border-top: 1px solid #EAE0F2; text-align: left; cursor: pointer;
-    font-family: inherit; font-size: 0.78rem; letter-spacing: 0.08em;
-    text-transform: uppercase; color: #C48BAA;
-  }
-  .kurs-details { display: none; padding: 1.5rem 2rem; background: #F3EEF8; border-top: 1px solid #EAE0F2; }
+  .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 5rem; }
+  .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
+  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .kurs-card { background: var(--white); border: 1px solid var(--sand); overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; }
+  .kurs-card:hover { border-color: var(--plum); box-shadow: 0 16px 50px rgba(122,92,138,0.08); }
+  .kurs-header { padding: 2.5rem 2.5rem 2rem; }
+  .kurs-tag { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; display: block; }
+  .kurs-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--deep); margin-bottom: 1rem; line-height: 1.4; }
+  .kurs-teaser { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
+  .kurs-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1.25rem 2.5rem; background: none; border: none; border-top: 1px solid var(--sand); cursor: pointer; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); transition: background 0.2s; }
+  .kurs-toggle:hover { background: var(--rose-pale); }
+  .kurs-toggle .arrow { font-size: 0.9rem; transition: transform 0.3s; display: inline-block; }
+  .kurs-toggle.open .arrow { transform: rotate(180deg); }
+  .kurs-details { display: none; padding: 2.5rem; border-top: 1px solid var(--sand); background: var(--plum-pale); }
   .kurs-details.open { display: block; }
-
-  .kurs-inhalte-title {
-    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 0.75rem; margin-top: 1rem;
-  }
-  .kurs-outcome strong {
-    display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--plum); margin-bottom: 0.4rem; font-weight: 500;
-  }
-  .kurs-inhalte { list-style: none; margin-bottom: 1.5rem; }
-  .kurs-inhalte li {
-    font-size: 0.85rem; color: var(--muted); padding: 0.35rem 0;
-    border-bottom: 1px solid var(--warm-white); padding-left: 1rem; position: relative;
-  }
-  .kurs-inhalte li::before { content: '—'; position: absolute; left: 0; color: var(--rose-light); }
-  .kurs-outcome {
-    font-size: 0.82rem; color: var(--plum); background: var(--plum-pale);
-    padding: 0.75rem 1rem; border-left: 2px solid var(--plum-light); line-height: 1.6; margin-bottom: 1.5rem;
-  }
-  .kurs-cta {
-    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose);
-    text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
-    border-bottom: 1px solid rgba(196,139,170,0.3); padding-bottom: 2px;
-    transition: gap 0.2s, border-color 0.2s;
-  }
-  .kurs-cta:hover { gap: 0.75rem; border-color: var(--rose); }
-
-  /* ÜBER */
-  #ueber {
-    background: var(--grey-light); display: grid; grid-template-columns: 1fr 1fr;
-    gap: 6rem; align-items: start; padding: 6rem 4rem;
-  }
+  .kurs-hook { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.75; margin-bottom: 2rem; }
+  .kurs-inhalte-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; display: block; }
+  .kurs-inhalte { list-style: none; margin-bottom: 2rem; }
+  .kurs-inhalte li { font-size: 0.87rem; color: var(--mid); padding: 0.5rem 0 0.5rem 1.25rem; border-bottom: 1px solid rgba(122,92,138,0.1); position: relative; }
+  .kurs-inhalte li::before { content: '—'; position: absolute; left: 0; color: var(--plum); }
+  .kurs-outcome { font-size: 0.87rem; color: var(--mid); background: var(--white); padding: 1.25rem 1.5rem; border-left: 2px solid var(--plum); line-height: 1.75; margin-bottom: 2rem; }
+  .kurs-outcome strong { display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--plum); font-weight: 400; margin-bottom: 0.5rem; }
+  .kurs-cta { display: inline-block; background: var(--rose); color: white; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 2px; transition: background 0.2s; }
+  .kurs-cta:hover { background: var(--rose-dark); }
+  #ueber { background: var(--off); display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
   .ueber-image { position: relative; }
-  .ueber-image img { width: 100%; max-width: 460px; display: block; }
-  .ueber-image::before {
-    content: ''; position: absolute; top: -1.5rem; left: -1.5rem; right: 1.5rem; bottom: 1.5rem;
-    border: 1px solid var(--sand); z-index: -1;
-  }
-  .ueber-text p { font-size: 0.96rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.2rem; }
-  .ausbildung-grid { margin-top: 2.5rem; }
-  .ausbildung-item {
-    display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem;
-    padding: 1.25rem 0; border-bottom: 1px solid var(--sand); align-items: start;
-  }
+  .ueber-image img { width: 100%; display: block; }
+  .ueber-image::before { content: ''; position: absolute; top: -2rem; left: -2rem; right: 2rem; bottom: 2rem; border: 1px solid var(--sand); z-index: -1; }
+  .ueber-text p { font-size: 0.96rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; }
+  .ausbildung-grid { margin-top: 3rem; }
+  .ausbildung-item { display: grid; grid-template-columns: 4rem 1fr; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--sand); align-items: start; }
   .ausbildung-item:first-child { border-top: 1px solid var(--sand); }
-  .ausbildung-icon {
-    font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700;
-    color: var(--sand); line-height: 1; padding-top: 0.2rem;
-  }
-  .ausbildung-title { font-size: 0.9rem; font-weight: 500; color: var(--deep); margin-bottom: 0.2rem; }
-  .ausbildung-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
-  .pub-link {
-    display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.82rem;
-    color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(196,139,170,0.3);
-    padding-bottom: 2px; margin-top: 2rem; transition: border-color 0.2s;
-  }
+  .ausbildung-icon { font-family: var(--font-serif); font-size: 2rem; font-weight: 400; color: var(--sand); line-height: 1; }
+  .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0.25rem; }
+  .ausbildung-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+  .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color 0.2s; }
   .pub-link:hover { border-color: var(--rose); }
-
-  /* PHILOSOPHIE */
-  #philosophie { background: var(--deep); text-align: center; padding: 7rem 4rem; }
-  .philo-quote-main {
-    font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400;
-    font-style: italic; color: var(--cream); line-height: 1.35; max-width: 800px; margin: 0 auto 1.5rem;
-  }
-  .philo-quote-main em { color: var(--rose-light); font-style: normal; }
-  .philo-attribution {
-    font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: rgba(255,255,255,0.35); margin-bottom: 4rem;
-  }
-  .philo-values {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;
-  }
-  .philo-value { text-align: left; padding: 2rem; border: 1px solid rgba(255,255,255,0.08); }
-  .philo-value-title {
-    font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700;
-    color: var(--rose-light); margin-bottom: 0.75rem;
-  }
-  .philo-value-text { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.75; }
-
-  /* STIMMEN */
-  #stimmen { background: var(--warm-white); }
-  .testimonials-featured {
-    background: var(--deep); color: var(--cream); padding: 3rem 3.5rem; margin-bottom: 3rem; position: relative;
-  }
-  .testimonials-featured::before {
-    content: '"'; font-family: var(--font-serif); font-size: 8rem; color: var(--rose);
-    position: absolute; top: -1.5rem; left: 2rem; line-height: 1; opacity: 0.4;
-  }
-  .featured-quote {
-    font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; font-weight: 400;
-    line-height: 1.6; margin-bottom: 1rem; position: relative; z-index: 1;
-  }
-  .featured-stars { color: var(--rose-light); font-size: 1rem; letter-spacing: 0.2em; margin-bottom: 0.5rem; }
+  #philosophie { background: var(--deep); text-align: center; padding: 10rem 5rem; }
+  .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; }
+  .philo-quote-main em { color: var(--rose); font-style: normal; }
+  .philo-attribution { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 6rem; display: block; }
+  .philo-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; max-width: 920px; margin: 0 auto; }
+  .philo-value { text-align: left; }
+  .philo-value-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
+  .philo-value-text { font-size: 0.87rem; color: rgba(255,255,255,0.45); line-height: 1.8; }
+  #stimmen { background: var(--white); }
+  .testimonials-featured { background: var(--deep); padding: 4rem; margin-bottom: 3rem; position: relative; overflow: hidden; }
+  .testimonials-featured::before { content: '\201C'; font-family: var(--font-serif); font-size: 12rem; color: var(--rose); position: absolute; top: -2rem; left: 2.5rem; line-height: 1; opacity: 0.2; pointer-events: none; }
+  .featured-stars { color: var(--rose); font-size: 0.85rem; letter-spacing: 0.3em; margin-bottom: 1.5rem; display: block; }
+  .featured-quote { font-family: var(--font-serif); font-size: clamp(1.3rem, 2vw, 1.8rem); font-style: italic; font-weight: 400; color: var(--white); line-height: 1.65; position: relative; z-index: 1; max-width: 820px; }
   .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .testimonial-card { background: white; padding: 2rem; border: 1px solid var(--sand); }
-  .testimonial-text {
-    font-size: 0.9rem; color: var(--mid); font-style: italic; line-height: 1.75; margin-bottom: 1rem;
-  }
-  .testimonial-highlight {
-    font-size: 0.75rem; color: var(--plum); font-style: normal; font-weight: 400;
-    letter-spacing: 0.06em; border-top: 1px solid var(--sand); padding-top: 0.75rem;
-  }
-
-  /* KONTAKT */
-  #kontakt {
-    background: var(--cream); display: grid; grid-template-columns: 1fr 1fr;
-    gap: 6rem; padding: 6rem 4rem; align-items: start;
-  }
-  .kontakt-form { display: flex; flex-direction: column; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-  .form-group label {
-    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
-  }
-  .form-group input, .form-group select, .form-group textarea {
-    font-family: var(--font-sans); font-size: 0.9rem; font-weight: 300; color: var(--deep);
-    background: white; border: 1px solid var(--sand); padding: 0.85rem 1rem;
-    border-radius: 2px; outline: none; transition: border-color 0.2s; -webkit-appearance: none;
-  }
+  .testimonial-card { background: var(--off); padding: 2.5rem; border: 1px solid var(--sand); transition: transform 0.3s, box-shadow 0.3s; }
+  .testimonial-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,16,37,0.06); }
+  .testimonial-text { font-size: 0.9rem; color: var(--mid); font-style: italic; line-height: 1.8; margin-bottom: 1.25rem; }
+  .testimonial-highlight { font-size: 0.7rem; color: var(--plum); font-style: normal; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--sand); padding-top: 1rem; }
+  #kontakt { background: var(--off); display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+  .kontakt-form { display: flex; flex-direction: column; gap: 1.5rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .form-group input, .form-group select, .form-group textarea { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 300; color: var(--deep); background: var(--white); border: 1px solid var(--sand); padding: 1rem 1.25rem; border-radius: 2px; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--rose); }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-  .form-submit {
-    background: var(--rose); color: white; border: none; font-family: var(--font-sans);
-    font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 1.1rem 2.5rem; border-radius: 2px; cursor: pointer; align-self: flex-start;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .form-submit:hover { background: var(--rose-dark); transform: translateY(-1px); }
-  .kontakt-details { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
-  .kontakt-detail { display: grid; grid-template-columns: 1.5rem 1fr; gap: 1rem; align-items: start; }
-  .kontakt-detail-icon { color: var(--rose); font-size: 1rem; margin-top: 0.15rem; }
-  .kontakt-detail-text { font-size: 0.9rem; color: var(--mid); line-height: 1.6; }
-  .kontakt-detail-text strong {
-    display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); font-weight: 400; margin-bottom: 0.2rem;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--deep); padding: 3rem 4rem;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-logo {
-    font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.6);
-  }
-  .footer-text { font-size: 0.75rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes lightSweep { from { left: -100%; } to { left: 200%; } }
-  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal .section-title { transform: scale(0.95); transition: transform 0.7s ease 0.15s; }
-  .reveal.visible .section-title { transform: scale(1); }
-
-  /* PROGRESS BAR */
-  #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); width: 0%; z-index: 9999; pointer-events: none; transition: width 0.1s linear; }
-
-  /* CURSOR FOLLOWER */
-  .cursor-follower { width: 20px; height: 20px; border: 1px solid var(--rose); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: left 0.08s ease, top 0.08s ease; transform: translate(-50%, -50%); top: -40px; left: -40px; }
-
-  /* CARD LIGHT SWEEP */
-  .angebot-card { position: relative; overflow: hidden; }
-  .kurs-card::after, .angebot-card::after, .problem-card::after {
-    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-    transform: skewX(-15deg); pointer-events: none;
-  }
-  .kurs-card:hover::after, .angebot-card:hover::after, .problem-card:hover::after {
-    animation: lightSweep 0.6s ease forwards;
-  }
-
-  /* GSAP CURSOR + PROGRESS */
-  * { cursor: none; }
-  .cursor { position:fixed;width:10px;height:10px;background:var(--rose);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s,background 0.2s; }
-  .cursor-ring { position:fixed;width:36px;height:36px;border:1.5px solid var(--rose);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:0.5; }
-  a:hover ~ .cursor, button:hover ~ .cursor { width:20px;height:20px; }
-  .progress-bar { position:fixed;top:0;left:0;height:2px;background:linear-gradient(to right,var(--rose),var(--plum));z-index:10000;width:0;transform-origin:left; }
-  .hero-headline .word { display:inline-block;overflow:hidden; }
-  .hero-headline .word span { display:inline-block; }
-  #philosophie .philo-quote-main .word { display:inline-block;opacity:0;transform:translateY(20px); }
-
-  /* MOBILE */
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .form-submit { background: var(--rose); color: white; border: none; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.5rem; border-radius: 2px; cursor: pointer; align-self: flex-start; transition: background 0.2s; }
+  .form-submit:hover { background: var(--rose-dark); }
+  .kontakt-details { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+  .kontakt-detail { display: grid; grid-template-columns: 1.5rem 1fr; gap: 1.25rem; align-items: start; }
+  .kontakt-detail-icon { color: var(--rose); }
+  .kontakt-detail-text { font-size: 0.9rem; color: var(--mid); line-height: 1.65; }
+  .kontakt-detail-text strong { display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 400; margin-bottom: 0.25rem; }
+  footer { background: var(--deep); padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.5); }
+  .footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; }
+  .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(to right, var(--rose), var(--plum)); z-index: 10000; width: 0; }
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    #hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 3rem 1.5rem; }
-    .hero-right { height: 50vw; }
-    section { padding: 4rem 1.5rem; }
-    .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; }
-    #ueber, #kontakt { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
-    .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2rem 1.5rem; }
-    .angebote-intro { grid-template-columns: 1fr; gap: 1.5rem; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+    nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { grid-template-columns: 1fr; } .hero-left { padding: 3rem 1.5rem; } .hero-right { height: 60vw; } section { padding: 5rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 5rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
   }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
+<div class="progress-bar" id="progressBar"></div>
 <nav>
   <a href="#" class="nav-logo">Dr. Stephanie Kurtenbach</a>
   <ul class="nav-links">
@@ -466,400 +167,195 @@
     <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
   </ul>
 </nav>
-
-<!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-overline">Sprechwissenschaftlerin · Dozentin · Coach</p>
+    <span class="hero-overline">Sprechwissenschaftlerin · Dozentin · Coach</span>
     <h1 class="hero-headline">Ich verändere die Art, wie Menschen auf <em>Kommunikation</em> schauen.</h1>
     <p class="hero-sub">Ich gebe Orientierung und wirksame Handlungsstrategien, damit echte Verbindung entsteht — in Fortbildungen für Fachkräfte, im Stimm- und Kommunikationscoaching sowie in der Begleitung von Kindern und Familien.</p>
-    <div class="hero-tags">
-      <span class="tag">Fortbildungen</span>
-      <span class="tag">Stimmcoaching</span>
-      <span class="tag">Familienbegleitung</span>
-    </div>
+    <div class="hero-tags"><span class="tag">Fortbildungen</span><span class="tag">Stimmcoaching</span><span class="tag">Familienbegleitung</span></div>
     <div class="hero-actions">
       <a href="#angebote" class="btn-primary">Angebote entdecken</a>
       <a href="#ueber" class="btn-secondary">Mehr über mich</a>
     </div>
   </div>
   <div class="hero-right">
-    <img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach">
+    <img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach" id="heroImg">
     <div class="hero-quote">
       <p>„Kommunikation ist dann erfolgreich, wenn Menschen sich auf den Augenblick einlassen."</p>
       <cite>Dr. Stephanie Kurtenbach</cite>
     </div>
   </div>
 </section>
-
-<!-- STATS -->
 <div class="stats-bar">
-  <div class="stat-item"><span class="stat-number">30+</span><span class="stat-label">Jahre Erfahrung</span></div>
-  <div class="stat-item"><span class="stat-number">200+</span><span class="stat-label">Weiterbildungen</span></div>
-  <div class="stat-item"><span class="stat-number">20</span><span class="stat-label">Jahre Uni-Dozentin</span></div>
-  <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Fachausbildungen</span></div>
+  <div class="stat-item"><span class="stat-number" data-target="30" data-suffix="+">30+</span><span class="stat-label">Jahre Erfahrung</span></div>
+  <div class="stat-item"><span class="stat-number" data-target="200" data-suffix="+">200+</span><span class="stat-label">Weiterbildungen</span></div>
+  <div class="stat-item"><span class="stat-number" data-target="20" data-suffix="">20</span><span class="stat-label">Jahre Uni-Dozentin</span></div>
+  <div class="stat-item"><span class="stat-number" data-target="4" data-suffix="">4</span><span class="stat-label">Fachausbildungen</span></div>
 </div>
-
-<!-- PROBLEME -->
 <section id="probleme">
-  <div class="reveal">
-    <p class="section-overline">Erkennst du dich wieder?</p>
-    <h2 class="section-title">Was Menschen zu mir führt</h2>
-  </div>
-  <div class="problems-grid reveal">
-    <div class="problem-card">
-      <p class="problem-audience">Therapeut*innen</p>
-      <p class="problem-quote">„Immer mehr Kinder können sich nicht auf meine Methoden einlassen. Wie kann ich ursachenorientierter, erfolgreicher — und mit mehr Freude — arbeiten?"</p>
-      <p class="problem-response">Wissenschaftlich fundiert. Praxisnah. Sofort umsetzbar.</p>
-    </div>
-    <div class="problem-card">
-      <p class="problem-audience">Menschen mit Stimmproblemen</p>
-      <p class="problem-quote">„Meine Stimme trägt mich nicht. Ich bin unsicher — und habe Angst vor dem Sprechen vor Gruppen."</p>
-      <p class="problem-response">Individuelle Begleitung für Menschen mit Sprecherberufen.</p>
-    </div>
-    <div class="problem-card">
-      <p class="problem-audience">Eltern & Familien</p>
-      <p class="problem-quote">„Keiner weiß, was wirklich hinter den Problemen unseres Kindes steckt. Wir sind ratlos — und die Therapie kommt nicht voran."</p>
-      <p class="problem-response">Ursachen verstehen. Ressourcen stärken. Wege finden.</p>
-    </div>
+  <span class="section-overline">Erkennst du dich wieder?</span>
+  <h2 class="section-title">Was Menschen zu mir führt</h2>
+  <div class="problems-grid">
+    <div class="problem-card"><span class="problem-audience">Therapeut*innen</span><p class="problem-quote">„Immer mehr Kinder können sich nicht auf meine Methoden einlassen. Wie kann ich ursachenorientierter, erfolgreicher — und mit mehr Freude — arbeiten?"</p><p class="problem-response">Wissenschaftlich fundiert. Praxisnah. Sofort umsetzbar.</p></div>
+    <div class="problem-card"><span class="problem-audience">Menschen mit Stimmproblemen</span><p class="problem-quote">„Meine Stimme trägt mich nicht. Ich bin unsicher — und habe Angst vor dem Sprechen vor Gruppen."</p><p class="problem-response">Individuelle Begleitung für Menschen mit Sprecherberufen.</p></div>
+    <div class="problem-card"><span class="problem-audience">Eltern & Familien</span><p class="problem-quote">„Keiner weiß, was wirklich hinter den Problemen unseres Kindes steckt. Wir sind ratlos — und die Therapie kommt nicht voran."</p><p class="problem-response">Ursachen verstehen. Ressourcen stärken. Wege finden.</p></div>
   </div>
 </section>
-
-<!-- ANGEBOTE + KURSE -->
 <section id="angebote">
   <div class="angebote-intro">
-    <div class="reveal">
-      <p class="section-overline">Drei Säulen</p>
-      <h2 class="section-title">Meine Angebote</h2>
-    </div>
-    <p class="section-body reveal" style="color: var(--muted);">In meiner Arbeit begegne ich Menschen auf Augenhöhe und schaffe einen vertrauensvollen Rahmen, in dem kommunikative Entwicklung entstehen kann. Es geht mir darum, grundlegende Überzeugungen zu verankern und Ressourcen herauszuarbeiten — damit Menschen in ihren Bedarfen mehr Selbstwirksamkeit erleben.</p>
+    <div><span class="section-overline">Drei Säulen</span><h2 class="section-title">Meine Angebote</h2></div>
+    <p class="section-body">In meiner Arbeit begegne ich Menschen auf Augenhöhe und schaffe einen vertrauensvollen Rahmen, in dem kommunikative Entwicklung entstehen kann.</p>
   </div>
-  <div class="angebote-grid reveal">
-    <div class="angebot-card">
-      <div class="angebot-number">01</div>
-      <h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3>
-      <p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining — online und in Präsenz.</p>
-      <a href="#kurse" class="angebot-link">Alle Kurse ansehen →</a>
-    </div>
-    <div class="angebot-card">
-      <div class="angebot-number">02</div>
-      <h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3>
-      <p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation — nachhaltig entwickeln.</p>
-      <a href="#kontakt" class="angebot-link">Anfrage stellen →</a>
-    </div>
-    <div class="angebot-card">
-      <div class="angebot-number">03</div>
-      <h3 class="angebot-title">Beratung für Kinder & Familien</h3>
-      <p class="angebot-desc">Befundung, Beratung und Entwicklungsbegleitung — mit dem Ziel, die Ursachen zu verstehen und Kinder in ihrer Selbstwirksamkeit zu stärken.</p>
-      <a href="#kontakt" class="angebot-link">Kontakt aufnehmen →</a>
-    </div>
+  <div class="angebote-grid">
+    <div class="angebot-card"><h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3><p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining — online und in Präsenz.</p><a href="#kurse" class="angebot-link">Alle Kurse ansehen →</a></div>
+    <div class="angebot-card"><h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3><p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation — nachhaltig entwickeln.</p><a href="#kontakt" class="angebot-link">Anfrage stellen →</a></div>
+    <div class="angebot-card"><h3 class="angebot-title">Beratung für Kinder & Familien</h3><p class="angebot-desc">Befundung, Beratung und Entwicklungsbegleitung — mit dem Ziel, die Ursachen zu verstehen und Kinder in ihrer Selbstwirksamkeit zu stärken.</p><a href="#kontakt" class="angebot-link">Kontakt aufnehmen →</a></div>
   </div>
-
-  <!-- KURSE als Subsection -->
   <div class="kurse-subsection" id="kurse">
-    <div class="reveal">
-      <p class="section-overline">Fortbildungen für Therapeut*innen</p>
-      <h3 class="section-title" style="font-size: 2rem;">Aktuelle Kurse</h3>
-      <p class="section-body">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
-    </div>
-    <div class="kurse-grid" style="margin-top: 2.5rem;">
-
-      <div class="kurs-card reveal">
-        <div class="kurs-header">
-          <p class="kurs-tag">Sensorische Integration</p>
-          <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
-          <p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft, diese Zusammenhänge zu verstehen.</p>
-        </div>
+    <span class="section-overline">Fortbildungen im Detail</span>
+    <h3 class="section-title" style="font-size:2rem;">Aktuelle Kurse</h3>
+    <p class="section-body">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
+    <div class="kurse-grid">
+      <div class="kurs-card">
+        <div class="kurs-header"><span class="kurs-tag">Sensorische Integration</span><h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3><p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p></div>
         <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen <span class="arrow">↓</span></button>
         <div class="kurs-details">
-          <p class="kurs-hook">Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet — und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend.</p>
-          <p class="kurs-inhalte-title">Kursinhalte</p>
-          <ul class="kurs-inhalte">
-            <li>Bedeutung der Sensorischen Integration für das Lernen</li>
-            <li>Haut, Gleichgewicht und Tiefenwahrnehmung: Grundpfeiler für die Sprachentwicklung</li>
-            <li>Wahrnehmungsstörungen und ihre Auswirkungen auf Lernen, Verhalten und Sprache</li>
-            <li>Anamnese mit dem SI-Elternfragebogen</li>
-            <li>Kindersprachtherapie mit Sensorischer Integration</li>
-          </ul>
-          <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Du wirst sprachliche Auffälligkeiten stärker im Zusammenhang mit der Gesamtentwicklung betrachten können. Alle Kursbausteine werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft. Du kannst deine Therapien konkret mit SI-Elementen planen und durchführen.</div>
+          <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet — und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend. Häufig liegen den sprachlichen Schwierigkeiten weitere Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft dabei, diese Zusammenhänge besser zu verstehen."</p>
+          <span class="kurs-inhalte-label">Kursinhalte</span>
+          <ul class="kurs-inhalte"><li>Bedeutung der Sensorischen Integration für das Lernen</li><li>Haut, Gleichgewicht und Tiefenwahrnehmung: Grundpfeiler für die Sprachentwicklung</li><li>Wahrnehmungsstörungen und ihre Auswirkungen auf Lernen, Verhalten und Sprache</li><li>Anamnese mit dem SI-Elternfragebogen</li><li>Kindersprachtherapie mit Sensorischer Integration</li></ul>
+          <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Du wirst sprachliche Auffälligkeiten stärker im Zusammenhang mit der Gesamtentwicklung des Kindes betrachten können. Alle Kursbausteine werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft. Du kannst nach diesem Kurs deine Therapien konkret mit SI-Elementen planen und durchführen.</div>
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
         </div>
       </div>
-
-      <div class="kurs-card reveal">
-        <div class="kurs-header">
-          <p class="kurs-tag">Elterntraining</p>
-          <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
-          <p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen — inklusive aller Materialien für die eigenständige Durchführung.</p>
-        </div>
+      <div class="kurs-card">
+        <div class="kurs-header"><span class="kurs-tag">Elterntraining</span><h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3><p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen — inklusive aller Materialien.</p></div>
         <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen <span class="arrow">↓</span></button>
         <div class="kurs-details">
-          <p class="kurs-hook">Im Mittelpunkt steht die Vermittlung alltagsnaher Sprachlehrstrategien, die Eltern gezielt in der Kommunikation mit ihrem Kind einsetzen können. Du lernst das Programm umfassend kennen und wirst Schritt für Schritt darauf vorbereitet, es eigenständig durchzuführen.</p>
-          <p class="kurs-inhalte-title">Du erhältst alle Materialien</p>
-          <ul class="kurs-inhalte">
-            <li>Kursleiterskript</li>
-            <li>Begleitheft für Eltern</li>
-            <li>Werbeflyer zur Teilnehmergewinnung</li>
-            <li>Anschreiben für Krankenkassen</li>
-            <li>Teilnehmerliste, Elternzertifikat und Rückmeldebogen (Vorlagen)</li>
-          </ul>
+          <p class="kurs-hook">„Suchst du nach einer strukturierten Möglichkeit, Eltern aktiv in die Sprachförderung einzubeziehen? Im Mittelpunkt steht die Vermittlung alltagsnaher Sprachlehrstrategien, die Eltern gezielt in der Kommunikation mit ihrem Kind einsetzen können, um dessen Sprachentwicklung wirksam zu unterstützen."</p>
+          <span class="kurs-inhalte-label">Du erhältst alle Materialien</span>
+          <ul class="kurs-inhalte"><li>Kursleiterskript</li><li>Begleitheft für Eltern</li><li>Werbeflyer zur Teilnehmergewinnung</li><li>Anschreiben für Krankenkassen</li><li>Teilnehmerliste (Vorlage)</li><li>Elternzertifikat (Vorlage)</li><li>Rückmeldebogen zur Evaluation (Vorlage)</li></ul>
           <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Du verfügst über alle notwendigen Kenntnisse und Materialien, um das Elterntraining „Spielst du mit mir sprechen? 2.0" selbstständig und professionell umzusetzen.</div>
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
         </div>
       </div>
-
-      <div class="kurs-card reveal">
-        <div class="kurs-header">
-          <p class="kurs-tag">Frühe Intervention</p>
-          <h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3>
-          <p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention bei sprach- und kommunikationsauffälligen Kindern.</p>
-        </div>
+      <div class="kurs-card">
+        <div class="kurs-header"><span class="kurs-tag">Frühe Intervention</span><h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3><p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p></div>
         <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen <span class="arrow">↓</span></button>
         <div class="kurs-details">
-          <p class="kurs-hook">Hast du auch immer öfter Kinder in der Praxis, bei denen die gängigen Methoden nicht funktionieren? Vielleicht liegt es daran, dass diese Kinder noch nicht in der Lage sind, Sprache zu erwerben — weil bei ihnen ein wichtiges Fundament fehlt.</p>
-          <p class="kurs-inhalte-title">Kursaufbau</p>
-          <ul class="kurs-inhalte">
-            <li>Kommunikative Vorläuferfähigkeiten – das Fundament erfolgreicher Sprachentwicklung</li>
-            <li>Praxiserprobte Diagnostik zur Erfassung kommunikativer Vorläuferfähigkeiten</li>
-            <li>Wirksame therapeutische Konzepte für die frühe Intervention</li>
-            <li>Die Frühe Dialogtherapie: Struktur, Methodik und therapeutische Umsetzung</li>
-          </ul>
-          <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Alle Kursbausteine werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft. Du kannst deine Therapien konkret mit dieser Methode planen und durchführen.</div>
+          <p class="kurs-hook">„Hast du auch immer öfter Kinder in der Praxis, bei denen die gängigen Methoden nicht funktionieren? Vielleicht liegt es daran, dass diese Kinder noch nicht in der Lage sind, Sprache zu erwerben, weil bei ihnen ein wichtiges Fundament fehlt: die kommunikativen Vorausläuferfähigkeiten."</p>
+          <span class="kurs-inhalte-label">Kursaufbau</span>
+          <ul class="kurs-inhalte"><li>Kommunikative Vorläuferfähigkeiten – das Fundament erfolgreicher Sprachentwicklung</li><li>Praxiserprobte Diagnostik zur Erfassung kommunikativer Vorläuferfähigkeiten</li><li>Wirksame therapeutische Konzepte für die frühe Intervention</li><li>Die Frühe Dialogtherapie: Struktur, Methodik und therapeutische Umsetzung</li></ul>
+          <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Alle Kursbausteine werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft. Du kannst nach diesem Kurs deine Therapien konkret mit dieser Methode planen und durchführen.</div>
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
         </div>
       </div>
-
-      <div class="kurs-card reveal">
-        <div class="kurs-header">
-          <p class="kurs-tag">Webinar</p>
-          <h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3>
-          <p class="kurs-teaser">Kinder, die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken — ein möglicher Schlüssel liegt in den frühkindlichen Reflexen. Dieses Webinar gibt einen fundierten Einblick in die Zusammenhänge.</p>
-        </div>
+      <div class="kurs-card">
+        <div class="kurs-header"><span class="kurs-tag">Webinar</span><h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3><p class="kurs-teaser">Kinder die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken — ein möglicher Schlüssel liegt in den frühkindlichen Reflexen.</p></div>
         <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen <span class="arrow">↓</span></button>
         <div class="kurs-details">
-          <p class="kurs-hook">Frühkindliche Reflexe sind genetisch angelegte Bewegungsmuster und bilden eine wichtige Grundlage für Haltung, Bewegung, Wahrnehmung, Lernen und Kommunikation. Verläuft der Integrationsprozess nicht vollständig, können Restreaktionen bestehen bleiben und verschiedene Entwicklungsbereiche beeinflussen.</p>
-          <p class="kurs-inhalte-title">Kursinhalte</p>
-          <ul class="kurs-inhalte">
-            <li>Die Entwicklung und Funktion frühkindlicher Reflexe</li>
-            <li>Bedeutung für Wahrnehmung, Motorik, Lernen und Sprachentwicklung</li>
-            <li>Mögliche Folgen nicht vollständig integrierter Reflexe im Kindesalter</li>
-            <li>Zusammenhänge zwischen Reflexentwicklung, kommunikativen Vorläuferfähigkeiten und Sprachentwicklung</li>
-            <li>Reflexintegrationsprogramme – Grundlagen, Möglichkeiten und Grenzen</li>
-            <li>Aktuelle Studienlage und wissenschaftliche Einordnung</li>
-          </ul>
+          <p class="kurs-hook">„Frühkindliche Reflexe sind genetisch angelegte Bewegungsmuster und bilden eine wichtige Grundlage für Haltung, Bewegung, Wahrnehmung, Lernen und Kommunikation. Verläuft der Integrationsprozess nicht vollständig, können Restreaktionen bestehen bleiben und verschiedene Entwicklungsbereiche beeinflussen — darunter Aufmerksamkeit, Motorik, Koordination, emotionale Regulation und Sprachentwicklung."</p>
+          <span class="kurs-inhalte-label">Kursinhalte</span>
+          <ul class="kurs-inhalte"><li>Die Entwicklung und Funktion frühkindlicher Reflexe</li><li>Bedeutung für Wahrnehmung, Motorik, Lernen und Sprachentwicklung</li><li>Mögliche Folgen nicht vollständig integrierter Reflexe im Kindesalter</li><li>Zusammenhänge zwischen Reflexentwicklung, kommunikativen Vorläuferfähigkeiten und Sprachentwicklung</li><li>Reflexintegrationsprogramme – Grundlagen, Möglichkeiten und Grenzen</li><li>Überblick über die aktuelle Studienlage und wissenschaftliche Einordnung</li></ul>
           <div class="kurs-outcome"><strong>Nach dem Webinar</strong>Du wirst die Rolle frühkindlicher Reflexe differenzierter betrachten können, erkennst mögliche Zusammenhänge im therapeutischen Alltag und gewinnst zusätzliche Perspektiven für die Begleitung von Kindern mit Entwicklungsauffälligkeiten.</div>
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
-<!-- ÜBER -->
 <section id="ueber">
-  <div class="ueber-image reveal">
-    <img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach">
-  </div>
-  <div class="ueber-text reveal">
-    <p class="section-overline">Über mich</p>
+  <div class="ueber-image"><img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach"></div>
+  <div class="ueber-text">
+    <span class="section-overline">Über mich</span>
     <h2 class="section-title">Dr. Stephanie Kurtenbach</h2>
     <p>Was mich inspiriert und erfüllt, sind meine Familie und meine Freunde, Begegnungen mit Menschen, auf Reisen und in der Natur zu sein, gutes Essen, tiefe Gespräche und Yoga.</p>
     <p>In meiner Arbeit begegne ich Menschen auf Augenhöhe. Mit meinen Lernpraktiken möchte ich tiefe Veränderungsprozesse ankurbeln — nicht durch das Vermitteln von Fertigkeiten, sondern durch das Verankern grundlegender Überzeugungen und das Herausarbeiten von Ressourcen.</p>
     <p>Seit mehr als 30 Jahren begleite ich Kinder, Familien, Fachkräfte und Berufssprecher*innen. Meine Arbeit beginnt beim Verstehen der Ursachen — und der Bedingungen, die echte Entwicklung ermöglichen.</p>
     <div class="ausbildung-grid">
-      <div class="ausbildung-item">
-        <span class="ausbildung-icon">01</span>
-        <div><p class="ausbildung-title">Studium der Sprechwissenschaft</p><p class="ausbildung-desc">Ganzheitliche Grundlage für stimmliche Ausbildung, Rhetorik und sprachtherapeutisches Fachwissen.</p></div>
-      </div>
-      <div class="ausbildung-item">
-        <span class="ausbildung-icon">02</span>
-        <div><p class="ausbildung-title">Sensorische Integrationstherapeutin</p><p class="ausbildung-desc">Ursachenorientierte, bewegungsintensive Arbeit mit Kindern — für Selbstwirksamkeit und kommunikative Stärke.</p></div>
-      </div>
-      <div class="ausbildung-item">
-        <span class="ausbildung-icon">03</span>
-        <div><p class="ausbildung-title">Systemische Beraterin</p><p class="ausbildung-desc">Respekt, Wertschätzung, Ressourcen- und Lösungsorientierung als Grundhaltung.</p></div>
-      </div>
-      <div class="ausbildung-item">
-        <span class="ausbildung-icon">04</span>
-        <div><p class="ausbildung-title">Reflexintegrationstrainerin</p><p class="ausbildung-desc">Verständnis der Ursachen von Lernstörungen im Kindes- wie Erwachsenenalter.</p></div>
-      </div>
+      <div class="ausbildung-item"><span class="ausbildung-icon">01</span><div><p class="ausbildung-title">Studium der Sprechwissenschaft</p><p class="ausbildung-desc">Ganzheitliche Grundlage für stimmliche Ausbildung, Rhetorik und sprachtherapeutisches Fachwissen.</p></div></div>
+      <div class="ausbildung-item"><span class="ausbildung-icon">02</span><div><p class="ausbildung-title">Sensorische Integrationstherapeutin</p><p class="ausbildung-desc">Ursachenorientierte, bewegungsintensive Arbeit mit Kindern — für Selbstwirksamkeit und kommunikative Stärke.</p></div></div>
+      <div class="ausbildung-item"><span class="ausbildung-icon">03</span><div><p class="ausbildung-title">Systemische Beraterin</p><p class="ausbildung-desc">Respekt, Wertschätzung, Ressourcen- und Lösungsorientierung als Grundhaltung.</p></div></div>
+      <div class="ausbildung-item"><span class="ausbildung-icon">04</span><div><p class="ausbildung-title">Reflexintegrationstrainerin</p><p class="ausbildung-desc">Verständnis der Ursachen von Lernstörungen im Kindes- wie Erwachsenenalter.</p></div></div>
     </div>
     <a href="https://www.uni-erfurt.de/erziehungswissenschaftliche-fakultaet/fakultaet/profil/fachgebiete-und-professuren/inklusive-paedagogik-bei-benachteiligung-und-behinderung/struktur-des-fachgebietes/professur-fuer-inklusive-bildungsprozesse-bei-beeintraechtigungen-in-sprache-und-kommunikation/team/dr-stephanie-kurtenbach" target="_blank" class="pub-link">Publikationen & Forschung ansehen →</a>
   </div>
 </section>
-
-<!-- PHILOSOPHIE -->
 <section id="philosophie">
-  <div class="reveal">
-    <p class="philo-quote-main">„Jenseits von richtig und falsch liegt ein Ort. <em>Dort treffen wir uns.</em>"</p>
-    <p class="philo-attribution">Dschalāl ad-Dīn Muhammad Rūmī</p>
-  </div>
-  <div class="philo-values reveal">
-    <div class="philo-value">
-      <h3 class="philo-value-title">Augenhöhe</h3>
-      <p class="philo-value-text">Jede Begegnung — ob mit Kind, Elternteil oder Fachkraft — entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen trägt.</p>
-    </div>
-    <div class="philo-value">
-      <h3 class="philo-value-title">Ursachenorientierung</h3>
-      <p class="philo-value-text">Symptome zeigen, was sichtbar ist. Was wirklich zählt, liegt tiefer. Meine Arbeit beginnt immer mit dem Verstehen — bevor Handlungsstrategien folgen.</p>
-    </div>
-    <div class="philo-value">
-      <h3 class="philo-value-title">Selbstwirksamkeit</h3>
-      <p class="philo-value-text">Das Ziel ist nie Abhängigkeit — sondern dass Menschen, Kinder und Familien in die Lage kommen, ihre eigene Entwicklung aktiv zu gestalten.</p>
-    </div>
+  <p class="philo-quote-main">„Jenseits von richtig und falsch liegt ein Ort. <em>Dort treffen wir uns.</em>"</p>
+  <span class="philo-attribution">Dschalāl ad-Dīn Muhammad Rūmī</span>
+  <div class="philo-values">
+    <div class="philo-value"><span class="philo-value-title">Augenhöhe</span><p class="philo-value-text">Jede Begegnung — ob mit Kind, Elternteil oder Fachkraft — entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen trägt.</p></div>
+    <div class="philo-value"><span class="philo-value-title">Ursachenorientierung</span><p class="philo-value-text">Symptome zeigen, was sichtbar ist. Was wirklich zählt, liegt tiefer. Meine Arbeit beginnt immer mit dem Verstehen — bevor Handlungsstrategien folgen.</p></div>
+    <div class="philo-value"><span class="philo-value-title">Selbstwirksamkeit</span><p class="philo-value-text">Das Ziel ist nie Abhängigkeit — sondern dass Menschen, Kinder und Familien in die Lage kommen, ihre eigene Entwicklung aktiv zu gestalten.</p></div>
   </div>
 </section>
-
-<!-- STIMMEN -->
 <section id="stimmen">
-  <div class="reveal">
-    <p class="section-overline">Kursteilnehmer*innen</p>
-    <h2 class="section-title">Was Menschen sagen</h2>
-  </div>
-  <div class="testimonials-featured reveal">
-    <p class="featured-stars">★★★★★★★★★★</p>
+  <span class="section-overline">Kursteilnehmer*innen</span>
+  <h2 class="section-title">Was Menschen sagen</h2>
+  <div class="testimonials-featured">
+    <span class="featured-stars">★★★★★★★★★★</span>
     <p class="featured-quote">„Wenn ich könnte, würde ich 10 Sterne vergeben. Die Atmosphäre war sehr persönlich und angenehm, der Inhalt wurde super anschaulich vermittelt und Fragen immer beantwortet. Man bekommt einen ganz neuen Blick auf die Kinder."</p>
   </div>
-  <div class="testimonials-grid reveal">
-    <div class="testimonial-card"><p class="testimonial-text">„Stephanie hat mit so viel Leidenschaft die Inhalte übermittelt, sodass man direkt angesteckt wurde, es selbst auszuprobieren."</p><p class="testimonial-highlight">Kursteilnehmerin, Fortbildung SI</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Ich war total begeistert, angeregt und habe extrem viel gelernt. Vielen Dank!"</p><p class="testimonial-highlight">Kursteilnehmerin, Kindersprachtherapie</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Super praxisnah — ich kann die Ideen gleich im Alltag umsetzen. Die besondere fachliche Kompetenz und Kommunikationsform der Dozentin haben mich beeindruckt."</p><p class="testimonial-highlight">Logopädin, Weiterbildung</p></div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card"><p class="testimonial-text">„Stephanie hat mit so viel Leidenschaft die Inhalte übermittelt, sodass man direkt angesteckt wurde, es selbst auszuprobieren."</p><p class="testimonial-highlight">Kursteilnehmerin · Fortbildung SI</p></div>
+    <div class="testimonial-card"><p class="testimonial-text">„Ich war total begeistert, angeregt und habe extrem viel gelernt. Vielen Dank!"</p><p class="testimonial-highlight">Kursteilnehmerin · Kindersprachtherapie</p></div>
+    <div class="testimonial-card"><p class="testimonial-text">„Super praxisnah — ich kann die Ideen gleich im Alltag umsetzen. Die besondere fachliche Kompetenz und Kommunikationsform der Dozentin haben mich beeindruckt."</p><p class="testimonial-highlight">Logopädin · Weiterbildung</p></div>
     <div class="testimonial-card"><p class="testimonial-text">„Wie sehr es mir die Augen in Bezug auf einige Therapiekinder geöffnet hat — das war der wertvollste Moment der Fortbildung."</p><p class="testimonial-highlight">Kursteilnehmerin</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Gut strukturiert, ausgewogenes Verhältnis von Theorie und Praxis. Spannende Videos, tolle Fallbesprechungen — und immer auf alle Fragen eingegangen."</p><p class="testimonial-highlight">Kursteilnehmerin, Online-Seminar</p></div>
+    <div class="testimonial-card"><p class="testimonial-text">„Gut strukturiert, ausgewogenes Verhältnis von Theorie und Praxis. Spannende Videos, tolle Fallbesprechungen — und immer auf alle Fragen eingegangen."</p><p class="testimonial-highlight">Kursteilnehmerin · Online-Seminar</p></div>
     <div class="testimonial-card"><p class="testimonial-text">„Das Charisma von Stephanie Kurtenbach. Sehr viel Erfahrung — und trotzdem ganz nah bei den Teilnehmenden."</p><p class="testimonial-highlight">Kursteilnehmer*in</p></div>
   </div>
 </section>
-
-<!-- KONTAKT -->
 <section id="kontakt">
-  <div class="reveal">
-    <p class="section-overline">Kontakt</p>
-    <h2 class="section-title" style="font-size: 2.2rem;">Ich freue mich auf Ihre Nachricht.</h2>
-    <p class="section-body" style="margin-bottom: 2rem;">Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung — nehmen Sie gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
+  <div class="kontakt-info">
+    <span class="section-overline">Kontakt</span>
+    <h2 class="section-title">Ich freue mich auf Ihre Nachricht.</h2>
+    <p class="section-body" style="margin-bottom:2rem;">Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung — nehmen Sie gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
     <div class="kontakt-details">
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Standort</strong>Deutschsprachiger Raum · Online & Präsenz</div></div>
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Forschung & Publikationen</strong>Universität Erfurt, Lehr- und ForschungsLab KOMPASS Sprache</div></div>
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Erfahrung</strong>30+ Jahre · 200+ Weiterbildungen · national und international</div></div>
     </div>
   </div>
-  <div class="reveal">
-    <form class="kontakt-form" onsubmit="return false;">
-      <div class="form-group"><label>Name</label><input type="text" placeholder="Ihr vollständiger Name"></div>
-      <div class="form-group"><label>E-Mail</label><input type="email" placeholder="ihre@email.de"></div>
-      <div class="form-group">
-        <label>Ich interessiere mich für</label>
-        <select>
-          <option value="">Bitte wählen …</option>
-          <option>Fortbildung für Therapeut*innen</option>
-          <option>Stimm- & Kommunikationscoaching</option>
-          <option>Beratung für Kinder & Familien</option>
-          <option>Sonstiges</option>
-        </select>
-      </div>
-      <div class="form-group"><label>Nachricht</label><textarea placeholder="Ihr Anliegen …"></textarea></div>
-      <button type="submit" class="form-submit">Nachricht senden</button>
-    </form>
-  </div>
+  <form class="kontakt-form" onsubmit="return false;">
+    <div class="form-group"><label>Name</label><input type="text" placeholder="Ihr vollständiger Name"></div>
+    <div class="form-group"><label>E-Mail</label><input type="email" placeholder="ihre@email.de"></div>
+    <div class="form-group"><label>Ich interessiere mich für</label><select><option value="">Bitte wählen …</option><option>Fortbildung für Therapeut*innen</option><option>Stimm- & Kommunikationscoaching</option><option>Beratung für Kinder & Familien</option><option>Sonstiges</option></select></div>
+    <div class="form-group"><label>Nachricht</label><textarea placeholder="Ihr Anliegen …"></textarea></div>
+    <button type="submit" class="form-submit">Nachricht senden</button>
+  </form>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <p class="footer-logo">Dr. Stephanie Kurtenbach</p>
   <p class="footer-text">© 2025 · Sprechwissenschaftlerin · Dozentin · Coach</p>
 </footer>
-
 <script>
-gsap.registerPlugin(ScrollTrigger);
-
-// Progress bar
-const pb = document.createElement('div');
-pb.className = 'progress-bar';
-document.body.appendChild(pb);
-gsap.to(pb, { width:'100%', ease:'none', scrollTrigger:{ scrub:0.3, start:'top top', end:'bottom bottom' }});
-
-// Custom cursor
-const cursor = document.createElement('div');
-cursor.className = 'cursor';
-const ring = document.createElement('div');
-ring.className = 'cursor-ring';
-document.body.appendChild(cursor);
-document.body.appendChild(ring);
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{ mx=e.clientX;my=e.clientY; cursor.style.left=mx+'px';cursor.style.top=my+'px'; });
-(function loop(){ rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop); })();
-
-// Hero headline word split
-const hl = document.querySelector('.hero-headline');
-if(hl){ hl.innerHTML=hl.innerHTML.replace(/(\S+)/g,'<span class="word"><span>$1</span></span>&nbsp;'); gsap.from('.hero-headline .word span',{ y:'100%',opacity:0,duration:0.8,stagger:0.06,ease:'power3.out',delay:0.5 }); }
-
-// Stats count up
-document.querySelectorAll('.stat-number').forEach(el=>{
-  const txt=el.textContent;
-  const num=parseInt(txt);
-  const suf=txt.replace(/[0-9]/g,'');
-  gsap.from({v:0},{v:num,duration:1.8,ease:'power2.out',snap:{v:1},
-    scrollTrigger:{trigger:el,start:'top 90%',once:true},
-    onUpdate:function(){ el.textContent=Math.round(this.targets()[0].v)+suf; }
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to('#progressBar', { width:'100%', ease:'none', scrollTrigger:{ scrub:0.3, start:'top top', end:'bottom bottom' }});
+  gsap.from('.hero-headline', { y:30, opacity:0, duration:1.2, ease:'power3.out', delay:0.3 });
+  gsap.from('.hero-overline', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.15 });
+  gsap.from('.hero-sub', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.55 });
+  gsap.from('.hero-tags', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.7 });
+  gsap.from('.hero-actions', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.85 });
+  gsap.from('.hero-quote', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:1.1 });
+  gsap.to('#heroImg', { y:100, ease:'none', scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:1 }});
+  document.querySelectorAll('.section-title').forEach(el => {
+    gsap.from(el, { y:35, opacity:0, duration:1, ease:'power3.out', scrollTrigger:{ trigger:el, start:'top 85%', once:true }});
   });
-});
-
-// Section titles slide up
-gsap.utils.toArray('.section-title').forEach(el=>{
-  gsap.from(el,{ y:40,opacity:0,duration:0.9,ease:'power3.out',
-    scrollTrigger:{trigger:el,start:'top 85%',once:true}
+  document.querySelectorAll('.stat-number').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    ScrollTrigger.create({ trigger:el, start:'top 90%', once:true, onEnter:() => {
+      let obj = { val:0 };
+      gsap.to(obj, { val:target, duration:1.8, ease:'power2.out', onUpdate:() => { el.textContent = Math.round(obj.val) + suffix; }});
+    }});
   });
-});
-
-// Cards stagger in
-gsap.utils.toArray('.angebote-grid, .problems-grid, .testimonials-grid').forEach(grid=>{
-  gsap.from(grid.children,{ y:50,opacity:0,duration:0.7,stagger:0.12,ease:'power2.out',
-    scrollTrigger:{trigger:grid,start:'top 80%',once:true}
-  });
-});
-
-// Kurs cards stagger
-gsap.from('.kurs-card',{ y:60,opacity:0,duration:0.8,stagger:0.15,ease:'power2.out',
-  scrollTrigger:{trigger:'.kurse-grid',start:'top 80%',once:true}
-});
-
-// Hero parallax
-gsap.to('.hero-right img',{ y:120,ease:'none',
-  scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1}
-});
-
-// Philosophie quote word reveal
-const pq=document.querySelector('.philo-quote-main');
-if(pq){
-  const words=pq.innerHTML.split(/(\s+)/);
-  pq.innerHTML=words.map(w=>w.trim()?'<span class="word">'+w+'</span>':w).join('');
-  gsap.to('.philo-quote-main .word',{ opacity:1,y:0,duration:0.4,stagger:0.04,ease:'power2.out',
-    scrollTrigger:{trigger:pq,start:'top 70%',once:true}
-  });
-}
-
-// 3D card hover
-document.querySelectorAll('.angebot-card,.kurs-card,.problem-card').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-0.5;
-    const y=(e.clientY-r.top)/r.height-0.5;
-    gsap.to(card,{rotateY:x*8,rotateX:-y*8,scale:1.02,duration:0.3,ease:'power2.out',transformPerspective:800});
-  });
-  card.addEventListener('mouseleave',()=>gsap.to(card,{rotateY:0,rotateX:0,scale:1,duration:0.5,ease:'power2.out'}));
-});
-
-// Kurs toggle
-window.toggleKurs=function(btn){
-  const d=btn.nextElementSibling;
-  const open=d.classList.contains('open');
-  d.classList.toggle('open',!open);
-  btn.classList.toggle('open',!open);
-  btn.querySelector('.arrow').textContent=open?'↓':'↑';
-};
-
-// Reveal fallback
-document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(([e])=>e.isIntersecting&&e.target.classList.add('visible'),{threshold:0.1}).observe(el));
+  function toggleKurs(btn) {
+    const details = btn.nextElementSibling;
+    const isOpen = details.classList.contains('open');
+    details.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.querySelector('.arrow').textContent = isOpen ? '↓' : '↑';
+  }
 </script>
 </body>
 </html>
