@@ -6,7 +6,7 @@
 <title>Dr. Stephanie Kurtenbach – Kommunikation. Stimme. Verbindung.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
@@ -22,17 +22,19 @@
     --deep: #2D2040;
     --mid: #5A4A6A;
     --muted: #9080A0;
-    --font-serif: 'DM Serif Display', Georgia, serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'DM Sans', sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { background: var(--white); color: var(--deep); font-family: var(--font-sans); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(122,92,138,0.08); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(45,32,64,0.1); }
   .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
   .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
-  .nav-links a { font-size: 0.78rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a { font-size: 0.85rem; font-weight: 400; color: var(--deep); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--rose); transition: width 0.3s ease; }
   .nav-links a:hover { color: var(--rose); }
+  .nav-links a:hover::after { width: 100%; }
   .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background 0.2s !important; }
   .nav-cta:hover { background: var(--rose-dark) !important; }
   #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; overflow: hidden; position: relative; }
@@ -84,20 +86,24 @@
   .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.8; flex: 1; margin-bottom: 2rem; }
   .angebot-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; align-self: flex-start; transition: border-color 0.2s; }
   .angebot-link:hover { border-color: var(--rose); }
-  .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 5rem; }
+  .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 5rem; background: #F9F6F8; padding: 4rem; margin-top: 4rem; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
-  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
-  .kurs-card { background: var(--white); border: none; box-shadow: none; border-bottom: 1px solid rgba(122,92,138,0.1); overflow: hidden; }
+  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; margin-top: 3rem; }
+  .kurs-card { background: #F9F6F8; border: none; box-shadow: none; border-bottom: 1px solid rgba(184,114,138,0.15); overflow: hidden; position: relative; }
   .kurs-card:hover { box-shadow: none; }
+  .kurs-card-number { position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-serif); font-size: 6rem; line-height: 1; color: var(--rose); opacity: 0.08; pointer-events: none; font-style: italic; }
   .kurs-header { padding: 2.5rem 2.5rem 2rem; }
-  .kurs-tag { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; display: block; }
-  .kurs-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--deep); margin-bottom: 1rem; line-height: 1.4; }
+  .kurs-tag { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; display: block; }
+  .kurs-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--deep); margin-bottom: 1rem; line-height: 1.35; }
   .kurs-teaser { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
-  .kurs-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1.25rem 2.5rem; background: none; border: none; border-top: 1px solid var(--sand); cursor: pointer; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); transition: background 0.2s; }
-  .kurs-toggle:hover { background: var(--rose-pale); }
-  .kurs-toggle .arrow { font-size: 0.9rem; transition: transform 0.3s; display: inline-block; }
+  .kurs-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1.25rem 2.5rem; background: none; border: none; border-top: 1px solid rgba(184,114,138,0.15); cursor: pointer; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); transition: color 0.2s; }
+  .kurs-toggle:hover { color: var(--rose-dark); }
+  .kurs-toggle .toggle-text { position: relative; }
+  .kurs-toggle .toggle-text::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--rose); transition: width 0.3s ease; }
+  .kurs-toggle:hover .toggle-text::after { width: 100%; }
+  .kurs-toggle .arrow { font-size: 0.9rem; transition: transform 0.3s; display: inline-block; margin-left: 0.5rem; }
   .kurs-toggle.open .arrow { transform: rotate(180deg); }
-  .kurs-details { display: none; padding: 2.5rem; border-top: 1px solid var(--sand); background: var(--plum-pale); }
+  .kurs-details { display: none; padding: 2.5rem; border-top: none; background: white; border-left: 3px solid var(--rose); padding-left: 2rem; margin: 0 2.5rem 2rem; }
   .kurs-details.open { display: block; }
   .kurs-hook { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.75; margin-bottom: 2rem; }
   .kurs-inhalte-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; display: block; }
@@ -227,8 +233,9 @@
     <p class="section-body">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
     <div class="kurse-grid">
       <div class="kurs-card">
+        <span class="kurs-card-number">01</span>
         <div class="kurs-header"><span class="kurs-tag">Sensorische Integration</span><h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3><p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p></div>
-        <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen <span class="arrow">↓</span></button>
+        <button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Weiterlesen</span> <span class="arrow">↓</span></button>
         <div class="kurs-details">
           <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet — und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend. Häufig liegen den sprachlichen Schwierigkeiten weitere Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft dabei, diese Zusammenhänge besser zu verstehen."</p>
           <span class="kurs-inhalte-label">Kursinhalte</span>
@@ -238,8 +245,9 @@
         </div>
       </div>
       <div class="kurs-card">
+        <span class="kurs-card-number">02</span>
         <div class="kurs-header"><span class="kurs-tag">Elterntraining</span><h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3><p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen — inklusive aller Materialien.</p></div>
-        <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen <span class="arrow">↓</span></button>
+        <button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Weiterlesen</span> <span class="arrow">↓</span></button>
         <div class="kurs-details">
           <p class="kurs-hook">„Suchst du nach einer strukturierten Möglichkeit, Eltern aktiv in die Sprachförderung einzubeziehen? Im Mittelpunkt steht die Vermittlung alltagsnaher Sprachlehrstrategien, die Eltern gezielt in der Kommunikation mit ihrem Kind einsetzen können, um dessen Sprachentwicklung wirksam zu unterstützen."</p>
           <span class="kurs-inhalte-label">Du erhältst alle Materialien</span>
@@ -249,8 +257,9 @@
         </div>
       </div>
       <div class="kurs-card">
+        <span class="kurs-card-number">03</span>
         <div class="kurs-header"><span class="kurs-tag">Frühe Intervention</span><h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3><p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p></div>
-        <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen <span class="arrow">↓</span></button>
+        <button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Weiterlesen</span> <span class="arrow">↓</span></button>
         <div class="kurs-details">
           <p class="kurs-hook">„Hast du auch immer öfter Kinder in der Praxis, bei denen die gängigen Methoden nicht funktionieren? Vielleicht liegt es daran, dass diese Kinder noch nicht in der Lage sind, Sprache zu erwerben, weil bei ihnen ein wichtiges Fundament fehlt: die kommunikativen Vorausläuferfähigkeiten."</p>
           <span class="kurs-inhalte-label">Kursaufbau</span>
@@ -260,8 +269,9 @@
         </div>
       </div>
       <div class="kurs-card">
+        <span class="kurs-card-number">04</span>
         <div class="kurs-header"><span class="kurs-tag">Webinar</span><h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3><p class="kurs-teaser">Kinder die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken — ein möglicher Schlüssel liegt in den frühkindlichen Reflexen.</p></div>
-        <button class="kurs-toggle" onclick="toggleKurs(this)">Weiterlesen <span class="arrow">↓</span></button>
+        <button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Weiterlesen</span> <span class="arrow">↓</span></button>
         <div class="kurs-details">
           <p class="kurs-hook">„Frühkindliche Reflexe sind genetisch angelegte Bewegungsmuster und bilden eine wichtige Grundlage für Haltung, Bewegung, Wahrnehmung, Lernen und Kommunikation. Verläuft der Integrationsprozess nicht vollständig, können Restreaktionen bestehen bleiben und verschiedene Entwicklungsbereiche beeinflussen — darunter Aufmerksamkeit, Motorik, Koordination, emotionale Regulation und Sprachentwicklung."</p>
           <span class="kurs-inhalte-label">Kursinhalte</span>
