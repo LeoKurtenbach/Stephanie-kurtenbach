@@ -144,7 +144,8 @@
   .featured-quote { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.5vw, 2.4rem); font-style: italic; font-weight: 300; color: rgba(255,255,255,0.88); line-height: 1.8; max-width: 780px; margin: 0 auto; }
   .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; row-gap: 3.5rem; margin-top: 4rem; }
   .testimonial-card { background: none; padding: 0; border: none; }
-  .testimonial-text { font-family: var(--font-serif); font-size: 0.95rem; color: var(--mid); font-style: italic; font-weight: 300; line-height: 1.85; margin-bottom: 1.25rem; }
+  .testimonial-card { background: none; border: none; box-shadow: none; padding: 0 0 2rem 0; border-bottom: 1px solid rgba(184,114,138,0.12); }
+  .testimonial-text { font-family: var(--font-serif); font-size: 1rem; color: var(--mid); font-style: italic; font-weight: 300; line-height: 1.85; margin-bottom: 1.25rem; }
   .testimonial-highlight { font-size: 0.72rem; color: var(--rose); font-style: normal; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; border-top: none; padding-top: 0; margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem; }
   .testimonial-highlight::before { content: '—'; color: var(--rose); }
   #kontakt { background: var(--deep); display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
@@ -316,9 +317,12 @@
 <section id="stimmen">
   <span class="section-overline">Kursteilnehmer*innen</span>
   <h2 class="section-title">Was Menschen sagen</h2>
-  <div class="testimonials-featured">
-    <span class="featured-stars"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4 C16 4 18 10 22 12 C18 12 16 18 16 18 C16 18 14 12 10 12 C14 10 16 4 16 4Z" fill="#B8728A" opacity="0.7"/><path d="M16 14 C16 14 20 15 22 18 C19 17 16 20 16 20 C16 20 13 17 10 18 C12 15 16 14 16 14Z" fill="#B8728A" opacity="0.5"/><circle cx="16" cy="16" r="2" fill="#B8728A" opacity="0.9"/></svg></span>
-    <p class="featured-quote">„Wenn ich könnte, würde ich 10 Sterne vergeben. Die Atmosphäre war sehr persönlich und angenehm, der Inhalt wurde super anschaulich vermittelt und Fragen immer beantwortet. Man bekommt einen ganz neuen Blick auf die Kinder."</p>
+  <div style="max-width:760px; margin: 0 0 5rem 0;">
+    <div style="margin-bottom:2rem;">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4 C16 4 18 10 22 12 C18 12 16 18 16 18 C16 18 14 12 10 12 C14 10 16 4 16 4Z" fill="#B8728A" opacity="0.7"/><path d="M16 14 C16 14 20 15 22 18 C19 17 16 20 16 20 C16 20 13 17 10 18 C12 15 16 14 16 14Z" fill="#B8728A" opacity="0.5"/><circle cx="16" cy="16" r="2" fill="#B8728A" opacity="0.9"/></svg>
+    </div>
+    <p style="font-family:var(--font-serif);font-style:italic;font-weight:300;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.65;color:var(--deep);margin-bottom:1.25rem;">„Wenn ich könnte, würde ich 10 Sterne vergeben. Die Atmosphäre war sehr persönlich und angenehm, der Inhalt wurde super anschaulich vermittelt und Fragen immer beantwortet. Man bekommt einen ganz neuen Blick auf die Kinder."</p>
+    <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose);">Kursteilnehmerin</span>
   </div>
   <div class="testimonials-grid">
     <div class="testimonial-card"><p class="testimonial-text">„Stephanie hat mit so viel Leidenschaft die Inhalte übermittelt, sodass man direkt angesteckt wurde, es selbst auszuprobieren."</p><p class="testimonial-highlight">Kursteilnehmerin · Fortbildung SI</p></div>
