@@ -35,10 +35,11 @@
   .nav-links a:hover { color: var(--rose); }
   .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background 0.2s !important; }
   .nav-cta:hover { background: var(--rose-dark) !important; }
-  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; overflow: hidden; }
-  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; }
+  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; overflow: hidden; position: relative; }
+  #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(255,255,255,0) 100%); z-index: 1; pointer-events: none; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; position: relative; z-index: 2; }
   .hero-overline { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 2rem; }
-  .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 6rem); font-weight: 400; line-height: 1.05; color: var(--deep); margin-bottom: 2.5rem; }
+  .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; color: var(--deep); margin-bottom: 2.5rem; }
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-style: italic; color: var(--rose); }
   .hero-sub { font-size: 1rem; font-weight: 300; color: var(--mid); line-height: 1.85; max-width: 420px; margin-bottom: 3rem; }
@@ -51,7 +52,7 @@
   .btn-secondary:hover { color: var(--rose); border-color: var(--rose); }
   .hero-right { position: relative; overflow: hidden; }
   .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; will-change: transform; }
-  .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--white) 0%, transparent 18%); z-index: 1; }
+  .hero-right::after { display: none; }
   .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; }
   .hero-quote p { font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 0.5rem; }
   .hero-quote cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-style: normal; }
@@ -61,34 +62,29 @@
   .stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.5rem; display: block; }
   section { padding: 9rem 5rem; }
   .section-overline { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; display: block; }
-  .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 400; line-height: 1.15; color: var(--deep); margin-bottom: 2rem; }
+  .section-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 3.2vw, 3.8rem); font-weight: 400; line-height: 1.15; color: var(--deep); margin-bottom: 2rem; }
   .section-body { font-size: 1rem; color: var(--mid); line-height: 1.85; max-width: 580px; }
-  #probleme { position: relative; overflow: hidden; }
-  #angebote { position: relative; overflow: hidden; }
-  #probleme::before, #angebote::before, #ueber::before { content: ''; position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&q=80'); background-size: cover; background-position: center; opacity: 0.05; z-index: 0; pointer-events: none; }
-  #probleme > *, #angebote > *, #ueber > * { position: relative; z-index: 1; }
-  .nature-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.06; }
-  .nature-bg svg { width: 100%; height: 100%; }
-  section > *:not(.nature-bg) { position: relative; z-index: 1; }
-  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 4rem; position: relative; z-index: 1; }
-  .problem-card { background: var(--white); padding: 3rem 2.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 2px 20px rgba(45,32,64,0.06); }
-  .problem-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(45,32,64,0.1); }
+  #probleme { background: #F7F4F0; }
+  #angebote { background: #FFFFFF; }
+  #ueber { background: #F7F4F0; }
+  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-top: 4rem; }
+  .problem-card { background: none; padding: 0; }
   .problem-audience { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.25rem; display: block; }
-  .problem-quote { font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.75; margin-bottom: 2rem; }
-  .problem-response { font-size: 0.85rem; color: var(--plum); font-weight: 400; border-top: 1px solid var(--sand); padding-top: 1.25rem; }
+  .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.75; margin-bottom: 1.5rem; }
+  .problem-response { font-size: 0.85rem; color: var(--plum); font-weight: 400; }
   .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
-  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 7rem; position: relative; z-index: 1; }
-  .angebot-card { border: none; border-top: 2px solid var(--rose); padding: 3.5rem 3rem; display: flex; flex-direction: column; background: var(--white); box-shadow: 0 4px 30px rgba(45,32,64,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .angebot-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(45,32,64,0.12); }
-  .angebot-title { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; color: var(--deep); margin-bottom: 1.5rem; line-height: 1.2; }
+  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-bottom: 7rem; }
+  .angebot-card { background: none; border: none; box-shadow: none; padding: 0; display: flex; flex-direction: column; }
+  .angebot-title { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0; line-height: 1.2; }
+  .angebot-title::after { content: ''; display: block; width: 3rem; height: 1px; background: var(--rose); margin-top: 1rem; margin-bottom: 1.5rem; }
   .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.8; flex: 1; margin-bottom: 2rem; }
   .angebot-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; align-self: flex-start; transition: border-color 0.2s; }
   .angebot-link:hover { border-color: var(--rose); }
   .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 5rem; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
-  .kurs-card { background: var(--white); border: none; box-shadow: 0 2px 20px rgba(45,32,64,0.06); overflow: hidden; transition: box-shadow 0.3s; }
-  .kurs-card:hover { box-shadow: 0 16px 50px rgba(122,92,138,0.12); }
+  .kurs-card { background: var(--white); border: none; box-shadow: none; overflow: hidden; }
+  .kurs-card:hover { box-shadow: none; }
   .kurs-header { padding: 2.5rem 2.5rem 2rem; }
   .kurs-tag { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; display: block; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--deep); margin-bottom: 1rem; line-height: 1.4; }
@@ -134,11 +130,11 @@
   .testimonials-featured::before { display: none; }
   .featured-stars { color: var(--rose); font-size: 0.85rem; letter-spacing: 0.3em; margin-bottom: 2rem; display: block; }
   .featured-quote { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.5vw, 2.4rem); font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.6; max-width: 780px; margin: 0 auto; }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
-  .testimonial-card { background: none; padding: 0; border: none; transition: none; }
-  .testimonial-card:hover { transform: none; box-shadow: none; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; row-gap: 3.5rem; margin-top: 4rem; }
+  .testimonial-card { background: none; padding: 0; border: none; }
   .testimonial-text { font-family: var(--font-serif); font-size: 1rem; color: var(--mid); font-style: italic; font-weight: 400; line-height: 1.85; margin-bottom: 1.25rem; }
-  .testimonial-highlight { font-size: 0.68rem; color: var(--rose); font-style: normal; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; border-top: 1px solid var(--rose); padding-top: 0.85rem; display: inline-block; }
+  .testimonial-highlight { font-size: 0.68rem; color: var(--rose); font-style: normal; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; display: block; }
+  .testimonial-highlight::before { content: '— '; }
   #kontakt { background: var(--deep); display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
   .kontakt-info .section-overline { color: var(--rose); }
   .kontakt-info .section-title { color: var(--white); }
