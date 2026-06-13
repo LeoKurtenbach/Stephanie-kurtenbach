@@ -38,8 +38,9 @@
   #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; overflow: hidden; }
   .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; }
   .hero-overline { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 2rem; }
-  .hero-headline { font-family: var(--font-serif); font-size: clamp(4rem, 7vw, 8rem); font-weight: 400; line-height: 1.05; color: var(--deep); margin-bottom: 2.5rem; }
+  .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 6rem); font-weight: 400; line-height: 1.05; color: var(--deep); margin-bottom: 2.5rem; }
   .hero-headline em { font-style: italic; color: var(--rose); }
+  .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-style: italic; color: var(--rose); }
   .hero-sub { font-size: 1rem; font-weight: 300; color: var(--mid); line-height: 1.85; max-width: 420px; margin-bottom: 3rem; }
   .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
   .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--sand); padding: 0.4rem 1rem; border-radius: 2px; }
@@ -62,27 +63,29 @@
   .section-overline { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; display: block; }
   .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 400; line-height: 1.15; color: var(--deep); margin-bottom: 2rem; }
   .section-body { font-size: 1rem; color: var(--mid); line-height: 1.85; max-width: 580px; }
-  #probleme { background: var(--off); }
-  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 4rem; }
-  .problem-card { background: var(--white); padding: 3rem 2.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 2px solid transparent; }
-  .problem-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(26,16,37,0.06); border-top-color: var(--rose); }
+  #probleme { background: var(--white); position: relative; overflow: hidden; }
+  #probleme::before { content: ''; position: absolute; top: -60px; right: -80px; width: 500px; height: 600px; background-image: url("data:image/svg+xml,%3Csvg width='500' height='600' viewBox='0 0 500 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237A5C8A' opacity='1'%3E%3Cpath d='M400 0 C300 80 250 200 320 350 C380 280 430 150 400 0Z'/%3E%3Cpath d='M450 50 C380 130 350 260 400 400 C450 330 480 200 450 50Z'/%3E%3Cpath d='M350 20 C260 120 230 260 290 420 C350 340 390 200 350 20Z'/%3E%3Cpath d='M480 100 C400 180 370 300 430 460 C490 380 510 240 480 100Z'/%3E%3Cpath d='M320 0 C240 100 220 240 280 400 C330 320 360 180 320 0Z'/%3E%3Cpath d='M200 50 C150 150 160 280 210 420 C260 340 270 200 200 50Z'/%3E%3Cpath d='M150 0 C80 120 90 260 140 400 C200 320 200 170 150 0Z'/%3E%3C/g%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; opacity: 0.09; pointer-events: none; z-index: 0; }
+  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 4rem; position: relative; z-index: 1; }
+  .problem-card { background: var(--white); padding: 3rem 2.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 2px 20px rgba(45,32,64,0.06); }
+  .problem-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(45,32,64,0.1); }
   .problem-audience { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.25rem; display: block; }
   .problem-quote { font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.75; margin-bottom: 2rem; }
   .problem-response { font-size: 0.85rem; color: var(--plum); font-weight: 400; border-top: 1px solid var(--sand); padding-top: 1.25rem; }
-  #angebote { background: var(--white); }
-  .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; }
-  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 7rem; }
-  .angebot-card { border: 1px solid var(--sand); padding: 4rem; display: flex; flex-direction: column; background: var(--white); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s; }
-  .angebot-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(26,16,37,0.07); border-color: var(--rose); }
-  .angebot-title { font-family: var(--font-serif); font-size: 2rem; font-weight: 400; color: var(--deep); margin-bottom: 1.5rem; line-height: 1.2; }
+  #angebote { background: var(--white); position: relative; overflow: hidden; }
+  #angebote::before { content: ''; position: absolute; top: -80px; left: -80px; width: 500px; height: 600px; background-image: url("data:image/svg+xml,%3Csvg width='500' height='600' viewBox='0 0 500 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237A5C8A' opacity='1'%3E%3Cpath d='M400 0 C300 80 250 200 320 350 C380 280 430 150 400 0Z'/%3E%3Cpath d='M450 50 C380 130 350 260 400 400 C450 330 480 200 450 50Z'/%3E%3Cpath d='M350 20 C260 120 230 260 290 420 C350 340 390 200 350 20Z'/%3E%3Cpath d='M480 100 C400 180 370 300 430 460 C490 380 510 240 480 100Z'/%3E%3Cpath d='M320 0 C240 100 220 240 280 400 C330 320 360 180 320 0Z'/%3E%3Cpath d='M200 50 C150 150 160 280 210 420 C260 340 270 200 200 50Z'/%3E%3Cpath d='M150 0 C80 120 90 260 140 400 C200 320 200 170 150 0Z'/%3E%3C/g%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; opacity: 0.09; pointer-events: none; z-index: 0; transform: scaleX(-1); }
+  .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
+  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 7rem; position: relative; z-index: 1; }
+  .angebot-card { border: none; border-top: 2px solid var(--rose); padding: 3.5rem 3rem; display: flex; flex-direction: column; background: var(--white); box-shadow: 0 4px 30px rgba(45,32,64,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .angebot-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(45,32,64,0.12); }
+  .angebot-title { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; color: var(--deep); margin-bottom: 1.5rem; line-height: 1.2; }
   .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.8; flex: 1; margin-bottom: 2rem; }
   .angebot-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; align-self: flex-start; transition: border-color 0.2s; }
   .angebot-link:hover { border-color: var(--rose); }
   .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 5rem; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
-  .kurs-card { background: var(--white); border: 1px solid var(--sand); overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; }
-  .kurs-card:hover { border-color: var(--plum); box-shadow: 0 16px 50px rgba(122,92,138,0.08); }
+  .kurs-card { background: var(--white); border: none; box-shadow: 0 2px 20px rgba(45,32,64,0.06); overflow: hidden; transition: box-shadow 0.3s; }
+  .kurs-card:hover { box-shadow: 0 16px 50px rgba(122,92,138,0.12); }
   .kurs-header { padding: 2.5rem 2.5rem 2rem; }
   .kurs-tag { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; display: block; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--deep); margin-bottom: 1rem; line-height: 1.4; }
@@ -102,7 +105,8 @@
   .kurs-outcome strong { display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--plum); font-weight: 400; margin-bottom: 0.5rem; }
   .kurs-cta { display: inline-block; background: var(--rose); color: white; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 2px; transition: background 0.2s; }
   .kurs-cta:hover { background: var(--rose-dark); }
-  #ueber { background: var(--off); display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+  #ueber { background: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; position: relative; overflow: hidden; }
+  #ueber::after { content: ''; position: absolute; bottom: -100px; left: -80px; width: 500px; height: 600px; background-image: url("data:image/svg+xml,%3Csvg width='500' height='600' viewBox='0 0 500 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237A5C8A' opacity='1'%3E%3Cpath d='M400 0 C300 80 250 200 320 350 C380 280 430 150 400 0Z'/%3E%3Cpath d='M450 50 C380 130 350 260 400 400 C450 330 480 200 450 50Z'/%3E%3Cpath d='M350 20 C260 120 230 260 290 420 C350 340 390 200 350 20Z'/%3E%3Cpath d='M480 100 C400 180 370 300 430 460 C490 380 510 240 480 100Z'/%3E%3Cpath d='M320 0 C240 100 220 240 280 400 C330 320 360 180 320 0Z'/%3E%3Cpath d='M200 50 C150 150 160 280 210 420 C260 340 270 200 200 50Z'/%3E%3Cpath d='M150 0 C80 120 90 260 140 400 C200 320 200 170 150 0Z'/%3E%3C/g%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; opacity: 0.09; pointer-events: none; z-index: 0; }
   .ueber-image { position: relative; }
   .ueber-image img { width: 100%; display: block; }
   .ueber-image::before { content: ''; position: absolute; top: -2rem; left: -2rem; right: 2rem; bottom: 2rem; border: 1px solid var(--sand); z-index: -1; }
@@ -123,7 +127,6 @@
   .philo-value { text-align: left; }
   .philo-value-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
   .philo-value-text { font-size: 0.87rem; color: rgba(255,255,255,0.45); line-height: 1.8; }
-  #probleme, #angebote, #ueber { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800'%3E%3Cg fill='%237A5C8A' opacity='0.07'%3E%3Cellipse cx='120' cy='280' rx='90' ry='28' transform='rotate(-30 120 280)'/%3E%3Cellipse cx='140' cy='260' rx='75' ry='22' transform='rotate(-50 140 260)'/%3E%3Cellipse cx='100' cy='300' rx='60' ry='18' transform='rotate(-10 100 300)'/%3E%3Cellipse cx='600' cy='120' rx='100' ry='32' transform='rotate(25 600 120)'/%3E%3Cellipse cx='620' cy='100' rx='80' ry='24' transform='rotate(45 620 100)'/%3E%3Cellipse cx='580' cy='140' rx='65' ry='20' transform='rotate(10 580 140)'/%3E%3Cellipse cx='680' cy='550' rx='110' ry='35' transform='rotate(-20 680 550)'/%3E%3Cellipse cx='700' cy='530' rx='85' ry='26' transform='rotate(-40 700 530)'/%3E%3Cellipse cx='660' cy='570' rx='70' ry='22' transform='rotate(-5 660 570)'/%3E%3Cellipse cx='200' cy='650' rx='95' ry='30' transform='rotate(35 200 650)'/%3E%3Cellipse cx='220' cy='630' rx='72' ry='22' transform='rotate(55 220 630)'/%3E%3Cellipse cx='180' cy='670' rx='58' ry='18' transform='rotate(18 180 670)'/%3E%3Cellipse cx='420' cy='400' rx='50' ry='16' transform='rotate(-15 420 400)'/%3E%3Cellipse cx='440' cy='385' rx='38' ry='12' transform='rotate(20 440 385)'/%3E%3C/g%3E%3Cg fill='none' stroke='%237A5C8A' stroke-width='1' opacity='0.05'%3E%3Cpath d='M100 320 C110 280 130 260 120 220'/%3E%3Cpath d='M600 160 C610 120 630 100 620 60'/%3E%3Cpath d='M680 590 C690 550 710 530 700 490'/%3E%3Cpath d='M200 690 C210 650 230 630 220 590'/%3E%3Cpath d='M350 50 C380 80 400 120 430 100'/%3E%3Cpath d='M50 500 C80 480 120 490 140 460'/%3E%3C/g%3E%3C/svg%3E"); background-size: 800px 800px; }
   #stimmen { background-color: var(--white); }
   .testimonials-featured { background: none; padding: 3rem 0 4rem; margin-bottom: 1rem; text-align: center; }
   .testimonials-featured::before { display: none; }
@@ -175,7 +178,7 @@
 <section id="hero">
   <div class="hero-left">
     <span class="hero-overline">Sprechwissenschaftlerin · Dozentin · Coach</span>
-    <h1 class="hero-headline">Ich verändere die Art, wie Menschen auf <em>Kommunikation</em> schauen.</h1>
+    <h1 class="hero-headline">Ich verändere die Art, wie Menschen auf <span class="hero-headline-sub">Kommunikation schauen.</span></h1>
     <p class="hero-sub">Ich gebe Orientierung und wirksame Handlungsstrategien, damit echte Verbindung entsteht — in Fortbildungen für Fachkräfte, im Stimm- und Kommunikationscoaching sowie in der Begleitung von Kindern und Familien.</p>
     <div class="hero-tags"><span class="tag">Fortbildungen</span><span class="tag">Stimmcoaching</span><span class="tag">Familienbegleitung</span></div>
     <div class="hero-actions">
