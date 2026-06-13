@@ -19,8 +19,8 @@
     --rose-pale: #F7EEF2;
     --plum: #7A5C8A;
     --plum-pale: #F2EEF7;
-    --deep: #1A1025;
-    --mid: #4A3858;
+    --deep: #2D2040;
+    --mid: #5A4A6A;
     --muted: #9080A0;
     --font-serif: 'DM Serif Display', Georgia, serif;
     --font-sans: 'DM Sans', sans-serif;
@@ -134,11 +134,15 @@
   .testimonial-card:hover { transform: none; box-shadow: none; }
   .testimonial-text { font-family: var(--font-serif); font-size: 1rem; color: var(--mid); font-style: italic; font-weight: 400; line-height: 1.85; margin-bottom: 1.25rem; }
   .testimonial-highlight { font-size: 0.68rem; color: var(--rose); font-style: normal; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; border-top: 1px solid var(--rose); padding-top: 0.85rem; display: inline-block; }
-  #kontakt { background: var(--off); display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+  #kontakt { background: var(--deep); display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+  .kontakt-info .section-overline { color: var(--rose); }
+  .kontakt-info .section-title { color: var(--white); }
+  .kontakt-info .section-body { color: rgba(255,255,255,0.5); }
   .kontakt-form { display: flex; flex-direction: column; gap: 1.5rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .form-group label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-  .form-group input, .form-group select, .form-group textarea { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 300; color: var(--deep); background: var(--white); border: 1px solid var(--sand); padding: 1rem 1.25rem; border-radius: 2px; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+  .form-group label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .form-group input, .form-group select, .form-group textarea { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 300; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); padding: 1rem 1.25rem; border-radius: 2px; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--rose); }
   .form-group textarea { resize: vertical; min-height: 130px; }
   .form-submit { background: var(--rose); color: white; border: none; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.5rem; border-radius: 2px; cursor: pointer; align-self: flex-start; transition: background 0.2s; }
@@ -146,9 +150,9 @@
   .kontakt-details { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
   .kontakt-detail { display: grid; grid-template-columns: 1.5rem 1fr; gap: 1.25rem; align-items: start; }
   .kontakt-detail-icon { color: var(--rose); }
-  .kontakt-detail-text { font-size: 0.9rem; color: var(--mid); line-height: 1.65; }
-  .kontakt-detail-text strong { display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 400; margin-bottom: 0.25rem; }
-  footer { background: var(--deep); padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; }
+  .kontakt-detail-text { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+  .kontakt-detail-text strong { display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); font-weight: 400; margin-bottom: 0.25rem; }
+  footer { background: #120D1E; padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.5); }
   .footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(to right, var(--rose), var(--plum)); z-index: 10000; width: 0; }
