@@ -64,26 +64,30 @@
   .section-overline { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; display: block; }
   .section-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 3.2vw, 3.8rem); font-weight: 400; line-height: 1.15; color: var(--deep); margin-bottom: 2rem; }
   .section-body { font-size: 1rem; color: var(--mid); line-height: 1.85; max-width: 580px; }
-  #probleme { background: #F7F4F0; }
+  #probleme { position: relative; background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&q=80'); background-size: cover; background-position: center; background-attachment: fixed; color: white; }
+  #probleme::before { content: ''; position: absolute; inset: 0; background: rgba(20, 15, 30, 0.72); z-index: 0; }
+  #probleme > * { position: relative; z-index: 1; }
+  #probleme .section-overline { color: var(--rose); }
+  #probleme .section-title { color: white; }
   #angebote { background: #FFFFFF; }
-  #ueber { background: #F7F4F0; }
+  #ueber { background: #FFFFFF; }
   .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-top: 4rem; }
   .problem-card { background: none; padding: 0; }
   .problem-audience { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.25rem; display: block; }
-  .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.75; margin-bottom: 1.5rem; }
-  .problem-response { font-size: 0.85rem; color: var(--plum); font-weight: 400; }
+  .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.75; margin-bottom: 1.5rem; }
+  .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-weight: 400; }
   .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
   .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-bottom: 7rem; }
-  .angebot-card { background: none; border: none; box-shadow: none; padding: 0; display: flex; flex-direction: column; }
-  .angebot-title { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0; line-height: 1.2; }
-  .angebot-title::after { content: ''; display: block; width: 3rem; height: 1px; background: var(--rose); margin-top: 1rem; margin-bottom: 1.5rem; }
+  .angebot-card { background: none; border: none; box-shadow: none; padding: 2rem; display: flex; flex-direction: column; }
+  .angebot-card::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--rose); margin-bottom: 1.5rem; }
+  .angebot-title { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 400; color: var(--deep); margin-bottom: 1.5rem; line-height: 1.2; }
   .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.8; flex: 1; margin-bottom: 2rem; }
   .angebot-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; align-self: flex-start; transition: border-color 0.2s; }
   .angebot-link:hover { border-color: var(--rose); }
   .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 5rem; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
-  .kurs-card { background: var(--white); border: none; box-shadow: none; overflow: hidden; }
+  .kurs-card { background: var(--white); border: none; box-shadow: none; border-bottom: 1px solid rgba(122,92,138,0.1); overflow: hidden; }
   .kurs-card:hover { box-shadow: none; }
   .kurs-header { padding: 2.5rem 2.5rem 2rem; }
   .kurs-tag { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; display: block; }
