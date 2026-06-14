@@ -53,8 +53,8 @@
   .btn-primary:hover { background: var(--rose-dark); }
   .btn-secondary { font-size: 0.8rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.08em; border-bottom: 1px solid var(--sand); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
   .btn-secondary:hover { color: var(--rose); border-color: var(--rose); }
-  .hero-right { position: relative; overflow: hidden; }
-  .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; will-change: transform; }
+  .hero-right { position: relative; overflow: hidden; z-index: 1; }
+  .hero-right img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; will-change: transform; }
   .hero-right::after { display: none; }
   .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; }
   .hero-quote p { font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 0.5rem; }
