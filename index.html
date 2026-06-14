@@ -95,12 +95,13 @@
   .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 5rem; background: #F9F6F8; padding: 4rem; margin-top: 4rem; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; margin-top: 3rem; }
-  .kurs-card { background: #F9F6F8; border: none; box-shadow: none; border-bottom: 1px solid rgba(184,114,138,0.15); overflow: hidden; position: relative; will-change: transform; transform: translateZ(0); }
+  .kurs-card { background: #F9F6F8; border: none; border-top: 1px solid rgba(184,114,138,0.2); box-shadow: none; overflow: hidden; position: relative; will-change: transform; transform: translateZ(0); }
   .kurs-card:hover { box-shadow: none; }
-  .kurs-card-number { position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-serif); font-size: 6rem; line-height: 1; color: var(--rose); opacity: 0.08; pointer-events: none; font-style: italic; }
   .kurs-header { padding: 2.5rem 2.5rem 2rem; }
   .kurs-tag { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; display: block; }
-  .kurs-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--deep); margin-bottom: 1rem; line-height: 1.35; }
+  .kurs-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--deep); margin-bottom: 1rem; line-height: 1.35; position: relative; display: inline-block; }
+  .kurs-title::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--rose); transition: width 0.4s ease; }
+  .kurs-card:hover .kurs-title::after { width: 100%; }
   .kurs-teaser { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
   .kurs-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1.25rem 2.5rem; background: none; border: none; border-top: 1px solid rgba(184,114,138,0.15); cursor: pointer; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); transition: color 0.2s; }
   .kurs-toggle:hover { color: var(--rose-dark); }
@@ -125,10 +126,13 @@
   .ueber-image img { width: 100%; display: block; }
   .ueber-image::before { content: ''; position: absolute; top: -2rem; left: -2rem; right: 2rem; bottom: 2rem; border: 1px solid var(--sand); z-index: -1; }
   .ueber-text p { font-size: 0.96rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; }
-  .ausbildung-grid { margin-top: 3rem; }
-  .ausbildung-item { display: grid; grid-template-columns: 4rem 1fr; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--sand); align-items: start; }
-  .ausbildung-item:first-child { border-top: 1px solid var(--sand); }
-  .ausbildung-icon { font-family: var(--font-serif); font-size: 2rem; font-weight: 400; color: var(--sand); line-height: 1; }
+  .timeline { position: relative; padding-left: 2rem; margin-top: 3rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem; width: 1px; background: linear-gradient(to bottom, var(--rose), rgba(184,114,138,0.1)); }
+  .timeline-item { position: relative; padding: 0 0 3rem 2.5rem; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-dot { position: absolute; left: -0.35rem; top: 0.5rem; width: 8px; height: 8px; border-radius: 50%; background: var(--rose); }
+  .timeline-label { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--deep); display: block; margin-bottom: 0.75rem; font-style: italic; }
+  .timeline-content p { font-size: 0.95rem; color: var(--mid); line-height: 1.85; }
   .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0.25rem; }
   .ausbildung-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
   .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color 0.2s; }
@@ -242,7 +246,6 @@
     <p class="section-body">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
     <div class="kurse-grid">
       <div class="kurs-card">
-        <span class="kurs-card-number">01</span>
         <div class="kurs-header"><span class="kurs-tag">Sensorische Integration</span><h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3><p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p><a href="#kontakt" class="anmelde-hint">Anmelden →</a></div>
         <button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Weiterlesen</span> <span class="arrow">↓</span></button>
         <div class="kurs-details">
@@ -254,7 +257,6 @@
         </div>
       </div>
       <div class="kurs-card">
-        <span class="kurs-card-number">02</span>
         <div class="kurs-header"><span class="kurs-tag">Elterntraining</span><h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3><p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen — inklusive aller Materialien.</p><a href="#kontakt" class="anmelde-hint">Anmelden →</a></div>
         <button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Weiterlesen</span> <span class="arrow">↓</span></button>
         <div class="kurs-details">
@@ -266,7 +268,6 @@
         </div>
       </div>
       <div class="kurs-card">
-        <span class="kurs-card-number">03</span>
         <div class="kurs-header"><span class="kurs-tag">Frühe Intervention</span><h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3><p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p><a href="#kontakt" class="anmelde-hint">Anmelden →</a></div>
         <button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Weiterlesen</span> <span class="arrow">↓</span></button>
         <div class="kurs-details">
@@ -278,7 +279,6 @@
         </div>
       </div>
       <div class="kurs-card">
-        <span class="kurs-card-number">04</span>
         <div class="kurs-header"><span class="kurs-tag">Webinar</span><h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3><p class="kurs-teaser">Kinder die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken — ein möglicher Schlüssel liegt in den frühkindlichen Reflexen.</p><a href="#kontakt" class="anmelde-hint">Anmelden →</a></div>
         <button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Weiterlesen</span> <span class="arrow">↓</span></button>
         <div class="kurs-details">
@@ -300,11 +300,35 @@
     <p>Was mich inspiriert und erfüllt, sind meine Familie und meine Freunde, Begegnungen mit Menschen, auf Reisen und in der Natur zu sein, gutes Essen, tiefe Gespräche und Yoga.</p>
     <p>In meiner Arbeit begegne ich Menschen auf Augenhöhe. Mit meinen Lernpraktiken möchte ich tiefe Veränderungsprozesse ankurbeln — nicht durch das Vermitteln von Fertigkeiten, sondern durch das Verankern grundlegender Überzeugungen und das Herausarbeiten von Ressourcen.</p>
     <p>Seit mehr als 30 Jahren begleite ich Kinder, Familien, Fachkräfte und Berufssprecher*innen. Meine Arbeit beginnt beim Verstehen der Ursachen — und der Bedingungen, die echte Entwicklung ermöglichen.</p>
-    <div class="ausbildung-grid">
-      <div class="ausbildung-item"><span class="ausbildung-icon">01</span><div><p class="ausbildung-title">Sprechwissenschaft</p><p class="ausbildung-desc">Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p></div></div>
-      <div class="ausbildung-item"><span class="ausbildung-icon">02</span><div><p class="ausbildung-title">Sensorische Integrationstherapeutin</p><p class="ausbildung-desc">Ursachenorientierte, bewegungsintensive Arbeit mit Kindern — für Selbstwirksamkeit und kommunikative Stärke.</p></div></div>
-      <div class="ausbildung-item"><span class="ausbildung-icon">03</span><div><p class="ausbildung-title">Systemische Beraterin</p><p class="ausbildung-desc">Respekt, Wertschätzung, Ressourcen- und Lösungsorientierung als Grundhaltung.</p></div></div>
-      <div class="ausbildung-item"><span class="ausbildung-icon">04</span><div><p class="ausbildung-title">Reflexintegrationstrainerin</p><p class="ausbildung-desc">Verständnis der Ursachen von Lernstörungen im Kindes- wie Erwachsenenalter.</p></div></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-label">Sprechwissenschaft</span>
+          <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-label">Sensorische Integrationstherapie</span>
+          <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-label">Systemische Beratung</span>
+          <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich — in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-label">Reflexintegration</span>
+          <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht — und dass es sich immer lohnt, weiter zu fragen.</p>
+        </div>
+      </div>
     </div>
     <a href="https://www.uni-erfurt.de/erziehungswissenschaftliche-fakultaet/fakultaet/profil/fachgebiete-und-professuren/inklusive-paedagogik-bei-benachteiligung-und-behinderung/struktur-des-fachgebietes/professur-fuer-inklusive-bildungsprozesse-bei-beeintraechtigungen-in-sprache-und-kommunikation/team/dr-stephanie-kurtenbach" target="_blank" class="pub-link">Publikationen & Forschung ansehen →</a>
   </div>
