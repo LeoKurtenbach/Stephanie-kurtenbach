@@ -94,14 +94,14 @@
   .anmelde-hint:hover { border-color: var(--rose); }
   .kurse-subsection { background: var(--off); padding: 4rem; margin-top: 4rem; border-radius: 4px; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
-  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 3rem; }
-  .kurs-card { background: var(--deep); border-radius: 3px; border: none; box-shadow: 0 4px 24px rgba(45,32,64,0.12); overflow: hidden; display: flex; flex-direction: column; position: relative; min-height: 300px; will-change: transform; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
+  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; gap: 1.25rem; margin-top: 3rem; align-items: stretch; }
+  .kurs-card { background: var(--deep); border-radius: 3px; border: none; box-shadow: 0 4px 24px rgba(45,32,64,0.12); overflow: hidden; display: flex; flex-direction: column; position: relative; will-change: transform; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
   .kurs-card:hover { transform: translateY(-6px) translateZ(0); box-shadow: 0 28px 72px rgba(184,114,138,0.22); }
   .kurs-header { padding: 2.25rem 2.25rem 1.5rem; flex: 1; }
   .kurs-tag { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); border: 1px solid rgba(184,114,138,0.45); padding: 0.28rem 0.7rem; display: inline-block; margin-bottom: 1.4rem; border-radius: 2px; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: 0.85rem; line-height: 1.3; display: block; }
   .kurs-teaser { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.85; }
-  .kurs-card-actions { display: flex; gap: 0.75rem; padding: 1.6rem 2.25rem; border-top: 1px solid rgba(255,255,255,0.07); margin-top: auto; }
+  .kurs-card-actions { display: flex; gap: 0.75rem; padding: 1.6rem 2.25rem; border-top: 1px solid rgba(255,255,255,0.07); }
   .kurs-btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.78rem; font-weight: 400; letter-spacing: 0.07em; text-decoration: none; padding: 0.65rem 1.35rem; border-radius: 2px; border: none; cursor: pointer; transition: background 0.2s; }
   .kurs-btn-primary:hover { background: var(--rose-dark); }
   .kurs-toggle { display: flex; align-items: center; gap: 0.35rem; background: transparent; color: rgba(255,255,255,0.45); font-family: var(--font-sans); font-size: 0.78rem; font-weight: 400; letter-spacing: 0.07em; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.16); cursor: pointer; transition: border-color 0.25s, color 0.25s; white-space: nowrap; }
@@ -119,23 +119,20 @@
   .kurs-outcome strong { display: block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); font-weight: 400; opacity: 0.9; margin-bottom: 0.45rem; }
   .kurs-cta { display: inline-block; background: var(--rose); color: white; font-size: 0.82rem; letter-spacing: 0.06em; text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 2px; transition: background 0.2s; }
   .kurs-cta:hover { background: var(--rose-dark); }
-  #ueber { display: block; position: relative; overflow: hidden; background: var(--off); }
-  .ueber-top { display: grid; grid-template-columns: 1fr 280px; gap: 5rem; align-items: start; margin-bottom: 4rem; }
-  .ueber-image { position: relative; }
-  .ueber-image::before { content: ''; position: absolute; top: -10px; left: -10px; right: 10px; bottom: 10px; border: 1px solid rgba(184,114,138,0.28); border-radius: 3px; z-index: 0; pointer-events: none; }
-  .ueber-image img { width: 100%; display: block; border-radius: 3px; box-shadow: 0 18px 60px rgba(45,32,64,0.15); position: relative; z-index: 1; }
-  .ueber-text p { font-size: 1rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; }
-  .ueber-text p:first-of-type { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; color: var(--deep); line-height: 1.85; }
-  .botanical-timeline { display: grid; grid-template-columns: 1fr 180px 1fr; gap: 0 3rem; margin-top: 2rem; align-items: center; }
-  .botanical-vine { grid-column: 2; grid-row: 1 / 5; align-self: stretch; }
-  .botanical-vine img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; mix-blend-mode: multiply; opacity: 0.5; mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%); }
-  .station-item { background: white; border-radius: 3px; border-top: 2px solid rgba(184,114,138,0.55); padding: 1.75rem 2rem; box-shadow: 0 4px 24px rgba(45,32,64,0.07); }
-  .station-item:nth-child(2) { grid-column: 3; grid-row: 1; }
-  .station-item:nth-child(3) { grid-column: 1; grid-row: 2; }
-  .station-item:nth-child(4) { grid-column: 3; grid-row: 3; }
-  .station-item:nth-child(5) { grid-column: 1; grid-row: 4; }
-  .station-label { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--deep); display: block; margin-bottom: 0.75rem; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(184,114,138,0.15); }
-  .station-item p { font-size: 0.9rem; color: var(--mid); line-height: 1.85; }
+  #ueber { display: block; position: relative; background-color: #1A1025; background-image: url('forest.jpg'); background-size: cover; background-position: center; background-attachment: fixed; }
+  #ueber::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,16,37,0.84) 0%, rgba(26,16,37,0.76) 50%, rgba(26,16,37,0.84) 100%); z-index: 0; }
+  #ueber > * { position: relative; z-index: 1; }
+  #ueber .section-overline { color: var(--rose); }
+  #ueber .section-title { color: white; }
+  .ueber-top { display: grid; grid-template-columns: 1fr 300px; gap: 6rem; align-items: start; margin-bottom: 5rem; }
+  .ueber-image img { width: 100%; display: block; border-radius: 2px; box-shadow: 0 16px 60px rgba(0,0,0,0.5); }
+  .ueber-text p { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.9; margin-bottom: 1.25rem; }
+  .bio-stations { display: grid; grid-template-columns: 1fr 1fr; margin-top: 2rem; }
+  .bio-station { padding: 3rem 5rem 3rem 0; border-top: 1px solid rgba(184,114,138,0.25); }
+  .bio-station:nth-child(even) { padding: 3rem 0 3rem 5rem; border-left: 1px solid rgba(184,114,138,0.15); }
+  .bio-station-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: rgba(255,255,255,0.9); display: block; margin-bottom: 0.85rem; line-height: 1.3; }
+  .bio-station p { font-size: 0.92rem; color: rgba(255,255,255,0.48); line-height: 1.9; }
+  .pub-link { color: var(--rose); border-bottom-color: var(--rose); }
   .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0.25rem; }
   .ausbildung-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
   .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; color: var(--rose); text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color 0.2s; }
@@ -306,22 +303,21 @@
     </div>
     <div class="ueber-image"><img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach"></div>
   </div>
-  <div class="botanical-timeline">
-    <div class="botanical-vine"><img src="wisteria.png" alt=""></div>
-    <div class="station-item">
-      <span class="station-label">Sprechwissenschaft</span>
+  <div class="bio-stations">
+    <div class="bio-station">
+      <span class="bio-station-name">Sprechwissenschaft</span>
       <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
-    <div class="station-item">
-      <span class="station-label">Sensorische Integrationstherapie</span>
+    <div class="bio-station">
+      <span class="bio-station-name">Sensorische Integrationstherapie</span>
       <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
     </div>
-    <div class="station-item">
-      <span class="station-label">Systemische Beratung</span>
+    <div class="bio-station">
+      <span class="bio-station-name">Systemische Beratung</span>
       <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich — in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
     </div>
-    <div class="station-item">
-      <span class="station-label">Reflexintegration</span>
+    <div class="bio-station">
+      <span class="bio-station-name">Reflexintegration</span>
       <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht — und dass es sich immer lohnt, weiter zu fragen.</p>
     </div>
   </div>
@@ -403,8 +399,7 @@
     gsap.from('.kurs-card', { y:48, opacity:0, duration:0.85, ease:'power3.out', stagger:0.13, force3D:true, scrollTrigger:{ trigger:'.kurse-grid', start:'top 82%', once:true }});
     gsap.from('.angebot-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, force3D:true, scrollTrigger:{ trigger:'.angebote-grid', start:'top 82%', once:true }});
     gsap.from('.problem-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, force3D:true, scrollTrigger:{ trigger:'.problems-grid', start:'top 82%', once:true }});
-    gsap.from('.station-item', { y:32, opacity:0, duration:0.9, ease:'power3.out', stagger:0.2, force3D:true, scrollTrigger:{ trigger:'.botanical-timeline', start:'top 78%', once:true }});
-    gsap.from('.botanical-vine', { opacity:0, duration:1.4, ease:'power2.out', force3D:true, scrollTrigger:{ trigger:'.botanical-timeline', start:'top 80%', once:true }});
+    gsap.from('.bio-station', { y:32, opacity:0, duration:0.9, ease:'power3.out', stagger:0.15, force3D:true, scrollTrigger:{ trigger:'.bio-stations', start:'top 80%', once:true }});
     gsap.from('.testimonial-card', { y:28, opacity:0, duration:0.75, ease:'power3.out', stagger:0.1, force3D:true, scrollTrigger:{ trigger:'.testimonials-grid', start:'top 82%', once:true }});
     gsap.from('.section-overline', { y:16, opacity:0, duration:0.7, ease:'power3.out', stagger:0.1, force3D:true, scrollTrigger:{ trigger:'body', start:'top top', once:false, toggleActions:'play none none none' }});
   });
