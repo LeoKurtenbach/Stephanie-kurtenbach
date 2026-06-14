@@ -126,14 +126,14 @@
   .ueber-image img { width: 100%; display: block; }
   .ueber-image::before { content: ''; position: absolute; top: -2rem; left: -2rem; right: 2rem; bottom: 2rem; border: 1px solid var(--sand); z-index: -1; }
   .ueber-text p { font-size: 0.96rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; }
-  .timeline { position: relative; padding-left: 2rem; margin-top: 3rem; }
-  .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem; width: 1px; background: linear-gradient(to bottom, var(--rose), rgba(184,114,138,0.1)); }
-  .timeline-item { position: relative; padding: 0 0 3.5rem 2.5rem; }
-  .timeline-item:last-child { padding-bottom: 0; }
-  .timeline-item::before { content: ''; position: absolute; left: -0.3rem; top: 0.85rem; width: 1.5rem; height: 1px; background: rgba(184,114,138,0.3); }
-  .timeline-dot { position: absolute; left: -0.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: white; border: 2px solid var(--rose); }
-  .timeline-label { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--deep); display: block; margin-bottom: 0.75rem; font-style: normal; }
-  .timeline-content p { font-size: 0.95rem; color: var(--mid); line-height: 1.85; }
+  .botanical-timeline { display: grid; grid-template-columns: 80px 1fr; gap: 0 2rem; margin-top: 3rem; align-items: start; }
+  .botanical-vine { position: relative; }
+  .botanical-vine svg { width: 80px; height: 800px; }
+  .botanical-stations { display: flex; flex-direction: column; justify-content: space-between; height: 800px; padding: 0.5rem 0; }
+  .botanical-station { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 1.5rem 0; border-bottom: none; }
+  .botanical-station:last-child { padding-bottom: 0; }
+  .station-label { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--deep); display: block; margin-bottom: 0.75rem; }
+  .botanical-station p { font-size: 0.93rem; color: var(--mid); line-height: 1.85; max-width: 480px; }
   .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0.25rem; }
   .ausbildung-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
   .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 400; color: var(--rose); text-decoration: none; border-bottom: 1.5px solid var(--rose); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color 0.2s; }
@@ -301,32 +301,63 @@
     <p>Was mich inspiriert und erfüllt, sind meine Familie und meine Freunde, Begegnungen mit Menschen, auf Reisen und in der Natur zu sein, gutes Essen, tiefe Gespräche und Yoga.</p>
     <p>In meiner Arbeit begegne ich Menschen auf Augenhöhe. Mit meinen Lernpraktiken möchte ich tiefe Veränderungsprozesse ankurbeln — nicht durch das Vermitteln von Fertigkeiten, sondern durch das Verankern grundlegender Überzeugungen und das Herausarbeiten von Ressourcen.</p>
     <p>Seit mehr als 30 Jahren begleite ich Kinder, Familien, Fachkräfte und Berufssprecher*innen. Meine Arbeit beginnt beim Verstehen der Ursachen — und der Bedingungen, die echte Entwicklung ermöglichen.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-label">Sprechwissenschaft</span>
+    <div class="botanical-timeline">
+      <div class="botanical-vine">
+        <svg viewBox="0 0 120 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <path d="M60 0 C55 80 65 160 58 240 C52 320 68 400 60 480 C53 560 67 640 60 800" stroke="#B8728A" stroke-width="1.5" fill="none" opacity="0.5"/>
+          <path d="M60 60 C80 50 100 30 95 15 C90 5 75 10 70 25" stroke="#B8728A" stroke-width="1" fill="none" opacity="0.4"/>
+          <ellipse cx="88" cy="22" rx="12" ry="6" transform="rotate(-30 88 22)" fill="#B8728A" opacity="0.15"/>
+          <ellipse cx="78" cy="42" rx="10" ry="5" transform="rotate(-20 78 42)" fill="#B8728A" opacity="0.2"/>
+          <path d="M60 60 C40 55 20 40 18 25 C16 12 28 8 35 18" stroke="#B8728A" stroke-width="1" fill="none" opacity="0.3"/>
+          <ellipse cx="22" cy="28" rx="10" ry="5" transform="rotate(20 22 28)" fill="#B8728A" opacity="0.15"/>
+          <circle cx="60" cy="60" r="4" fill="#B8728A" opacity="0.6"/>
+          <circle cx="60" cy="60" r="2" fill="white" opacity="0.8"/>
+          <path d="M58 240 C78 228 98 210 96 195 C94 182 80 185 74 198" stroke="#B8728A" stroke-width="1" fill="none" opacity="0.4"/>
+          <ellipse cx="92" cy="200" rx="13" ry="6" transform="rotate(-25 92 200)" fill="#B8728A" opacity="0.18"/>
+          <ellipse cx="80" cy="215" rx="11" ry="5" transform="rotate(-15 80 215)" fill="#B8728A" opacity="0.2"/>
+          <path d="M58 240 C38 232 18 218 15 204 C12 190 25 185 34 196" stroke="#B8728A" stroke-width="1" fill="none" opacity="0.3"/>
+          <ellipse cx="18" cy="208" rx="10" ry="5" transform="rotate(15 18 208)" fill="#B8728A" opacity="0.15"/>
+          <circle cx="58" cy="240" r="4" fill="#B8728A" opacity="0.6"/>
+          <circle cx="58" cy="240" r="2" fill="white" opacity="0.8"/>
+          <path d="M60 420 C82 408 104 390 102 374 C100 360 85 364 78 378" stroke="#B8728A" stroke-width="1" fill="none" opacity="0.4"/>
+          <ellipse cx="98" cy="378" rx="14" ry="6" transform="rotate(-30 98 378)" fill="#B8728A" opacity="0.18"/>
+          <ellipse cx="84" cy="395" rx="11" ry="5" transform="rotate(-18 84 395)" fill="#B8728A" opacity="0.2"/>
+          <path d="M60 420 C38 410 16 395 14 380 C12 366 26 362 36 374" stroke="#B8728A" stroke-width="1" fill="none" opacity="0.3"/>
+          <ellipse cx="17" cy="382" rx="10" ry="5" transform="rotate(18 17 382)" fill="#B8728A" opacity="0.15"/>
+          <circle cx="60" cy="420" r="4" fill="#B8728A" opacity="0.6"/>
+          <circle cx="60" cy="420" r="2" fill="white" opacity="0.8"/>
+          <path d="M60 620 C80 608 100 590 98 575 C96 562 82 566 76 580" stroke="#B8728A" stroke-width="1" fill="none" opacity="0.4"/>
+          <ellipse cx="94" cy="578" rx="13" ry="6" transform="rotate(-28 94 578)" fill="#B8728A" opacity="0.18"/>
+          <ellipse cx="82" cy="594" rx="11" ry="5" transform="rotate(-16 82 594)" fill="#B8728A" opacity="0.2"/>
+          <path d="M60 620 C40 612 18 596 16 582 C14 568 28 564 38 576" stroke="#B8728A" stroke-width="1" fill="none" opacity="0.3"/>
+          <ellipse cx="19" cy="584" rx="10" ry="5" transform="rotate(16 19 584)" fill="#B8728A" opacity="0.15"/>
+          <circle cx="60" cy="620" r="4" fill="#B8728A" opacity="0.6"/>
+          <circle cx="60" cy="620" r="2" fill="white" opacity="0.8"/>
+          <ellipse cx="62" cy="130" rx="8" ry="4" transform="rotate(-40 62 130)" fill="#B8728A" opacity="0.12"/>
+          <ellipse cx="56" cy="160" rx="7" ry="3" transform="rotate(35 56 160)" fill="#B8728A" opacity="0.1"/>
+          <ellipse cx="64" cy="310" rx="8" ry="4" transform="rotate(-35 64 310)" fill="#B8728A" opacity="0.12"/>
+          <ellipse cx="55" cy="350" rx="7" ry="3" transform="rotate(30 55 350)" fill="#B8728A" opacity="0.1"/>
+          <ellipse cx="62" cy="510" rx="8" ry="4" transform="rotate(-38 62 510)" fill="#B8728A" opacity="0.12"/>
+          <ellipse cx="56" cy="540" rx="7" ry="3" transform="rotate(32 56 540)" fill="#B8728A" opacity="0.1"/>
+          <ellipse cx="61" cy="700" rx="8" ry="4" transform="rotate(-36 61 700)" fill="#B8728A" opacity="0.12"/>
+          <ellipse cx="57" cy="730" rx="7" ry="3" transform="rotate(28 57 730)" fill="#B8728A" opacity="0.1"/>
+        </svg>
+      </div>
+      <div class="botanical-stations">
+        <div class="botanical-station">
+          <span class="station-label">Sprechwissenschaft</span>
           <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-label">Sensorische Integrationstherapie</span>
+        <div class="botanical-station">
+          <span class="station-label">Sensorische Integrationstherapie</span>
           <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-label">Systemische Beratung</span>
+        <div class="botanical-station">
+          <span class="station-label">Systemische Beratung</span>
           <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich — in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-label">Reflexintegration</span>
+        <div class="botanical-station">
+          <span class="station-label">Reflexintegration</span>
           <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht — und dass es sich immer lohnt, weiter zu fragen.</p>
         </div>
       </div>
