@@ -49,12 +49,12 @@
   .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
   .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--sand); padding: 0.4rem 1rem; border-radius: 2px; }
   .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
-  .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.2rem; border-radius: 2px; transition: background 0.2s; }
+  .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.4rem; border-radius: 2px; transition: background 0.2s; }
   .btn-primary:hover { background: var(--rose-dark); }
   .btn-secondary { font-size: 0.8rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.08em; border-bottom: 1px solid var(--sand); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
   .btn-secondary:hover { color: var(--rose); border-color: var(--rose); }
-  .hero-right { position: relative; overflow: hidden; z-index: 1; }
-  .hero-right img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; will-change: transform; }
+  .hero-right { position: relative; overflow: hidden; height: 100%; z-index: 1; }
+  .hero-right img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; will-change: transform; position: relative; z-index: 1; }
   .hero-right::after { display: none; }
   .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; }
   .hero-quote p { font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 0.5rem; }
@@ -64,7 +64,7 @@
   .stat-number { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; color: var(--rose); display: block; line-height: 1; }
   .stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.5rem; display: block; }
   section { padding: 9rem 5rem; }
-  .section-overline { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; display: block; }
+  .section-overline { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-bottom: 1rem; display: block; }
   .section-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 3.2vw, 3.8rem); font-weight: 400; line-height: 1.15; color: var(--deep); margin-bottom: 2rem; }
   .section-body { font-size: 1rem; color: var(--mid); line-height: 1.85; max-width: 580px; }
   #probleme { position: relative; background-color: #1A1025; background-image: url('forest.jpg'); background-size: cover; background-position: center; background-attachment: fixed; }
@@ -88,9 +88,9 @@
   .angebot-card::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--rose); margin-bottom: 1.5rem; }
   .angebot-title { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 400; color: var(--deep); margin-bottom: 1.5rem; line-height: 1.2; }
   .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.8; flex: 1; margin-bottom: 2rem; }
-  .angebot-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; align-self: flex-start; transition: border-color 0.2s; }
-  .angebot-link:hover { border-color: var(--rose); }
-  .anmelde-hint { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; display: inline-block; margin-top: 0.75rem; transition: border-color 0.2s; }
+  .angebot-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); font-weight: 400; text-decoration: none; border-bottom: 1.5px solid var(--rose); padding-bottom: 3px; align-self: flex-start; transition: color 0.2s, letter-spacing 0.2s; }
+  .angebot-link:hover { letter-spacing: 0.15em; }
+  .anmelde-hint { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); font-weight: 400; text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; display: inline-block; margin-top: 0.75rem; opacity: 1; transition: border-color 0.2s; }
   .anmelde-hint:hover { border-color: var(--rose); }
   .kurse-subsection { border-top: 1px solid var(--sand); padding-top: 5rem; background: #F9F6F8; padding: 4rem; margin-top: 4rem; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
@@ -103,7 +103,7 @@
   .kurs-title::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--rose); transition: width 0.4s ease; }
   .kurs-card:hover .kurs-title::after { width: 100%; }
   .kurs-teaser { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
-  .kurs-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1.25rem 2.5rem; background: none; border: none; border-top: 1px solid rgba(184,114,138,0.15); cursor: pointer; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); transition: color 0.2s; }
+  .kurs-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1.25rem 2.5rem; background: none; border: none; border-top: 1px solid rgba(184,114,138,0.15); cursor: pointer; font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); transition: color 0.2s; }
   .kurs-toggle:hover { color: var(--rose-dark); }
   .kurs-toggle .toggle-text { position: relative; }
   .kurs-toggle .toggle-text::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--rose); transition: width 0.3s ease; }
@@ -119,8 +119,8 @@
   .kurs-inhalte li::before { content: '—'; position: absolute; left: 0; color: var(--plum); }
   .kurs-outcome { font-size: 0.87rem; color: var(--mid); background: var(--white); padding: 1.25rem 1.5rem; border-left: 2px solid var(--plum); line-height: 1.75; margin-bottom: 2rem; }
   .kurs-outcome strong { display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--plum); font-weight: 400; margin-bottom: 0.5rem; }
-  .kurs-cta { display: inline-block; background: var(--rose); color: white; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 2px; transition: background 0.2s; }
-  .kurs-cta:hover { background: var(--rose-dark); }
+  .kurs-cta { display: inline-block; background: var(--rose); color: white; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2rem; border-radius: 2px; transition: background 0.2s, transform 0.2s; }
+  .kurs-cta:hover { background: var(--rose-dark); transform: translateY(-2px); }
   #ueber { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; position: relative; overflow: hidden; }
   .ueber-image { position: relative; }
   .ueber-image img { width: 100%; display: block; }
@@ -128,15 +128,16 @@
   .ueber-text p { font-size: 0.96rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; }
   .timeline { position: relative; padding-left: 2rem; margin-top: 3rem; }
   .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem; width: 1px; background: linear-gradient(to bottom, var(--rose), rgba(184,114,138,0.1)); }
-  .timeline-item { position: relative; padding: 0 0 3rem 2.5rem; }
+  .timeline-item { position: relative; padding: 0 0 3.5rem 2.5rem; }
   .timeline-item:last-child { padding-bottom: 0; }
-  .timeline-dot { position: absolute; left: -0.35rem; top: 0.5rem; width: 8px; height: 8px; border-radius: 50%; background: var(--rose); }
-  .timeline-label { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--deep); display: block; margin-bottom: 0.75rem; font-style: italic; }
+  .timeline-item::before { content: ''; position: absolute; left: -0.3rem; top: 0.85rem; width: 1.5rem; height: 1px; background: rgba(184,114,138,0.3); }
+  .timeline-dot { position: absolute; left: -0.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: white; border: 2px solid var(--rose); }
+  .timeline-label { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--deep); display: block; margin-bottom: 0.75rem; font-style: normal; }
   .timeline-content p { font-size: 0.95rem; color: var(--mid); line-height: 1.85; }
   .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0.25rem; }
   .ausbildung-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
-  .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--rose); text-decoration: none; border-bottom: 1px solid rgba(184,114,138,0.3); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color 0.2s; }
-  .pub-link:hover { border-color: var(--rose); }
+  .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 400; color: var(--rose); text-decoration: none; border-bottom: 1.5px solid var(--rose); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color 0.2s; }
+  .pub-link:hover { border-color: var(--rose-dark); }
   #philosophie { background: var(--deep); text-align: center; padding: 10rem 5rem; }
   .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; }
   .philo-quote-main em { color: var(--rose); font-style: normal; }
