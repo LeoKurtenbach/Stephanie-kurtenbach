@@ -126,14 +126,11 @@
   .ueber-image { position: relative; }
   .ueber-image img { width: 100%; display: block; }
   .ueber-text p { font-size: 1rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; }
-  .botanical-timeline { display: grid; grid-template-columns: 300px 1fr; gap: 0 4rem; margin-top: 3rem; align-items: start; }
-  .botanical-vine { position: relative; }
-  .botanical-vine img { width: 300px; height: 1150px; object-fit: cover; object-position: top center; display: block; mix-blend-mode: multiply; }
-  .botanical-stations { display: flex; flex-direction: column; justify-content: space-between; height: 1150px; padding: 2rem 0; }
-  .botanical-station { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 2rem 0; border-bottom: none; }
-  .botanical-station:last-child { padding-bottom: 0; }
-  .station-label { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--deep); display: block; margin-bottom: 1rem; }
-  .botanical-station p { font-size: 1rem; color: var(--mid); line-height: 1.9; max-width: 520px; }
+  .station-row { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 2rem; }
+  .station-vine img { width: 100%; height: 420px; object-fit: cover; object-position: center; display: block; mix-blend-mode: multiply; }
+  .station-content { display: flex; flex-direction: column; justify-content: center; }
+  .station-label { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--deep); display: block; margin-bottom: 1rem; }
+  .station-content p { font-size: 1rem; color: var(--mid); line-height: 1.9; }
   .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0.25rem; }
   .ausbildung-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
   .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; color: var(--rose); text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color 0.2s; }
@@ -304,29 +301,38 @@
     </div>
     <div class="ueber-image"><img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach"></div>
   </div>
-  <div class="botanical-timeline">
-      <div class="botanical-vine">
-        <img src="wisteria.png" alt="">
-      </div>
-      <div class="botanical-stations">
-        <div class="botanical-station">
-          <span class="station-label">Sprechwissenschaft</span>
-          <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
-        </div>
-        <div class="botanical-station">
-          <span class="station-label">Sensorische Integrationstherapie</span>
-          <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
-        </div>
-        <div class="botanical-station">
-          <span class="station-label">Systemische Beratung</span>
-          <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich — in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
-        </div>
-        <div class="botanical-station">
-          <span class="station-label">Reflexintegration</span>
-          <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht — und dass es sich immer lohnt, weiter zu fragen.</p>
-        </div>
-      </div>
+  <!-- Row 1: graphic left, text right -->
+  <div class="station-row">
+    <div class="station-vine"><img src="wisteria_1.jpg" alt=""></div>
+    <div class="station-content">
+      <span class="station-label">Sprechwissenschaft</span>
+      <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
+  </div>
+  <!-- Row 2: text left, graphic right -->
+  <div class="station-row">
+    <div class="station-content">
+      <span class="station-label">Sensorische Integrationstherapie</span>
+      <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
+    </div>
+    <div class="station-vine"><img src="wisteria_2.jpg" alt=""></div>
+  </div>
+  <!-- Row 3: graphic left, text right -->
+  <div class="station-row">
+    <div class="station-vine"><img src="wisteria_3.jpg" alt=""></div>
+    <div class="station-content">
+      <span class="station-label">Systemische Beratung</span>
+      <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich — in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
+    </div>
+  </div>
+  <!-- Row 4: text left, graphic right -->
+  <div class="station-row">
+    <div class="station-content">
+      <span class="station-label">Reflexintegration</span>
+      <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht — und dass es sich immer lohnt, weiter zu fragen.</p>
+    </div>
+    <div class="station-vine"><img src="wisteria_4.jpg" alt=""></div>
+  </div>
   <a href="https://www.uni-erfurt.de/erziehungswissenschaftliche-fakultaet/fakultaet/profil/fachgebiete-und-professuren/inklusive-paedagogik-bei-benachteiligung-und-behinderung/struktur-des-fachgebietes/professur-fuer-inklusive-bildungsprozesse-bei-beeintraechtigungen-in-sprache-und-kommunikation/team/dr-stephanie-kurtenbach" target="_blank" class="pub-link">Publikationen & Forschung ansehen →</a>
 </section>
 <section id="philosophie">
