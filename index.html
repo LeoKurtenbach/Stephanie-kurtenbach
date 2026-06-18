@@ -94,8 +94,8 @@
   .anmelde-hint:hover { border-color: var(--rose); }
   .kurse-subsection { background: var(--off); padding: 4rem; margin-top: 4rem; border-radius: 4px; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
-  .kurse-grid { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 2rem; margin-top: 3rem; }
-  .kurs-card { background: var(--deep); border-radius: 6px; overflow: hidden; position: relative; display: flex; flex-direction: column; height: 100%; transition: transform 0.3s ease; }
+  .kurse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; align-items: stretch; }
+  .kurs-card { background: var(--deep); border-radius: 6px; overflow: hidden; position: relative; display: flex; flex-direction: column; transition: transform 0.3s ease; }
   .kurs-card:hover { transform: translateY(-3px); }
   .kurs-card::after { content: ''; position: absolute; right: -20px; bottom: -20px; width: 320px; height: 320px; background-image: var(--botanical-img); background-size: contain; background-repeat: no-repeat; background-position: bottom right; opacity: 0.14; z-index: 0; pointer-events: none; }
   .kurs-header { padding: 2.25rem 2.25rem 1.5rem; position: relative; z-index: 1; flex: 1; }
