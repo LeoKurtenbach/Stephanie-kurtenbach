@@ -131,10 +131,14 @@
   .ueber-image img { width: 100%; display: block; border-radius: 2px; box-shadow: 0 16px 60px rgba(0,0,0,0.5); }
   .ueber-text p { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.9; margin-bottom: 1.25rem; }
   .bio-stations { display: grid; grid-template-columns: 1fr 1fr; margin-top: 2rem; }
-  .bio-station { padding: 3rem 5rem 3rem 0; border-top: 1px solid rgba(184,114,138,0.25); }
-  .bio-station:nth-child(even) { padding: 3rem 0 3rem 5rem; border-left: 1px solid rgba(184,114,138,0.15); }
-  .bio-station-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: white; display: block; margin-bottom: 0.85rem; line-height: 1.3; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
-  .bio-station p { font-size: 0.92rem; color: rgba(255,255,255,0.72); line-height: 1.9; }
+  .bio-station { padding: 0 5rem 0 0; border-top: 1px solid rgba(184,114,138,0.25); }
+  .bio-station:nth-child(even) { padding: 0 0 0 5rem; border-left: 1px solid rgba(184,114,138,0.15); }
+  .bio-station-img { position: relative; height: 200px; overflow: hidden; margin-bottom: 2rem; }
+  .bio-station-img::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(45,32,64,0.3) 0%, transparent 30%, transparent 65%, rgba(45,32,64,1) 100%), linear-gradient(to right, rgba(45,32,64,0.4) 0%, transparent 15%, transparent 85%, rgba(45,32,64,0.4) 100%); }
+  .bio-station-img img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.58; filter: brightness(0.72) contrast(1.05) saturate(1.1); object-position: center center; }
+  .bio-station-img img.pos-top { object-position: center top; }
+  .bio-station-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: white; display: block; margin-bottom: 0.85rem; padding: 2rem 0 0; line-height: 1.3; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
+  .bio-station p { font-size: 0.92rem; color: rgba(255,255,255,0.72); line-height: 1.9; padding-bottom: 3rem; }
   .pub-link { color: var(--rose); border-bottom-color: var(--rose); }
   .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: var(--deep); margin-bottom: 0.25rem; }
   .ausbildung-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
@@ -312,18 +316,22 @@
   </div>
   <div class="bio-stations">
     <div class="bio-station">
+      <div class="bio-station-img"><img src="bio-sprechwiss.png" alt="" loading="lazy"></div>
       <span class="bio-station-name">Sprechwissenschaft</span>
       <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
     <div class="bio-station">
+      <div class="bio-station-img"><img src="bio-si.png" alt="" loading="lazy" class="pos-top"></div>
       <span class="bio-station-name">Sensorische Integrationstherapie</span>
       <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
     </div>
     <div class="bio-station">
+      <div class="bio-station-img"><img src="bio-systemisch.png" alt="" loading="lazy"></div>
       <span class="bio-station-name">Systemische Beratung</span>
       <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich — in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
     </div>
     <div class="bio-station">
+      <div class="bio-station-img"><img src="bio-reflex.png" alt="" loading="lazy" class="pos-top"></div>
       <span class="bio-station-name">Reflexintegration</span>
       <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht — und dass es sich immer lohnt, weiter zu fragen.</p>
     </div>
