@@ -94,11 +94,11 @@
   .anmelde-hint:hover { border-color: var(--rose); }
   .kurse-subsection { background: var(--off); padding: 4rem; margin-top: 4rem; border-radius: 4px; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
-  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; align-items: stretch; }
+  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; align-items: start; }
   .kurs-card { background: var(--deep); border-radius: 4px; border: none; box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 6px 20px rgba(0,0,0,0.14); overflow: hidden; display: flex; flex-direction: column; position: relative; will-change: transform; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
   .kurs-card::after { content: ''; position: absolute; right: -20px; bottom: -20px; width: 320px; height: 320px; background-image: var(--botanical-img); background-size: contain; background-repeat: no-repeat; background-position: right -20px bottom -20px; opacity: 0.14; z-index: 0; pointer-events: none; }
   .kurs-card:hover { transform: translateY(-4px) translateZ(0); box-shadow: 0 2px 4px rgba(184,114,138,0.08), 0 16px 48px rgba(184,114,138,0.2), 0 40px 80px rgba(45,32,64,0.18); }
-  .kurs-header { padding: 2.25rem 2.25rem 1.5rem; flex: 1; position: relative; z-index: 1; }
+  .kurs-header { padding: 2.25rem 2.25rem 1.5rem; position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); border: 1px solid rgba(184,114,138,0.45); padding: 0.28rem 0.7rem; display: inline-block; margin-bottom: 1.4rem; border-radius: 2px; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: 0.85rem; line-height: 1.3; display: block; }
   .kurs-teaser { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.85; }
@@ -131,7 +131,7 @@
   .bio-stations { display: grid; grid-template-columns: 1fr 1fr; margin-top: 2rem; }
   .bio-station { padding: 0 5rem 0 0; box-shadow: inset 0 1px 0 rgba(184,114,138,0.22); }
   .bio-station:nth-child(even) { padding: 0 0 0 5rem; box-shadow: inset 0 1px 0 rgba(184,114,138,0.22), inset 1px 0 0 rgba(184,114,138,0.12); }
-  .bio-station-img { position: relative; aspect-ratio: 16/9; overflow: hidden; margin-bottom: 2rem; }
+  .bio-station-img { position: relative; aspect-ratio: 16/6; overflow: hidden; margin-bottom: 1.5rem; }
   .bio-station-img::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, transparent 25%, transparent 60%, rgba(0,0,0,0.75) 100%); }
   .bio-station-img img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; filter: brightness(0.85) contrast(1.02) saturate(1.05); object-position: center center; }
   .bio-station-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: white; display: block; margin-bottom: 0.85rem; padding: 2rem 0 0; line-height: 1.3; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
