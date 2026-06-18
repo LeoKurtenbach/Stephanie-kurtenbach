@@ -94,7 +94,7 @@
   .anmelde-hint:hover { border-color: var(--rose); }
   .kurse-subsection { background: var(--off); padding: 4rem; margin-top: 4rem; border-radius: 4px; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
-  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; gap: 1.25rem; margin-top: 3rem; align-items: stretch; }
+  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 3rem; align-items: stretch; }
   .kurs-card { background: var(--deep); border-radius: 3px; border: none; box-shadow: 0 1px 2px rgba(45,32,64,0.12), 0 6px 20px rgba(45,32,64,0.14), 0 20px 40px rgba(45,32,64,0.08); overflow: hidden; display: flex; flex-direction: column; position: relative; will-change: transform; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
   .kurs-card:hover { transform: translateY(-6px) translateZ(0); box-shadow: 0 2px 4px rgba(184,114,138,0.08), 0 16px 48px rgba(184,114,138,0.2), 0 40px 80px rgba(45,32,64,0.18); }
   .kurs-header { padding: 2.25rem 2.25rem 1.5rem; flex: 1; }
@@ -426,6 +426,7 @@
     cards.forEach(c => c.style.minHeight = max + 'px');
   }
   document.fonts.ready.then(equalizeKursCards);
+  window.addEventListener('load', equalizeKursCards);
   window.addEventListener('resize', () => { document.fonts.ready.then(equalizeKursCards); });
   function toggleKurs(btn) {
     const details = btn.closest('.kurs-card').querySelector('.kurs-details');
