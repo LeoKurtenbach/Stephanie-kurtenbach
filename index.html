@@ -96,14 +96,13 @@
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
   .kurs-card { background: var(--deep); border-radius: 3px; border: none; box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 6px 20px rgba(0,0,0,0.14); overflow: hidden; display: flex; flex-direction: column; position: relative; will-change: transform; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
+  .kurs-card::after { content: ''; position: absolute; right: -20px; bottom: -20px; width: 280px; height: 280px; background-image: var(--botanical-img); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.07; z-index: 0; pointer-events: none; }
   .kurs-card:hover { transform: translateY(-4px) translateZ(0); box-shadow: 0 2px 4px rgba(184,114,138,0.08), 0 16px 48px rgba(184,114,138,0.2), 0 40px 80px rgba(45,32,64,0.18); }
-  .kurs-header { padding: 2.25rem 2.25rem 1.5rem; flex: 1; }
+  .kurs-header { padding: 2.25rem 2.25rem 1.5rem; flex: 1; position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); border: 1px solid rgba(184,114,138,0.45); padding: 0.28rem 0.7rem; display: inline-block; margin-bottom: 1.4rem; border-radius: 2px; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: 0.85rem; line-height: 1.3; display: block; }
   .kurs-teaser { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.85; }
-  .kurs-botanical { padding: 0 2.25rem 1.75rem; flex-shrink: 0; }
-  .kurs-botanical img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; display: block; opacity: 0.9; filter: brightness(0.9) contrast(1.02) saturate(1.05); }
-  .kurs-card-actions { display: flex; gap: 0.75rem; padding: 1.6rem 2.25rem; border-top: 1px solid rgba(255,255,255,0.07); }
+  .kurs-card-actions { display: flex; gap: 0.75rem; padding: 1.6rem 2.25rem; border-top: 1px solid rgba(255,255,255,0.07); position: relative; z-index: 1; }
   .kurs-btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.78rem; font-weight: 400; letter-spacing: 0.07em; text-decoration: none; padding: 0.65rem 1.35rem; border-radius: 2px; border: none; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; box-shadow: 0 2px 8px rgba(184,114,138,0.4); }
   .kurs-btn-primary:hover { background: var(--rose-dark); box-shadow: 0 4px 16px rgba(184,114,138,0.5); }
   .kurs-toggle { display: flex; align-items: center; gap: 0.35rem; background: transparent; color: rgba(255,255,255,0.45); font-family: var(--font-sans); font-size: 0.78rem; font-weight: 400; letter-spacing: 0.07em; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.16); cursor: pointer; transition: border-color 0.25s, color 0.25s; white-space: nowrap; }
@@ -250,9 +249,8 @@
     <h3 class="section-title" style="font-size:2rem;">Aktuelle Kurse</h3>
     <p class="section-body">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
     <div class="kurse-grid">
-      <div class="kurs-card">
+      <div class="kurs-card" style="--botanical-img: url('passionflower.png');">
         <div class="kurs-header"><span class="kurs-tag">Sensorische Integration</span><h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3><p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p></div>
-        <div class="kurs-botanical"><img src="passionflower.png" alt="" loading="lazy" style="object-position: center 35%;"></div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
         <div class="kurs-details">
           <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet — und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend. Häufig liegen den sprachlichen Schwierigkeiten weitere Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft dabei, diese Zusammenhänge besser zu verstehen."</p>
@@ -262,9 +260,8 @@
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
         </div>
       </div>
-      <div class="kurs-card">
+      <div class="kurs-card" style="--botanical-img: url('peony.png');">
         <div class="kurs-header"><span class="kurs-tag">Elterntraining</span><h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3><p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen — inklusive aller Materialien.</p></div>
-        <div class="kurs-botanical"><img src="peony.png" alt="" loading="lazy" style="object-position: center 28%;"></div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
         <div class="kurs-details">
           <p class="kurs-hook">„Suchst du nach einer strukturierten Möglichkeit, Eltern aktiv in die Sprachförderung einzubeziehen? Im Mittelpunkt steht die Vermittlung alltagsnaher Sprachlehrstrategien, die Eltern gezielt in der Kommunikation mit ihrem Kind einsetzen können, um dessen Sprachentwicklung wirksam zu unterstützen."</p>
@@ -274,9 +271,8 @@
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
         </div>
       </div>
-      <div class="kurs-card">
+      <div class="kurs-card" style="--botanical-img: url('valerian.png');">
         <div class="kurs-header"><span class="kurs-tag">Frühe Intervention</span><h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3><p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p></div>
-        <div class="kurs-botanical"><img src="valerian.png" alt="" loading="lazy" style="object-position: center 15%;"></div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
         <div class="kurs-details">
           <p class="kurs-hook">„Hast du auch immer öfter Kinder in der Praxis, bei denen die gängigen Methoden nicht funktionieren? Vielleicht liegt es daran, dass diese Kinder noch nicht in der Lage sind, Sprache zu erwerben, weil bei ihnen ein wichtiges Fundament fehlt: die kommunikativen Vorausläuferfähigkeiten."</p>
@@ -286,9 +282,8 @@
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
         </div>
       </div>
-      <div class="kurs-card">
+      <div class="kurs-card" style="--botanical-img: url('olive.png');">
         <div class="kurs-header"><span class="kurs-tag">Webinar</span><h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3><p class="kurs-teaser">Kinder die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken — ein möglicher Schlüssel liegt in den frühkindlichen Reflexen.</p></div>
-        <div class="kurs-botanical"><img src="olive.png" alt="" loading="lazy" style="object-position: center 55%;"></div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
         <div class="kurs-details">
           <p class="kurs-hook">„Frühkindliche Reflexe sind genetisch angelegte Bewegungsmuster und bilden eine wichtige Grundlage für Haltung, Bewegung, Wahrnehmung, Lernen und Kommunikation. Verläuft der Integrationsprozess nicht vollständig, können Restreaktionen bestehen bleiben und verschiedene Entwicklungsbereiche beeinflussen — darunter Aufmerksamkeit, Motorik, Koordination, emotionale Regulation und Sprachentwicklung."</p>
