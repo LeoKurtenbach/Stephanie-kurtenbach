@@ -96,7 +96,7 @@
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
   .kurs-card { background: var(--deep); border-radius: 3px; border: none; box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 6px 20px rgba(0,0,0,0.14); overflow: hidden; display: flex; flex-direction: column; position: relative; will-change: transform; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
-  .kurs-card::after { content: ''; position: absolute; right: -20px; bottom: -20px; width: 280px; height: 280px; background-image: var(--botanical-img); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.07; z-index: 0; pointer-events: none; }
+  .kurs-card::after { content: ''; position: absolute; right: -20px; bottom: -20px; width: 320px; height: 320px; background-image: var(--botanical-img); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.14; z-index: 0; pointer-events: none; }
   .kurs-card:hover { transform: translateY(-4px) translateZ(0); box-shadow: 0 2px 4px rgba(184,114,138,0.08), 0 16px 48px rgba(184,114,138,0.2), 0 40px 80px rgba(45,32,64,0.18); }
   .kurs-header { padding: 2.25rem 2.25rem 1.5rem; flex: 1; position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); border: 1px solid rgba(184,114,138,0.45); padding: 0.28rem 0.7rem; display: inline-block; margin-bottom: 1.4rem; border-radius: 2px; }
@@ -309,12 +309,12 @@
   </div>
   <div class="bio-stations">
     <div class="bio-station">
-      <div class="bio-station-img"><img src="bio-sprechwiss.png" alt="" loading="lazy" style="object-position: center 65%;"></div>
+      <div class="bio-station-img"><img src="bio-sprechwiss.png" alt="" loading="lazy" style="object-fit: cover; object-position: center 65%; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sprechwissenschaft</span>
       <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
     <div class="bio-station">
-      <div class="bio-station-img"><img src="bio-si.png" alt="" loading="lazy" style="object-position: center center;"></div>
+      <div class="bio-station-img"><img src="bio-si.png" alt="" loading="lazy" style="object-fit: cover; object-position: center center; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sensorische Integrationstherapie</span>
       <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
     </div>
