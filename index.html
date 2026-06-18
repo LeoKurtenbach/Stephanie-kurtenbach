@@ -94,20 +94,16 @@
   .anmelde-hint:hover { border-color: var(--rose); }
   .kurse-subsection { background: var(--off); padding: 4rem; margin-top: 4rem; border-radius: 4px; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
-  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 1.25rem; row-gap: 0; margin-top: 3rem; align-items: stretch; }
-  .kurs-card { background: var(--deep); border-radius: 0; border: none; box-shadow: none; overflow: hidden; display: flex; flex-direction: column; position: relative; will-change: transform; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
-  .kurse-grid .kurs-card:nth-child(1) { border-radius: 3px 3px 0 0; }
-  .kurse-grid .kurs-card:nth-child(2) { border-radius: 3px 3px 0 0; }
-  .kurse-grid .kurs-card:nth-child(3) { border-radius: 0 0 3px 3px; }
-  .kurse-grid .kurs-card:nth-child(4) { border-radius: 0 0 3px 3px; }
+  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .kurs-card { background: var(--deep); border-radius: 3px; border: none; box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 6px 20px rgba(0,0,0,0.14); overflow: hidden; display: flex; flex-direction: column; position: relative; will-change: transform; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
   .kurs-card:hover { transform: translateY(-4px) translateZ(0); box-shadow: 0 2px 4px rgba(184,114,138,0.08), 0 16px 48px rgba(184,114,138,0.2), 0 40px 80px rgba(45,32,64,0.18); }
   .kurs-header { padding: 2.25rem 2.25rem 1.5rem; flex: 1; }
   .kurs-tag { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); border: 1px solid rgba(184,114,138,0.45); padding: 0.28rem 0.7rem; display: inline-block; margin-bottom: 1.4rem; border-radius: 2px; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: 0.85rem; line-height: 1.3; display: block; }
   .kurs-teaser { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.85; }
   .kurs-botanical { position: relative; height: 200px; overflow: hidden; flex-shrink: 0; }
-  .kurs-botanical::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(45,32,64,0.6) 0%, transparent 35%, transparent 60%, rgba(45,32,64,0.85) 100%); }
-  .kurs-botanical img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.82; filter: brightness(0.78) contrast(1.05) saturate(1.1); }
+  .kurs-botanical::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, transparent 30%, transparent 55%, rgba(0,0,0,0.7) 100%); }
+  .kurs-botanical img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.92; filter: brightness(0.85) contrast(1.02) saturate(1.05); }
   .kurs-card-actions { display: flex; gap: 0.75rem; padding: 1.6rem 2.25rem; border-top: 1px solid rgba(255,255,255,0.07); }
   .kurs-btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.78rem; font-weight: 400; letter-spacing: 0.07em; text-decoration: none; padding: 0.65rem 1.35rem; border-radius: 2px; border: none; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; box-shadow: 0 2px 8px rgba(184,114,138,0.4); }
   .kurs-btn-primary:hover { background: var(--rose-dark); box-shadow: 0 4px 16px rgba(184,114,138,0.5); }
@@ -138,9 +134,8 @@
   .bio-station { padding: 0 5rem 0 0; border-top: 1px solid rgba(184,114,138,0.25); }
   .bio-station:nth-child(even) { padding: 0 0 0 5rem; border-left: 1px solid rgba(184,114,138,0.15); }
   .bio-station-img { position: relative; height: 200px; overflow: hidden; margin-bottom: 2rem; }
-  .bio-station-img::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(45,32,64,0.3) 0%, transparent 30%, transparent 65%, rgba(45,32,64,1) 100%), linear-gradient(to right, rgba(45,32,64,0.4) 0%, transparent 15%, transparent 85%, rgba(45,32,64,0.4) 100%); }
-  .bio-station-img img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.58; filter: brightness(0.72) contrast(1.05) saturate(1.1); object-position: center center; }
-  .bio-station-img img.pos-top { object-position: center top; }
+  .bio-station-img::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 25%, transparent 60%, rgba(0,0,0,0.8) 100%); }
+  .bio-station-img img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.88; filter: brightness(0.82) contrast(1.02) saturate(1.05); object-position: center center; }
   .bio-station-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: white; display: block; margin-bottom: 0.85rem; padding: 2rem 0 0; line-height: 1.3; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
   .bio-station p { font-size: 0.92rem; color: rgba(255,255,255,0.72); line-height: 1.9; padding-bottom: 3rem; }
   .pub-link { color: var(--rose); border-bottom-color: var(--rose); }
@@ -282,7 +277,7 @@
       </div>
       <div class="kurs-card">
         <div class="kurs-header"><span class="kurs-tag">Frühe Intervention</span><h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3><p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p></div>
-        <div class="kurs-botanical"><img src="valerian.png" alt="" loading="lazy" style="object-position: center 22%;"></div>
+        <div class="kurs-botanical"><img src="valerian.png" alt="" loading="lazy" style="object-position: center 85%;"></div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
         <div class="kurs-details">
           <p class="kurs-hook">„Hast du auch immer öfter Kinder in der Praxis, bei denen die gängigen Methoden nicht funktionieren? Vielleicht liegt es daran, dass diese Kinder noch nicht in der Lage sind, Sprache zu erwerben, weil bei ihnen ein wichtiges Fundament fehlt: die kommunikativen Vorausläuferfähigkeiten."</p>
@@ -320,12 +315,12 @@
   </div>
   <div class="bio-stations">
     <div class="bio-station">
-      <div class="bio-station-img"><img src="bio-sprechwiss.png" alt="" loading="lazy"></div>
+      <div class="bio-station-img"><img src="bio-sprechwiss.png" alt="" loading="lazy" style="object-position: center 20%;"></div>
       <span class="bio-station-name">Sprechwissenschaft</span>
       <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
     <div class="bio-station">
-      <div class="bio-station-img"><img src="bio-si.png" alt="" loading="lazy" class="pos-top"></div>
+      <div class="bio-station-img"><img src="bio-si.png" alt="" loading="lazy" style="object-position: center 70%;"></div>
       <span class="bio-station-name">Sensorische Integrationstherapie</span>
       <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
     </div>
