@@ -95,8 +95,10 @@
   .kurse-subsection { background: var(--off); padding: 4rem; margin-top: 4rem; border-radius: 4px; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: stretch; margin-top: 3rem; }
-  .kurs-card { background: var(--deep); border-radius: 6px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+  .kurs-card { background: var(--deep); border-radius: 6px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; }
   .kurs-card:hover { transform: translateY(-2px); }
+  .kurs-card-bg { position: absolute; top: 0; right: 0; width: 180px; height: 180px; opacity: 0.12; background-size: contain; background-repeat: no-repeat; background-position: top right; pointer-events: none; z-index: 0; }
+  .kurs-card > *:not(.kurs-card-bg) { position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); border: 1px solid rgba(184,114,138,0.45); padding: 0.3rem 0.75rem; border-radius: 2px; width: fit-content; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--white); line-height: 1.35; }
   .kurs-teaser { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
@@ -248,6 +250,7 @@
     <p class="section-body">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
     <div class="kurse-grid">
       <div class="kurs-card">
+        <div class="kurs-card-bg" style="background-image: url('passionflower.png');"></div>
         <span class="kurs-tag">Sensorische Integration</span>
         <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
         <p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p>
@@ -261,6 +264,7 @@
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
       <div class="kurs-card">
+        <div class="kurs-card-bg" style="background-image: url('peony.png');"></div>
         <span class="kurs-tag">Elterntraining</span>
         <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
         <p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen — inklusive aller Materialien.</p>
@@ -274,6 +278,7 @@
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
       <div class="kurs-card">
+        <div class="kurs-card-bg" style="background-image: url('valerian.png');"></div>
         <span class="kurs-tag">Frühe Intervention</span>
         <h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3>
         <p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p>
@@ -287,6 +292,7 @@
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
       <div class="kurs-card">
+        <div class="kurs-card-bg" style="background-image: url('olive.png');"></div>
         <span class="kurs-tag">Webinar</span>
         <h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3>
         <p class="kurs-teaser">Kinder die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken — ein möglicher Schlüssel liegt in den frühkindlichen Reflexen.</p>
