@@ -29,7 +29,7 @@
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body { background: var(--white); color: var(--deep); font-family: var(--font-sans); font-weight: 300; font-size: 17px; line-height: 1.85; letter-spacing: 0.01em; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(45,32,64,0.08); box-shadow: 0 1px 0 rgba(45,32,64,0.04), 0 4px 24px rgba(45,32,64,0.06); will-change: transform; transform: translateZ(0); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(45,32,64,0.08); box-shadow: 0 1px 0 rgba(45,32,64,0.04), 0 4px 24px rgba(45,32,64,0.06); will-change: transform; transform: translateZ(0); }
   .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
   .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
   .nav-links a { font-size: 0.9rem; font-weight: 400; color: var(--deep); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; position: relative; }
@@ -78,7 +78,7 @@
   #angebote { background: #FFFFFF; }
   #ueber { background: #FFFFFF; }
   .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-top: 4rem; }
-  .problem-card { background: none; padding: 0; }
+  .problem-card { background: none; padding: 0; will-change: transform; transform: translateZ(0); }
   .problem-audience { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.25rem; display: block; }
   .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 1.5rem; }
   .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-weight: 400; }
@@ -95,7 +95,7 @@
   .kurse-subsection { background: var(--off); padding: 4rem; margin-top: 4rem; border-radius: 4px; }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: stretch; margin-top: 3rem; }
-  .kurs-card { background: var(--deep); border-radius: 6px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; }
+  .kurs-card { background: var(--deep); border-radius: 6px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; will-change: transform; transform: translateZ(0); }
   .kurs-card:hover { transform: translateY(-2px); }
   .kurs-card-bg { position: absolute; top: 0; right: 0; width: 180px; height: 180px; opacity: 0.12; background-size: contain; background-repeat: no-repeat; background-position: top right; pointer-events: none; z-index: 0; }
   .kurs-card > *:not(.kurs-card-bg) { position: relative; z-index: 1; }
@@ -317,7 +317,7 @@
       <p>In meiner Arbeit begegne ich Menschen auf Augenhöhe. Mit meinen Lernpraktiken möchte ich tiefe Veränderungsprozesse ankurbeln — nicht durch das Vermitteln von Fertigkeiten, sondern durch das Verankern grundlegender Überzeugungen und das Herausarbeiten von Ressourcen.</p>
       <p>Seit mehr als 30 Jahren begleite ich Kinder, Familien, Fachkräfte und Berufssprecher*innen. Meine Arbeit beginnt beim Verstehen der Ursachen — und der Bedingungen, die echte Entwicklung ermöglichen.</p>
     </div>
-    <div class="ueber-image"><img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach"></div>
+    <div class="ueber-image"><img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach" loading="lazy"></div>
   </div>
   <div class="bio-stations">
     <div class="bio-station">
@@ -396,16 +396,15 @@
 </footer>
 <script>
   gsap.registerPlugin(ScrollTrigger);
-  gsap.config({ force3D: true });
   gsap.to('#progressBar', { width:'100%', ease:'none', scrollTrigger:{ scrub:0.3, start:'top top', end:'bottom bottom' }});
-  gsap.from('.hero-headline', { y:30, opacity:0, duration:1.2, ease:'power3.out', delay:0.3, force3D:true });
-  gsap.from('.hero-overline', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.15, force3D:true });
-  gsap.from('.hero-sub', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.55, force3D:true });
-  gsap.from('.hero-tags', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.7, force3D:true });
-  gsap.from('.hero-actions', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.85, force3D:true });
-  gsap.from('.hero-quote', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:1.1, force3D:true });
+  gsap.from('.hero-headline', { y:30, opacity:0, duration:1.2, ease:'power3.out', delay:0.3 });
+  gsap.from('.hero-overline', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.15 });
+  gsap.from('.hero-sub', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.55 });
+  gsap.from('.hero-tags', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.7 });
+  gsap.from('.hero-actions', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:0.85 });
+  gsap.from('.hero-quote', { y:20, opacity:0, duration:0.9, ease:'power3.out', delay:1.1 });
   document.querySelectorAll('.section-title').forEach(el => {
-    gsap.from(el, { y:35, opacity:0, duration:1, ease:'power3.out', force3D:true, scrollTrigger:{ trigger:el, start:'top 85%', once:true }});
+    gsap.from(el, { y:35, opacity:0, duration:1, ease:'power3.out', scrollTrigger:{ trigger:el, start:'top 85%', once:true }});
   });
   document.querySelectorAll('.stat-number').forEach(el => {
     const target = parseInt(el.dataset.target);
@@ -416,12 +415,12 @@
     }});
   });
   gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
-    gsap.from('.kurs-card', { y:48, opacity:0, duration:0.85, ease:'power3.out', stagger:0.13, force3D:true, scrollTrigger:{ trigger:'.kurse-grid', start:'top 82%', once:true }});
-    gsap.from('.angebot-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, force3D:true, scrollTrigger:{ trigger:'.angebote-grid', start:'top 82%', once:true }});
-    gsap.from('.problem-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, force3D:true, scrollTrigger:{ trigger:'.problems-grid', start:'top 82%', once:true }});
-    gsap.from('.bio-station', { y:32, opacity:0, duration:0.9, ease:'power3.out', stagger:0.15, force3D:true, scrollTrigger:{ trigger:'.bio-stations', start:'top 80%', once:true }});
-    gsap.from('.testimonial-card', { y:28, opacity:0, duration:0.75, ease:'power3.out', stagger:0.1, force3D:true, scrollTrigger:{ trigger:'.testimonials-grid', start:'top 82%', once:true }});
-    gsap.from('.section-overline', { y:16, opacity:0, duration:0.7, ease:'power3.out', stagger:0.1, force3D:true, scrollTrigger:{ trigger:'body', start:'top top', once:false, toggleActions:'play none none none' }});
+    gsap.from('.kurs-card', { y:48, opacity:0, duration:0.85, ease:'power3.out', stagger:0.13, scrollTrigger:{ trigger:'.kurse-grid', start:'top 82%', once:true }});
+    gsap.from('.angebot-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, scrollTrigger:{ trigger:'.angebote-grid', start:'top 82%', once:true }});
+    gsap.from('.problem-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, scrollTrigger:{ trigger:'.problems-grid', start:'top 82%', once:true }});
+    gsap.from('.bio-station', { y:32, opacity:0, duration:0.9, ease:'power3.out', stagger:0.15, scrollTrigger:{ trigger:'.bio-stations', start:'top 80%', once:true }});
+    gsap.from('.testimonial-card', { y:28, opacity:0, duration:0.75, ease:'power3.out', stagger:0.1, scrollTrigger:{ trigger:'.testimonials-grid', start:'top 82%', once:true }});
+    gsap.from('.section-overline', { y:16, opacity:0, duration:0.7, ease:'power3.out', stagger:0.1, scrollTrigger:{ trigger:'body', start:'top top', once:true, toggleActions:'play none none none' }});
   });
   function equalizeKursCards() {
     const cards = document.querySelectorAll('.kurs-card');
