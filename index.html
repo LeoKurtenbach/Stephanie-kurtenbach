@@ -89,16 +89,15 @@
   .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 1.5rem; }
   .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-weight: 400; }
   .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
-  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 7rem; align-items: start; }
-  .angebot-card { width: 100%; background: rgba(232,237,226,0.52); border: none; box-shadow: 0 2px 24px rgba(45,32,64,0.1); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; will-change: transform; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .angebot-card:hover { transform: translateY(-3px); box-shadow: 0 6px 32px rgba(45,32,64,0.16); }
-  .angebot-card-img { height: 240px; width: 100%; overflow: hidden; flex-shrink: 0; }
-  .angebot-card-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; transition: transform 0.5s ease; }
+  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; margin-bottom: 7rem; }
+  .angebot-card { display: flex; flex-direction: column; background: rgba(232,237,226,0.52); border-radius: 4px; transition: transform 0.3s ease; }
+  .angebot-card:hover { transform: translateY(-4px); }
+  .angebot-card-img { aspect-ratio: 4/3; width: 100%; overflow: hidden; border-radius: 4px 4px 0 0; }
+  .angebot-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
   .angebot-card:hover .angebot-card-img img { transform: scale(1.04); }
-  .angebot-card-placeholder { height: 240px; width: 100%; background: rgba(45,32,64,0.08); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-  .angebot-card-placeholder::after { content: '—'; font-size: 0.72rem; letter-spacing: 0.12em; color: rgba(45,32,64,0.2); text-transform: uppercase; }
-  .angebot-card-body { padding: 1.75rem 1.5rem 2rem; display: flex; flex-direction: column; flex: 1; }
-  .angebot-card-body::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); margin-bottom: 1.1rem; }
+  .angebot-card-placeholder { aspect-ratio: 4/3; width: 100%; background: rgba(45,32,64,0.08); border-radius: 4px 4px 0 0; }
+  .angebot-card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+  .angebot-card-body::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); margin-bottom: 1rem; }
   .angebot-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--deep); margin-bottom: 0.75rem; line-height: 1.3; }
   .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.75; margin-bottom: 1.25rem; }
   .angebot-link { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--rose); font-weight: 400; text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; align-self: flex-start; transition: letter-spacing 0.2s; }
@@ -258,7 +257,7 @@
   </div>
   <div class="angebote-grid">
     <div class="angebot-card">
-      <div class="angebot-card-img"><img src="angebot-fortbildung.jpg" alt="Stephanie Kurtenbach bei einer Fortbildung" loading="lazy" style="object-position: center 20%;"></div>
+      <div class="angebot-card-img"><img src="angebot-fortbildung.jpg" alt="Stephanie Kurtenbach bei einer Fortbildung" loading="eager" style="object-position: center 20%;"></div>
       <div class="angebot-card-body">
         <h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3>
         <p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining — online und in Präsenz.</p>
@@ -266,7 +265,7 @@
       </div>
     </div>
     <div class="angebot-card">
-      <div class="angebot-card-img"><img src="angebot-coaching.jpg" alt="Stimm- und Kommunikationscoaching" loading="lazy" style="object-position: center 25%;"></div>
+      <div class="angebot-card-img"><img src="angebot-coaching.jpg" alt="Stimm- und Kommunikationscoaching" loading="eager" style="object-position: center 25%;"></div>
       <div class="angebot-card-body">
         <h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3>
         <p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation — nachhaltig entwickeln.</p>
@@ -454,7 +453,6 @@
   });
   gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
     gsap.from('.kurs-card', { y:48, opacity:0, duration:0.85, ease:'power3.out', stagger:0.13, scrollTrigger:{ trigger:'.kurse-grid', start:'top 82%', once:true }});
-    gsap.from('.angebot-card', { y:20, opacity:0, duration:0.7, ease:'power3.out', stagger:0, scrollTrigger:{ trigger:'.angebote-grid', start:'top 82%', once:true }});
     gsap.from('.problem-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, scrollTrigger:{ trigger:'.problems-grid', start:'top 82%', once:true }});
     gsap.from('.bio-station', { y:32, opacity:0, duration:0.9, ease:'power3.out', stagger:0.15, scrollTrigger:{ trigger:'.bio-stations', start:'top 80%', once:true }});
     gsap.from('.testimonial-card', { y:28, opacity:0, duration:0.75, ease:'power3.out', stagger:0.1, scrollTrigger:{ trigger:'.testimonials-grid', start:'top 82%', once:true }});
