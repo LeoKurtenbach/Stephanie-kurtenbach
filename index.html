@@ -454,7 +454,7 @@
   });
   gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
     gsap.from('.kurs-card', { y:48, opacity:0, duration:0.85, ease:'power3.out', stagger:0.13, scrollTrigger:{ trigger:'.kurse-grid', start:'top 82%', once:true }});
-    gsap.from('.angebot-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, scrollTrigger:{ trigger:'.angebote-grid', start:'top 82%', once:true }});
+    gsap.from('.angebot-card', { y:20, opacity:0, duration:0.7, ease:'power3.out', stagger:0, scrollTrigger:{ trigger:'.angebote-grid', start:'top 82%', once:true }});
     gsap.from('.problem-card', { y:36, opacity:0, duration:0.8, ease:'power3.out', stagger:0.14, scrollTrigger:{ trigger:'.problems-grid', start:'top 82%', once:true }});
     gsap.from('.bio-station', { y:32, opacity:0, duration:0.9, ease:'power3.out', stagger:0.15, scrollTrigger:{ trigger:'.bio-stations', start:'top 80%', once:true }});
     gsap.from('.testimonial-card', { y:28, opacity:0, duration:0.75, ease:'power3.out', stagger:0.1, scrollTrigger:{ trigger:'.testimonials-grid', start:'top 82%', once:true }});
