@@ -89,15 +89,20 @@
   .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 1.5rem; }
   .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-weight: 400; }
   .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
-  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-bottom: 7rem; }
-  .angebot-card { background: none; border: none; box-shadow: none; padding: 2rem; display: flex; flex-direction: column; will-change: transform; transform: translateZ(0); }
-  .angebot-card::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--rose); margin-bottom: 1.5rem; }
-  .angebot-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--deep); margin-bottom: 1.5rem; line-height: 1.3; letter-spacing: 0em; text-shadow: 0 1px 8px rgba(232,237,226,0.5); }
-  .angebot-desc { font-size: 1rem; color: var(--mid); line-height: 1.9; flex: 1; margin-bottom: 2rem; }
-  .angebot-link { font-size: 0.9rem; letter-spacing: 0.06em; color: var(--rose); font-weight: 400; text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 3px; align-self: flex-start; transition: color 0.2s; }
-  .angebot-link:hover { letter-spacing: 0.15em; }
-  .anmelde-hint { font-size: 0.9rem; letter-spacing: 0.06em; color: var(--rose); font-weight: 400; text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; display: inline-block; margin-top: 0.75rem; opacity: 1; transition: border-color 0.2s; }
-  .anmelde-hint:hover { border-color: var(--rose); }
+  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 7rem; }
+  .angebot-card { background: rgba(255,255,255,0.96); border-radius: 4px; overflow: hidden; box-shadow: 0 2px 16px rgba(45,32,64,0.08), 0 1px 3px rgba(45,32,64,0.04); display: flex; flex-direction: column; will-change: transform; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .angebot-card:hover { transform: translateY(-4px); box-shadow: 0 10px 36px rgba(45,32,64,0.13), 0 2px 6px rgba(45,32,64,0.06); }
+  .angebot-card-img { aspect-ratio: 3/2; overflow: hidden; flex-shrink: 0; }
+  .angebot-card-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; transition: transform 0.45s ease; }
+  .angebot-card:hover .angebot-card-img img { transform: scale(1.04); }
+  .angebot-card-placeholder { aspect-ratio: 3/2; background: linear-gradient(135deg, rgba(184,114,138,0.15) 0%, rgba(122,92,138,0.12) 100%); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .angebot-card-body { padding: 1.75rem 1.75rem 2rem; display: flex; flex-direction: column; flex: 1; }
+  .angebot-card-body::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); margin-bottom: 1.25rem; }
+  .angebot-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--deep); margin-bottom: 0.85rem; line-height: 1.3; }
+  .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.75; flex: 1; margin-bottom: 1.5rem; }
+  .angebot-link { font-size: 0.85rem; letter-spacing: 0.05em; color: var(--rose); font-weight: 400; text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; align-self: flex-start; transition: color 0.2s, letter-spacing 0.2s; }
+  .angebot-link:hover { letter-spacing: 0.12em; }
+  .anmelde-hint { display: none; }
   .kurse-subsection { background: transparent; padding: 4rem 0 0 0; margin-top: 2rem; border-top: 1px solid rgba(45,32,64,0.12); }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: stretch; margin-top: 3rem; }
@@ -251,9 +256,30 @@
     <p class="section-body">In meiner Arbeit begegne ich Menschen auf Augenhöhe und schaffe einen vertrauensvollen Rahmen, in dem kommunikative Entwicklung entstehen kann.</p>
   </div>
   <div class="angebote-grid">
-    <div class="angebot-card"><h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3><p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining — online und in Präsenz.</p><a href="#kurse" class="angebot-link">Alle Kurse ansehen →</a></div>
-    <div class="angebot-card"><h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3><p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation — nachhaltig entwickeln.</p><a href="#kontakt" class="angebot-link">Anfrage stellen →</a><a href="#kontakt" class="anmelde-hint">→ Jetzt anfragen</a></div>
-    <div class="angebot-card"><h3 class="angebot-title">Beratung für Kinder & Familien</h3><p class="angebot-desc">Befundung, Beratung und Entwicklungsbegleitung — mit dem Ziel, die Ursachen zu verstehen und Kinder in ihrer Selbstwirksamkeit zu stärken.</p><a href="#kontakt" class="angebot-link">Kontakt aufnehmen →</a><a href="#kontakt" class="anmelde-hint">→ Jetzt anfragen</a></div>
+    <div class="angebot-card">
+      <div class="angebot-card-img"><img src="angebot-fortbildung.jpg" alt="Stephanie Kurtenbach bei einer Fortbildung" loading="lazy" style="object-position: center 20%;"></div>
+      <div class="angebot-card-body">
+        <h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3>
+        <p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining — online und in Präsenz.</p>
+        <a href="#kurse" class="angebot-link">Alle Kurse ansehen →</a>
+      </div>
+    </div>
+    <div class="angebot-card">
+      <div class="angebot-card-img"><img src="angebot-coaching.jpg" alt="Stimm- und Kommunikationscoaching" loading="lazy" style="object-position: center 25%;"></div>
+      <div class="angebot-card-body">
+        <h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3>
+        <p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation — nachhaltig entwickeln.</p>
+        <a href="#kontakt" class="angebot-link">Anfrage stellen →</a>
+      </div>
+    </div>
+    <div class="angebot-card">
+      <div class="angebot-card-placeholder"></div>
+      <div class="angebot-card-body">
+        <h3 class="angebot-title">Beratung für Kinder & Familien</h3>
+        <p class="angebot-desc">Befundung, Beratung und Entwicklungsbegleitung — mit dem Ziel, die Ursachen zu verstehen und Kinder in ihrer Selbstwirksamkeit zu stärken.</p>
+        <a href="#kontakt" class="angebot-link">Kontakt aufnehmen →</a>
+      </div>
+    </div>
   </div>
   <div class="kurse-subsection" id="kurse">
     <span class="section-overline">Fortbildungen im Detail</span>
