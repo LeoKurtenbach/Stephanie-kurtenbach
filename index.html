@@ -35,7 +35,7 @@
   :focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
   #pageBg { position: fixed; inset: 0; z-index: -1; background-image: url('forest.jpg'); background-size: 130%; background-position: center; background-repeat: no-repeat; }
   @media (max-width: 900px) { #pageBg { background-size: cover; } }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(232,237,226,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(45,32,64,0.07); box-shadow: 0 1px 0 rgba(45,32,64,0.04), 0 4px 24px rgba(45,32,64,0.06); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(232,237,226,0.96); border-bottom: 1px solid rgba(45,32,64,0.07); }
   .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
   .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
   .nav-links a { font-size: 0.9rem; font-weight: 400; color: var(--deep); text-decoration: none; letter-spacing: 0.06em; transition: color var(--dur-ui) var(--ease-organic); position: relative; }
@@ -64,7 +64,7 @@
   .hero-right { position: relative; overflow: hidden; min-height: calc(100vh - 80px); }
   .hero-right img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; z-index: 10; }
   .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(232,237,226,0.72) 0%, transparent 22%); z-index: 2; pointer-events: none; }
-  .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(232,237,226,0.86); backdrop-filter: blur(14px); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; box-shadow: 0 4px 8px rgba(45,32,64,0.06), 0 16px 40px rgba(45,32,64,0.12); }
+  .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(232,237,226,0.92); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; box-shadow: 0 4px 8px rgba(45,32,64,0.06), 0 16px 40px rgba(45,32,64,0.10); }
   .hero-quote p { font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 0.5rem; }
   .hero-quote cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-style: normal; }
   .stats-bar { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); padding: 3rem 5rem; }
@@ -445,8 +445,18 @@
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Progress bar: scaleX avoids layout reflow on every scroll frame
-  gsap.to('#progressBar', { scaleX: 1, ease: 'none', scrollTrigger: { scrub: 0.3, start: 'top top', end: 'bottom bottom' }});
+  // Progress bar: native scroll + rAF — no GSAP scrub listener on every pixel
+  const _bar = document.getElementById('progressBar');
+  let _rafPending = false;
+  window.addEventListener('scroll', () => {
+    if (_rafPending) return;
+    _rafPending = true;
+    requestAnimationFrame(() => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      _bar.style.transform = `scaleX(${total > 0 ? window.scrollY / total : 0})`;
+      _rafPending = false;
+    });
+  }, { passive: true });
 
   // Stat counters: instant under reduced motion
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
