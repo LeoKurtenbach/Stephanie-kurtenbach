@@ -33,7 +33,7 @@
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body { background-color: var(--off); color: var(--deep); font-family: var(--font-sans); font-weight: 400; font-size: 17px; line-height: 1.85; letter-spacing: 0.01em; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   :focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
-  #pageBg { position: fixed; inset: 0; z-index: -1; background-image: url('forest.jpg'); background-size: 130%; background-position: center; background-repeat: no-repeat; }
+  #pageBg { position: fixed; inset: 0; z-index: -1; background-color: #3a6b36; background-image: url('forest.jpg'); background-size: 130%; background-position: center; background-repeat: no-repeat; background-blend-mode: luminosity; }
   @media (max-width: 900px) { #pageBg { background-size: cover; } }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(232,237,226,0.96); border-bottom: 1px solid rgba(45,32,64,0.07); }
   .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
@@ -72,7 +72,7 @@
   .stats-bar > * { position: relative; z-index: 1; }
   .stat-item { text-align: center; padding: 0.5rem 2rem; }
   .stat-number { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; color: var(--rose); display: block; line-height: 1; text-shadow: 0 0 28px rgba(184,114,138,0.35); }
-  .stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.56); margin-top: 0.5rem; display: block; }
+  .stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.72); margin-top: 0.5rem; display: block; }
   section { padding: 9rem 5rem; }
   .section-overline { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-bottom: 1rem; display: block; }
   .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--deep); margin-bottom: 2rem; text-shadow: 0 1px 4px rgba(45,32,64,0.08); }
@@ -92,7 +92,7 @@
   .problem-card { background: none; padding: 0; }
   .problem-audience { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.25rem; display: block; }
   .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 1.5rem; }
-  .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-weight: 400; }
+  .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.72); font-weight: 400; }
   .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
   .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; margin-bottom: 7rem; }
   .angebot-card { display: flex; flex-direction: column; background: rgba(232,237,226,0.52); border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); }
@@ -123,7 +123,7 @@
   .kurs-hook { font-family: var(--font-serif); font-size: 0.95rem; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.75; }
   .kurs-inhalte-label { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); opacity: 0.85; display: block; }
   .kurs-inhalte { list-style: none; }
-  .kurs-inhalte li { font-size: 0.84rem; color: rgba(255,255,255,0.62); padding: 0.45rem 0 0.45rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
+  .kurs-inhalte li { font-size: 0.84rem; color: rgba(255,255,255,0.75); padding: 0.45rem 0 0.45rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
   .kurs-inhalte li::before { content: '—'; position: absolute; left: 0; color: var(--rose); opacity: 0.65; }
   .kurs-outcome { font-size: 0.84rem; color: rgba(255,255,255,0.5); background: rgba(184,114,138,0.1); padding: 1.1rem 1.4rem; border-left: 2px solid var(--rose); line-height: 1.75; }
   .kurs-outcome strong { display: block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); font-weight: 400; opacity: 0.9; margin-bottom: 0.45rem; }
@@ -162,11 +162,11 @@
   #philosophie > * { position: relative; z-index: 1; }
   .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; text-shadow: 0 2px 20px rgba(184,114,138,0.2), 0 4px 40px rgba(0,0,0,0.3); }
   .philo-quote-main em { color: var(--rose); font-style: normal; }
-  .philo-attribution { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 6rem; display: block; }
+  .philo-attribution { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.70); margin-bottom: 6rem; display: block; }
   .philo-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; max-width: 920px; margin: 0 auto; }
   .philo-value { text-align: left; }
   .philo-value-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
-  .philo-value-text { font-size: 0.87rem; color: rgba(255,255,255,0.60); line-height: 1.85; }
+  .philo-value-text { font-size: 0.87rem; color: rgba(255,255,255,0.78); line-height: 1.85; }
   #stimmen { position: relative; }
   #stimmen::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
   #stimmen > * { position: relative; z-index: 1; }
@@ -211,6 +211,9 @@
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { grid-template-columns: 1fr; } .hero-left { padding: 3rem 1.5rem; } .hero-right { height: 60vw; } section { padding: 5rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 5rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
   }
+  .footer-nav { display: flex; gap: 1.5rem; }
+  .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
+  .footer-nav a:hover { color: rgba(255,255,255,0.70); }
 </style>
 </head>
 <body>
@@ -229,7 +232,7 @@
   <div class="hero-left">
     <span class="hero-overline">Sprechwissenschaftlerin · Dozentin · Coach</span>
     <h1 class="hero-headline">Ich verändere die Art, wie Menschen auf <span class="hero-headline-sub">Kommunikation schauen.</span></h1>
-    <p class="hero-sub">Ich gebe Orientierung und wirksame Handlungsstrategien, damit echte Verbindung entsteht — in Fortbildungen für Fachkräfte, im Stimm- und Kommunikationscoaching sowie in der Begleitung von Kindern und Familien.</p>
+    <p class="hero-sub">Ich gebe Orientierung und wirksame Handlungsstrategien, damit echte Verbindung entsteht: in Fortbildungen für Fachkräfte, im Stimm- und Kommunikationscoaching sowie in der Begleitung von Kindern und Familien.</p>
     <div class="hero-tags"><span class="tag">Fortbildungen</span><span class="tag">Stimmcoaching</span><span class="tag">Familienbegleitung</span></div>
     <div class="hero-actions">
       <a href="#angebote" class="btn-primary">Angebote entdecken</a>
@@ -256,9 +259,9 @@
   <span class="section-overline">Erkennst du dich wieder?</span>
   <h2 class="section-title">Was Menschen zu mir führt</h2>
   <div class="problems-grid">
-    <div class="problem-card"><span class="problem-audience">Therapeut*innen</span><p class="problem-quote">„Immer mehr Kinder können sich nicht auf meine Methoden einlassen. Wie kann ich ursachenorientierter, erfolgreicher — und mit mehr Freude — arbeiten?"</p><p class="problem-response">Wissenschaftlich fundiert. Praxisnah. Sofort umsetzbar.</p></div>
-    <div class="problem-card"><span class="problem-audience">Menschen mit Stimmproblemen</span><p class="problem-quote">„Meine Stimme trägt mich nicht. Ich bin unsicher — und habe Angst vor dem Sprechen vor Gruppen."</p><p class="problem-response">Individuelle Begleitung für Menschen mit Sprecherberufen.</p></div>
-    <div class="problem-card"><span class="problem-audience">Eltern & Familien</span><p class="problem-quote">„Keiner weiß, was wirklich hinter den Problemen unseres Kindes steckt. Wir sind ratlos — und die Therapie kommt nicht voran."</p><p class="problem-response">Ursachen verstehen. Ressourcen stärken. Wege finden.</p></div>
+    <div class="problem-card"><span class="problem-audience">Therapeut*innen</span><p class="problem-quote">„Immer mehr Kinder können sich nicht auf meine Methoden einlassen. Wie kann ich ursachenorientierter, erfolgreicher, mit mehr Freude, arbeiten?"</p><p class="problem-response">Wissenschaftlich fundiert. Praxisnah. Sofort umsetzbar.</p></div>
+    <div class="problem-card"><span class="problem-audience">Menschen mit Stimmproblemen</span><p class="problem-quote">„Meine Stimme trägt mich nicht. Ich bin unsicher und habe Angst vor dem Sprechen vor Gruppen."</p><p class="problem-response">Individuelle Begleitung für Menschen mit Sprecherberufen.</p></div>
+    <div class="problem-card"><span class="problem-audience">Eltern & Familien</span><p class="problem-quote">„Keiner weiß, was wirklich hinter den Problemen unseres Kindes steckt. Wir sind ratlos, und die Therapie kommt nicht voran."</p><p class="problem-response">Ursachen verstehen. Ressourcen stärken. Wege finden.</p></div>
   </div>
 </section>
 <section id="angebote">
@@ -271,7 +274,7 @@
       <div class="angebot-card-img"><img src="angebot-fortbildung.jpg" alt="Stephanie Kurtenbach bei einer Fortbildung" loading="eager" style="object-position: center 20%;"></div>
       <div class="angebot-card-body">
         <h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3>
-        <p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining — online und in Präsenz.</p>
+        <p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining, online und in Präsenz.</p>
         <a href="#kurse" class="angebot-link">Alle Kurse ansehen →</a>
       </div>
     </div>
@@ -279,7 +282,7 @@
       <div class="angebot-card-img"><img src="angebot-coaching.jpg" alt="Stimm- und Kommunikationscoaching" loading="eager" style="object-position: center 25%;"></div>
       <div class="angebot-card-body">
         <h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3>
-        <p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation — nachhaltig entwickeln.</p>
+        <p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation, nachhaltig entwickeln.</p>
         <a href="#kontakt" class="angebot-link">Anfrage stellen →</a>
       </div>
     </div>
@@ -287,7 +290,7 @@
       <div class="angebot-card-img"><img src="angebot-kinder.jpg" alt="Kind betrachtet eine Schnecke" loading="eager"></div>
       <div class="angebot-card-body">
         <h3 class="angebot-title">Beratung für Kinder & Familien</h3>
-        <p class="angebot-desc">Befundung, Beratung und Entwicklungsbegleitung — mit dem Ziel, die Ursachen zu verstehen und Kinder in ihrer Selbstwirksamkeit zu stärken.</p>
+        <p class="angebot-desc">Befundung, Beratung und Entwicklungsbegleitung mit dem Ziel, die Ursachen zu verstehen und Kinder in ihrer Selbstwirksamkeit zu stärken.</p>
         <a href="#kontakt" class="angebot-link">Kontakt aufnehmen →</a>
       </div>
     </div>
@@ -303,7 +306,7 @@
         <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
         <p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p>
         <div class="kurs-details">
-          <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet — und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend. Häufig liegen den sprachlichen Schwierigkeiten weitere Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft dabei, diese Zusammenhänge besser zu verstehen."</p>
+          <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet, und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend. Häufig liegen den sprachlichen Schwierigkeiten weitere Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft dabei, diese Zusammenhänge besser zu verstehen."</p>
           <span class="kurs-inhalte-label">Kursinhalte</span>
           <ul class="kurs-inhalte"><li>Bedeutung der Sensorischen Integration für das Lernen</li><li>Haut, Gleichgewicht und Tiefenwahrnehmung: Grundpfeiler für die Sprachentwicklung</li><li>Wahrnehmungsstörungen und ihre Auswirkungen auf Lernen, Verhalten und Sprache</li><li>Anamnese mit dem SI-Elternfragebogen</li><li>Kindersprachtherapie mit Sensorischer Integration</li></ul>
           <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Du wirst sprachliche Auffälligkeiten stärker im Zusammenhang mit der Gesamtentwicklung des Kindes betrachten können. Alle Kursbausteine werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft. Du kannst nach diesem Kurs deine Therapien konkret mit SI-Elementen planen und durchführen.</div>
@@ -315,7 +318,7 @@
         <div class="kurs-card-bg" style="background-image: url('peony.png');"></div>
         <span class="kurs-tag">Elterntraining</span>
         <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
-        <p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen — inklusive aller Materialien.</p>
+        <p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen, inklusive aller Materialien.</p>
         <div class="kurs-details">
           <p class="kurs-hook">„Suchst du nach einer strukturierten Möglichkeit, Eltern aktiv in die Sprachförderung einzubeziehen? Im Mittelpunkt steht die Vermittlung alltagsnaher Sprachlehrstrategien, die Eltern gezielt in der Kommunikation mit ihrem Kind einsetzen können, um dessen Sprachentwicklung wirksam zu unterstützen."</p>
           <span class="kurs-inhalte-label">Du erhältst alle Materialien</span>
@@ -343,9 +346,9 @@
         <div class="kurs-card-bg" style="background-image: url('olive.png');"></div>
         <span class="kurs-tag">Webinar</span>
         <h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3>
-        <p class="kurs-teaser">Kinder die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken — ein möglicher Schlüssel liegt in den frühkindlichen Reflexen.</p>
+        <p class="kurs-teaser">Kinder die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken: ein möglicher Schlüssel liegt in den frühkindlichen Reflexen.</p>
         <div class="kurs-details">
-          <p class="kurs-hook">„Frühkindliche Reflexe sind genetisch angelegte Bewegungsmuster und bilden eine wichtige Grundlage für Haltung, Bewegung, Wahrnehmung, Lernen und Kommunikation. Verläuft der Integrationsprozess nicht vollständig, können Restreaktionen bestehen bleiben und verschiedene Entwicklungsbereiche beeinflussen — darunter Aufmerksamkeit, Motorik, Koordination, emotionale Regulation und Sprachentwicklung."</p>
+          <p class="kurs-hook">„Frühkindliche Reflexe sind genetisch angelegte Bewegungsmuster und bilden eine wichtige Grundlage für Haltung, Bewegung, Wahrnehmung, Lernen und Kommunikation. Verläuft der Integrationsprozess nicht vollständig, können Restreaktionen bestehen bleiben und verschiedene Entwicklungsbereiche beeinflussen, darunter Aufmerksamkeit, Motorik, Koordination, emotionale Regulation und Sprachentwicklung."</p>
           <span class="kurs-inhalte-label">Kursinhalte</span>
           <ul class="kurs-inhalte"><li>Die Entwicklung und Funktion frühkindlicher Reflexe</li><li>Bedeutung für Wahrnehmung, Motorik, Lernen und Sprachentwicklung</li><li>Mögliche Folgen nicht vollständig integrierter Reflexe im Kindesalter</li><li>Zusammenhänge zwischen Reflexentwicklung, kommunikativen Vorläuferfähigkeiten und Sprachentwicklung</li><li>Reflexintegrationsprogramme – Grundlagen, Möglichkeiten und Grenzen</li><li>Überblick über die aktuelle Studienlage und wissenschaftliche Einordnung</li></ul>
           <div class="kurs-outcome"><strong>Nach dem Webinar</strong>Du wirst die Rolle frühkindlicher Reflexe differenzierter betrachten können, erkennst mögliche Zusammenhänge im therapeutischen Alltag und gewinnst zusätzliche Perspektiven für die Begleitung von Kindern mit Entwicklungsauffälligkeiten.</div>
@@ -362,8 +365,8 @@
       <span class="section-overline">Über mich</span>
       <h2 class="section-title">Dr. Stephanie Kurtenbach</h2>
       <p>Was mich inspiriert und erfüllt, sind meine Familie und meine Freunde, Begegnungen mit Menschen, auf Reisen und in der Natur zu sein, gutes Essen, tiefe Gespräche und Yoga.</p>
-      <p>In meiner Arbeit begegne ich Menschen auf Augenhöhe. Mit meinen Lernpraktiken möchte ich tiefe Veränderungsprozesse ankurbeln — nicht durch das Vermitteln von Fertigkeiten, sondern durch das Verankern grundlegender Überzeugungen und das Herausarbeiten von Ressourcen.</p>
-      <p>Seit mehr als 30 Jahren begleite ich Kinder, Familien, Fachkräfte und Berufssprecher*innen. Meine Arbeit beginnt beim Verstehen der Ursachen — und der Bedingungen, die echte Entwicklung ermöglichen.</p>
+      <p>In meiner Arbeit begegne ich Menschen auf Augenhöhe. Mit meinen Lernpraktiken möchte ich tiefe Veränderungsprozesse ankurbeln: nicht durch das Vermitteln von Fertigkeiten, sondern durch das Verankern grundlegender Überzeugungen und das Herausarbeiten von Ressourcen.</p>
+      <p>Seit mehr als 30 Jahren begleite ich Kinder, Familien, Fachkräfte und Berufssprecher*innen. Meine Arbeit beginnt beim Verstehen der Ursachen und der Bedingungen, die echte Entwicklung ermöglichen.</p>
     </div>
     <div class="ueber-image"><img src="stephanie_ueber.jpg" alt="Dr. Stephanie Kurtenbach" loading="lazy"></div>
   </div>
@@ -371,22 +374,22 @@
     <div class="bio-station">
       <div class="bio-station-img"><img src="bio-sprechwiss.png" alt="" loading="lazy" style="object-fit: cover; object-position: center 33%; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sprechwissenschaft</span>
-      <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung — das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
+      <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung. Das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
     <div class="bio-station">
       <div class="bio-station-img"><img src="bio-si.png" alt="" loading="lazy" style="object-fit: cover; object-position: center center; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sensorische Integrationstherapie</span>
-      <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt — nicht die, die man ihm gibt.</p>
+      <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt, nicht die, die man ihm gibt.</p>
     </div>
     <div class="bio-station">
       <div class="bio-station-img"><img src="bio-systemisch.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: right center; transform: scale(1.35);"></div>
       <span class="bio-station-name">Systemische Beratung</span>
-      <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich — in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
+      <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich: in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
     </div>
     <div class="bio-station">
       <div class="bio-station-img"><img src="bio-reflex.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center center; transform: scale(1.15);"></div>
       <span class="bio-station-name">Reflexintegration</span>
-      <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht — und dass es sich immer lohnt, weiter zu fragen.</p>
+      <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht, und dass es sich immer lohnt, weiter zu fragen.</p>
     </div>
   </div>
   <a href="https://www.uni-erfurt.de/erziehungswissenschaftliche-fakultaet/fakultaet/profil/fachgebiete-und-professuren/inklusive-paedagogik-bei-benachteiligung-und-behinderung/struktur-des-fachgebietes/professur-fuer-inklusive-bildungsprozesse-bei-beeintraechtigungen-in-sprache-und-kommunikation/team/dr-stephanie-kurtenbach" target="_blank" class="pub-link">Publikationen & Forschung ansehen →</a>
@@ -395,9 +398,9 @@
   <p class="philo-quote-main">„Jenseits von richtig und falsch liegt ein Ort. <em>Dort treffen wir uns.</em>"</p>
   <span class="philo-attribution">Dschalāl ad-Dīn Muhammad Rūmī</span>
   <div class="philo-values">
-    <div class="philo-value"><span class="philo-value-title">Augenhöhe</span><p class="philo-value-text">Jede Begegnung — ob mit Kind, Elternteil oder Fachkraft — entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen trägt.</p></div>
-    <div class="philo-value"><span class="philo-value-title">Ursachenorientierung</span><p class="philo-value-text">Symptome zeigen, was sichtbar ist. Was wirklich zählt, liegt tiefer. Meine Arbeit beginnt immer mit dem Verstehen — bevor Handlungsstrategien folgen.</p></div>
-    <div class="philo-value"><span class="philo-value-title">Selbstwirksamkeit</span><p class="philo-value-text">Das Ziel ist nie Abhängigkeit — sondern dass Menschen, Kinder und Familien in die Lage kommen, ihre eigene Entwicklung aktiv zu gestalten.</p></div>
+    <div class="philo-value"><span class="philo-value-title">Augenhöhe</span><p class="philo-value-text">Jede Begegnung, ob mit Kind, Elternteil oder Fachkraft, entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen trägt.</p></div>
+    <div class="philo-value"><span class="philo-value-title">Ursachenorientierung</span><p class="philo-value-text">Symptome zeigen, was sichtbar ist. Was wirklich zählt, liegt tiefer. Meine Arbeit beginnt immer mit dem Verstehen, bevor Handlungsstrategien folgen.</p></div>
+    <div class="philo-value"><span class="philo-value-title">Selbstwirksamkeit</span><p class="philo-value-text">Das Ziel ist nie Abhängigkeit, sondern dass Menschen, Kinder und Familien in die Lage kommen, ihre eigene Entwicklung aktiv zu gestalten.</p></div>
   </div>
 </section>
 <section id="stimmen">
@@ -413,17 +416,17 @@
   <div class="testimonials-grid">
     <div class="testimonial-card"><p class="testimonial-text">„Stephanie hat mit so viel Leidenschaft die Inhalte übermittelt, sodass man direkt angesteckt wurde, es selbst auszuprobieren."</p><p class="testimonial-highlight">Kursteilnehmerin · Fortbildung SI</p></div>
     <div class="testimonial-card"><p class="testimonial-text">„Ich war total begeistert, angeregt und habe extrem viel gelernt. Vielen Dank!"</p><p class="testimonial-highlight">Kursteilnehmerin · Kindersprachtherapie</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Super praxisnah — ich kann die Ideen gleich im Alltag umsetzen. Die besondere fachliche Kompetenz und Kommunikationsform der Dozentin haben mich beeindruckt."</p><p class="testimonial-highlight">Logopädin · Weiterbildung</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Wie sehr es mir die Augen in Bezug auf einige Therapiekinder geöffnet hat — das war der wertvollste Moment der Fortbildung."</p><p class="testimonial-highlight">Kursteilnehmerin</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Gut strukturiert, ausgewogenes Verhältnis von Theorie und Praxis. Spannende Videos, tolle Fallbesprechungen — und immer auf alle Fragen eingegangen."</p><p class="testimonial-highlight">Kursteilnehmerin · Online-Seminar</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Das Charisma von Stephanie Kurtenbach. Sehr viel Erfahrung — und trotzdem ganz nah bei den Teilnehmenden."</p><p class="testimonial-highlight">Kursteilnehmer*in</p></div>
+    <div class="testimonial-card"><p class="testimonial-text">„Super praxisnah, ich kann die Ideen gleich im Alltag umsetzen. Die besondere fachliche Kompetenz und Kommunikationsform der Dozentin haben mich beeindruckt."</p><p class="testimonial-highlight">Logopädin · Weiterbildung</p></div>
+    <div class="testimonial-card"><p class="testimonial-text">„Wie sehr es mir die Augen in Bezug auf einige Therapiekinder geöffnet hat. Das war der wertvollste Moment der Fortbildung."</p><p class="testimonial-highlight">Kursteilnehmerin</p></div>
+    <div class="testimonial-card"><p class="testimonial-text">„Gut strukturiert, ausgewogenes Verhältnis von Theorie und Praxis. Spannende Videos, tolle Fallbesprechungen, und immer auf alle Fragen eingegangen."</p><p class="testimonial-highlight">Kursteilnehmerin · Online-Seminar</p></div>
+    <div class="testimonial-card"><p class="testimonial-text">„Das Charisma von Stephanie Kurtenbach. Sehr viel Erfahrung, und trotzdem ganz nah bei den Teilnehmenden."</p><p class="testimonial-highlight">Kursteilnehmer*in</p></div>
   </div>
 </section>
 <section id="kontakt">
   <div class="kontakt-info">
     <span class="section-overline">Kontakt</span>
     <h2 class="section-title">Ich freue mich auf deine Nachricht.</h2>
-    <p class="section-body" style="margin-bottom:2rem;">Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung — nimm gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
+    <p class="section-body" style="margin-bottom:2rem;">Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung: Nimm gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
     <div class="kontakt-details">
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Standort</strong>Deutschsprachiger Raum · Online & Präsenz</div></div>
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Forschung & Publikationen</strong>Universität Erfurt, Lehr- und ForschungsLab KOMPASS Sprache</div></div>
@@ -441,6 +444,10 @@
 <footer>
   <p class="footer-logo">Dr. Stephanie Kurtenbach</p>
   <p class="footer-text">© 2025 · Sprechwissenschaftlerin · Dozentin · Coach</p>
+  <nav class="footer-nav" aria-label="Footer navigation">
+    <a href="/impressum">Impressum</a>
+    <a href="/datenschutz">Datenschutz</a>
+  </nav>
 </footer>
 <script>
   gsap.registerPlugin(ScrollTrigger);
