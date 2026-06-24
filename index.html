@@ -215,6 +215,24 @@
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
   .footer-nav a:hover { color: rgba(255,255,255,0.70); }
+  .angebot-mehr-btn { background: transparent; font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.06em; color: var(--rose-dark); font-weight: 500; border: none; border-bottom: 1px solid var(--rose-dark); padding: 0 0 2px; cursor: pointer; align-self: flex-start; transition: color var(--dur-ui) var(--ease-organic), opacity var(--dur-ui) var(--ease-organic); }
+  .angebot-mehr-btn:hover { opacity: 0.75; }
+  .angebot-mehr-btn .arrow { font-size: 0.72rem; display: inline-block; transition: transform var(--dur-ui) var(--ease-organic); margin-left: 0.2em; }
+  .angebot-mehr-btn.open .arrow { transform: rotate(180deg); }
+  .angebot-detail { display: none; padding: 3.5rem 0 1rem; border-top: 1px solid rgba(45,32,64,0.12); margin-top: 0.5rem; }
+  .angebot-detail.open { display: block; }
+  .angebot-detail-intro { font-size: 1rem; color: var(--mid); line-height: 1.9; max-width: 760px; margin-bottom: 2rem; }
+  .angebot-detail h2 { font-family: var(--font-serif); font-size: clamp(1.3rem, 2.2vw, 1.85rem); font-weight: 400; color: var(--deep); margin: 2.5rem 0 1rem; line-height: 1.2; }
+  .angebot-detail ul { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+  .angebot-detail ul li { color: var(--mid); line-height: 1.85; padding: 0.35rem 0 0.35rem 1.2rem; position: relative; border-bottom: 1px solid rgba(45,32,64,0.07); }
+  .angebot-detail ul li::before { content: '·'; position: absolute; left: 0; color: var(--rose); }
+  .angebot-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2.5rem; }
+  .angebot-detail-card { background: rgba(45,32,64,0.05); border-left: 2px solid var(--rose); padding: 1.4rem 1.6rem; border-radius: 0 2px 2px 0; }
+  .angebot-detail-card h3 { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: var(--deep); margin-bottom: 0.5rem; line-height: 1.35; }
+  .angebot-detail-card p { color: var(--mid); font-size: 0.88rem; line-height: 1.75; margin: 0; }
+  .angebot-detail-body p { color: var(--mid); line-height: 1.9; margin-bottom: 1.1rem; font-size: 1rem; max-width: 760px; }
+  .angebot-detail-cta { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(45,32,64,0.1); display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .angebot-detail-cta p { color: var(--mid); margin: 0; font-size: 0.95rem; }
 </style>
 </head>
 <body>
@@ -285,7 +303,7 @@
         <h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3>
         <p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation, nachhaltig entwickeln.</p>
         <a href="#kontakt" class="angebot-link">Anfrage stellen →</a>
-        <a href="stimmcoaching.html" class="angebot-link" style="margin-top:0.5rem;">Mehr erfahren →</a>
+        <button class="angebot-mehr-btn" onclick="toggleAngebotDetail(this,'stimmcoaching-detail')" aria-expanded="false" aria-controls="stimmcoaching-detail" style="margin-top:0.5rem;">Mehr erfahren <span class="arrow">↓</span></button>
       </div>
     </div>
     <div class="angebot-card">
@@ -296,6 +314,55 @@
         <a href="#kontakt" class="angebot-link">Kontakt aufnehmen →</a>
         <a href="kinder-familien.html" class="angebot-link" style="margin-top:0.5rem;">Mehr erfahren →</a>
       </div>
+    </div>
+  </div>
+  <div id="stimmcoaching-detail" class="angebot-detail" role="region" aria-label="Stimm- &amp; Kommunikationscoaching Details">
+    <p class="angebot-detail-intro">Deine Stimme ist dein wichtigstes Business-Tool. Ob im Coaching, Training, Meeting, Webinar, Podcast oder auf der Bühne – sie beeinflusst, wie kompetent, überzeugend und präsent du wahrgenommen wirst.</p>
+    <h2>Vielleicht kennst du das:</h2>
+    <ul>
+      <li>Du bist mit deiner Stimme unzufrieden.</li>
+      <li>Du wirkst unsicherer, als du möchtest.</li>
+      <li>Du leidest unter Lampenfieber.</li>
+      <li>Deine Stimme ermüdet schnell.</li>
+      <li>Du bist nach längeren Gesprächen oder Workshops heiser.</li>
+      <li>Du möchtest souveräner und wirkungsvoller auftreten.</li>
+      <li>Deine Inhalte sollen besser strukturiert sein.</li>
+    </ul>
+    <div class="angebot-detail-body">
+      <p>Mit meinem Stimmtraining entwickelst du eine Stimme, die gesund, tragfähig und authentisch klingt und eine Sprechweise, die deiner Kompetenz Ausdruck verleiht und mehr Aufmerksamkeit gewinnt. Du verlierst Lampenfieber und hast Freude an deinen stimmlichen Auftritten!</p>
+    </div>
+    <h2>Das erwartet dich</h2>
+    <div class="angebot-detail-grid">
+      <div class="angebot-detail-card">
+        <h3>Stimmanalyse</h3>
+        <p>Wo stehst du aktuell? Was sind deine Ziele? Welche Potenziale stecken in deiner Stimme?</p>
+      </div>
+      <div class="angebot-detail-card">
+        <h3>Mehr Resonanz &amp; Präsenz</h3>
+        <p>Voller und überzeugender klingen. Mit weniger Anstrengung mehr Wirkung erzielen. Sicherer auftreten.</p>
+      </div>
+      <div class="angebot-detail-card">
+        <h3>Gesunde und belastbare Stimme</h3>
+        <p>Heiserkeit und Stimmermüdigung vorbeugen. Ökonomischer Stimmeinsatz. Mehr Ausdauer beim Sprechen.</p>
+      </div>
+      <div class="angebot-detail-card">
+        <h3>Struktur &amp; Zuhörerführung</h3>
+        <p>Komplexe Inhalte verständlich strukturieren. Kernaussagen auf den Punkt bringen. Mit Pausen, Betonung und klarer Gliederung Aufmerksamkeit gewinnen und halten.</p>
+      </div>
+      <div class="angebot-detail-card">
+        <h3>Praktische Tools für den Alltag</h3>
+        <p>5-Minuten-Stimm-Warm-up. Übungen für mehr Präsenz und Klarheit. Tipps bei hoher Stimmbelastung. Strategien für eine langfristig gesunde Stimme.</p>
+      </div>
+    </div>
+    <div class="angebot-detail-body">
+      <h2>Für wen?</h2>
+      <p>Für Coaches, Trainer, Speaker und Business Professionals, die beruflich viel sprechen und mit ihrer Stimme überzeugen möchten.</p>
+      <h2>Dein Ergebnis</h2>
+      <p>Mehr Sicherheit, Präsenz, Resonanz, Struktur und Wirkung. Eine Stimme, die gesund, belastbar und überzeugend klingt – und Menschen erreicht.</p>
+    </div>
+    <div class="angebot-detail-cta">
+      <p>Interesse? Dann melde dich gerne für ein erstes Beratungsgespräch – kostenlos.</p>
+      <a href="#kontakt" class="btn-primary">Anfrage stellen →</a>
     </div>
   </div>
   <div class="kurse-subsection" id="kurse">
@@ -522,6 +589,18 @@
     if (resizeRaf) cancelAnimationFrame(resizeRaf);
     resizeRaf = requestAnimationFrame(equalizeKursCards);
   });
+
+  function toggleAngebotDetail(btn, detailId) {
+    const detail = document.getElementById(detailId);
+    const isOpen = detail.classList.contains('open');
+    detail.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.querySelector('.arrow').textContent = isOpen ? '↓' : '↑';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    if (!isOpen) {
+      setTimeout(() => detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+    }
+  }
 
   function toggleKurs(btn) {
     const details = btn.closest('.kurs-card').querySelector('.kurs-details');
