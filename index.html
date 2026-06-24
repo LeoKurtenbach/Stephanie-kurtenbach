@@ -33,8 +33,8 @@
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body { background-color: var(--off); color: var(--deep); font-family: var(--font-sans); font-weight: 400; font-size: 17px; line-height: 1.85; letter-spacing: 0.01em; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   :focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
-  #pageBg { position: fixed; inset: 0; z-index: -1; background-color: #0d1a0a; background-image: url('forest.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
-  @media (max-width: 900px) { #pageBg { background-size: cover; } }
+  #pageBg { position: fixed; inset: 0; z-index: -1; background-color: #0d1a0a; }
+  #pageBg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
   nav.main-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(232,237,226,0.96); border-bottom: 1px solid rgba(45,32,64,0.07); }
   .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
   .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
@@ -49,8 +49,7 @@
   .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; position: relative; z-index: 2; }
   .hero-left::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.91); z-index: 0; pointer-events: none; }
   .hero-left > * { position: relative; z-index: 1; }
-  .hero-overline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
-  .hero-overline::before { content: ''; display: block; width: 2.5rem; height: 2px; background: var(--rose); flex-shrink: 0; }
+  .hero-overline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 2.5rem; display: block; }
   .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--deep); margin-bottom: 2.5rem; text-shadow: 0 2px 12px rgba(45,32,64,0.09); }
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-style: italic; color: var(--rose); }
@@ -219,7 +218,7 @@
 </style>
 </head>
 <body>
-<div id="pageBg" aria-hidden="true"></div>
+<div id="pageBg" aria-hidden="true"><img src="forest.jpg" alt="" fetchpriority="high"></div>
 <div class="progress-bar" id="progressBar"></div>
 <nav class="main-nav">
   <a href="#" class="nav-logo">Dr. Stephanie Kurtenbach</a>
