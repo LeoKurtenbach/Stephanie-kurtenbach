@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beratung für Kinder &amp; Familien · Dr. Stephanie Kurtenbach</title>
+<title>Beratung für Kinder & Familien · Dr. Stephanie Kurtenbach</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@
   #probleme .problem-quote { color: rgba(255,255,255,0.92); }
   #probleme .problem-response { color: rgba(255,255,255,0.6); }
   #angebote { position: relative; }
-  #angebote::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.70); z-index: 0; pointer-events: none; }
+  #angebote::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
   #angebote > * { position: relative; z-index: 1; }
   .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-top: 4rem; }
   .problem-card { background: none; padding: 0; }
@@ -169,7 +169,7 @@
   .philo-value-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
   .philo-value-text { font-size: 0.87rem; color: rgba(255,255,255,0.78); line-height: 1.85; }
   #stimmen { position: relative; }
-  #stimmen::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
+  #stimmen::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
   #stimmen > * { position: relative; z-index: 1; }
   .testimonials-featured { background: transparent; padding: 0 0 4rem 0; margin-bottom: 4rem; text-align: center; border-bottom: 1px solid rgba(45,32,64,0.12); }
   .featured-stars { margin-bottom: 2rem; display: block; color: var(--rose); }
@@ -215,37 +215,44 @@
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
   .footer-nav a:hover { color: rgba(255,255,255,0.70); }
-
-  /* ── Detail page styles ── */
-  .detail-hero { position: relative; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 5rem 6rem; }
-  .detail-hero::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
+  .detail-hero { position: relative; min-height: 60vh; display: flex; align-items: flex-end; padding: 8rem 5rem 5rem; }
+  .detail-hero::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.72); z-index: 0; pointer-events: none; }
   .detail-hero > * { position: relative; z-index: 1; }
-  .detail-hero .section-overline { color: var(--rose); margin-bottom: 1rem; }
-  .detail-hero h1.section-title { color: var(--white); text-shadow: 0 2px 16px rgba(0,0,0,0.35); margin-bottom: 1.25rem; }
-  .detail-hero p { font-size: 1rem; color: rgba(255,255,255,0.80); max-width: 640px; line-height: 1.85; }
-  .detail-content { position: relative; padding: calc(80px + 5rem) 5rem 7rem; max-width: 860px; margin: 0 auto; }
-  .detail-content::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
-  .detail-content > * { position: relative; z-index: 1; }
-  .detail-content p { font-size: 1rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.5rem; }
-  .detail-content h2.section-title { color: var(--deep); margin-top: 2.5rem; }
-  .detail-content h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--deep); margin-bottom: 0.75rem; margin-top: 2rem; }
-  .detail-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .detail-content ul li { font-size: 1rem; color: var(--mid); line-height: 1.85; padding: 0.2rem 0; }
-  .detail-cta { margin-top: 3rem; }
-  .prolog-links { margin-top: 2rem; margin-bottom: 2rem; }
-  .prolog-links p { font-size: 0.85rem; }
-  .prolog-links a { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; }
+  .detail-hero .section-overline { color: var(--rose); }
+  .detail-hero .section-title { color: white; margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4vw, 3.2rem); }
+  p.subtitle { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 680px; margin-top: 1rem; }
+  .detail-content { position: relative; padding: 6rem 5rem; }
+  .detail-content::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
+  .detail-content > * { position: relative; z-index: 1; max-width: 800px; }
+  .detail-content h2 { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--deep); margin: 3rem 0 1rem; line-height: 1.2; }
+  .detail-content h3 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--deep); margin: 2rem 0 0.5rem; }
+  .detail-content p { color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; font-size: 1rem; }
+  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  .detail-content ul li { color: var(--mid); line-height: 1.85; margin-bottom: 0.4rem; }
+  .detail-content .back-link { display: inline-block; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); text-decoration: none; margin-bottom: 3rem; font-weight: 500; }
+  .detail-content .back-link:hover { color: var(--rose); }
+  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0 3rem; }
+  .detail-card { background: rgba(45,32,64,0.05); border-left: 2px solid var(--rose); padding: 1.5rem 1.75rem; border-radius: 0 2px 2px 0; }
+  .detail-card h3 { margin-top: 0; color: var(--deep); }
+  .detail-card p { color: var(--mid); font-size: 0.95rem; margin: 0; }
+  .detail-cta { background: rgba(45,32,64,0.04); border-top: 1px solid rgba(45,32,64,0.1); padding: 3rem 5rem; position: relative; }
+  .detail-cta::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
+  .detail-cta > * { position: relative; z-index: 1; max-width: 800px; }
+  .detail-cta p { color: var(--mid); margin-bottom: 1.5rem; font-size: 1rem; }
+  .detail-material { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(45,32,64,0.1); }
+  .detail-material p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .detail-material a { color: var(--rose); font-size: 0.9rem; display: block; margin-bottom: 0.3rem; text-decoration: underline; text-decoration-color: rgba(184,114,138,0.4); }
   @media (max-width: 900px) {
-    .detail-hero { padding: 6rem 1.5rem 4rem; min-height: 40vh; }
-    .detail-hero > div { width: 100%; max-width: 100%; }
-    .detail-hero h1.section-title { font-size: clamp(1.6rem, 6vw, 2.5rem); word-break: break-word; }
-    .detail-content { padding: calc(80px + 3rem) 1.5rem 5rem; }
+    .detail-hero { padding: 7rem 1.5rem 4rem; }
+    .detail-content { padding: 4rem 1.5rem; }
+    .detail-cta { padding: 3rem 1.5rem; }
+    .detail-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 <div id="pageBg" aria-hidden="true"><img src="forest.jpg" alt="" fetchpriority="high"></div>
-<div class="progress-bar" id="progressBar"></div>
+<div id="progressBar" class="progress-bar"></div>
 <nav class="main-nav">
   <a href="index.html" class="nav-logo">Dr. Stephanie Kurtenbach</a>
   <ul class="nav-links">
@@ -256,19 +263,17 @@
   </ul>
 </nav>
 
-<!-- Hero -->
-<section class="detail-hero">
+<div class="detail-hero">
   <div>
-    <span class="section-overline">Kinder &amp; Familien</span>
+    <span class="section-overline">Kinder & Familien</span>
     <h1 class="section-title">Entwicklungsbegleitung für Kinder und Familien</h1>
   </div>
-</section>
+</div>
 
-<!-- Main content -->
 <div class="detail-content">
-  <a href="index.html#angebote" style="color:var(--rose);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;margin-bottom:2rem;">← Zurück</a>
+  <a href="index.html#angebote" class="back-link">← Zurück zu den Angeboten</a>
 
-  <span class="section-overline">Vielleicht kennen Sie als Eltern diese Situation:</span>
+  <h2>Vielleicht kennen Sie als Eltern diese Situation:</h2>
   <ul>
     <li>Ihr Kind spricht wenig oder entwickelt seine Sprache langsamer als andere Kinder.</li>
     <li>In der Kita gibt es immer wieder Schwierigkeiten.</li>
@@ -280,7 +285,7 @@
 
   <p>Viele Eltern erleben einen langen Weg voller Fragen, Unsicherheit und widersprüchlicher Aussagen. Oft wird an einzelnen Symptomen gearbeitet, während die eigentlichen Ursachen unentdeckt bleiben.</p>
 
-  <h2 class="section-title">Mein Angebot: Ganzheitliche Begleitung</h2>
+  <h2>Mein Angebot: Ganzheitliche Begleitung von Kindern und Familien</h2>
   <p>Ich unterstütze Familien dabei, die Entwicklung ihres Kindes besser zu verstehen und die nächsten sinnvollen Schritte zu erkennen. Dabei betrachte ich nicht nur die sprachlichen Fähigkeiten Ihres Kindes, sondern die gesamte Entwicklung. Besonders wichtig sind dabei die Zusammenhänge zwischen Sprache, Bewegung, Wahrnehmung, sensomotorischer Entwicklung und neuromotorischer Reife.</p>
 
   <h3>Umfassende Befundung</h3>
@@ -304,7 +309,7 @@
   <p>Sie erhalten konkrete Empfehlungen und Orientierung für den weiteren Weg.</p>
 
   <h3>Entwicklungsbegleitung und Kommunikationsberatung</h3>
-  <p>Darüber hinaus unterstütze ich Sie dabei,</p>
+  <p>Darüber hinaus unterstütze ich Sie dabei:</p>
   <ul>
     <li>die Entwicklung Ihres Kindes gezielt im Alltag zu fördern</li>
     <li>Kommunikation positiv zu gestalten</li>
@@ -312,23 +317,22 @@
     <li>mehr Sicherheit im Umgang mit den Herausforderungen Ihres Kindes zu gewinnen</li>
   </ul>
 
-  <span class="section-overline">Mein Ziel</span>
+  <h2>Mein Ziel</h2>
   <ul>
     <li>Eltern Klarheit geben, wenn viele Fragen offen sind.</li>
     <li>Kinder besser verstehen, anstatt nur Symptome zu betrachten.</li>
     <li>Gemeinsam Wege finden, damit Entwicklung möglich wird.</li>
   </ul>
 
-  <!-- Prolog material -->
-  <div class="prolog-links">
-    <span class="section-overline">Fachmaterial von Dr. Stephanie Kurtenbach:</span>
-    <a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/fachliteraturratgeber-kindersprache/2022/sikit" target="_blank" rel="noopener" style="color:var(--rose)">SIKiT – Kindliche Sprachentwicklung und Sprachentwicklungsstörungen</a>
-    <a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/sprachentwicklungsstoerungen/mundmotorikmft/4060/ein-tag-mit-teddy-pitt" target="_blank" rel="noopener" style="color:var(--rose)">Ein Tag mit Teddy Pitt</a>
+  <div class="detail-material">
+    <p>Fachmaterial von Dr. Stephanie Kurtenbach:</p>
+    <a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/sprachentwicklungsstoerungen/mundmotorikmft/4060/ein-tag-mit-teddy-pitt" target="_blank" rel="noopener">Ein Tag mit Teddy Pitt →</a>
   </div>
+</div>
 
-  <div class="detail-cta">
-    <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">Kontakt aufnehmen</a>
-  </div>
+<div class="detail-cta">
+  <p>Interesse bekommen? Nehmen Sie gerne Kontakt mit mir auf.</p>
+  <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">hallo@stephaniekurtenbach.com</a>
 </div>
 
 <footer>

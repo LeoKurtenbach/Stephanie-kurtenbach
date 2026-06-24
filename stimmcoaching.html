@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stimm- &amp; Kommunikationscoaching · Dr. Stephanie Kurtenbach</title>
+<title>Stimm- & Kommunikationscoaching · Dr. Stephanie Kurtenbach</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@
   #probleme .problem-quote { color: rgba(255,255,255,0.92); }
   #probleme .problem-response { color: rgba(255,255,255,0.6); }
   #angebote { position: relative; }
-  #angebote::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.70); z-index: 0; pointer-events: none; }
+  #angebote::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
   #angebote > * { position: relative; z-index: 1; }
   .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-top: 4rem; }
   .problem-card { background: none; padding: 0; }
@@ -169,7 +169,7 @@
   .philo-value-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
   .philo-value-text { font-size: 0.87rem; color: rgba(255,255,255,0.78); line-height: 1.85; }
   #stimmen { position: relative; }
-  #stimmen::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
+  #stimmen::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
   #stimmen > * { position: relative; z-index: 1; }
   .testimonials-featured { background: transparent; padding: 0 0 4rem 0; margin-bottom: 4rem; text-align: center; border-bottom: 1px solid rgba(45,32,64,0.12); }
   .featured-stars { margin-bottom: 2rem; display: block; color: var(--rose); }
@@ -215,34 +215,44 @@
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
   .footer-nav a:hover { color: rgba(255,255,255,0.70); }
-
-  /* ── Detail page styles ── */
-  .detail-hero { position: relative; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 5rem 6rem; }
-  .detail-hero::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
+  .detail-hero { position: relative; min-height: 60vh; display: flex; align-items: flex-end; padding: 8rem 5rem 5rem; }
+  .detail-hero::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.72); z-index: 0; pointer-events: none; }
   .detail-hero > * { position: relative; z-index: 1; }
-  .detail-hero .section-overline { color: var(--rose); margin-bottom: 1rem; }
-  .detail-hero h1.section-title { color: var(--white); text-shadow: 0 2px 16px rgba(0,0,0,0.35); margin-bottom: 1.25rem; }
-  .detail-hero p { font-size: 1rem; color: rgba(255,255,255,0.80); max-width: 640px; line-height: 1.85; }
-  .detail-content { position: relative; padding: calc(80px + 5rem) 5rem 7rem; max-width: 860px; margin: 0 auto; }
-  .detail-content::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
-  .detail-content > * { position: relative; z-index: 1; }
-  .detail-content p { font-size: 1rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.5rem; }
-  .detail-content h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--deep); margin-bottom: 0.75rem; margin-top: 0.5rem; }
-  .detail-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .detail-content ul li { font-size: 1rem; color: var(--mid); line-height: 1.85; padding: 0.2rem 0; }
-  .detail-block { margin-bottom: 2rem; }
-  .detail-block h3 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--deep); margin-bottom: 0.5rem; }
-  .detail-block p { margin-bottom: 0.5rem; }
-  .detail-cta { margin-top: 3rem; }
+  .detail-hero .section-overline { color: var(--rose); }
+  .detail-hero .section-title { color: white; margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4vw, 3.2rem); }
+  p.subtitle { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 680px; margin-top: 1rem; }
+  .detail-content { position: relative; padding: 6rem 5rem; }
+  .detail-content::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
+  .detail-content > * { position: relative; z-index: 1; max-width: 800px; }
+  .detail-content h2 { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--deep); margin: 3rem 0 1rem; line-height: 1.2; }
+  .detail-content h3 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--deep); margin: 2rem 0 0.5rem; }
+  .detail-content p { color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; font-size: 1rem; }
+  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  .detail-content ul li { color: var(--mid); line-height: 1.85; margin-bottom: 0.4rem; }
+  .detail-content .back-link { display: inline-block; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); text-decoration: none; margin-bottom: 3rem; font-weight: 500; }
+  .detail-content .back-link:hover { color: var(--rose); }
+  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0 3rem; }
+  .detail-card { background: rgba(45,32,64,0.05); border-left: 2px solid var(--rose); padding: 1.5rem 1.75rem; border-radius: 0 2px 2px 0; }
+  .detail-card h3 { margin-top: 0; color: var(--deep); }
+  .detail-card p { color: var(--mid); font-size: 0.95rem; margin: 0; }
+  .detail-cta { background: rgba(45,32,64,0.04); border-top: 1px solid rgba(45,32,64,0.1); padding: 3rem 5rem; position: relative; }
+  .detail-cta::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
+  .detail-cta > * { position: relative; z-index: 1; max-width: 800px; }
+  .detail-cta p { color: var(--mid); margin-bottom: 1.5rem; font-size: 1rem; }
+  .detail-material { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(45,32,64,0.1); }
+  .detail-material p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .detail-material a { color: var(--rose); font-size: 0.9rem; display: block; margin-bottom: 0.3rem; text-decoration: underline; text-decoration-color: rgba(184,114,138,0.4); }
   @media (max-width: 900px) {
-    .detail-hero { padding: 6rem 1.5rem 4rem; min-height: 40vh; }
-    .detail-content { padding: calc(80px + 3rem) 1.5rem 5rem; }
+    .detail-hero { padding: 7rem 1.5rem 4rem; }
+    .detail-content { padding: 4rem 1.5rem; }
+    .detail-cta { padding: 3rem 1.5rem; }
+    .detail-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 <div id="pageBg" aria-hidden="true"><img src="forest.jpg" alt="" fetchpriority="high"></div>
-<div class="progress-bar" id="progressBar"></div>
+<div id="progressBar" class="progress-bar"></div>
 <nav class="main-nav">
   <a href="index.html" class="nav-logo">Dr. Stephanie Kurtenbach</a>
   <ul class="nav-links">
@@ -253,22 +263,20 @@
   </ul>
 </nav>
 
-<!-- Hero -->
-<section class="detail-hero">
+<div class="detail-hero">
   <div>
     <span class="section-overline">Stimmcoaching</span>
     <h1 class="section-title">Kraftvolle Stimme</h1>
-    <p>Das Online-Stimmtraining für Coaches, Trainer, Speaker und Business Professionals</p>
+    <p class="subtitle">Das Online-Stimmtraining für Coaches, Trainer, Speaker und Business Professionals</p>
   </div>
-</section>
+</div>
 
-<!-- Main content -->
 <div class="detail-content">
-  <a href="index.html#angebote" style="color:var(--rose);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;margin-bottom:2rem;">← Zurück</a>
+  <a href="index.html#angebote" class="back-link">← Zurück zu den Angeboten</a>
 
   <p>Deine Stimme ist dein wichtigstes Business-Tool. Ob im Coaching, Training, Meeting, Webinar, Podcast oder auf der Bühne – sie beeinflusst, wie kompetent, überzeugend und präsent du wahrgenommen wirst.</p>
 
-  <span class="section-overline">Vielleicht kennst du das</span>
+  <h2>Vielleicht kennst du das:</h2>
   <ul>
     <li>Du bist mit deiner Stimme unzufrieden.</li>
     <li>Du wirkst unsicherer, als du möchtest.</li>
@@ -281,42 +289,40 @@
 
   <p>Mit meinem Stimmtraining entwickelst du eine Stimme, die gesund, tragfähig und authentisch klingt und eine Sprechweise, die deiner Kompetenz Ausdruck verleiht und mehr Aufmerksamkeit gewinnt. Du verlierst Lampenfieber und hast Freude an deinen stimmlichen Auftritten!</p>
 
-  <span class="section-overline">Das erwartet dich</span>
-
-  <div class="detail-block">
-    <h3>Stimmanalyse</h3>
-    <p>Wo stehst du aktuell? · Was sind deine Ziele? · Welche Potenziale stecken in deiner Stimme?</p>
+  <h2>Das erwartet dich</h2>
+  <div class="detail-grid">
+    <div class="detail-card">
+      <h3>Stimmanalyse</h3>
+      <p>Wo stehst du aktuell? Was sind deine Ziele? Welche Potenziale stecken in deiner Stimme?</p>
+    </div>
+    <div class="detail-card">
+      <h3>Mehr Resonanz &amp; Präsenz</h3>
+      <p>Voller und überzeugender klingen. Mit weniger Anstrengung mehr Wirkung erzielen. Sicherer auftreten.</p>
+    </div>
+    <div class="detail-card">
+      <h3>Gesunde und belastbare Stimme</h3>
+      <p>Heiserkeit und Stimmermüdigkeit vorbeugen. Ökonomischer Stimmeinsatz. Mehr Ausdauer beim Sprechen.</p>
+    </div>
+    <div class="detail-card">
+      <h3>Struktur, Sprechdenkplanung &amp; Zuhörerführung</h3>
+      <p>Komplexe Inhalte verständlich strukturieren. Kernaussagen auf den Punkt bringen. Mit Pausen, Betonung und klarer Gliederung Aufmerksamkeit gewinnen und halten.</p>
+    </div>
+    <div class="detail-card">
+      <h3>Praktische Tools für den Alltag</h3>
+      <p>5-Minuten-Stimm-Warm-up. Übungen für mehr Präsenz, Klarheit und Strukturierung. Tipps bei hoher Stimmbelastung oder Erkältung. Strategien für eine langfristig gesunde Stimme.</p>
+    </div>
   </div>
 
-  <div class="detail-block">
-    <h3>Mehr Resonanz &amp; Präsenz</h3>
-    <p>Voller und überzeugender klingen · mit weniger Anstrengung mehr Wirkung erzielen · sicherer auftreten</p>
-  </div>
-
-  <div class="detail-block">
-    <h3>Gesunde und belastbare Stimme</h3>
-    <p>Heiserkeit und Stimmermüdung vorbeugen · ökonomischer Stimmeinsatz · mehr Ausdauer beim Sprechen</p>
-  </div>
-
-  <div class="detail-block">
-    <h3>Struktur, Sprechdenkplanung &amp; Zuhörerführung</h3>
-    <p>Komplexe Inhalte verständlich strukturieren · Kernaussagen auf den Punkt bringen · mit Pausen, Betonung und klarer Gliederung Aufmerksamkeit gewinnen und halten</p>
-  </div>
-
-  <div class="detail-block">
-    <h3>Praktische Tools für den Alltag</h3>
-    <p>5-Minuten-Stimm-Warm-up · Übungen für mehr Präsenz, Klarheit und Strukturierung · Tipps bei hoher Stimmbelastung oder Erkältung · Strategien für eine langfristig gesunde Stimme</p>
-  </div>
-
-  <span class="section-overline">Für wen?</span>
+  <h2>Für wen?</h2>
   <p>Für Coaches, Trainer, Speaker und Business Professionals, die beruflich viel sprechen und mit ihrer Stimme überzeugen möchten.</p>
 
-  <span class="section-overline">Dein Ergebnis</span>
+  <h2>Dein Ergebnis</h2>
   <p>Mehr Sicherheit, Präsenz, Resonanz, Struktur und Wirkung. Eine Stimme, die gesund, belastbar und überzeugend klingt – und Menschen erreicht.</p>
+</div>
 
-  <div class="detail-cta">
-    <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">Kostenloses Erstgespräch anfragen</a>
-  </div>
+<div class="detail-cta">
+  <p>Interesse? Dann kontaktier mich für ein erstes Beratungsgespräch – kostenlos.</p>
+  <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">hallo@stephaniekurtenbach.com</a>
 </div>
 
 <footer>
