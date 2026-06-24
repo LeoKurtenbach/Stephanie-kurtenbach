@@ -38,7 +38,7 @@
   nav.main-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(232,237,226,0.96); border-bottom: 1px solid rgba(45,32,64,0.07); }
   .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
   .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
-  .nav-links a { font-size: 0.9rem; font-weight: 400; color: var(--deep); text-decoration: none; letter-spacing: 0.06em; transition: color var(--dur-ui) var(--ease-organic); position: relative; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--deep); text-decoration: none; letter-spacing: 0.06em; transition: color var(--dur-ui) var(--ease-organic); position: relative; }
   .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--rose); transition: width var(--dur-ui) var(--ease-organic); }
   .nav-links a:hover { color: var(--rose); }
   .nav-links a:hover::after { width: 100%; }
@@ -47,15 +47,15 @@
   #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; padding-top: 80px; position: relative; }
   
   .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; position: relative; z-index: 2; }
-  .hero-left::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.72); z-index: 0; pointer-events: none; }
+  .hero-left::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.91); z-index: 0; pointer-events: none; }
   .hero-left > * { position: relative; z-index: 1; }
-  .hero-overline { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 2rem; }
+  .hero-overline { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--deep); margin-bottom: 2.5rem; display: inline-block; padding: 0.45rem 1rem; background: rgba(45,32,64,0.07); border-radius: 2px; }
   .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--deep); margin-bottom: 2.5rem; text-shadow: 0 2px 12px rgba(45,32,64,0.09); }
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-style: italic; color: var(--rose); }
-  .hero-sub { font-size: 1rem; font-weight: 400; color: var(--mid); line-height: 1.85; max-width: 420px; margin-bottom: 3rem; }
+  .hero-sub { font-size: 1rem; font-weight: 400; color: var(--deep); line-height: 1.85; max-width: 420px; margin-bottom: 3rem; opacity: 0.82; }
   .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
-  .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); border: 1px solid rgba(184,114,138,0.22); padding: 0.4rem 1rem; border-radius: 2px; }
+  .tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); background: var(--rose-pale); border: 1px solid rgba(143,77,104,0.22); padding: 0.45rem 1.1rem; border-radius: 2px; font-weight: 600; }
   .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
   .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; text-decoration: none; padding: 1.1rem 2.5rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 8px rgba(184,114,138,0.35), 0 1px 2px rgba(184,114,138,0.2); }
   .btn-primary:hover { background: var(--rose-dark); box-shadow: 0 4px 16px rgba(184,114,138,0.45); transform: translateY(-1px); }
@@ -63,7 +63,7 @@
   .btn-secondary:hover { color: var(--rose); border-color: var(--rose); }
   .hero-right { position: relative; overflow: hidden; min-height: calc(100vh - 80px); }
   .hero-right img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; z-index: 10; }
-  .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(232,237,226,0.72) 0%, transparent 22%); z-index: 2; pointer-events: none; }
+  .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(232,237,226,0.91) 0%, transparent 20%); z-index: 2; pointer-events: none; }
   .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(232,237,226,0.92); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; box-shadow: 0 4px 8px rgba(45,32,64,0.06), 0 16px 40px rgba(45,32,64,0.10); }
   .hero-quote p { font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 0.5rem; }
   .hero-quote cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-style: normal; }
