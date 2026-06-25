@@ -99,17 +99,18 @@
   .angebot-card { display: flex; flex-direction: column; background: rgba(232,237,226,0.52); border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); position: relative; cursor: pointer; }
   .angebot-card:hover { transform: translateY(-4px); }
   .angebot-stretch-link::after { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: 4px; }
-  .angebot-link:not(.angebot-stretch-link) { position: relative; z-index: 2; }
   .angebot-card-img { aspect-ratio: 4/3; width: 100%; overflow: hidden; border-radius: 4px 4px 0 0; }
   .angebot-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-ambient) var(--ease-organic); }
   .angebot-card:hover .angebot-card-img img { transform: scale(1.04); }
   .angebot-card-placeholder { aspect-ratio: 4/3; width: 100%; background: rgba(45,32,64,0.08); border-radius: 4px 4px 0 0; }
-  .angebot-card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+  .angebot-card-body { padding: 1.5rem 1.5rem 1.75rem; display: flex; flex-direction: column; flex: 1; }
   .angebot-card-body::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); margin-bottom: 1rem; }
   .angebot-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--deep); margin-bottom: 0.75rem; line-height: 1.3; }
-  .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.75; margin-bottom: 1.25rem; }
-  .angebot-link { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--rose-dark); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--rose-dark); padding-bottom: 2px; align-self: flex-start; transition: color var(--dur-ui) var(--ease-organic), opacity var(--dur-ui) var(--ease-organic); }
-  .angebot-link:hover { opacity: 0.75; }
+  .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.75; margin-bottom: 0; flex: 1; }
+  .angebot-primary-btn { display: flex; align-items: center; background: var(--rose); color: var(--white); font-family: var(--font-sans); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.05em; text-decoration: none; padding: 0.9rem 1.75rem; border-radius: 2px; align-self: flex-start; margin-top: 1.5rem; min-height: 44px; box-shadow: 0 2px 8px rgba(184,114,138,0.28); transition: background var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic); position: relative; z-index: 2; }
+  .angebot-primary-btn:hover { background: var(--rose-dark); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(184,114,138,0.42); }
+  .angebot-secondary-link { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; align-self: flex-start; position: relative; z-index: 2; margin-top: 0.75rem; transition: color var(--dur-ui) var(--ease-organic); }
+  .angebot-secondary-link:hover { color: var(--mid); }
   .anmelde-hint { display: none; }
   .kurse-subsection { background: transparent; padding: 4rem 0 0 0; margin-top: 2rem; border-top: 1px solid rgba(45,32,64,0.12); }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
@@ -135,8 +136,8 @@
   .kurs-card-actions { display: flex; gap: 0.75rem; margin-top: auto; padding-top: 0.5rem; }
   .kurs-btn-primary { background: var(--rose); color: white; font-size: 0.8rem; padding: 0.65rem 1.35rem; border-radius: 2px; text-decoration: none; font-weight: 400; transition: background var(--dur-ui) var(--ease-organic); }
   .kurs-btn-primary:hover { background: var(--rose-dark); }
-  .kurs-toggle { background: transparent; color: rgba(255,255,255,0.45); font-family: var(--font-sans); font-size: 0.78rem; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.16); cursor: pointer; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic); }
-  .kurs-toggle:hover { border-color: rgba(255,255,255,0.38); color: rgba(255,255,255,0.82); }
+  .kurs-toggle { background: transparent; color: rgba(255,255,255,0.68); font-family: var(--font-sans); font-size: 0.78rem; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.30); cursor: pointer; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic), background var(--dur-ui) var(--ease-organic); }
+  .kurs-toggle:hover { border-color: rgba(255,255,255,0.62); color: var(--white); background: rgba(255,255,255,0.06); }
   .kurs-toggle .arrow { font-size: 0.72rem; transition: transform var(--dur-ui) var(--ease-organic); display: inline-block; }
   .kurs-toggle.open .arrow { transform: rotate(180deg); }
   #ueber { display: block; position: relative; }
@@ -295,14 +296,16 @@
   .ks-modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
   .ks-module-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; }
   @media (hover: hover) { .ks-module-card:hover { transform: translateY(-3px); transition: transform 220ms cubic-bezier(0.22,1,0.36,1); } }
-  .ks-module-icon { position: absolute; top: 0; right: 0; width: 130px; height: 130px; opacity: 0.09; background-size: contain; background-repeat: no-repeat; background-position: top right; pointer-events: none; }
-  .ks-module-card h3 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--white); margin-bottom: 0.65rem; line-height: 1.3; position: relative; z-index: 1; }
-  .ks-module-card p { font-size: 0.9rem; color: rgba(255,255,255,0.62); line-height: 1.75; position: relative; z-index: 1; margin: 0; }
+  .ks-module-icon { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.20; background-size: cover; background-position: center; background-repeat: no-repeat; pointer-events: none; z-index: 0; -webkit-mask-image: radial-gradient(ellipse at 65% 30%, black 15%, transparent 70%); mask-image: radial-gradient(ellipse at 65% 30%, black 15%, transparent 70%); }
+  .ks-module-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(155deg, rgba(10,8,15,0.90) 0%, rgba(10,8,15,0.55) 100%); z-index: 1; border-radius: 3px; pointer-events: none; }
+  .ks-module-card h3 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--white); margin-bottom: 0.75rem; line-height: 1.25; position: relative; z-index: 2; }
+  .ks-module-card p { font-size: 0.92rem; color: rgba(255,255,255,0.70); line-height: 1.78; position: relative; z-index: 2; margin: 0; }
   .ks-result { text-align: center; }
   .ks-result-statement { font-family: var(--font-serif); font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.92); line-height: 1.55; max-width: 660px; margin: 0 auto 3rem; }
   .ks-result-cta { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
   .ks-result-who { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.42); }
-  .angebot-brand-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose-dark); border: 1px solid rgba(143,77,104,0.35); padding: 0.22rem 0.6rem; border-radius: 2px; margin-bottom: 0.6rem; }
+  .angebot-brand-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; border: 1px solid rgba(143,77,104,0.65); padding: 0.22rem 0.6rem; border-radius: 2px; margin-bottom: 0.6rem; }
+  .angebote-intro .section-body { font-size: 1.08rem; font-style: italic; color: var(--mid); line-height: 1.85; }
   @media (max-width: 900px) { .ks-modules-grid { grid-template-columns: 1fr; } .ks-pain-line { font-size: 1.1rem; } .ks-big-quote { font-size: 1.4rem; } }
 </style>
 </head>
@@ -365,7 +368,7 @@
       <div class="angebot-card-body">
         <h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3>
         <p class="angebot-desc">Wissenschaftlich fundierte, praxisnahe Kurse zu Sensorischer Integration, frühkindlichen Reflexen, Dialogtherapie und Elterntraining, online und in Präsenz.</p>
-        <a href="#kurse" class="angebot-link">Alle Kurse ansehen →</a>
+        <a href="#kurse" class="angebot-primary-btn angebot-stretch-link">Alle Kurse ansehen</a>
       </div>
     </div>
     <div class="angebot-card">
@@ -374,8 +377,8 @@
         <span class="angebot-brand-tag">Kraftvolle Stimme</span>
         <h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3>
         <p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation, nachhaltig entwickeln.</p>
-        <a href="#kontakt" class="angebot-link">Anfrage stellen →</a>
-        <a href="#kraftvolle-stimme" class="angebot-link angebot-stretch-link" style="margin-top:0.5rem;">Mehr erfahren →</a>
+        <a href="#kraftvolle-stimme" class="angebot-primary-btn angebot-stretch-link">Mehr erfahren</a>
+        <a href="#kontakt" class="angebot-secondary-link">Anfrage stellen →</a>
       </div>
     </div>
     <div class="angebot-card">
@@ -384,8 +387,8 @@
         <span class="angebot-brand-tag">Entwicklungsbegleitung</span>
         <h3 class="angebot-title">Beratung für Kinder & Familien</h3>
         <p class="angebot-desc">Befundung, Beratung und Entwicklungsbegleitung mit dem Ziel, die Ursachen zu verstehen und Kinder in ihrer Selbstwirksamkeit zu stärken.</p>
-        <a href="#kontakt" class="angebot-link">Kontakt aufnehmen →</a>
-        <a href="kinder-familien.html" class="angebot-link angebot-stretch-link" style="margin-top:0.5rem;">Mehr erfahren →</a>
+        <a href="kinder-familien.html" class="angebot-primary-btn angebot-stretch-link">Mehr erfahren</a>
+        <a href="#kontakt" class="angebot-secondary-link">Kontakt aufnehmen →</a>
       </div>
     </div>
   </div>
@@ -501,7 +504,7 @@
         <p>Kernaussagen auf den Punkt. Aufmerksamkeit gewinnen und halten.</p>
       </div>
       <div class="ks-module-card">
-        <div class="ks-module-icon"></div>
+        <div class="ks-module-icon" style="background-image:url('peony.png')"></div>
         <h3>Tools für den Alltag</h3>
         <p>5-Min-Warm-up, Übungen und Strategien für eine dauerhaft gesunde Stimme.</p>
       </div>
