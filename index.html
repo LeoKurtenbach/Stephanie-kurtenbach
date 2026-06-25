@@ -44,30 +44,26 @@
   .nav-links a:hover::after { width: 100%; }
   .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic) !important; }
   .nav-cta:hover { background: var(--rose-dark) !important; }
-  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; padding-top: 80px; position: relative; }
-  
-  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; position: relative; z-index: 2; }
-  .hero-left::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.91); z-index: 0; pointer-events: none; }
-  .hero-left > * { position: relative; z-index: 1; }
-  .hero-overline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 2.5rem; display: block; }
-  .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--deep); margin-bottom: 2.5rem; text-shadow: 0 2px 12px rgba(45,32,64,0.09); }
+  #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; overflow: hidden; }
+  .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 68% center; display: block; z-index: 0; }
+  #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,0.86) 0%, rgba(10,8,15,0.78) 32%, rgba(10,8,15,0.44) 60%, rgba(10,8,15,0.12) 100%); z-index: 1; pointer-events: none; }
+  .hero-content { position: relative; z-index: 2; max-width: 600px; padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .hero-overline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 2.5rem; display: block; }
+  .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--white); margin-bottom: 2.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-style: italic; color: var(--rose); }
-  .hero-sub { font-size: 1rem; font-weight: 400; color: var(--deep); line-height: 1.85; max-width: 420px; margin-bottom: 3rem; opacity: 0.82; }
+  .hero-sub { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.85; max-width: 460px; margin-bottom: 3rem; }
   .hero-tags { display: flex; gap: 0; flex-wrap: wrap; margin-bottom: 3rem; align-items: center; }
   .tag + .tag::before { content: '·'; margin: 0 0.8rem; color: var(--rose); font-size: 0.9rem; }
-  .tag { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .tag { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.52); font-weight: 500; }
   .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
-  .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; text-decoration: none; padding: 1.1rem 2.5rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 8px rgba(184,114,138,0.35), 0 1px 2px rgba(184,114,138,0.2); }
-  .btn-primary:hover { background: var(--rose-dark); box-shadow: 0 4px 16px rgba(184,114,138,0.45); transform: translateY(-1px); }
-  .btn-secondary { font-size: 0.9rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid var(--rose); padding-bottom: 2px; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
-  .btn-secondary:hover { color: var(--rose); border-color: var(--rose); }
-  .hero-right { position: relative; overflow: hidden; min-height: calc(100vh - 80px); }
-  .hero-right img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; z-index: 10; }
-  .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(232,237,226,0.91) 0%, transparent 20%); z-index: 2; pointer-events: none; }
-  .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(232,237,226,0.92); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; box-shadow: 0 4px 8px rgba(45,32,64,0.06), 0 16px 40px rgba(45,32,64,0.10); }
-  .hero-quote p { font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 0.5rem; }
-  .hero-quote cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-style: normal; }
+  .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; padding: 1.1rem 2.6rem; border-radius: 2px; min-height: 44px; transition: background var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 12px rgba(184,114,138,0.50), 0 1px 3px rgba(184,114,138,0.25); }
+  .btn-primary:hover { background: var(--rose-dark); box-shadow: 0 6px 22px rgba(184,114,138,0.58); transform: translateY(-2px); }
+  .btn-secondary { font-size: 0.9rem; font-weight: 400; color: rgba(255,255,255,0.75); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid rgba(255,255,255,0.38); padding-bottom: 2px; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
+  .btn-secondary:hover { color: var(--white); border-color: rgba(255,255,255,0.72); }
+  .hero-quote { margin-top: 3.5rem; border-left: 2px solid var(--rose); padding: 1.1rem 1.6rem; max-width: 440px; background: rgba(10,8,15,0.28); }
+  .hero-quote p { font-family: var(--font-serif); font-size: 0.95rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 0.5rem; }
+  .hero-quote cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.48); font-style: normal; }
   .stats-bar { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); padding: 3rem 5rem; }
   .stats-bar::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   .stats-bar > * { position: relative; z-index: 1; }
@@ -107,9 +103,9 @@
   .angebot-card-body::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); margin-bottom: 1rem; }
   .angebot-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--deep); margin-bottom: 0.75rem; line-height: 1.3; }
   .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.75; margin-bottom: 0; flex: 1; }
-  .angebot-primary-btn { display: flex; align-items: center; background: var(--rose); color: var(--white); font-family: var(--font-sans); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.05em; text-decoration: none; padding: 0.9rem 1.75rem; border-radius: 2px; align-self: flex-start; margin-top: 1.5rem; min-height: 44px; box-shadow: 0 2px 8px rgba(184,114,138,0.28); transition: background var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic); position: relative; z-index: 2; }
-  .angebot-primary-btn:hover { background: var(--rose-dark); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(184,114,138,0.42); }
-  .angebot-secondary-link { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; align-self: flex-start; position: relative; z-index: 2; margin-top: 0.75rem; transition: color var(--dur-ui) var(--ease-organic); }
+  .angebot-primary-btn { display: flex; align-items: center; background: var(--rose); color: var(--white); font-family: var(--font-sans); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.05em; text-decoration: none; padding: 1rem 2rem; border-radius: 2px; align-self: flex-start; margin-top: 1.5rem; min-height: 44px; box-shadow: 0 2px 10px rgba(184,114,138,0.38); transition: background var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic); position: relative; z-index: 2; }
+  .angebot-primary-btn:hover { background: var(--rose-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(184,114,138,0.50); }
+  .angebot-secondary-link { font-size: 0.76rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; align-self: flex-start; position: relative; z-index: 2; margin-top: 0.6rem; transition: color var(--dur-ui) var(--ease-organic); }
   .angebot-secondary-link:hover { color: var(--mid); }
   .anmelde-hint { display: none; }
   .kurse-subsection { background: transparent; padding: 4rem 0 0 0; margin-top: 2rem; border-top: 1px solid rgba(45,32,64,0.12); }
@@ -117,7 +113,7 @@
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: stretch; margin-top: 3rem; }
   .kurs-card { background: rgba(10,8,15,0.52); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; transition: transform var(--dur-ui) var(--ease-organic); }
   .kurs-card:hover { transform: translateY(-2px); }
-  .kurs-card-bg { position: absolute; top: 0; right: 0; width: 180px; height: 180px; opacity: 0.12; background-size: contain; background-repeat: no-repeat; background-position: top right; pointer-events: none; z-index: 0; }
+  .kurs-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.16; background-size: cover; background-repeat: no-repeat; background-position: center; pointer-events: none; z-index: 0; -webkit-mask-image: radial-gradient(ellipse at 78% 22%, black 18%, transparent 68%); mask-image: radial-gradient(ellipse at 78% 22%, black 18%, transparent 68%); }
   .kurs-card > *:not(.kurs-card-bg) { position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.92); border: 1px solid rgba(184,114,138,0.70); padding: 0.3rem 0.75rem; border-radius: 2px; width: fit-content; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--white); line-height: 1.35; }
@@ -213,7 +209,7 @@
   .footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
   @media (max-width: 900px) {
-    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { grid-template-columns: 1fr; } .hero-left { padding: 3rem 1.5rem; } .hero-right { height: 60vw; } section { padding: 5rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 5rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
+    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-bg-img { object-position: 72% center; } .hero-content { padding: 3.5rem 1.5rem; max-width: 100%; } section { padding: 5rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 5rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
   }
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
@@ -296,16 +292,16 @@
   .ks-modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
   .ks-module-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; }
   @media (hover: hover) { .ks-module-card:hover { transform: translateY(-3px); transition: transform 220ms cubic-bezier(0.22,1,0.36,1); } }
-  .ks-module-icon { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.20; background-size: cover; background-position: center; background-repeat: no-repeat; pointer-events: none; z-index: 0; -webkit-mask-image: radial-gradient(ellipse at 65% 30%, black 15%, transparent 70%); mask-image: radial-gradient(ellipse at 65% 30%, black 15%, transparent 70%); }
-  .ks-module-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(155deg, rgba(10,8,15,0.90) 0%, rgba(10,8,15,0.55) 100%); z-index: 1; border-radius: 3px; pointer-events: none; }
-  .ks-module-card h3 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--white); margin-bottom: 0.75rem; line-height: 1.25; position: relative; z-index: 2; }
-  .ks-module-card p { font-size: 0.92rem; color: rgba(255,255,255,0.70); line-height: 1.78; position: relative; z-index: 2; margin: 0; }
+  .ks-module-icon { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.32; background-size: cover; background-position: center; background-repeat: no-repeat; pointer-events: none; z-index: 0; }
+  .ks-module-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(155deg, rgba(10,8,15,0.95) 0%, rgba(10,8,15,0.85) 42%, rgba(10,8,15,0.48) 100%); z-index: 1; border-radius: 3px; pointer-events: none; }
+  .ks-module-card h3 { font-family: var(--font-serif); font-size: 1.65rem; font-weight: 400; color: var(--white); margin-bottom: 1rem; line-height: 1.2; position: relative; z-index: 2; }
+  .ks-module-card p { font-size: 0.93rem; color: rgba(255,255,255,0.72); line-height: 1.8; position: relative; z-index: 2; margin: 0; }
   .ks-result { text-align: center; }
   .ks-result-statement { font-family: var(--font-serif); font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.92); line-height: 1.55; max-width: 660px; margin: 0 auto 3rem; }
   .ks-result-cta { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
   .ks-result-who { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.42); }
-  .angebot-brand-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; border: 1px solid rgba(143,77,104,0.65); padding: 0.22rem 0.6rem; border-radius: 2px; margin-bottom: 0.6rem; }
-  .angebote-intro .section-body { font-size: 1.08rem; font-style: italic; color: var(--mid); line-height: 1.85; }
+  .angebot-brand-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 700; border: 1px solid var(--rose-dark); padding: 0.22rem 0.6rem; border-radius: 2px; margin-bottom: 0.6rem; }
+  .angebote-intro .section-body { font-size: 1.18rem; font-style: italic; color: var(--mid); line-height: 1.8; }
   @media (max-width: 900px) { .ks-modules-grid { grid-template-columns: 1fr; } .ks-pain-line { font-size: 1.1rem; } .ks-big-quote { font-size: 1.4rem; } }
 </style>
 </head>
@@ -322,7 +318,8 @@
   </ul>
 </nav>
 <section id="hero">
-  <div class="hero-left">
+  <img src="stephanie_hero.jpg" class="hero-bg-img" alt="" fetchpriority="high" loading="eager">
+  <div class="hero-content">
     <span class="hero-overline">Sprechwissenschaftlerin · Dozentin · Coach</span>
     <h1 class="hero-headline">Ich verändere die Art, wie Menschen auf <span class="hero-headline-sub">Kommunikation schauen.</span></h1>
     <p class="hero-sub">Ich gebe Orientierung und wirksame Handlungsstrategien, damit echte Verbindung entsteht: in Fortbildungen für Fachkräfte, im Stimm- und Kommunikationscoaching sowie in der Begleitung von Kindern und Familien.</p>
@@ -330,11 +327,7 @@
     <div class="hero-actions">
       <a href="#angebote" class="btn-primary">Angebote entdecken</a>
       <a href="#ueber" class="btn-secondary">Mehr über mich</a>
-      <a href="#kontakt" class="anmelde-hint" style="font-size:0.75rem;color:var(--muted);letter-spacing:0.08em;text-decoration:none;border-bottom:1px solid var(--sand);">Direkt Kontakt aufnehmen</a>
     </div>
-  </div>
-  <div class="hero-right">
-    <img src="stephanie.jpg" alt="Dr. Stephanie Kurtenbach" id="heroImg" loading="eager" fetchpriority="high">
     <div class="hero-quote">
       <p>„Kommunikation ist dann erfolgreich, wenn Menschen sich auf den Augenblick einlassen."</p>
       <cite>Dr. Stephanie Kurtenbach</cite>
@@ -402,7 +395,7 @@
         <span class="kurs-tag">Sensorische Integration</span>
         <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
         <p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p>
-        <p style="margin-top:0.75rem;font-size:0.8rem;"><a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/fachliteraturratgeber-kindersprache/2022/sikit" target="_blank" rel="noopener" style="color:var(--rose)">Zum Begleitbuch: SIKiT – Kindliche Sprachentwicklung und Sprachentwicklungsstörungen →</a></p>
+        <p style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.06);font-size:0.72rem;letter-spacing:0.05em;color:rgba(255,255,255,0.38);"><a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/fachliteraturratgeber-kindersprache/2022/sikit" target="_blank" rel="noopener" style="color:rgba(184,114,138,0.75);text-decoration:none;border-bottom:1px solid rgba(184,114,138,0.35);">Zum Begleitbuch: SIKiT →</a></p>
         <div class="kurs-details">
           <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet, und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend. Häufig liegen den sprachlichen Schwierigkeiten weitere Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft dabei, diese Zusammenhänge besser zu verstehen."</p>
           <span class="kurs-inhalte-label">Kursinhalte</span>
@@ -427,7 +420,7 @@
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
       <div class="kurs-card">
-        <div class="kurs-card-bg" style="background-image: url('valerian.png');"></div>
+        <div class="kurs-card-bg" style="background-image: url('wisteria.png');"></div>
         <span class="kurs-tag">Frühe Intervention</span>
         <h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3>
         <p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p>
@@ -494,7 +487,7 @@
         <p>Voller klingen — mit weniger Anstrengung mehr Wirkung.</p>
       </div>
       <div class="ks-module-card">
-        <div class="ks-module-icon" style="background-image:url('valerian.png')"></div>
+        <div class="ks-module-icon" style="background-image:url('wisteria.png')"></div>
         <h3>Gesunde, belastbare Stimme</h3>
         <p>Heiserkeit vorbeugen. Ökonomischer Einsatz. Mehr Ausdauer.</p>
       </div>
@@ -531,12 +524,12 @@
   </div>
   <div class="bio-stations">
     <div class="bio-station">
-      <div class="bio-station-img"><img src="bio-sprechwiss.png" alt="" loading="lazy" style="object-fit: cover; object-position: center 33%; transform: scale(1.08);"></div>
+      <div class="bio-station-img"><img src="stephanie-portrait-1.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center 18%; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sprechwissenschaft</span>
       <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung. Das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
     <div class="bio-station">
-      <div class="bio-station-img"><img src="bio-si.png" alt="" loading="lazy" style="object-fit: cover; object-position: center center; transform: scale(1.08);"></div>
+      <div class="bio-station-img"><img src="stephanie-portrait-2.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center 20%; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sensorische Integrationstherapie</span>
       <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt, nicht die, die man ihm gibt.</p>
     </div>
@@ -639,12 +632,12 @@
 
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
     // Hero load sequence
-    gsap.from('.hero-overline',  { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.15 });
-    gsap.from('.hero-headline',  { y: 20, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.3 });
-    gsap.from('.hero-sub',       { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.5 });
-    gsap.from('.hero-tags',      { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.62 });
-    gsap.from('.hero-actions',   { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.74 });
-    gsap.from('.hero-quote',     { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.92 });
+    gsap.fromTo('.hero-overline',  { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.15 });
+    gsap.fromTo('.hero-headline',  { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.3 });
+    gsap.fromTo('.hero-sub',       { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.5 });
+    gsap.fromTo('.hero-tags',      { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.62 });
+    gsap.fromTo('.hero-actions',   { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.74 });
+    gsap.fromTo('.hero-quote',     { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.92 });
 
   });
 
