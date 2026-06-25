@@ -96,8 +96,10 @@
   .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.72); font-weight: 400; }
   .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
   .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; margin-bottom: 7rem; }
-  .angebot-card { display: flex; flex-direction: column; background: rgba(232,237,226,0.52); border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); }
+  .angebot-card { display: flex; flex-direction: column; background: rgba(232,237,226,0.52); border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); position: relative; cursor: pointer; }
   .angebot-card:hover { transform: translateY(-4px); }
+  .angebot-stretch-link::after { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: 4px; }
+  .angebot-link:not(.angebot-stretch-link) { position: relative; z-index: 2; }
   .angebot-card-img { aspect-ratio: 4/3; width: 100%; overflow: hidden; border-radius: 4px 4px 0 0; }
   .angebot-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-ambient) var(--ease-organic); }
   .angebot-card:hover .angebot-card-img img { transform: scale(1.04); }
@@ -373,7 +375,7 @@
         <h3 class="angebot-title">Stimm- & Kommunikationscoaching</h3>
         <p class="angebot-desc">Individuelle Begleitung für Menschen mit Sprecherberufen: Tragfähigkeit, Sicherheit und Wirkung in der Kommunikation, nachhaltig entwickeln.</p>
         <a href="#kontakt" class="angebot-link">Anfrage stellen →</a>
-        <a href="#kraftvolle-stimme" class="angebot-link" style="margin-top:0.5rem;">Mehr erfahren →</a>
+        <a href="#kraftvolle-stimme" class="angebot-link angebot-stretch-link" style="margin-top:0.5rem;">Mehr erfahren →</a>
       </div>
     </div>
     <div class="angebot-card">
@@ -383,7 +385,7 @@
         <h3 class="angebot-title">Beratung für Kinder & Familien</h3>
         <p class="angebot-desc">Befundung, Beratung und Entwicklungsbegleitung mit dem Ziel, die Ursachen zu verstehen und Kinder in ihrer Selbstwirksamkeit zu stärken.</p>
         <a href="#kontakt" class="angebot-link">Kontakt aufnehmen →</a>
-        <a href="kinder-familien.html" class="angebot-link" style="margin-top:0.5rem;">Mehr erfahren →</a>
+        <a href="kinder-familien.html" class="angebot-link angebot-stretch-link" style="margin-top:0.5rem;">Mehr erfahren →</a>
       </div>
     </div>
   </div>
