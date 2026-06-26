@@ -45,17 +45,17 @@
   .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic) !important; }
   .nav-cta:hover { background: var(--rose-dark) !important; }
   #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; overflow: hidden; }
-  .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 68% center; display: block; z-index: 0; }
+  .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% 12%; display: block; z-index: 0; }
   #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,0.86) 0%, rgba(10,8,15,0.78) 32%, rgba(10,8,15,0.44) 60%, rgba(10,8,15,0.12) 100%); z-index: 1; pointer-events: none; }
   .hero-content { position: relative; z-index: 2; max-width: 600px; padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
   .hero-overline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 2.5rem; display: block; }
   .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--white); margin-bottom: 2.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
   .hero-headline em { font-style: italic; color: var(--rose); }
-  .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-style: italic; color: var(--rose); }
+  .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-family: var(--font-serif); font-style: italic; color: var(--rose); }
   .hero-sub { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.85; max-width: 460px; margin-bottom: 3rem; }
-  .hero-tags { display: flex; gap: 0; flex-wrap: wrap; margin-bottom: 3rem; align-items: center; }
-  .tag + .tag::before { content: '·'; margin: 0 0.8rem; color: var(--rose); font-size: 0.9rem; }
-  .tag { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.52); font-weight: 500; }
+  .hero-tags { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-bottom: 3rem; align-items: center; }
+  .tag { font-size: 0.63rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.80); font-weight: 500; text-decoration: none; border: 1px solid rgba(255,255,255,0.32); padding: 0.38rem 1rem; border-radius: 100px; display: inline-flex; align-items: center; min-height: 36px; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic); }
+  .tag:hover { border-color: rgba(255,255,255,0.72); color: var(--white); }
   .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
   .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; padding: 1.1rem 2.6rem; border-radius: 2px; min-height: 44px; transition: background var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 12px rgba(184,114,138,0.50), 0 1px 3px rgba(184,114,138,0.25); }
   .btn-primary:hover { background: var(--rose-dark); box-shadow: 0 6px 22px rgba(184,114,138,0.58); transform: translateY(-2px); }
@@ -89,7 +89,7 @@
   .problem-card { background: none; padding: 0; }
   .problem-audience { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.25rem; display: block; }
   .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 1.5rem; }
-  .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.72); font-weight: 400; }
+  .problem-response { font-size: 0.92rem; color: rgba(255,255,255,0.86); font-weight: 400; }
   .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
   .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; margin-bottom: 7rem; }
   .angebot-card { display: flex; flex-direction: column; background: rgba(232,237,226,0.52); border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); position: relative; cursor: pointer; }
@@ -103,10 +103,10 @@
   .angebot-card-body::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); margin-bottom: 1rem; }
   .angebot-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--deep); margin-bottom: 0.75rem; line-height: 1.3; }
   .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.75; margin-bottom: 0; flex: 1; }
-  .angebot-primary-btn { display: flex; align-items: center; background: var(--rose); color: var(--white); font-family: var(--font-sans); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.05em; text-decoration: none; padding: 1rem 2rem; border-radius: 2px; align-self: flex-start; margin-top: 1.5rem; min-height: 44px; box-shadow: 0 2px 10px rgba(184,114,138,0.38); transition: background var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic); position: relative; z-index: 2; }
-  .angebot-primary-btn:hover { background: var(--rose-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(184,114,138,0.50); }
-  .angebot-secondary-link { font-size: 0.76rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; align-self: flex-start; position: relative; z-index: 2; margin-top: 0.6rem; transition: color var(--dur-ui) var(--ease-organic); }
-  .angebot-secondary-link:hover { color: var(--mid); }
+  .angebot-primary-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--rose); color: var(--white); font-family: var(--font-sans); font-size: 0.74rem; font-weight: 500; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; padding: 0.82rem 1.6rem; border-radius: 2px; align-self: flex-start; margin-top: 1.5rem; min-height: 44px; box-shadow: 0 1px 6px rgba(184,114,138,0.26); transition: background var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); position: relative; z-index: 2; }
+  .angebot-primary-btn:hover { background: var(--rose-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(184,114,138,0.42); }
+  .angebot-secondary-link { font-size: 0.82rem; color: var(--mid); text-decoration: none; letter-spacing: 0.04em; align-self: flex-start; position: relative; z-index: 2; margin-top: 0.75rem; border-bottom: 1px solid rgba(90,74,106,0.5); padding-bottom: 1px; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
+  .angebot-secondary-link:hover { color: var(--deep); border-color: rgba(45,32,64,0.65); }
   .anmelde-hint { display: none; }
   .kurse-subsection { background: transparent; padding: 4rem 0 0 0; margin-top: 2rem; border-top: 1px solid rgba(45,32,64,0.12); }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
@@ -117,15 +117,15 @@
   .kurs-card > *:not(.kurs-card-bg) { position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.92); border: 1px solid rgba(184,114,138,0.70); padding: 0.3rem 0.75rem; border-radius: 2px; width: fit-content; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--white); line-height: 1.35; }
-  .kurs-teaser { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
-  .kurs-details { display: none; font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.8; }
+  .kurs-teaser { font-size: 0.9rem; color: rgba(255,255,255,0.80); line-height: 1.75; }
+  .kurs-details { display: none; font-size: 0.88rem; color: rgba(255,255,255,0.88); line-height: 1.8; }
   .kurs-details.open { display: flex; flex-direction: column; gap: 1.25rem; }
-  .kurs-hook { font-family: var(--font-serif); font-size: 0.95rem; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.75; }
+  .kurs-hook { font-family: var(--font-serif); font-size: 0.95rem; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.75; }
   .kurs-inhalte-label { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); opacity: 0.85; display: block; }
   .kurs-inhalte { list-style: none; }
-  .kurs-inhalte li { font-size: 0.84rem; color: rgba(255,255,255,0.75); padding: 0.45rem 0 0.45rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
+  .kurs-inhalte li { font-size: 0.84rem; color: rgba(255,255,255,0.88); padding: 0.45rem 0 0.45rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; }
   .kurs-inhalte li::before { content: '·'; position: absolute; left: 0; color: var(--rose); opacity: 0.85; }
-  .kurs-outcome { font-size: 0.84rem; color: rgba(255,255,255,0.5); background: rgba(184,114,138,0.1); padding: 1.1rem 1.4rem; border-left: 2px solid var(--rose); line-height: 1.75; }
+  .kurs-outcome { font-size: 0.84rem; color: rgba(255,255,255,0.82); background: rgba(184,114,138,0.12); padding: 1.1rem 1.4rem; border-left: 2px solid var(--rose); line-height: 1.75; }
   .kurs-outcome strong { display: block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); font-weight: 500; opacity: 1; margin-bottom: 0.45rem; }
   .kurs-cta { display: inline-block; background: var(--rose); color: white; font-size: 0.82rem; letter-spacing: 0.06em; text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic); width: fit-content; }
   .kurs-cta:hover { background: var(--rose-dark); }
@@ -165,8 +165,8 @@
   .philo-attribution { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.70); margin-bottom: 6rem; display: block; }
   .philo-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; max-width: 920px; margin: 0 auto; }
   .philo-value { text-align: left; }
-  .philo-value-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
-  .philo-value-text { font-size: 0.87rem; color: rgba(255,255,255,0.78); line-height: 1.85; }
+  .philo-value-title { font-family: var(--font-serif); font-size: 1.45rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
+  .philo-value-text { font-size: 0.96rem; color: rgba(255,255,255,0.90); line-height: 1.9; }
   #stimmen { position: relative; }
   #stimmen::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
   #stimmen > * { position: relative; z-index: 1; }
@@ -209,7 +209,7 @@
   .footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
   @media (max-width: 900px) {
-    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-bg-img { object-position: 72% center; } .hero-content { padding: 3.5rem 1.5rem; max-width: 100%; } section { padding: 5rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 5rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
+    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-bg-img { object-position: 72% 12%; } .hero-content { padding: 3.5rem 1.5rem; max-width: 100%; } section { padding: 5rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 5rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
   }
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
@@ -279,11 +279,11 @@
   .ks-sub { font-size: 1.05rem; color: rgba(255,255,255,0.72); line-height: 1.75; max-width: 620px; margin: 1.5rem 0 2rem; }
   .ks-lead { font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.85; max-width: 620px; }
   .ks-pain { padding: 0 0 5rem; margin-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .ks-pain .section-overline { color: var(--rose); margin-bottom: 2.5rem; }
-  .ks-painpoints { display: flex; flex-direction: column; max-width: 780px; }
-  .ks-pain-line { font-family: var(--font-serif); font-size: clamp(1.2rem, 2.2vw, 1.75rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.78); line-height: 1.5; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .ks-pain .section-overline { color: var(--rose); margin-bottom: 3rem; font-size: 0.88rem; letter-spacing: 0.22em; }
+  .ks-painpoints { display: flex; flex-direction: column; max-width: 680px; }
+  .ks-pain-line { font-family: var(--font-sans); font-size: clamp(1.05rem, 1.9vw, 1.45rem); font-weight: 400; font-style: normal; color: rgba(255,255,255,0.90); line-height: 1.5; padding: 0.55rem 0; border: none; letter-spacing: 0.005em; }
   .ks-transition { font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.8rem); font-weight: 400; color: var(--white); margin-top: 3rem; line-height: 1.3; }
-  .ks-transition em { color: var(--rose); font-style: italic; }
+  .ks-transition em { color: var(--rose); font-style: normal; font-weight: 500; }
   .ks-statement { padding: 0 0 5rem; margin-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: center; }
   .ks-big-quote { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.8vw, 2.6rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.92); line-height: 1.5; max-width: 820px; margin: 0 auto; text-shadow: 0 2px 20px rgba(184,114,138,0.15); }
   .ks-big-quote em { color: var(--rose); font-style: normal; }
@@ -299,7 +299,7 @@
   .ks-result { text-align: center; }
   .ks-result-statement { font-family: var(--font-serif); font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.92); line-height: 1.55; max-width: 660px; margin: 0 auto 3rem; }
   .ks-result-cta { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
-  .ks-result-who { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.42); }
+  .ks-result-who { font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.72); }
   .angebot-brand-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 700; border: 1px solid var(--rose-dark); padding: 0.22rem 0.6rem; border-radius: 2px; margin-bottom: 0.6rem; }
   .angebote-intro .section-body { font-size: 1.18rem; font-style: italic; color: var(--mid); line-height: 1.8; }
   @media (max-width: 900px) { .ks-modules-grid { grid-template-columns: 1fr; } .ks-pain-line { font-size: 1.1rem; } .ks-big-quote { font-size: 1.4rem; } }
@@ -323,7 +323,7 @@
     <span class="hero-overline">Sprechwissenschaftlerin · Dozentin · Coach</span>
     <h1 class="hero-headline">Ich verändere die Art, wie Menschen auf <span class="hero-headline-sub">Kommunikation schauen.</span></h1>
     <p class="hero-sub">Ich gebe Orientierung und wirksame Handlungsstrategien, damit echte Verbindung entsteht: in Fortbildungen für Fachkräfte, im Stimm- und Kommunikationscoaching sowie in der Begleitung von Kindern und Familien.</p>
-    <div class="hero-tags"><span class="tag">Fortbildungen</span><span class="tag">Kraftvolle Stimme</span><span class="tag">Familienbegleitung</span></div>
+    <div class="hero-tags"><a href="#kurse" class="tag">Fortbildungen</a><a href="#kraftvolle-stimme" class="tag">Kraftvolle Stimme</a><a href="kinder-familien.html" class="tag">Familienbegleitung</a></div>
     <div class="hero-actions">
       <a href="#angebote" class="btn-primary">Angebote entdecken</a>
       <a href="#ueber" class="btn-secondary">Mehr über mich</a>
@@ -395,7 +395,7 @@
         <span class="kurs-tag">Sensorische Integration</span>
         <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
         <p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p>
-        <p style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.06);font-size:0.72rem;letter-spacing:0.05em;color:rgba(255,255,255,0.38);"><a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/fachliteraturratgeber-kindersprache/2022/sikit" target="_blank" rel="noopener" style="color:rgba(184,114,138,0.75);text-decoration:none;border-bottom:1px solid rgba(184,114,138,0.35);">Zum Begleitbuch: SIKiT →</a></p>
+        <p style="margin-top:1.25rem;padding-top:0.85rem;border-top:1px solid rgba(255,255,255,0.10);font-size:0.8rem;letter-spacing:0.03em;"><a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/fachliteraturratgeber-kindersprache/2022/sikit" target="_blank" rel="noopener" style="color:var(--rose);text-decoration:none;border-bottom:1px solid rgba(184,114,138,0.55);padding-bottom:1px;">Zum Begleitbuch: SIKiT →</a></p>
         <div class="kurs-details">
           <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet, und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend. Häufig liegen den sprachlichen Schwierigkeiten weitere Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft dabei, diese Zusammenhänge besser zu verstehen."</p>
           <span class="kurs-inhalte-label">Kursinhalte</span>
@@ -562,7 +562,7 @@
     <div style="margin-bottom:2rem;">
       <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4 C16 4 18 10 22 12 C18 12 16 18 16 18 C16 18 14 12 10 12 C14 10 16 4 16 4Z" fill="#B8728A" opacity="0.7"/><path d="M16 14 C16 14 20 15 22 18 C19 17 16 20 16 20 C16 20 13 17 10 18 C12 15 16 14 16 14Z" fill="#B8728A" opacity="0.5"/><circle cx="16" cy="16" r="2" fill="#B8728A" opacity="0.9"/></svg>
     </div>
-    <p style="font-family:var(--font-serif);font-style:italic;font-weight:300;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.65;color:var(--deep);margin-bottom:1.25rem;">„Wenn ich könnte, würde ich 10 Sterne vergeben. Die Atmosphäre war sehr persönlich und angenehm, der Inhalt wurde super anschaulich vermittelt und Fragen immer beantwortet. Man bekommt einen ganz neuen Blick auf die Kinder."</p>
+    <p style="font-family:var(--font-serif);font-style:italic;font-weight:400;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.65;color:var(--deep);margin-bottom:1.25rem;">„Wenn ich könnte, würde ich 10 Sterne vergeben. Die Atmosphäre war sehr persönlich und angenehm, der Inhalt wurde super anschaulich vermittelt und Fragen immer beantwortet. Man bekommt einen ganz neuen Blick auf die Kinder."</p>
     <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-dark);font-weight:500;">Kursteilnehmerin</span>
   </div>
   <div class="testimonials-grid">
