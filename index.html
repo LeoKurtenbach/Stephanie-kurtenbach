@@ -120,8 +120,15 @@
   .kurs-tag { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.92); border: 1px solid rgba(184,114,138,0.70); padding: 0.3rem 0.75rem; border-radius: 2px; width: fit-content; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--white); line-height: 1.35; }
   .kurs-teaser { font-size: 0.9rem; color: rgba(255,255,255,0.80); line-height: 1.75; }
-  .kurs-details { display: none; font-size: 0.88rem; color: rgba(255,255,255,0.88); line-height: 1.8; }
-  .kurs-details.open { display: flex; flex-direction: column; gap: 1.25rem; }
+  .kurs-details { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s cubic-bezier(0.4,0,0.2,1); font-size: 0.88rem; color: rgba(255,255,255,0.88); line-height: 1.8; }
+  .kurs-details.open { grid-template-rows: 1fr; }
+  .kurs-details-inner { overflow: hidden; display: flex; flex-direction: column; gap: 1.25rem; opacity: 0; transition: opacity 0.3s 0.1s cubic-bezier(0.4,0,0.2,1); }
+  .kurs-details.open .kurs-details-inner { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .kurs-details { transition: none; }
+    .kurs-details-inner { transition: none; opacity: 1; }
+    .kurs-toggle .arrow { transition: none; }
+  }
   .kurs-hook { font-family: var(--font-quote); font-size: 0.95rem; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.75; }
   .kurs-inhalte-label { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); opacity: 0.85; display: block; }
   .kurs-inhalte { list-style: none; }
@@ -136,7 +143,7 @@
   .kurs-btn-primary:hover { background: var(--rose-dark); }
   .kurs-toggle { background: transparent; color: rgba(255,255,255,0.68); font-family: var(--font-sans); font-size: 0.78rem; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.30); cursor: pointer; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic), background var(--dur-ui) var(--ease-organic); }
   .kurs-toggle:hover { border-color: rgba(255,255,255,0.62); color: var(--white); background: rgba(255,255,255,0.06); }
-  .kurs-toggle .arrow { font-size: 0.72rem; transition: transform var(--dur-ui) var(--ease-organic); display: inline-block; }
+  .kurs-toggle .arrow { font-size: 0.72rem; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); display: inline-block; }
   .kurs-toggle.open .arrow { transform: rotate(180deg); }
   #ueber { display: block; position: relative; }
   #ueber::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 5%, rgba(10,8,15,0.70) 94%, rgba(10,8,15,0) 100%); z-index: 0; }
@@ -399,11 +406,13 @@
         <p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p>
         <p style="margin-top:1.25rem;padding-top:0.85rem;border-top:1px solid rgba(255,255,255,0.12);font-size:0.82rem;letter-spacing:0.02em;"><a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/fachliteraturratgeber-kindersprache/2022/sikit" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.45);padding-bottom:1px;">Zum Begleitbuch: SIKiT →</a></p>
         <div class="kurs-details">
+          <div class="kurs-details-inner">
           <p class="kurs-hook">„Ein Kind kann sich kaum auf sprachliche Angebote einlassen, wirkt ständig in Bewegung oder verliert schnell die Aufmerksamkeit. Trotz sorgfältiger Therapieplanung greifen bewährte Methoden nicht wie erwartet, und die Arbeit am Tisch wird für alle Beteiligten zunehmend anstrengend. Häufig liegen den sprachlichen Schwierigkeiten weitere Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind. Das Konzept der Sensorischen Integration hilft dabei, diese Zusammenhänge besser zu verstehen."</p>
           <span class="kurs-inhalte-label">Kursinhalte</span>
           <ul class="kurs-inhalte"><li>Bedeutung der Sensorischen Integration für das Lernen</li><li>Haut, Gleichgewicht und Tiefenwahrnehmung: Grundpfeiler für die Sprachentwicklung</li><li>Wahrnehmungsstörungen und ihre Auswirkungen auf Lernen, Verhalten und Sprache</li><li>Anamnese mit dem SI-Elternfragebogen</li><li>Kindersprachtherapie mit Sensorischer Integration</li></ul>
           <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Du wirst sprachliche Auffälligkeiten stärker im Zusammenhang mit der Gesamtentwicklung des Kindes betrachten können. Alle Kursbausteine werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft. Du kannst nach diesem Kurs deine Therapien konkret mit SI-Elementen planen und durchführen.</div>
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+          </div>
         </div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
@@ -413,11 +422,13 @@
         <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
         <p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen, inklusive aller Materialien.</p>
         <div class="kurs-details">
+          <div class="kurs-details-inner">
           <p class="kurs-hook">„Suchst du nach einer strukturierten Möglichkeit, Eltern aktiv in die Sprachförderung einzubeziehen? Im Mittelpunkt steht die Vermittlung alltagsnaher Sprachlehrstrategien, die Eltern gezielt in der Kommunikation mit ihrem Kind einsetzen können, um dessen Sprachentwicklung wirksam zu unterstützen."</p>
           <span class="kurs-inhalte-label">Du erhältst alle Materialien</span>
           <ul class="kurs-inhalte"><li>Kursleiterskript</li><li>Begleitheft für Eltern</li><li>Werbeflyer zur Teilnehmergewinnung</li><li>Anschreiben für Krankenkassen</li><li>Teilnehmerliste (Vorlage)</li><li>Elternzertifikat (Vorlage)</li><li>Rückmeldebogen zur Evaluation (Vorlage)</li></ul>
           <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Du verfügst über alle notwendigen Kenntnisse und Materialien, um das Elterntraining „Spielst du mit mir sprechen? 2.0" selbstständig und professionell umzusetzen.</div>
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+          </div>
         </div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
@@ -427,11 +438,13 @@
         <h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3>
         <p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p>
         <div class="kurs-details">
+          <div class="kurs-details-inner">
           <p class="kurs-hook">„Hast du auch immer öfter Kinder in der Praxis, bei denen die gängigen Methoden nicht funktionieren? Vielleicht liegt es daran, dass diese Kinder noch nicht in der Lage sind, Sprache zu erwerben, weil bei ihnen ein wichtiges Fundament fehlt: die kommunikativen Vorausläuferfähigkeiten."</p>
           <span class="kurs-inhalte-label">Kursaufbau</span>
           <ul class="kurs-inhalte"><li>Kommunikative Vorläuferfähigkeiten – das Fundament erfolgreicher Sprachentwicklung</li><li>Praxiserprobte Diagnostik zur Erfassung kommunikativer Vorläuferfähigkeiten</li><li>Wirksame therapeutische Konzepte für die frühe Intervention</li><li>Die Frühe Dialogtherapie: Struktur, Methodik und therapeutische Umsetzung</li></ul>
           <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Alle Kursbausteine werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft. Du kannst nach diesem Kurs deine Therapien konkret mit dieser Methode planen und durchführen.</div>
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+          </div>
         </div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
@@ -441,11 +454,13 @@
         <h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3>
         <p class="kurs-teaser">Kinder die sich kaum konzentrieren können, schnell ermüden oder motorisch auffällig wirken: ein möglicher Schlüssel liegt in den frühkindlichen Reflexen.</p>
         <div class="kurs-details">
+          <div class="kurs-details-inner">
           <p class="kurs-hook">„Frühkindliche Reflexe sind genetisch angelegte Bewegungsmuster und bilden eine wichtige Grundlage für Haltung, Bewegung, Wahrnehmung, Lernen und Kommunikation. Verläuft der Integrationsprozess nicht vollständig, können Restreaktionen bestehen bleiben und verschiedene Entwicklungsbereiche beeinflussen, darunter Aufmerksamkeit, Motorik, Koordination, emotionale Regulation und Sprachentwicklung."</p>
           <span class="kurs-inhalte-label">Kursinhalte</span>
           <ul class="kurs-inhalte"><li>Die Entwicklung und Funktion frühkindlicher Reflexe</li><li>Bedeutung für Wahrnehmung, Motorik, Lernen und Sprachentwicklung</li><li>Mögliche Folgen nicht vollständig integrierter Reflexe im Kindesalter</li><li>Zusammenhänge zwischen Reflexentwicklung, kommunikativen Vorläuferfähigkeiten und Sprachentwicklung</li><li>Reflexintegrationsprogramme – Grundlagen, Möglichkeiten und Grenzen</li><li>Überblick über die aktuelle Studienlage und wissenschaftliche Einordnung</li></ul>
           <div class="kurs-outcome"><strong>Nach dem Webinar</strong>Du wirst die Rolle frühkindlicher Reflexe differenzierter betrachten können, erkennst mögliche Zusammenhänge im therapeutischen Alltag und gewinnst zusätzliche Perspektiven für die Begleitung von Kindern mit Entwicklungsauffälligkeiten.</div>
           <a href="#kontakt" class="kurs-cta">Zur Anmeldung →</a>
+          </div>
         </div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
@@ -647,8 +662,10 @@
     const cards = document.querySelectorAll('.kurs-card');
     cards.forEach(c => c.style.minHeight = '');
     let max = 0;
-    cards.forEach(c => { max = Math.max(max, c.offsetHeight); });
-    cards.forEach(c => c.style.minHeight = max + 'px');
+    cards.forEach(c => {
+      if (!c.querySelector('.kurs-details.open')) max = Math.max(max, c.offsetHeight);
+    });
+    if (max > 0) cards.forEach(c => c.style.minHeight = max + 'px');
   }
   document.fonts.ready.then(equalizeKursCards);
   window.addEventListener('load', equalizeKursCards);
@@ -663,7 +680,6 @@
     const isOpen = details.classList.contains('open');
     details.classList.toggle('open', !isOpen);
     btn.classList.toggle('open', !isOpen);
-    btn.querySelector('.arrow').textContent = isOpen ? '↓' : '↑';
   }
 </script>
 </body>
