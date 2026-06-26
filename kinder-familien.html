@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entwicklungsbegleitung für Kinder und Familien · Dr. Stephanie Kurtenbach</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/fonts/fonts.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
@@ -44,209 +42,158 @@
   .nav-links a:hover::after { width: 100%; }
   .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic) !important; }
   .nav-cta:hover { background: var(--rose-dark) !important; }
-  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; padding-top: 80px; position: relative; }
 
+  /* ── Hero ── */
+  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; padding-top: 80px; position: relative; }
   .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; position: relative; z-index: 2; }
-  .hero-left::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.91); z-index: 0; pointer-events: none; }
+  .hero-left::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.92); z-index: 0; pointer-events: none; }
   .hero-left > * { position: relative; z-index: 1; }
   .hero-overline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 2.5rem; display: block; }
-  .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--deep); margin-bottom: 2.5rem; text-shadow: 0 2px 12px rgba(45,32,64,0.09); }
+  .hero-headline { font-family: var(--font-serif); font-size: clamp(2.8rem, 4.5vw, 5.2rem); font-weight: 400; line-height: 1.07; letter-spacing: -0.02em; color: var(--deep); margin-bottom: 2rem; }
   .hero-headline em { font-style: italic; color: var(--rose); }
-  .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-style: italic; color: var(--rose); }
-  .hero-sub { font-size: 1rem; font-weight: 400; color: var(--deep); line-height: 1.85; max-width: 420px; margin-bottom: 3rem; opacity: 0.82; }
+  .hero-sub { font-size: 1rem; font-weight: 400; color: var(--mid); line-height: 1.85; max-width: 400px; margin-bottom: 3rem; }
   .hero-tags { display: flex; gap: 0; flex-wrap: wrap; margin-bottom: 3rem; align-items: center; }
-  .tag + .tag::before { content: '·'; margin: 0 0.8rem; color: var(--rose); font-size: 0.9rem; }
   .tag { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .tag + .tag::before { content: '·'; margin: 0 0.8rem; color: var(--rose); font-size: 0.9rem; }
   .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
-  .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; text-decoration: none; padding: 1.1rem 2.5rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 8px rgba(184,114,138,0.35), 0 1px 2px rgba(184,114,138,0.2); }
-  .btn-primary:hover { background: var(--rose-dark); box-shadow: 0 4px 16px rgba(184,114,138,0.45); transform: translateY(-1px); }
-  .btn-secondary { font-size: 0.9rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid var(--rose); padding-bottom: 2px; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
-  .btn-secondary:hover { color: var(--rose); border-color: var(--rose); }
+  .btn-primary { display: inline-block; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; padding: 1.1rem 2.5rem; border-radius: 2px; min-height: 44px; transition: background var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 8px rgba(184,114,138,0.35); }
+  .btn-primary:hover { background: var(--rose-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(184,114,138,0.45); }
+  .btn-secondary { font-size: 0.9rem; font-weight: 400; color: var(--mid); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid var(--rose); padding-bottom: 2px; transition: color var(--dur-ui) var(--ease-organic); }
+  .btn-secondary:hover { color: var(--rose); }
   .hero-right { position: relative; overflow: hidden; min-height: calc(100vh - 80px); }
-  .hero-right img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; z-index: 10; }
-  .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(232,237,226,0.91) 0%, transparent 20%); z-index: 2; pointer-events: none; }
-  .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; background: rgba(232,237,226,0.92); border-left: 2px solid var(--rose); padding: 1.4rem 1.8rem; max-width: 340px; box-shadow: 0 4px 8px rgba(45,32,64,0.06), 0 16px 40px rgba(45,32,64,0.10); }
-  .hero-quote p { font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 0.5rem; }
-  .hero-quote cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-style: normal; }
-  .stats-bar { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); padding: 3rem 5rem; }
-  .stats-bar::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
-  .stats-bar > * { position: relative; z-index: 1; }
-  .stat-item { text-align: center; padding: 0.5rem 2rem; }
-  .stat-number { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; color: var(--rose); display: block; line-height: 1; text-shadow: 0 0 28px rgba(184,114,138,0.35); }
-  .stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.72); margin-top: 0.5rem; display: block; }
-  section { padding: 9rem 5rem; }
-  .section-overline { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); font-weight: 500; margin-bottom: 1rem; display: block; }
-  .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--deep); margin-bottom: 2rem; text-shadow: 0 1px 4px rgba(45,32,64,0.08); }
-  .section-body { font-size: 1rem; color: var(--mid); line-height: 1.9; max-width: 580px; }
-  #probleme { position: relative; }
-  #probleme::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; }
-  #probleme > * { position: relative; z-index: 1; }
-  #probleme .section-overline { color: var(--rose); }
-  #probleme .section-title { color: white; text-shadow: 0 2px 16px rgba(0,0,0,0.35); }
-  #probleme .problem-audience { color: var(--rose); }
-  #probleme .problem-quote { color: rgba(255,255,255,0.92); }
-  #probleme .problem-response { color: rgba(255,255,255,0.6); }
-  #angebote { position: relative; }
-  #angebote::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
-  #angebote > * { position: relative; z-index: 1; }
-  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-top: 4rem; }
-  .problem-card { background: none; padding: 0; }
-  .problem-audience { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.25rem; display: block; }
-  .problem-quote { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 1.5rem; }
-  .problem-response { font-size: 0.85rem; color: rgba(255,255,255,0.72); font-weight: 400; }
-  .angebote-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 5rem; position: relative; z-index: 1; }
-  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; margin-bottom: 7rem; }
-  .angebot-card { display: flex; flex-direction: column; background: rgba(232,237,226,0.52); border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); }
-  .angebot-card:hover { transform: translateY(-4px); }
-  .angebot-card-img { aspect-ratio: 4/3; width: 100%; overflow: hidden; border-radius: 4px 4px 0 0; }
-  .angebot-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-ambient) var(--ease-organic); }
-  .angebot-card:hover .angebot-card-img img { transform: scale(1.04); }
-  .angebot-card-placeholder { aspect-ratio: 4/3; width: 100%; background: rgba(45,32,64,0.08); border-radius: 4px 4px 0 0; }
-  .angebot-card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
-  .angebot-card-body::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); margin-bottom: 1rem; }
-  .angebot-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--deep); margin-bottom: 0.75rem; line-height: 1.3; }
-  .angebot-desc { font-size: 0.9rem; color: var(--mid); line-height: 1.75; margin-bottom: 1.25rem; }
-  .angebot-link { font-size: 0.82rem; letter-spacing: 0.06em; color: var(--rose-dark); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--rose-dark); padding-bottom: 2px; align-self: flex-start; transition: color var(--dur-ui) var(--ease-organic), opacity var(--dur-ui) var(--ease-organic); }
-  .angebot-link:hover { opacity: 0.75; }
-  .anmelde-hint { display: none; }
-  .kurse-subsection { background: transparent; padding: 4rem 0 0 0; margin-top: 2rem; border-top: 1px solid rgba(45,32,64,0.12); }
-  .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
-  .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: stretch; margin-top: 3rem; }
-  .kurs-card { background: rgba(10,8,15,0.52); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; transition: transform var(--dur-ui) var(--ease-organic); }
-  .kurs-card:hover { transform: translateY(-2px); }
-  .kurs-card-bg { position: absolute; top: 0; right: 0; width: 180px; height: 180px; opacity: 0.12; background-size: contain; background-repeat: no-repeat; background-position: top right; pointer-events: none; z-index: 0; }
-  .kurs-card > *:not(.kurs-card-bg) { position: relative; z-index: 1; }
-  .kurs-tag { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.92); border: 1px solid rgba(184,114,138,0.70); padding: 0.3rem 0.75rem; border-radius: 2px; width: fit-content; }
-  .kurs-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--white); line-height: 1.35; }
-  .kurs-teaser { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
-  .kurs-details { display: none; font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.8; }
-  .kurs-details.open { display: flex; flex-direction: column; gap: 1.25rem; }
-  .kurs-hook { font-family: var(--font-serif); font-size: 0.95rem; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.75; }
-  .kurs-inhalte-label { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); opacity: 0.85; display: block; }
-  .kurs-inhalte { list-style: none; }
-  .kurs-inhalte li { font-size: 0.84rem; color: rgba(255,255,255,0.75); padding: 0.45rem 0 0.45rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
-  .kurs-inhalte li::before { content: '·'; position: absolute; left: 0; color: var(--rose); opacity: 0.85; }
-  .kurs-outcome { font-size: 0.84rem; color: rgba(255,255,255,0.5); background: rgba(184,114,138,0.1); padding: 1.1rem 1.4rem; border-left: 2px solid var(--rose); line-height: 1.75; }
-  .kurs-outcome strong { display: block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); font-weight: 500; opacity: 1; margin-bottom: 0.45rem; }
-  .kurs-cta { display: inline-block; background: var(--rose); color: white; font-size: 0.82rem; letter-spacing: 0.06em; text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic); width: fit-content; }
-  .kurs-cta:hover { background: var(--rose-dark); }
-  .kurs-card-actions { display: flex; gap: 0.75rem; margin-top: auto; padding-top: 0.5rem; }
-  .kurs-btn-primary { background: var(--rose); color: white; font-size: 0.8rem; padding: 0.65rem 1.35rem; border-radius: 2px; text-decoration: none; font-weight: 400; transition: background var(--dur-ui) var(--ease-organic); }
-  .kurs-btn-primary:hover { background: var(--rose-dark); }
-  .kurs-toggle { background: transparent; color: rgba(255,255,255,0.45); font-family: var(--font-sans); font-size: 0.78rem; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.16); cursor: pointer; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic); }
-  .kurs-toggle:hover { border-color: rgba(255,255,255,0.38); color: rgba(255,255,255,0.82); }
-  .kurs-toggle .arrow { font-size: 0.72rem; transition: transform var(--dur-ui) var(--ease-organic); display: inline-block; }
-  .kurs-toggle.open .arrow { transform: rotate(180deg); }
-  #ueber { display: block; position: relative; }
-  #ueber::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; }
-  #ueber > * { position: relative; z-index: 1; }
-  #ueber .section-overline { color: var(--rose); }
-  #ueber .section-title { color: white; }
-  .ueber-top { display: grid; grid-template-columns: 1fr 300px; gap: 6rem; align-items: start; margin-bottom: 5rem; }
-  .ueber-image img { width: 100%; display: block; border-radius: 2px; box-shadow: 0 16px 60px rgba(0,0,0,0.5); }
-  .ueber-text p { font-size: 1rem; color: rgba(255,255,255,0.95); line-height: 1.9; margin-bottom: 1.25rem; }
-  .bio-stations { display: grid; grid-template-columns: 1fr 1fr; margin-top: 2rem; }
-  .bio-station { padding: 0 5rem 0 0; }
-  .bio-station:nth-child(even) { padding: 0 0 0 5rem; }
-  .bio-station-img { position: relative; aspect-ratio: 16/6; overflow: hidden; margin-bottom: 1.5rem; -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 100%); mask-image: radial-gradient(ellipse at center, black 55%, transparent 100%); }
-  .bio-station-img::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(ellipse at center, transparent 45%, rgba(26,16,37,0.75) 100%); }
-  .bio-station-img img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.88; filter: brightness(0.82) contrast(1.02) saturate(1.05); object-position: center center; }
-  .bio-station-name { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; color: white; display: block; margin-bottom: 0.85rem; padding: 2rem 0 0; line-height: 1.3; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
-  .bio-station p { font-size: 1.05rem; color: rgba(255,255,255,0.92); line-height: 1.9; padding-bottom: 3rem; }
-  .pub-link { color: var(--rose); border-bottom-color: var(--rose); }
-  .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: rgba(255,255,255,0.85); margin-bottom: 0.25rem; }
-  .ausbildung-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
-  .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; color: var(--rose); text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color var(--dur-ui) var(--ease-organic); }
-  .pub-link:hover { border-color: var(--rose-dark); }
-  #philosophie { position: relative; text-align: center; padding: 10rem 5rem; }
-  #philosophie::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
-  #philosophie > * { position: relative; z-index: 1; }
-  .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; text-shadow: 0 2px 20px rgba(184,114,138,0.2), 0 4px 40px rgba(0,0,0,0.3); }
-  .philo-quote-main em { color: var(--rose); font-style: normal; }
-  .philo-attribution { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.70); margin-bottom: 6rem; display: block; }
-  .philo-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; max-width: 920px; margin: 0 auto; }
-  .philo-value { text-align: left; }
-  .philo-value-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
-  .philo-value-text { font-size: 0.87rem; color: rgba(255,255,255,0.78); line-height: 1.85; }
-  #stimmen { position: relative; }
-  #stimmen::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
-  #stimmen > * { position: relative; z-index: 1; }
-  .testimonials-featured { background: transparent; padding: 0 0 4rem 0; margin-bottom: 4rem; text-align: center; border-bottom: 1px solid rgba(45,32,64,0.12); }
-  .featured-stars { margin-bottom: 2rem; display: block; color: var(--rose); }
-  .featured-quote { font-family: var(--font-serif); font-size: clamp(1.7rem, 2.5vw, 2.5rem); font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.85; max-width: 780px; margin: 0 auto; }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 3rem; row-gap: 3.5rem; margin-top: 4rem; }
-  .testimonial-card { background: none; border: none; box-shadow: none; padding: 0 0 2rem 0; border-bottom: 1px solid rgba(184,114,138,0.12); }
-  .testimonial-card:nth-child(1) { grid-column: span 7; }
-  .testimonial-card:nth-child(2) { grid-column: span 5; }
-  .testimonial-card:nth-child(3) { grid-column: span 4; }
-  .testimonial-card:nth-child(4) { grid-column: span 5; }
-  .testimonial-card:nth-child(5) { grid-column: span 3; }
-  .testimonial-card:nth-child(6) { grid-column: span 8; }
-  .testimonial-text { font-family: var(--font-serif); font-size: 1.02rem; color: var(--mid); font-style: italic; font-weight: 400; line-height: 2.0; margin-bottom: 1.25rem; }
-  .testimonial-highlight { font-size: 0.74rem; color: var(--rose-dark); font-style: normal; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; border-top: none; padding-top: 0; margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
-  .testimonial-highlight::before { content: '·'; color: var(--rose-dark); }
-  #kontakt { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
-  #kontakt::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
-  #kontakt > * { position: relative; z-index: 1; }
-  .kontakt-info .section-overline { color: var(--rose); }
-  .kontakt-info .section-title { color: var(--white); }
-  .kontakt-info .section-body { color: rgba(255,255,255,0.78); }
-  .kontakt-form { display: flex; flex-direction: column; gap: 1.5rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .form-group label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.68); }
-  .form-group input, .form-group select, .form-group textarea { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 400; color: var(--white); background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.28); padding: 1rem 1.25rem; border-radius: 2px; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
-  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.45); }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--rose); outline: none; }
-  .form-group textarea { resize: vertical; min-height: 130px; }
-  .form-submit { background: var(--rose); color: white; border: none; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.5rem; border-radius: 2px; cursor: pointer; align-self: flex-start; transition: background var(--dur-ui) var(--ease-organic); }
-  .form-submit:hover { background: var(--rose-dark); }
-  .kontakt-details { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
-  .kontakt-detail { display: grid; grid-template-columns: 1.5rem 1fr; gap: 1.25rem; align-items: start; }
-  .kontakt-detail-icon { color: var(--rose); }
-  .kontakt-detail-text { font-size: 1rem; color: rgba(255,255,255,0.80); line-height: 1.9; }
-  .kontakt-detail-text strong { display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 400; margin-bottom: 0.25rem; }
+  .hero-right img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; z-index: 1; }
+  .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(232,237,226,0.92) 0%, transparent 22%); z-index: 2; pointer-events: none; }
+  .hero-quote { position: absolute; bottom: 3rem; left: 2rem; z-index: 3; border-left: 2px solid rgba(184,114,138,0.6); padding: 0.65rem 1.4rem; max-width: 360px; }
+  .hero-quote p { font-family: var(--font-serif); font-size: 0.95rem; font-style: italic; color: rgba(45,32,64,0.9); line-height: 1.65; margin-bottom: 0.4rem; }
+  .hero-quote cite { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-style: normal; }
+
+  /* ── Section base ── */
+  .section-overline { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; display: block; }
+  .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 2rem; }
+  .section-body { font-size: 1.05rem; line-height: 1.9; max-width: 600px; }
+  .back-link { display: inline-block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); text-decoration: none; font-weight: 500; margin-bottom: 3.5rem; }
+  .back-link:hover { color: var(--rose); }
+
+  /* ── Scene 1: Erkennst du das (dark) ── */
+  #scene-erkennst { position: relative; padding: 9rem 5rem; }
+  #scene-erkennst::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
+  #scene-erkennst > * { position: relative; z-index: 1; }
+  #scene-erkennst .section-overline { color: var(--rose); }
+  #scene-erkennst .section-title { color: var(--white); }
+  .erkennst-statements { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 4rem; }
+  .erkennst-statement { padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; gap: 1.5rem; align-items: baseline; }
+  .erkennst-statement:nth-child(odd) { padding-right: 4rem; }
+  .erkennst-statement:nth-child(even) { padding-left: 4rem; border-left: 1px solid rgba(255,255,255,0.07); }
+  .erkennst-statement-num { font-family: var(--font-serif); font-size: 0.7rem; color: var(--rose); opacity: 0.7; flex-shrink: 0; padding-top: 0.3rem; }
+  .erkennst-statement-text { font-family: var(--font-serif); font-size: clamp(1rem, 1.4vw, 1.25rem); font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.75; }
+
+  /* ── Scene 2: Mein Angebot (light) ── */
+  #scene-angebot { position: relative; padding: 9rem 5rem; }
+  #scene-angebot::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(232,237,226,0) 0%, rgba(232,237,226,0.94) 5%, rgba(232,237,226,0.94) 94%, rgba(232,237,226,0) 100%); z-index: 0; pointer-events: none; }
+  #scene-angebot > * { position: relative; z-index: 1; }
+  #scene-angebot .section-overline { color: var(--rose-dark); }
+  #scene-angebot .section-title { color: var(--deep); }
+  #scene-angebot .section-body { color: var(--mid); margin-bottom: 5rem; }
+  .angebot-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
+  .angebot-pillar { padding: 2.5rem; background: rgba(45,32,64,0.04); border-top: 2px solid var(--rose); }
+  .angebot-pillar-num { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); display: block; margin-bottom: 1.25rem; font-weight: 500; }
+  .angebot-pillar-title { font-family: var(--font-serif); font-size: 1.2rem; color: var(--deep); margin-bottom: 1rem; line-height: 1.3; }
+  .angebot-pillar-body { font-size: 0.92rem; color: var(--mid); line-height: 1.85; }
+  .angebot-pillar-list { list-style: none; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem; }
+  .angebot-pillar-list li { font-size: 0.88rem; color: var(--mid); line-height: 1.7; padding-left: 1rem; position: relative; }
+  .angebot-pillar-list li::before { content: '·'; position: absolute; left: 0; color: var(--rose); }
+
+  /* ── Scene 3: Foto-Moment (full image + pull quote) ── */
+  #scene-foto { position: relative; min-height: 55vh; display: flex; align-items: center; overflow: hidden; }
+  #scene-foto::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.55); z-index: 1; pointer-events: none; }
+  .scene-foto-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+  .scene-foto-content { position: relative; z-index: 2; padding: 8rem 5rem; max-width: 720px; }
+  .scene-foto-quote { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.2vw, 2.2rem); font-style: italic; color: var(--white); line-height: 1.55; margin-bottom: 1.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .scene-foto-cite { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.58); font-style: normal; }
+
+  /* ── Scene 4: Mein Ziel (dark) ── */
+  #scene-ziel { position: relative; padding: 9rem 5rem; }
+  #scene-ziel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
+  #scene-ziel > * { position: relative; z-index: 1; }
+  #scene-ziel .section-overline { color: var(--rose); }
+  #scene-ziel .section-title { color: var(--white); }
+  .ziel-statements { margin-top: 4rem; display: flex; flex-direction: column; gap: 0; }
+  .ziel-statement { display: flex; gap: 2rem; align-items: baseline; padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .ziel-statement:last-child { border-bottom: none; }
+  .ziel-statement-num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--rose); opacity: 0.35; flex-shrink: 0; line-height: 1; min-width: 2rem; }
+  .ziel-statement-text { font-family: var(--font-serif); font-size: clamp(1.1rem, 1.6vw, 1.5rem); color: rgba(255,255,255,0.92); line-height: 1.55; }
+
+  /* ── Scene 5: Fachmaterial (light) ── */
+  #scene-material { position: relative; padding: 7rem 5rem; }
+  #scene-material::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
+  #scene-material > * { position: relative; z-index: 1; }
+  #scene-material .section-overline { color: var(--rose-dark); }
+  .material-block { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .material-text .section-title { color: var(--deep); font-size: clamp(1.4rem, 2vw, 2rem); margin-bottom: 1rem; }
+  .material-text p { font-size: 0.95rem; color: var(--mid); line-height: 1.85; margin-bottom: 1.5rem; max-width: 480px; }
+  .material-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; letter-spacing: 0.06em; color: var(--rose-dark); text-decoration: none; border-bottom: 1px solid var(--rose-dark); padding-bottom: 2px; font-weight: 500; transition: color var(--dur-ui) var(--ease-organic); }
+  .material-link:hover { color: var(--rose); border-color: var(--rose); }
+  .material-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; display: block; }
+  .material-visual { position: relative; aspect-ratio: 5/4; overflow: hidden; border-radius: 2px; }
+  .material-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+
+  /* ── CTA ── */
+  #scene-cta { position: relative; padding: 8rem 5rem; text-align: center; }
+  #scene-cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 100%); z-index: 0; pointer-events: none; }
+  #scene-cta > * { position: relative; z-index: 1; }
+  .cta-overline { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; display: block; margin-bottom: 1.5rem; }
+  .cta-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 3rem); color: var(--white); margin-bottom: 1.25rem; line-height: 1.2; }
+  .cta-body { font-size: 1rem; color: rgba(255,255,255,0.72); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.85; }
+
+  /* ── Footer ── */
   footer { background: #120D1E; padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.65); }
   .footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; }
-  .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
-  @media (max-width: 900px) {
-    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { grid-template-columns: 1fr; } .hero-left { padding: 3rem 1.5rem; } .hero-right { height: 60vw; } section { padding: 5rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 5rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
-  }
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
   .footer-nav a:hover { color: rgba(255,255,255,0.70); }
-  .detail-hero { position: relative; min-height: 60vh; display: flex; align-items: flex-end; padding: 8rem 5rem 5rem; }
-  .detail-hero::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.72); z-index: 0; pointer-events: none; }
-  .detail-hero > * { position: relative; z-index: 1; }
-  .detail-hero .section-overline { color: var(--rose); }
-  .detail-hero .section-title { color: white; margin-bottom: 0.5rem; font-size: clamp(1.8rem, 4vw, 3.2rem); }
-  p.subtitle { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 680px; margin-top: 1rem; }
-  .detail-content { position: relative; padding: 6rem 5rem; }
-  .detail-content::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
-  .detail-content > * { position: relative; z-index: 1; max-width: 800px; }
-  .detail-content h2 { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 400; color: var(--deep); margin: 3rem 0 1rem; line-height: 1.2; }
-  .detail-content h3 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--deep); margin: 2rem 0 0.5rem; }
-  .detail-content p { color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; font-size: 1rem; }
-  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .detail-content ul li { color: var(--mid); line-height: 1.85; margin-bottom: 0.4rem; }
-  .detail-content .back-link { display: inline-block; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); text-decoration: none; margin-bottom: 3rem; font-weight: 500; }
-  .detail-content .back-link:hover { color: var(--rose); }
-  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0 3rem; }
-  .detail-card { background: rgba(45,32,64,0.05); border-left: 2px solid var(--rose); padding: 1.5rem 1.75rem; border-radius: 0 2px 2px 0; }
-  .detail-card h3 { margin-top: 0; color: var(--deep); }
-  .detail-card p { color: var(--mid); font-size: 0.95rem; margin: 0; }
-  .detail-cta { background: rgba(45,32,64,0.04); border-top: 1px solid rgba(45,32,64,0.1); padding: 3rem 5rem; position: relative; }
-  .detail-cta::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
-  .detail-cta > * { position: relative; z-index: 1; max-width: 800px; }
-  .detail-cta p { color: var(--mid); margin-bottom: 1.5rem; font-size: 1rem; }
-  .detail-material { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(45,32,64,0.1); }
-  .detail-material p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
-  .detail-material a { color: var(--rose); font-size: 0.9rem; display: block; margin-bottom: 0.3rem; text-decoration: underline; text-decoration-color: rgba(184,114,138,0.4); }
+
+  .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
+
+  /* ── Scroll reveals ── */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+      .erkennst-statement { animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 0% entry 28%; }
+      .erkennst-statement:nth-child(2) { animation-range: entry 3% entry 31%; }
+      .erkennst-statement:nth-child(3) { animation-range: entry 6% entry 34%; }
+      .erkennst-statement:nth-child(4) { animation-range: entry 9% entry 37%; }
+      .erkennst-statement:nth-child(5) { animation-range: entry 12% entry 40%; }
+      .erkennst-statement:nth-child(6) { animation-range: entry 15% entry 43%; }
+      .angebot-pillar { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 30%; }
+      .angebot-pillar:nth-child(2) { animation-range: entry 9% entry 34%; }
+      .angebot-pillar:nth-child(3) { animation-range: entry 13% entry 38%; }
+      .scene-foto-quote, .scene-foto-cite { animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 30%; }
+      .ziel-statement { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 0% entry 28%; }
+      .ziel-statement:nth-child(2) { animation-range: entry 5% entry 33%; }
+      .ziel-statement:nth-child(3) { animation-range: entry 10% entry 38%; }
+    }
+  }
+
+  /* ── Mobile ── */
   @media (max-width: 900px) {
-    .detail-hero { padding: 7rem 1.5rem 4rem; }
-    .detail-content { padding: 4rem 1.5rem; }
-    .detail-cta { padding: 3rem 1.5rem; }
-    .detail-grid { grid-template-columns: 1fr; }
+    nav.main-nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem 4rem; }
+    .hero-right { min-height: 70vw; }
+    #scene-erkennst, #scene-angebot, #scene-ziel, #scene-material, #scene-cta { padding: 6rem 1.5rem; }
+    .erkennst-statements { grid-template-columns: 1fr; }
+    .erkennst-statement:nth-child(odd) { padding-right: 0; }
+    .erkennst-statement:nth-child(even) { padding-left: 0; border-left: none; }
+    .angebot-pillars { grid-template-columns: 1fr; gap: 1.5rem; }
+    .scene-foto-content { padding: 5rem 1.5rem; }
+    .material-block { grid-template-columns: 1fr; gap: 3rem; }
+    .material-visual { max-height: 300px; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+    @media (max-width: 480px) {
+      .ziel-statement-text { font-size: 1rem; }
+    }
   }
 </style>
 </head>
@@ -263,94 +210,160 @@
   </ul>
 </nav>
 
+<!-- Hero -->
 <section id="hero">
   <div class="hero-left">
     <span class="hero-overline">Entwicklungsbegleitung</span>
-    <h1 class="hero-headline">Verstehen, was Ihr Kind<span class="hero-headline-sub">wirklich braucht.</span></h1>
+    <h1 class="hero-headline">Verstehen, was Ihr Kind<em> wirklich braucht.</em></h1>
     <p class="hero-sub">Ganzheitliche Befundung, Beratung und Entwicklungsbegleitung — für Familien, die Orientierung suchen.</p>
-    <div class="hero-tags"><span class="tag">Entwicklungsbegleitung</span><span class="tag">Familienberatung</span><span class="tag">Sprachentwicklung</span></div>
+    <div class="hero-tags">
+      <span class="tag">Entwicklungsbegleitung</span>
+      <span class="tag">Familienberatung</span>
+      <span class="tag">Sprachentwicklung</span>
+    </div>
     <div class="hero-actions">
-      <a href="#inhalt" class="btn-primary">Mehr erfahren</a>
+      <a href="#scene-erkennst" class="btn-primary">Mehr erfahren</a>
       <a href="index.html#kontakt" class="btn-secondary">Kontakt aufnehmen</a>
     </div>
-  </div>
-  <div class="hero-right">
-    <img src="familie-1.jpg" alt="" loading="eager" fetchpriority="high" style="object-position: center top;">
     <div class="hero-quote">
       <p>„Kinder besser verstehen, anstatt nur Symptome zu betrachten."</p>
       <cite>Dr. Stephanie Kurtenbach</cite>
     </div>
   </div>
+  <div class="hero-right">
+    <img src="familie-1.jpg" alt="Mutter und Kind in warmem Licht" loading="eager" fetchpriority="high" width="900" height="1200">
+  </div>
 </section>
 
-<div class="detail-content" id="inhalt">
-  <a href="index.html#angebote" class="back-link">← Zurück zu den Angeboten</a>
-
-  <h2>Vielleicht kennen Sie als Eltern diese Situation:</h2>
-  <ul>
-    <li>Ihr Kind spricht wenig oder entwickelt seine Sprache langsamer als andere Kinder.</li>
-    <li>In der Kita gibt es immer wieder Schwierigkeiten.</li>
-    <li>Ihr Kind hat schulische Probleme.</li>
-    <li>Sie hören unterschiedliche Einschätzungen und Empfehlungen.</li>
-    <li>Niemand scheint genau sagen zu können, warum Ihr Kind diese Herausforderungen hat.</li>
-    <li>Sie fragen sich, welche Unterstützung Ihr Kind wirklich braucht.</li>
-  </ul>
-
-  <p>Viele Eltern erleben einen langen Weg voller Fragen, Unsicherheit und widersprüchlicher Aussagen. Oft wird an einzelnen Symptomen gearbeitet, während die eigentlichen Ursachen unentdeckt bleiben.</p>
-
-  <h2>Mein Angebot: Ganzheitliche Begleitung von Kindern und Familien</h2>
-  <p>Ich unterstütze Familien dabei, die Entwicklung ihres Kindes besser zu verstehen und die nächsten sinnvollen Schritte zu erkennen. Dabei betrachte ich nicht nur die sprachlichen Fähigkeiten Ihres Kindes, sondern die gesamte Entwicklung. Besonders wichtig sind dabei die Zusammenhänge zwischen Sprache, Bewegung, Wahrnehmung, sensomotorischer Entwicklung und neuromotorischer Reife.</p>
-
-  <h3>Umfassende Befundung</h3>
-  <p>In einer ausführlichen Anfangsbefundung erfasse ich die individuellen Stärken und Herausforderungen Ihres Kindes. Dabei berücksichtige ich:</p>
-  <ul>
-    <li>den sensomotorischen Entwicklungsstand</li>
-    <li>die neuromotorische Reife</li>
-    <li>mögliche Entwicklungsfaktoren, die die Sprachentwicklung beeinflussen können</li>
-    <li>die Voraussetzungen für Kommunikation, Lernen und soziale Teilhabe</li>
-  </ul>
-  <p>So können häufig Ursachen sichtbar werden, die bisher nicht ausreichend berücksichtigt wurden.</p>
-
-  <h3>Beratung und Orientierung</h3>
-  <p>Auf Grundlage der Befundung erhalten Sie eine verständliche Einschätzung der Situation Ihres Kindes. Gemeinsam klären wir:</p>
-  <ul>
-    <li>Welche Faktoren die Entwicklung Ihres Kindes beeinflussen</li>
-    <li>Welche Unterstützung jetzt sinnvoll ist</li>
-    <li>Welche nächsten Schritte hilfreich sein können</li>
-    <li>Welche Fachstellen oder therapeutischen Angebote infrage kommen</li>
-  </ul>
-  <p>Sie erhalten konkrete Empfehlungen und Orientierung für den weiteren Weg.</p>
-
-  <h3>Entwicklungsbegleitung und Kommunikationsberatung</h3>
-  <p>Darüber hinaus unterstütze ich Sie dabei:</p>
-  <ul>
-    <li>die Entwicklung Ihres Kindes gezielt im Alltag zu fördern</li>
-    <li>Kommunikation positiv zu gestalten</li>
-    <li>die Stärken Ihres Kindes auszubauen</li>
-    <li>mehr Sicherheit im Umgang mit den Herausforderungen Ihres Kindes zu gewinnen</li>
-  </ul>
-
-  <h2>Mein Ziel</h2>
-  <ul>
-    <li>Eltern Klarheit geben, wenn viele Fragen offen sind.</li>
-    <li>Kinder besser verstehen, anstatt nur Symptome zu betrachten.</li>
-    <li>Gemeinsam Wege finden, damit Entwicklung möglich wird.</li>
-  </ul>
-
-  <figure style="margin: 3rem 0; border-radius: 2px; overflow: hidden; max-width: 800px;">
-    <img src="familie-2.jpg" alt="" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 16/7; object-fit: cover; object-position: center 35%;">
-  </figure>
-
-  <div class="detail-material">
-    <p>Fachmaterial von Dr. Stephanie Kurtenbach:</p>
-    <a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/sprachentwicklungsstoerungen/mundmotorikmft/4060/ein-tag-mit-teddy-pitt" target="_blank" rel="noopener">Ein Tag mit Teddy Pitt →</a>
+<!-- Scene 1: Erkennst du das? -->
+<section id="scene-erkennst" aria-label="Häufige Situationen">
+  <span class="section-overline">Erkennst du das?</span>
+  <h2 class="section-title">Viele Familien erleben denselben Weg.</h2>
+  <div class="erkennst-statements">
+    <div class="erkennst-statement">
+      <span class="erkennst-statement-num">—</span>
+      <p class="erkennst-statement-text">Ihr Kind spricht wenig oder entwickelt seine Sprache langsamer als andere.</p>
+    </div>
+    <div class="erkennst-statement">
+      <span class="erkennst-statement-num">—</span>
+      <p class="erkennst-statement-text">In der Kita oder Schule gibt es immer wieder Schwierigkeiten.</p>
+    </div>
+    <div class="erkennst-statement">
+      <span class="erkennst-statement-num">—</span>
+      <p class="erkennst-statement-text">Sie hören widersprüchliche Einschätzungen und wissen nicht, welcher Sie vertrauen sollen.</p>
+    </div>
+    <div class="erkennst-statement">
+      <span class="erkennst-statement-num">—</span>
+      <p class="erkennst-statement-text">Niemand kann genau sagen, warum Ihr Kind diese Herausforderungen hat.</p>
+    </div>
+    <div class="erkennst-statement">
+      <span class="erkennst-statement-num">—</span>
+      <p class="erkennst-statement-text">Es wird an einzelnen Symptomen gearbeitet, während die eigentlichen Ursachen unentdeckt bleiben.</p>
+    </div>
+    <div class="erkennst-statement">
+      <span class="erkennst-statement-num">—</span>
+      <p class="erkennst-statement-text">Sie fragen sich, welche Unterstützung Ihr Kind wirklich braucht.</p>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="detail-cta">
-  <p>Interesse bekommen? Nehmen Sie gerne Kontakt mit mir auf.</p>
+<!-- Scene 2: Mein Angebot -->
+<section id="scene-angebot" aria-label="Mein Angebot">
+  <a href="index.html#angebote" class="back-link">← Zurück zu den Angeboten</a>
+  <span class="section-overline">Mein Angebot</span>
+  <h2 class="section-title">Ganzheitliche Begleitung von Kindern und Familien.</h2>
+  <p class="section-body">Ich unterstütze Familien dabei, die Entwicklung ihres Kindes besser zu verstehen und die nächsten sinnvollen Schritte zu erkennen. Besonders wichtig sind dabei die Zusammenhänge zwischen Sprache, Bewegung, Wahrnehmung, sensomotorischer Entwicklung und neuromotorischer Reife.</p>
+  <div class="angebot-pillars">
+    <div class="angebot-pillar">
+      <span class="angebot-pillar-num">01 · Befundung</span>
+      <h3 class="angebot-pillar-title">Umfassende Anfangsbefundung</h3>
+      <p class="angebot-pillar-body">In einer ausführlichen Anfangsbefundung erfasse ich die individuellen Stärken und Herausforderungen Ihres Kindes.</p>
+      <ul class="angebot-pillar-list">
+        <li>Sensomotorischer Entwicklungsstand</li>
+        <li>Neuromotorische Reife</li>
+        <li>Voraussetzungen für Kommunikation und Lernen</li>
+        <li>Mögliche Entwicklungsfaktoren für die Sprachentwicklung</li>
+      </ul>
+    </div>
+    <div class="angebot-pillar">
+      <span class="angebot-pillar-num">02 · Beratung</span>
+      <h3 class="angebot-pillar-title">Orientierung und nächste Schritte</h3>
+      <p class="angebot-pillar-body">Auf Grundlage der Befundung erhalten Sie eine verständliche Einschätzung der Situation Ihres Kindes.</p>
+      <ul class="angebot-pillar-list">
+        <li>Welche Faktoren die Entwicklung beeinflussen</li>
+        <li>Welche Unterstützung jetzt sinnvoll ist</li>
+        <li>Welche Fachstellen infrage kommen</li>
+        <li>Welche nächsten Schritte hilfreich sein können</li>
+      </ul>
+    </div>
+    <div class="angebot-pillar">
+      <span class="angebot-pillar-num">03 · Begleitung</span>
+      <h3 class="angebot-pillar-title">Entwicklungsbegleitung im Alltag</h3>
+      <p class="angebot-pillar-body">Ich unterstütze Sie dabei, die Entwicklung Ihres Kindes gezielt im Alltag zu fördern und Kommunikation positiv zu gestalten.</p>
+      <ul class="angebot-pillar-list">
+        <li>Stärken des Kindes ausbauen</li>
+        <li>Sicherheit im Umgang mit Herausforderungen</li>
+        <li>Kommunikation positiv gestalten</li>
+        <li>Orientierung auf dem weiteren Weg</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 3: Foto-Moment -->
+<section id="scene-foto" aria-hidden="true">
+  <img class="scene-foto-img" src="familie-2.jpg" alt="" loading="lazy" width="1600" height="900">
+  <div class="scene-foto-content">
+    <blockquote class="scene-foto-quote">„Kinder brauchen keine Perfektion — sie brauchen Eltern, die aufmerksam zuhören."</blockquote>
+    <cite class="scene-foto-cite">Dr. Stephanie Kurtenbach</cite>
+  </div>
+</section>
+
+<!-- Scene 4: Mein Ziel -->
+<section id="scene-ziel" aria-label="Mein Ziel">
+  <span class="section-overline">Mein Ziel</span>
+  <h2 class="section-title">Was ich für Sie und Ihr Kind erreichen möchte.</h2>
+  <div class="ziel-statements">
+    <div class="ziel-statement">
+      <span class="ziel-statement-num">1</span>
+      <p class="ziel-statement-text">Eltern Klarheit geben, wenn viele Fragen offen sind.</p>
+    </div>
+    <div class="ziel-statement">
+      <span class="ziel-statement-num">2</span>
+      <p class="ziel-statement-text">Kinder besser verstehen, anstatt nur Symptome zu betrachten.</p>
+    </div>
+    <div class="ziel-statement">
+      <span class="ziel-statement-num">3</span>
+      <p class="ziel-statement-text">Gemeinsam Wege finden, damit Entwicklung möglich wird.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 5: Fachmaterial -->
+<section id="scene-material">
+  <span class="section-overline">Fachmaterial</span>
+  <div class="material-block">
+    <div class="material-text">
+      <h2 class="section-title">Ein Tag mit Teddy Pitt</h2>
+      <p>Ein Prolog-Materialband von Dr. Stephanie Kurtenbach — entwickelt für die therapeutische Praxis rund um kindliche Mundmotorik und Sprachentwicklung.</p>
+      <a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/sprachentwicklungsstoerungen/mundmotorikmft/4060/ein-tag-mit-teddy-pitt" target="_blank" rel="noopener" class="material-link">
+        Zum Prolog-Verlag →
+      </a>
+      <span class="material-note">Externer Link · öffnet in neuem Tab</span>
+    </div>
+    <div class="material-visual">
+      <img src="familie-1.jpg" alt="" loading="lazy" width="600" height="480">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="scene-cta">
+  <span class="cta-overline">Kontakt aufnehmen</span>
+  <h2 class="cta-title">Interesse? Ich freue mich auf Ihre Nachricht.</h2>
+  <p class="cta-body">Nehmen Sie gerne Kontakt mit mir auf — für ein erstes Beratungsgespräch oder eine Anfrage. Ich melde mich innerhalb von 2 Werktagen.</p>
   <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">hallo@stephaniekurtenbach.com</a>
-</div>
+</section>
 
 <footer>
   <p class="footer-logo">Dr. Stephanie Kurtenbach</p>
@@ -360,10 +373,10 @@
     <a href="/datenschutz">Datenschutz</a>
   </nav>
 </footer>
+
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Progress bar: native scroll + rAF — no GSAP scrub listener on every pixel
   const _bar = document.getElementById('progressBar');
   let _rafPending = false;
   window.addEventListener('scroll', () => {
@@ -376,66 +389,14 @@
     });
   }, { passive: true });
 
-  // Stat counters: instant under reduced motion
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('.stat-number').forEach(el => {
-    const target = parseInt(el.dataset.target);
-    const suffix = el.dataset.suffix || '';
-    ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => {
-      if (prefersReduced) { el.textContent = target + suffix; return; }
-      let obj = { val: 0 };
-      gsap.to(obj, { val: target, duration: 1.5, ease: 'power2.out', onUpdate: () => { el.textContent = Math.round(obj.val) + suffix; }});
-    }});
-  });
-
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    // Hero load sequence
     gsap.from('.hero-overline',  { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.15 });
     gsap.from('.hero-headline',  { y: 20, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.3 });
     gsap.from('.hero-sub',       { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.5 });
     gsap.from('.hero-tags',      { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.62 });
     gsap.from('.hero-actions',   { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.74 });
     gsap.from('.hero-quote',     { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.92 });
-
-    // Section titles — per-element trigger, not body
-    document.querySelectorAll('.section-title').forEach(el => {
-      gsap.from(el, { y: 18, opacity: 0, duration: 0.75, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true }});
-    });
-
-    // Section overlines — per-element trigger, not global body trigger
-    document.querySelectorAll('.section-overline').forEach(el => {
-      gsap.from(el, { y: 10, opacity: 0, duration: 0.55, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true }});
-    });
-
-    // Scroll reveals — stagger ≤ 50ms, y ≤ 12px (no diagonal wave)
-    gsap.from('.problem-card',    { y: 12, opacity: 0, duration: 0.65, ease: 'power3.out', stagger: 0.05, scrollTrigger: { trigger: '.problems-grid',   start: 'top 85%', once: true }});
-    gsap.from('.kurs-card',       { y: 12, opacity: 0, duration: 0.65, ease: 'power3.out', stagger: 0.05, scrollTrigger: { trigger: '.kurse-grid',      start: 'top 85%', once: true }});
-    gsap.from('.bio-station',     { y: 12, opacity: 0, duration: 0.65, ease: 'power3.out', stagger: 0.05, scrollTrigger: { trigger: '.bio-stations',    start: 'top 82%', once: true }});
-    gsap.from('.testimonial-card',{ y: 10, opacity: 0, duration: 0.55, ease: 'power3.out', stagger: 0.04, scrollTrigger: { trigger: '.testimonials-grid', start: 'top 85%', once: true }});
   });
-
-  function equalizeKursCards() {
-    const cards = document.querySelectorAll('.kurs-card');
-    cards.forEach(c => c.style.minHeight = '');
-    let max = 0;
-    cards.forEach(c => { max = Math.max(max, c.offsetHeight); });
-    cards.forEach(c => c.style.minHeight = max + 'px');
-  }
-  document.fonts.ready.then(equalizeKursCards);
-  window.addEventListener('load', equalizeKursCards);
-  let resizeRaf;
-  window.addEventListener('resize', () => {
-    if (resizeRaf) cancelAnimationFrame(resizeRaf);
-    resizeRaf = requestAnimationFrame(equalizeKursCards);
-  });
-
-  function toggleKurs(btn) {
-    const details = btn.closest('.kurs-card').querySelector('.kurs-details');
-    const isOpen = details.classList.contains('open');
-    details.classList.toggle('open', !isOpen);
-    btn.classList.toggle('open', !isOpen);
-    btn.querySelector('.arrow').textContent = isOpen ? '↓' : '↑';
-  }
 </script>
 </body>
 </html>
