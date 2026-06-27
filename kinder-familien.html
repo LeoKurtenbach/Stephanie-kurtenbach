@@ -101,21 +101,20 @@
   .angebot-pillar-list li { font-size: 0.88rem; color: var(--mid); line-height: 1.7; padding-left: 1rem; position: relative; }
   .angebot-pillar-list li::before { content: '·'; position: absolute; left: 0; color: var(--rose); }
 
-  /* ── Scene 3: Zitat-Moment (editorial: Bild links, Zitat rechts — nie über native Breite) ── */
-  #scene-foto { position: relative; padding: 9rem 5rem; }
-  #scene-foto::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.40); z-index: 0; pointer-events: none; }
+  /* ── Scene 3: Zitat-Moment (split: Zitat links, Bild rechts — dunkles Gegenstück zu scene-material) ── */
+  #scene-foto { position: relative; padding: 7rem 5rem; }
+  #scene-foto::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
   #scene-foto > * { position: relative; z-index: 1; }
-  .scene-foto-inner { display: grid; grid-template-columns: auto 1fr; gap: 5rem; align-items: center; max-width: 960px; }
-  .scene-foto-img { display: block; width: 260px; max-width: 100%; height: auto; border-radius: 2px; box-shadow: 0 8px 48px rgba(0,0,0,0.55); }
-  .scene-foto-quote { font-family: var(--font-serif); font-size: clamp(1.3rem, 1.9vw, 1.85rem); font-style: italic; color: var(--white); line-height: 1.65; margin-bottom: 1.5rem; }
+  .scene-foto-block { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .scene-foto-visual { position: relative; overflow: hidden; border-radius: 2px; height: 520px; }
+  .scene-foto-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .scene-foto-quote { font-family: var(--font-serif); font-size: clamp(1.3rem, 1.9vw, 1.9rem); font-style: italic; color: var(--white); line-height: 1.65; margin-bottom: 1.5rem; }
   .scene-foto-cite { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-style: normal; }
 
-  /* ── Bild-Band: angebot-kinder.jpg (contained, max 860px ≤ 900px native — kein Upscaling) ── */
-  #scene-kind-foto { position: relative; padding: 5rem 5rem; text-align: center; }
-  #scene-kind-foto::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.52); z-index: 0; pointer-events: none; }
-  .kind-foto-wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; }
-  .kind-foto-img { display: block; width: 100%; height: auto; border-radius: 2px; box-shadow: 0 4px 32px rgba(0,0,0,0.5); }
-  .kind-foto-label { display: block; margin-top: 1.25rem; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+  /* ── Ziel: zweispaltig (Text links, Bild rechts) ── */
+  .ziel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .ziel-visual { position: relative; aspect-ratio: 5/4; overflow: hidden; border-radius: 2px; }
+  .ziel-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
 
   /* ── Scene 4: Mein Ziel (dark) ── */
   #scene-ziel { position: relative; padding: 9rem 5rem; }
@@ -185,9 +184,10 @@
     #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 6rem 1.5rem; }
     .erkennst-statements { max-width: 100%; }
     .angebot-pillars { grid-template-columns: 1fr; gap: 1.5rem; }
-    .scene-foto-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .scene-foto-img { width: 100%; max-width: 380px; margin: 0 auto; }
-    #scene-kind-foto { padding: 3rem 1.5rem; }
+    .scene-foto-block { grid-template-columns: 1fr; gap: 2.5rem; }
+    .scene-foto-visual { height: 60vw; max-height: 380px; }
+    .ziel-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .ziel-visual { aspect-ratio: 4/3; }
     .material-block { grid-template-columns: 1fr; gap: 3rem; }
     .material-visual { max-height: 300px; }
     footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
@@ -310,44 +310,45 @@
   </div>
 </section>
 
-<!-- Scene 3: Zitat-Moment -->
+<!-- Scene 3: Zitat-Moment (split: Zitat links, Bild rechts) -->
 <section id="scene-foto">
-  <div class="scene-foto-inner">
-    <img class="scene-foto-img reveal" src="familie-2.jpg" alt="" loading="lazy" width="683" height="1024">
-    <div class="scene-foto-content">
-      <blockquote class="scene-foto-quote reveal" data-delay="1">„Kinder brauchen keine Perfektion — sie brauchen Eltern, die aufmerksam zuhören."</blockquote>
-      <cite class="scene-foto-cite reveal" data-delay="2">Dr. Stephanie Kurtenbach</cite>
+  <div class="scene-foto-block">
+    <div class="scene-foto-text">
+      <blockquote class="scene-foto-quote reveal">„Kinder brauchen keine Perfektion — sie brauchen Eltern, die aufmerksam zuhören."</blockquote>
+      <cite class="scene-foto-cite reveal" data-delay="1">Dr. Stephanie Kurtenbach</cite>
+    </div>
+    <div class="scene-foto-visual reveal-bg" data-delay="1">
+      <img src="familie-2.jpg" alt="" loading="lazy" width="683" height="1024">
     </div>
   </div>
 </section>
 
-<!-- Scene 4: Mein Ziel -->
+<!-- Scene 4: Mein Ziel (split: Text links, Bild rechts) -->
 <section id="scene-ziel" aria-label="Mein Ziel">
-  <span class="section-overline reveal">Mein Ziel</span>
-  <h2 class="section-title reveal" data-delay="1">Was ich für Sie und Ihr Kind erreichen möchte.</h2>
-  <div class="ziel-statements">
-    <div class="ziel-statement reveal">
-      <span class="ziel-statement-num">1</span>
-      <p class="ziel-statement-text">Eltern Klarheit geben, wenn viele Fragen offen sind.</p>
+  <div class="ziel-inner">
+    <div class="ziel-text">
+      <span class="section-overline reveal">Mein Ziel</span>
+      <h2 class="section-title reveal" data-delay="1">Was ich für Sie und Ihr Kind erreichen möchte.</h2>
+      <div class="ziel-statements">
+        <div class="ziel-statement reveal">
+          <span class="ziel-statement-num">1</span>
+          <p class="ziel-statement-text">Eltern Klarheit geben, wenn viele Fragen offen sind.</p>
+        </div>
+        <div class="ziel-statement reveal" data-delay="1">
+          <span class="ziel-statement-num">2</span>
+          <p class="ziel-statement-text">Kinder besser verstehen, anstatt nur Symptome zu betrachten.</p>
+        </div>
+        <div class="ziel-statement reveal" data-delay="2">
+          <span class="ziel-statement-num">3</span>
+          <p class="ziel-statement-text">Gemeinsam Wege finden, damit Entwicklung möglich wird.</p>
+        </div>
+      </div>
     </div>
-    <div class="ziel-statement reveal" data-delay="1">
-      <span class="ziel-statement-num">2</span>
-      <p class="ziel-statement-text">Kinder besser verstehen, anstatt nur Symptome zu betrachten.</p>
-    </div>
-    <div class="ziel-statement reveal" data-delay="2">
-      <span class="ziel-statement-num">3</span>
-      <p class="ziel-statement-text">Gemeinsam Wege finden, damit Entwicklung möglich wird.</p>
+    <div class="ziel-visual reveal-bg" data-delay="2">
+      <img src="angebot-kinder.jpg" alt="" loading="lazy" width="900" height="712">
     </div>
   </div>
 </section>
-
-<!-- Atmosphärisches Bild-Band (contained, ≤ 860px → kein Upscaling über 900px native) -->
-<div id="scene-kind-foto" aria-hidden="true">
-  <div class="kind-foto-wrap reveal">
-    <img class="kind-foto-img" src="angebot-kinder.jpg" alt="" loading="lazy" width="900" height="712">
-    <span class="kind-foto-label">Kinder &amp; Familien · Begleitung &amp; Beratung</span>
-  </div>
-</div>
 
 <!-- Scene 5: Fachmaterial -->
 <section id="scene-material">
