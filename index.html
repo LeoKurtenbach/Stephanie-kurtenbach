@@ -245,48 +245,19 @@
         animation-timeline: scroll(root block);
       }
     }
-    @supports (animation-timeline: view()) {
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(12px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes bioParallax {
-        from { transform: translateY(-4%); }
-        to   { transform: translateY(4%); }
-      }
-      .section-overline { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 28%; }
-      .section-title { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 30%; }
-      .problem-card { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 28%; }
-      .problem-card:nth-child(2) { animation-range: entry 9% entry 32%; }
-      .problem-card:nth-child(3) { animation-range: entry 13% entry 36%; }
-      .angebot-card { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 28%; }
-      .angebot-card:nth-child(2) { animation-range: entry 9% entry 32%; }
-      .angebot-card:nth-child(3) { animation-range: entry 13% entry 36%; }
-      .kurs-card { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 28%; }
-      .kurs-card:nth-child(2) { animation-range: entry 8% entry 31%; }
-      .kurs-card:nth-child(3) { animation-range: entry 11% entry 34%; }
-      .kurs-card:nth-child(4) { animation-range: entry 14% entry 37%; }
-      .philo-value { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 28%; }
-      .philo-value:nth-child(2) { animation-range: entry 9% entry 32%; }
-      .philo-value:nth-child(3) { animation-range: entry 13% entry 36%; }
-      .bio-station { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 28%; }
-      .bio-station:nth-child(even) { animation-range: entry 9% entry 32%; }
-      .testimonial-card { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 28%; }
-      .bio-station-img { animation: bioParallax linear; animation-timeline: view(); animation-range: entry 0% exit 100%; animation-fill-mode: none; }
-      .ks-pain-line { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 0% entry 22%; }
-      .ks-pain-line:nth-child(2) { animation-range: entry 4% entry 26%; }
-      .ks-pain-line:nth-child(3) { animation-range: entry 8% entry 30%; }
-      .ks-pain-line:nth-child(4) { animation-range: entry 12% entry 34%; }
-      .ks-pain-line:nth-child(5) { animation-range: entry 16% entry 38%; }
-      .ks-pain-line:nth-child(6) { animation-range: entry 20% entry 42%; }
-      .ks-pain-line:nth-child(7) { animation-range: entry 24% entry 46%; }
-      .ks-transition, .ks-big-quote, .ks-result-statement, .ks-result-cta { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 30%; }
-      .ks-module-card { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 28%; }
-      .ks-module-card:nth-child(2) { animation-range: entry 9% entry 32%; }
-      .ks-module-card:nth-child(3) { animation-range: entry 13% entry 36%; }
-      .ks-module-card:nth-child(4) { animation-range: entry 17% entry 40%; }
-      .ks-module-card:nth-child(5) { animation-range: entry 21% entry 44%; }
-    }
+  }
+  /* ── Reveal system (IntersectionObserver, Safari-safe, plays once) ── */
+  .reveal, .reveal-bg { opacity: 0; }
+  .reveal { transform: translateY(24px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+  .reveal-bg { transition: opacity .85s cubic-bezier(.22,.61,.36,1); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-bg.is-visible { opacity: 1; }
+  [data-delay="1"] { transition-delay:  80ms; }
+  [data-delay="2"] { transition-delay: 160ms; }
+  [data-delay="3"] { transition-delay: 240ms; }
+  [data-delay="4"] { transition-delay: 320ms; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-bg { opacity: 1 !important; transform: none !important; transition: none !important; }
   }
   /* ── Kraftvolle Stimme section ── */
   #kraftvolle-stimme { position: relative; }
@@ -354,7 +325,7 @@
     </div>
   </div>
 </section>
-<div class="stats-bar">
+<div class="stats-bar reveal">
   <div class="stat-item"><span class="stat-number" data-target="30" data-suffix="+">30+</span><span class="stat-label">Jahre Erfahrung</span></div>
   <div class="stat-item"><span class="stat-number" data-target="200" data-suffix="+">200+</span><span class="stat-label">Weiterbildungen</span></div>
   <div class="stat-item"><span class="stat-number" data-target="20" data-suffix="">20</span><span class="stat-label">Jahre Uni-Dozentin</span></div>
@@ -362,21 +333,21 @@
   <div style="grid-column:1/-1;text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);margin-top:1rem;"><a href="#kontakt" style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose);text-decoration:none;border-bottom:1px solid var(--rose);padding-bottom:2px;">Jetzt Kontakt aufnehmen →</a></div>
 </div>
 <section id="probleme">
-  <span class="section-overline">Erkennst du dich wieder?</span>
-  <h2 class="section-title">Was Menschen zu mir führt</h2>
+  <span class="section-overline reveal">Erkennst du dich wieder?</span>
+  <h2 class="section-title reveal" data-delay="1">Was Menschen zu mir führt</h2>
   <div class="problems-grid">
-    <div class="problem-card"><span class="problem-audience">Therapeut*innen</span><p class="problem-quote">Immer mehr Kinder können sich nicht auf meine Methoden einlassen. Wie kann ich ursachenorientierter, erfolgreicher, mit mehr Freude arbeiten?</p><p class="problem-response">Wissenschaftlich fundiert. Praxisnah. Sofort umsetzbar.</p></div>
-    <div class="problem-card"><span class="problem-audience">Menschen mit Stimmproblemen</span><p class="problem-quote">Meine Stimme trägt mich nicht. Ich bin unsicher und habe Angst vor dem Sprechen vor Gruppen.</p><p class="problem-response">Individuelle Begleitung für Menschen mit Sprecherberufen.</p></div>
-    <div class="problem-card"><span class="problem-audience">Eltern & Familien</span><p class="problem-quote">Keiner weiß, was wirklich hinter den Problemen unseres Kindes steckt. Wir sind ratlos, und die Therapie kommt nicht voran.</p><p class="problem-response">Ursachen verstehen. Ressourcen stärken. Wege finden.</p></div>
+    <div class="problem-card reveal"><span class="problem-audience">Therapeut*innen</span><p class="problem-quote">Immer mehr Kinder können sich nicht auf meine Methoden einlassen. Wie kann ich ursachenorientierter, erfolgreicher, mit mehr Freude arbeiten?</p><p class="problem-response">Wissenschaftlich fundiert. Praxisnah. Sofort umsetzbar.</p></div>
+    <div class="problem-card reveal" data-delay="1"><span class="problem-audience">Menschen mit Stimmproblemen</span><p class="problem-quote">Meine Stimme trägt mich nicht. Ich bin unsicher und habe Angst vor dem Sprechen vor Gruppen.</p><p class="problem-response">Individuelle Begleitung für Menschen mit Sprecherberufen.</p></div>
+    <div class="problem-card reveal" data-delay="2"><span class="problem-audience">Eltern & Familien</span><p class="problem-quote">Keiner weiß, was wirklich hinter den Problemen unseres Kindes steckt. Wir sind ratlos, und die Therapie kommt nicht voran.</p><p class="problem-response">Ursachen verstehen. Ressourcen stärken. Wege finden.</p></div>
   </div>
 </section>
 <section id="angebote">
-  <div class="angebote-intro">
+  <div class="angebote-intro reveal">
     <div><span class="section-overline">Drei Säulen</span><h2 class="section-title">Meine Angebote</h2></div>
     <p class="section-body">In meiner Arbeit begegne ich Menschen auf Augenhöhe und schaffe einen vertrauensvollen Rahmen, in dem kommunikative Entwicklung entstehen kann.</p>
   </div>
   <div class="angebote-grid">
-    <div class="angebot-card">
+    <div class="angebot-card reveal">
       <div class="angebot-card-img"><img src="angebot-fortbildung.jpg" alt="Stephanie Kurtenbach bei einer Fortbildung" loading="eager" style="object-position: center 20%;"></div>
       <div class="angebot-card-body">
         <h3 class="angebot-title">Fortbildungen für Therapeut*innen</h3>
@@ -384,7 +355,7 @@
         <a href="#kurse" class="angebot-primary-btn angebot-stretch-link">Alle Kurse ansehen</a>
       </div>
     </div>
-    <div class="angebot-card">
+    <div class="angebot-card reveal" data-delay="1">
       <div class="angebot-card-img"><img src="angebot-coaching.jpg" alt="Stimm- und Kommunikationscoaching" loading="eager" style="object-position: center 25%;"></div>
       <div class="angebot-card-body">
         <span class="angebot-brand-tag">Kraftvolle Stimme</span>
@@ -394,7 +365,7 @@
         <a href="#kontakt" class="angebot-secondary-link">Anfrage stellen →</a>
       </div>
     </div>
-    <div class="angebot-card">
+    <div class="angebot-card reveal" data-delay="2">
       <div class="angebot-card-img"><img src="angebot-kinder.jpg" alt="Kind betrachtet eine Schnecke" loading="eager"></div>
       <div class="angebot-card-body">
         <span class="angebot-brand-tag">Entwicklungsbegleitung</span>
@@ -406,11 +377,11 @@
     </div>
   </div>
   <div class="kurse-subsection" id="kurse">
-    <span class="section-overline">Fortbildungen im Detail</span>
-    <h3 class="section-title" style="font-size:2rem;">Aktuelle Kurse</h3>
-    <p class="section-body">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
+    <span class="section-overline reveal">Fortbildungen im Detail</span>
+    <h3 class="section-title reveal" data-delay="1" style="font-size:2rem;">Aktuelle Kurse</h3>
+    <p class="section-body reveal" data-delay="2">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
     <div class="kurse-grid">
-      <div class="kurs-card">
+      <div class="kurs-card reveal">
         <div class="kurs-card-bg" style="background-image: url('passionflower.png');"></div>
         <span class="kurs-tag">Sensorische Integration</span>
         <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
@@ -427,7 +398,7 @@
         </div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
-      <div class="kurs-card">
+      <div class="kurs-card reveal" data-delay="1">
         <div class="kurs-card-bg" style="background-image: url('peony.png');"></div>
         <span class="kurs-tag">Elterntraining</span>
         <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
@@ -443,7 +414,7 @@
         </div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
-      <div class="kurs-card">
+      <div class="kurs-card reveal" data-delay="2">
         <div class="kurs-card-bg" style="background-image: url('wisteria.png');"></div>
         <span class="kurs-tag">Frühe Intervention</span>
         <h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3>
@@ -459,7 +430,7 @@
         </div>
         <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="toggleKurs(this)"><span class="toggle-text">Details</span> <span class="arrow">↓</span></button></div>
       </div>
-      <div class="kurs-card">
+      <div class="kurs-card reveal" data-delay="3">
         <div class="kurs-card-bg" style="background-image: url('olive.png');"></div>
         <span class="kurs-tag">Webinar</span>
         <h3 class="kurs-title">Frühkindliche Reflexe und ihre Bedeutung für die Sprachentwicklung</h3>
@@ -480,51 +451,51 @@
 </section>
 <section id="kraftvolle-stimme">
   <div class="ks-opener">
-    <span class="section-overline">Stimmcoaching</span>
-    <h2 class="section-title">Kraftvolle Stimme</h2>
-    <p class="ks-sub">Online-Stimmtraining für Coaches, Trainer, Speaker &amp; Business Professionals</p>
-    <p class="ks-lead">Deine Stimme ist dein wichtigstes Business-Tool — sie entscheidet, wie kompetent und präsent du wirkst.</p>
+    <span class="section-overline reveal">Stimmcoaching</span>
+    <h2 class="section-title reveal" data-delay="1">Kraftvolle Stimme</h2>
+    <p class="ks-sub reveal" data-delay="2">Online-Stimmtraining für Coaches, Trainer, Speaker &amp; Business Professionals</p>
+    <p class="ks-lead reveal" data-delay="3">Deine Stimme ist dein wichtigstes Business-Tool — sie entscheidet, wie kompetent und präsent du wirkst.</p>
   </div>
   <div class="ks-pain">
-    <span class="section-overline">Erkennst du dich?</span>
+    <span class="section-overline reveal">Erkennst du dich?</span>
     <div class="ks-painpoints">
-      <p class="ks-pain-line">Du bist unzufrieden mit deiner Stimme.</p>
-      <p class="ks-pain-line">Du wirkst unsicherer, als du möchtest.</p>
-      <p class="ks-pain-line">Lampenfieber.</p>
-      <p class="ks-pain-line">Deine Stimme ermüdet schnell.</p>
-      <p class="ks-pain-line">Heiser nach langen Workshops.</p>
-      <p class="ks-pain-line">Du möchtest souveräner auftreten.</p>
-      <p class="ks-pain-line">Klarer strukturieren — das liegt dir am Herzen.</p>
+      <p class="ks-pain-line reveal">Du bist unzufrieden mit deiner Stimme.</p>
+      <p class="ks-pain-line reveal" data-delay="1">Du wirkst unsicherer, als du möchtest.</p>
+      <p class="ks-pain-line reveal" data-delay="2">Lampenfieber.</p>
+      <p class="ks-pain-line reveal" data-delay="3">Deine Stimme ermüdet schnell.</p>
+      <p class="ks-pain-line reveal" data-delay="4">Heiser nach langen Workshops.</p>
+      <p class="ks-pain-line reveal" data-delay="4">Du möchtest souveräner auftreten.</p>
+      <p class="ks-pain-line reveal" data-delay="4">Klarer strukturieren — das liegt dir am Herzen.</p>
     </div>
-    <p class="ks-transition">Das lässt sich <em>ändern.</em></p>
+    <p class="ks-transition reveal">Das lässt sich <em>ändern.</em></p>
   </div>
   <div class="ks-statement">
-    <p class="ks-big-quote">„Eine Stimme, die gesund, tragfähig und authentisch klingt — und eine Sprechweise, die deiner Kompetenz <em>Ausdruck verleiht.</em>"</p>
+    <p class="ks-big-quote reveal">„Eine Stimme, die gesund, tragfähig und authentisch klingt — und eine Sprechweise, die deiner Kompetenz <em>Ausdruck verleiht.</em>"</p>
   </div>
   <div class="ks-modules">
-    <span class="section-overline">Was dich erwartet</span>
+    <span class="section-overline reveal">Was dich erwartet</span>
     <div class="ks-modules-grid">
-      <div class="ks-module-card">
+      <div class="ks-module-card reveal">
         <div class="ks-module-icon" style="background-image:url('passionflower.png')"></div>
         <h3>Stimmanalyse</h3>
         <p>Standort, Ziele und verborgene Potenziale deiner Stimme.</p>
       </div>
-      <div class="ks-module-card">
+      <div class="ks-module-card reveal" data-delay="1">
         <div class="ks-module-icon" style="background-image:url('peony.png')"></div>
         <h3>Resonanz &amp; Präsenz</h3>
         <p>Voller klingen — mit weniger Anstrengung mehr Wirkung.</p>
       </div>
-      <div class="ks-module-card">
+      <div class="ks-module-card reveal" data-delay="2">
         <div class="ks-module-icon" style="background-image:url('wisteria.png')"></div>
         <h3>Gesunde, belastbare Stimme</h3>
         <p>Heiserkeit vorbeugen. Ökonomischer Einsatz. Mehr Ausdauer.</p>
       </div>
-      <div class="ks-module-card">
+      <div class="ks-module-card reveal" data-delay="3">
         <div class="ks-module-icon" style="background-image:url('olive.png')"></div>
         <h3>Struktur &amp; Zuhörerführung</h3>
         <p>Kernaussagen auf den Punkt. Aufmerksamkeit gewinnen und halten.</p>
       </div>
-      <div class="ks-module-card">
+      <div class="ks-module-card reveal" data-delay="4">
         <div class="ks-module-icon" style="background-image:url('peony.png')"></div>
         <h3>Tools für den Alltag</h3>
         <p>5-Min-Warm-up, Übungen und Strategien für eine dauerhaft gesunde Stimme.</p>
@@ -532,8 +503,8 @@
     </div>
   </div>
   <div class="ks-result">
-    <p class="ks-result-statement">Mehr Sicherheit, Präsenz, Resonanz und Wirkung. Eine Stimme, die Menschen erreicht.</p>
-    <div class="ks-result-cta">
+    <p class="ks-result-statement reveal">Mehr Sicherheit, Präsenz, Resonanz und Wirkung. Eine Stimme, die Menschen erreicht.</p>
+    <div class="ks-result-cta reveal" data-delay="1">
       <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">Erstes Beratungsgespräch — kostenlos</a>
       <p class="ks-result-who">Für Coaches, Trainer, Speaker &amp; Business Professionals.</p>
     </div>
@@ -541,32 +512,32 @@
 </section>
 <section id="ueber">
   <div class="ueber-top">
-    <div class="ueber-text">
+    <div class="ueber-text reveal">
       <span class="section-overline">Über mich</span>
       <h2 class="section-title">Dr. Stephanie Kurtenbach</h2>
       <p>Was mich inspiriert und erfüllt, sind meine Familie und meine Freunde, Begegnungen mit Menschen, auf Reisen und in der Natur zu sein, gutes Essen, tiefe Gespräche und Yoga.</p>
       <p>In meiner Arbeit begegne ich Menschen auf Augenhöhe. Mit meinen Lernpraktiken möchte ich tiefe Veränderungsprozesse ankurbeln: nicht durch das Vermitteln von Fertigkeiten, sondern durch das Verankern grundlegender Überzeugungen und das Herausarbeiten von Ressourcen.</p>
       <p>Seit mehr als 30 Jahren begleite ich Kinder, Familien, Fachkräfte und Berufssprecher*innen. Meine Arbeit beginnt beim Verstehen der Ursachen und der Bedingungen, die echte Entwicklung ermöglichen.</p>
     </div>
-    <div class="ueber-image"><img src="stephanie_ueber.jpg" alt="Dr. Stephanie Kurtenbach" loading="lazy"></div>
+    <div class="ueber-image reveal" data-delay="2"><img src="stephanie_ueber.jpg" alt="Dr. Stephanie Kurtenbach" loading="lazy"></div>
   </div>
   <div class="bio-stations">
-    <div class="bio-station">
+    <div class="bio-station reveal">
       <div class="bio-station-img"><img src="stephanie-portrait-1.jpg" alt="" loading="lazy" style="object-fit: cover; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sprechwissenschaft</span>
       <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung. Das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
-    <div class="bio-station">
+    <div class="bio-station reveal" data-delay="1">
       <div class="bio-station-img"><img src="stephanie-portrait-2.jpg" alt="" loading="lazy" style="object-fit: cover; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sensorische Integrationstherapie</span>
       <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt, nicht die, die man ihm gibt.</p>
     </div>
-    <div class="bio-station">
+    <div class="bio-station reveal" data-delay="2">
       <div class="bio-station-img"><img src="bio-systemisch.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: right center; transform: scale(1.35);"></div>
       <span class="bio-station-name">Systemische Beratung</span>
       <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich: in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
     </div>
-    <div class="bio-station">
+    <div class="bio-station reveal" data-delay="3">
       <div class="bio-station-img"><img src="bio-reflex.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center center; transform: scale(1.15);"></div>
       <span class="bio-station-name">Reflexintegration</span>
       <p>Manche Schwierigkeiten haben Wurzeln, die weit früher liegen als gedacht. Diese Methode hat mir gezeigt, wie tief Entwicklung reicht, und dass es sich immer lohnt, weiter zu fragen.</p>
@@ -575,18 +546,18 @@
   <a href="https://www.uni-erfurt.de/erziehungswissenschaftliche-fakultaet/fakultaet/profil/fachgebiete-und-professuren/inklusive-paedagogik-bei-benachteiligung-und-behinderung/struktur-des-fachgebietes/professur-fuer-inklusive-bildungsprozesse-bei-beeintraechtigungen-in-sprache-und-kommunikation/team/dr-stephanie-kurtenbach" target="_blank" class="pub-link">Publikationen & Forschung ansehen →</a>
 </section>
 <section id="philosophie">
-  <p class="philo-quote-main">„Jenseits von richtig und falsch liegt ein Ort. <em>Dort treffen wir uns.</em>"</p>
-  <span class="philo-attribution">Dschalāl ad-Dīn Muhammad Rūmī</span>
+  <p class="philo-quote-main reveal">„Jenseits von richtig und falsch liegt ein Ort. <em>Dort treffen wir uns.</em>"</p>
+  <span class="philo-attribution reveal" data-delay="1">Dschalāl ad-Dīn Muhammad Rūmī</span>
   <div class="philo-values">
-    <div class="philo-value"><span class="philo-value-title">Augenhöhe</span><p class="philo-value-text">Jede Begegnung, ob mit Kind, Elternteil oder Fachkraft, entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen trägt.</p></div>
-    <div class="philo-value"><span class="philo-value-title">Ursachenorientierung</span><p class="philo-value-text">Symptome zeigen, was sichtbar ist. Was wirklich zählt, liegt tiefer. Meine Arbeit beginnt immer mit dem Verstehen, bevor Handlungsstrategien folgen.</p></div>
-    <div class="philo-value"><span class="philo-value-title">Selbstwirksamkeit</span><p class="philo-value-text">Das Ziel ist nie Abhängigkeit, sondern dass Menschen, Kinder und Familien in die Lage kommen, ihre eigene Entwicklung aktiv zu gestalten.</p></div>
+    <div class="philo-value reveal"><span class="philo-value-title">Augenhöhe</span><p class="philo-value-text">Jede Begegnung, ob mit Kind, Elternteil oder Fachkraft, entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen trägt.</p></div>
+    <div class="philo-value reveal" data-delay="1"><span class="philo-value-title">Ursachenorientierung</span><p class="philo-value-text">Symptome zeigen, was sichtbar ist. Was wirklich zählt, liegt tiefer. Meine Arbeit beginnt immer mit dem Verstehen, bevor Handlungsstrategien folgen.</p></div>
+    <div class="philo-value reveal" data-delay="2"><span class="philo-value-title">Selbstwirksamkeit</span><p class="philo-value-text">Das Ziel ist nie Abhängigkeit, sondern dass Menschen, Kinder und Familien in die Lage kommen, ihre eigene Entwicklung aktiv zu gestalten.</p></div>
   </div>
 </section>
 <section id="stimmen">
-  <span class="section-overline">Kursteilnehmer*innen</span>
-  <h2 class="section-title">Was Menschen sagen</h2>
-  <div style="max-width:760px; margin: 0 0 5rem 0;">
+  <span class="section-overline reveal">Kursteilnehmer*innen</span>
+  <h2 class="section-title reveal" data-delay="1">Was Menschen sagen</h2>
+  <div class="reveal" data-delay="2" style="max-width:760px; margin: 0 0 5rem 0;">
     <div style="margin-bottom:2rem;">
       <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4 C16 4 18 10 22 12 C18 12 16 18 16 18 C16 18 14 12 10 12 C14 10 16 4 16 4Z" fill="#B8728A" opacity="0.7"/><path d="M16 14 C16 14 20 15 22 18 C19 17 16 20 16 20 C16 20 13 17 10 18 C12 15 16 14 16 14Z" fill="#B8728A" opacity="0.5"/><circle cx="16" cy="16" r="2" fill="#B8728A" opacity="0.9"/></svg>
     </div>
@@ -594,16 +565,16 @@
     <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-dark);font-weight:500;">Kursteilnehmerin</span>
   </div>
   <div class="testimonials-grid">
-    <div class="testimonial-card"><p class="testimonial-text">„Stephanie hat mit so viel Leidenschaft die Inhalte übermittelt, sodass man direkt angesteckt wurde, es selbst auszuprobieren."</p><p class="testimonial-highlight">Kursteilnehmerin · Fortbildung SI</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Ich war total begeistert, angeregt und habe extrem viel gelernt. Vielen Dank!"</p><p class="testimonial-highlight">Kursteilnehmerin · Kindersprachtherapie</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Super praxisnah, ich kann die Ideen gleich im Alltag umsetzen. Die besondere fachliche Kompetenz und Kommunikationsform der Dozentin haben mich beeindruckt."</p><p class="testimonial-highlight">Logopädin · Weiterbildung</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Wie sehr es mir die Augen in Bezug auf einige Therapiekinder geöffnet hat. Das war der wertvollste Moment der Fortbildung."</p><p class="testimonial-highlight">Kursteilnehmerin</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Gut strukturiert, ausgewogenes Verhältnis von Theorie und Praxis. Spannende Videos, tolle Fallbesprechungen, und immer auf alle Fragen eingegangen."</p><p class="testimonial-highlight">Kursteilnehmerin · Online-Seminar</p></div>
-    <div class="testimonial-card"><p class="testimonial-text">„Das Charisma von Stephanie Kurtenbach. Sehr viel Erfahrung, und trotzdem ganz nah bei den Teilnehmenden."</p><p class="testimonial-highlight">Kursteilnehmer*in</p></div>
+    <div class="testimonial-card reveal"><p class="testimonial-text">„Stephanie hat mit so viel Leidenschaft die Inhalte übermittelt, sodass man direkt angesteckt wurde, es selbst auszuprobieren."</p><p class="testimonial-highlight">Kursteilnehmerin · Fortbildung SI</p></div>
+    <div class="testimonial-card reveal" data-delay="1"><p class="testimonial-text">„Ich war total begeistert, angeregt und habe extrem viel gelernt. Vielen Dank!"</p><p class="testimonial-highlight">Kursteilnehmerin · Kindersprachtherapie</p></div>
+    <div class="testimonial-card reveal" data-delay="2"><p class="testimonial-text">„Super praxisnah, ich kann die Ideen gleich im Alltag umsetzen. Die besondere fachliche Kompetenz und Kommunikationsform der Dozentin haben mich beeindruckt."</p><p class="testimonial-highlight">Logopädin · Weiterbildung</p></div>
+    <div class="testimonial-card reveal" data-delay="3"><p class="testimonial-text">„Wie sehr es mir die Augen in Bezug auf einige Therapiekinder geöffnet hat. Das war der wertvollste Moment der Fortbildung."</p><p class="testimonial-highlight">Kursteilnehmerin</p></div>
+    <div class="testimonial-card reveal" data-delay="4"><p class="testimonial-text">„Gut strukturiert, ausgewogenes Verhältnis von Theorie und Praxis. Spannende Videos, tolle Fallbesprechungen, und immer auf alle Fragen eingegangen."</p><p class="testimonial-highlight">Kursteilnehmerin · Online-Seminar</p></div>
+    <div class="testimonial-card reveal" data-delay="4"><p class="testimonial-text">„Das Charisma von Stephanie Kurtenbach. Sehr viel Erfahrung, und trotzdem ganz nah bei den Teilnehmenden."</p><p class="testimonial-highlight">Kursteilnehmer*in</p></div>
   </div>
 </section>
 <section id="kontakt">
-  <div class="kontakt-info">
+  <div class="kontakt-info reveal">
     <span class="section-overline">Kontakt</span>
     <h2 class="section-title">Ich freue mich auf deine Nachricht.</h2>
     <p class="section-body" style="margin-bottom:2rem;">Ich freue mich auf deine Nachricht. Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung – nimm gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
@@ -614,7 +585,7 @@
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Erfahrung</strong>30+ Jahre · 200+ Weiterbildungen · national und international</div></div>
     </div>
   </div>
-  <form class="kontakt-form" onsubmit="return false;">
+  <form class="kontakt-form reveal" data-delay="1" onsubmit="return false;">
     <div class="form-group"><label>Name</label><input type="text" placeholder="Dein vollständiger Name"></div>
     <div class="form-group"><label>E-Mail</label><input type="email" placeholder="deine@email.de"></div>
     <div class="form-group"><label>Ich interessiere mich für</label><select><option value="">Bitte wählen …</option><option>Fortbildung für Therapeut*innen</option><option>Stimm- & Kommunikationscoaching</option><option>Beratung für Kinder & Familien</option><option>Sonstiges</option></select></div>
@@ -696,6 +667,25 @@
     details.classList.toggle('open', !isOpen);
     btn.classList.toggle('open', !isOpen);
   }
+
+  // Reveal: IntersectionObserver — plays once, unobserve after trigger, Safari-safe
+  (function () {
+    var els = document.querySelectorAll('.reveal, .reveal-bg');
+    if (!els.length) return;
+    if (!window.IntersectionObserver) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  }());
 </script>
 </body>
 </html>

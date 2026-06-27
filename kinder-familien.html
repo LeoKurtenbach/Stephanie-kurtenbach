@@ -161,24 +161,18 @@
 
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
 
-  /* ── Scroll reveals ── */
-  @supports (animation-timeline: view()) {
-    @media (prefers-reduced-motion: no-preference) {
-      @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-      .erkennst-statement { animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 0% entry 28%; }
-      .erkennst-statement:nth-child(2) { animation-range: entry 3% entry 31%; }
-      .erkennst-statement:nth-child(3) { animation-range: entry 6% entry 34%; }
-      .erkennst-statement:nth-child(4) { animation-range: entry 9% entry 37%; }
-      .erkennst-statement:nth-child(5) { animation-range: entry 12% entry 40%; }
-      .erkennst-statement:nth-child(6) { animation-range: entry 15% entry 43%; }
-      .angebot-pillar { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 30%; }
-      .angebot-pillar:nth-child(2) { animation-range: entry 9% entry 34%; }
-      .angebot-pillar:nth-child(3) { animation-range: entry 13% entry 38%; }
-      .scene-foto-quote, .scene-foto-cite { animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 5% entry 30%; }
-      .ziel-statement { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; animation-timeline: view(); animation-range: entry 0% entry 28%; }
-      .ziel-statement:nth-child(2) { animation-range: entry 5% entry 33%; }
-      .ziel-statement:nth-child(3) { animation-range: entry 10% entry 38%; }
-    }
+  /* ── Reveal system (IntersectionObserver, Safari-safe, plays once) ── */
+  .reveal, .reveal-bg { opacity: 0; }
+  .reveal { transform: translateY(24px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+  .reveal-bg { transition: opacity .85s cubic-bezier(.22,.61,.36,1); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-bg.is-visible { opacity: 1; }
+  [data-delay="1"] { transition-delay:  80ms; }
+  [data-delay="2"] { transition-delay: 160ms; }
+  [data-delay="3"] { transition-delay: 240ms; }
+  [data-delay="4"] { transition-delay: 320ms; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-bg { opacity: 1 !important; transform: none !important; transition: none !important; }
   }
 
   /* ── Mobile ── */
@@ -244,30 +238,30 @@
 
 <!-- Scene 1: Erkennst du das? -->
 <section id="scene-erkennst" aria-label="Häufige Situationen">
-  <span class="section-overline">Erkennst du das?</span>
-  <h2 class="section-title">Viele Familien erleben denselben Weg.</h2>
+  <span class="section-overline reveal">Erkennst du das?</span>
+  <h2 class="section-title reveal" data-delay="1">Viele Familien erleben denselben Weg.</h2>
   <div class="erkennst-statements">
-    <div class="erkennst-statement">
+    <div class="erkennst-statement reveal">
       <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Ihr Kind spricht wenig oder entwickelt seine Sprache langsamer als andere.</p>
     </div>
-    <div class="erkennst-statement">
+    <div class="erkennst-statement reveal" data-delay="1">
       <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">In der Kita oder Schule gibt es immer wieder Schwierigkeiten.</p>
     </div>
-    <div class="erkennst-statement">
+    <div class="erkennst-statement reveal" data-delay="2">
       <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Sie hören widersprüchliche Einschätzungen und wissen nicht, welcher Sie vertrauen sollen.</p>
     </div>
-    <div class="erkennst-statement">
+    <div class="erkennst-statement reveal" data-delay="3">
       <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Niemand kann genau sagen, warum Ihr Kind diese Herausforderungen hat.</p>
     </div>
-    <div class="erkennst-statement">
+    <div class="erkennst-statement reveal" data-delay="4">
       <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Es wird an einzelnen Symptomen gearbeitet, während die eigentlichen Ursachen unentdeckt bleiben.</p>
     </div>
-    <div class="erkennst-statement">
+    <div class="erkennst-statement reveal" data-delay="4">
       <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Sie fragen sich, welche Unterstützung Ihr Kind wirklich braucht.</p>
     </div>
@@ -277,11 +271,11 @@
 <!-- Scene 2: Mein Angebot -->
 <section id="scene-angebot" aria-label="Mein Angebot">
   <a href="index.html#angebote" class="back-link">← Zurück zu den Angeboten</a>
-  <span class="section-overline">Mein Angebot</span>
-  <h2 class="section-title">Ganzheitliche Begleitung von Kindern und Familien.</h2>
-  <p class="section-body">Ich unterstütze Familien dabei, die Entwicklung ihres Kindes besser zu verstehen und die nächsten sinnvollen Schritte zu erkennen. Besonders wichtig sind dabei die Zusammenhänge zwischen Sprache, Bewegung, Wahrnehmung, sensomotorischer Entwicklung und neuromotorischer Reife.</p>
+  <span class="section-overline reveal">Mein Angebot</span>
+  <h2 class="section-title reveal" data-delay="1">Ganzheitliche Begleitung von Kindern und Familien.</h2>
+  <p class="section-body reveal" data-delay="2">Ich unterstütze Familien dabei, die Entwicklung ihres Kindes besser zu verstehen und die nächsten sinnvollen Schritte zu erkennen. Besonders wichtig sind dabei die Zusammenhänge zwischen Sprache, Bewegung, Wahrnehmung, sensomotorischer Entwicklung und neuromotorischer Reife.</p>
   <div class="angebot-pillars">
-    <div class="angebot-pillar">
+    <div class="angebot-pillar reveal">
       <span class="angebot-pillar-num">01 · Befundung</span>
       <h3 class="angebot-pillar-title">Umfassende Anfangsbefundung</h3>
       <p class="angebot-pillar-body">In einer ausführlichen Anfangsbefundung erfasse ich die individuellen Stärken und Herausforderungen Ihres Kindes.</p>
@@ -292,7 +286,7 @@
         <li>Mögliche Entwicklungsfaktoren für die Sprachentwicklung</li>
       </ul>
     </div>
-    <div class="angebot-pillar">
+    <div class="angebot-pillar reveal" data-delay="1">
       <span class="angebot-pillar-num">02 · Beratung</span>
       <h3 class="angebot-pillar-title">Orientierung und nächste Schritte</h3>
       <p class="angebot-pillar-body">Auf Grundlage der Befundung erhalten Sie eine verständliche Einschätzung der Situation Ihres Kindes.</p>
@@ -303,7 +297,7 @@
         <li>Welche nächsten Schritte hilfreich sein können</li>
       </ul>
     </div>
-    <div class="angebot-pillar">
+    <div class="angebot-pillar reveal" data-delay="2">
       <span class="angebot-pillar-num">03 · Begleitung</span>
       <h3 class="angebot-pillar-title">Entwicklungsbegleitung im Alltag</h3>
       <p class="angebot-pillar-body">Ich unterstütze Sie dabei, die Entwicklung Ihres Kindes gezielt im Alltag zu fördern und Kommunikation positiv zu gestalten.</p>
@@ -318,28 +312,28 @@
 </section>
 
 <!-- Scene 3: Foto-Moment -->
-<section id="scene-foto" aria-hidden="true">
+<section id="scene-foto" class="reveal-bg" aria-hidden="true">
   <img class="scene-foto-img" src="familie-2.jpg" alt="" loading="lazy" width="1600" height="900">
   <div class="scene-foto-content">
-    <blockquote class="scene-foto-quote">„Kinder brauchen keine Perfektion — sie brauchen Eltern, die aufmerksam zuhören."</blockquote>
-    <cite class="scene-foto-cite">Dr. Stephanie Kurtenbach</cite>
+    <blockquote class="scene-foto-quote reveal" data-delay="1">„Kinder brauchen keine Perfektion — sie brauchen Eltern, die aufmerksam zuhören."</blockquote>
+    <cite class="scene-foto-cite reveal" data-delay="2">Dr. Stephanie Kurtenbach</cite>
   </div>
 </section>
 
 <!-- Scene 4: Mein Ziel -->
 <section id="scene-ziel" aria-label="Mein Ziel">
-  <span class="section-overline">Mein Ziel</span>
-  <h2 class="section-title">Was ich für Sie und Ihr Kind erreichen möchte.</h2>
+  <span class="section-overline reveal">Mein Ziel</span>
+  <h2 class="section-title reveal" data-delay="1">Was ich für Sie und Ihr Kind erreichen möchte.</h2>
   <div class="ziel-statements">
-    <div class="ziel-statement">
+    <div class="ziel-statement reveal">
       <span class="ziel-statement-num">1</span>
       <p class="ziel-statement-text">Eltern Klarheit geben, wenn viele Fragen offen sind.</p>
     </div>
-    <div class="ziel-statement">
+    <div class="ziel-statement reveal" data-delay="1">
       <span class="ziel-statement-num">2</span>
       <p class="ziel-statement-text">Kinder besser verstehen, anstatt nur Symptome zu betrachten.</p>
     </div>
-    <div class="ziel-statement">
+    <div class="ziel-statement reveal" data-delay="2">
       <span class="ziel-statement-num">3</span>
       <p class="ziel-statement-text">Gemeinsam Wege finden, damit Entwicklung möglich wird.</p>
     </div>
@@ -347,15 +341,15 @@
 </section>
 
 <!-- Atmosphärisches Bild-Band -->
-<div id="scene-kind-foto" aria-hidden="true">
+<div id="scene-kind-foto" class="reveal-bg" aria-hidden="true">
   <img class="kind-foto-img" src="angebot-kinder.jpg" alt="" loading="lazy" width="1200" height="800">
   <span class="kind-foto-label">Kinder &amp; Familien · Begleitung &amp; Beratung</span>
 </div>
 
 <!-- Scene 5: Fachmaterial -->
 <section id="scene-material">
-  <span class="section-overline">Fachmaterial</span>
-  <div class="material-block">
+  <span class="section-overline reveal">Fachmaterial</span>
+  <div class="material-block reveal" data-delay="1">
     <div class="material-text">
       <h2 class="section-title">Ein Tag mit Teddy Pitt</h2>
       <p>Ein Prolog-Materialband von Dr. Stephanie Kurtenbach — entwickelt für die therapeutische Praxis rund um kindliche Mundmotorik und Sprachentwicklung.</p>
@@ -372,10 +366,10 @@
 
 <!-- CTA -->
 <section id="scene-cta">
-  <span class="cta-overline">Kontakt aufnehmen</span>
-  <h2 class="cta-title">Interesse? Ich freue mich auf Ihre Nachricht.</h2>
-  <p class="cta-body">Nehmen Sie gerne Kontakt mit mir auf — für ein erstes Beratungsgespräch oder eine Anfrage. Ich melde mich innerhalb von 2 Werktagen.</p>
-  <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">hallo@stephaniekurtenbach.com</a>
+  <span class="cta-overline reveal">Kontakt aufnehmen</span>
+  <h2 class="cta-title reveal" data-delay="1">Interesse? Ich freue mich auf Ihre Nachricht.</h2>
+  <p class="cta-body reveal" data-delay="2">Nehmen Sie gerne Kontakt mit mir auf — für ein erstes Beratungsgespräch oder eine Anfrage. Ich melde mich innerhalb von 2 Werktagen.</p>
+  <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary reveal" data-delay="3">hallo@stephaniekurtenbach.com</a>
 </section>
 
 <footer>
@@ -401,6 +395,25 @@
       _rafPending = false;
     });
   }, { passive: true });
+
+  // Reveal: IntersectionObserver — plays once, unobserve after trigger, Safari-safe
+  (function () {
+    var els = document.querySelectorAll('.reveal, .reveal-bg');
+    if (!els.length) return;
+    if (!window.IntersectionObserver) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  }());
 
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
     gsap.from('.hero-overline',  { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.15 });
