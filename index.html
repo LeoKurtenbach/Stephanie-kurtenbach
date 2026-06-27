@@ -34,6 +34,7 @@
   :focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
   #pageBg { position: fixed; inset: 0; z-index: -1; background-color: #0d1a0a; overflow: hidden; }
   #pageBg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  #pageDark { position: fixed; inset: 0; z-index: -1; background: rgba(10,8,15,0.52); pointer-events: none; }
   nav.main-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(232,237,226,0.96); border-bottom: 1px solid rgba(45,32,64,0.07); }
   .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
   .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
@@ -45,7 +46,7 @@
   .nav-cta:hover { background: var(--rose-dark) !important; }
   #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; overflow: hidden; }
   .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% 12%; display: block; z-index: 0; transform: scale(0.68); transform-origin: center 22%; }
-  #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,0.86) 0%, rgba(10,8,15,0.78) 32%, rgba(10,8,15,0.44) 60%, rgba(10,8,15,0.12) 100%); z-index: 1; pointer-events: none; }
+  #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,0.71) 0%, rgba(10,8,15,0.54) 32%, rgba(10,8,15,0) 60%, rgba(10,8,15,0) 100%); z-index: 1; pointer-events: none; }
   #hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 14rem; background: linear-gradient(to bottom, transparent 0%, rgba(10,8,15,0.72) 100%); z-index: 1; pointer-events: none; }
   .hero-content { position: relative; z-index: 2; max-width: 600px; padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
   .hero-overline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 2.5rem; display: block; }
@@ -70,12 +71,12 @@
   .stat-item { text-align: center; padding: 0.5rem 2rem; }
   .stat-number { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; color: var(--rose); display: block; line-height: 1; text-shadow: 0 0 28px rgba(184,114,138,0.35); }
   .stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.72); margin-top: 0.5rem; display: block; }
-  section { padding: 9rem 5rem; }
+  section { padding: 7rem 5rem; }
   .section-overline { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); font-weight: 500; margin-bottom: 1rem; display: block; }
   .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--deep); margin-bottom: 2rem; text-shadow: 0 1px 4px rgba(45,32,64,0.08); }
   .section-body { font-size: 1rem; color: var(--mid); line-height: 1.9; max-width: 580px; }
   #probleme { position: relative; }
-  #probleme::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; }
+  #probleme::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.40); z-index: 0; }
   #probleme > * { position: relative; z-index: 1; }
   #probleme .section-overline { color: var(--rose); }
   #probleme .section-title { color: white; text-shadow: 0 2px 16px rgba(0,0,0,0.35); }
@@ -144,7 +145,7 @@
   .kurs-toggle .arrow { font-size: 0.72rem; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); display: inline-block; }
   .kurs-toggle.open .arrow { transform: rotate(180deg); }
   #ueber { display: block; position: relative; }
-  #ueber::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 5%, rgba(10,8,15,0.70) 94%, rgba(10,8,15,0) 100%); z-index: 0; }
+  #ueber::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.40); z-index: 0; }
   #ueber > * { position: relative; z-index: 1; }
   #ueber .section-overline { color: var(--rose); }
   #ueber .section-title { color: white; }
@@ -164,8 +165,8 @@
   .ausbildung-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
   .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; color: var(--rose); text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color var(--dur-ui) var(--ease-organic); }
   .pub-link:hover { border-color: var(--rose-dark); }
-  #philosophie { position: relative; text-align: center; padding: 10rem 5rem; }
-  #philosophie::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 5%, rgba(10,8,15,0.70) 94%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
+  #philosophie { position: relative; text-align: center; padding: 8rem 5rem; }
+  #philosophie::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.40); z-index: 0; pointer-events: none; }
   #philosophie > * { position: relative; z-index: 1; }
   .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; text-shadow: 0 2px 20px rgba(184,114,138,0.2), 0 4px 40px rgba(0,0,0,0.3); }
   .philo-quote-main em { color: var(--rose); font-style: normal; }
@@ -192,7 +193,7 @@
   .testimonial-highlight { font-size: 0.74rem; color: var(--rose-dark); font-style: normal; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; border-top: none; padding-top: 0; margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
   .testimonial-highlight::before { content: '·'; color: var(--rose-dark); }
   #kontakt { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
-  #kontakt::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 5%, rgba(10,8,15,0.70) 100%); z-index: 0; pointer-events: none; }
+  #kontakt::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.40); z-index: 0; pointer-events: none; }
   #kontakt > * { position: relative; z-index: 1; }
   .kontakt-info .section-overline { color: var(--rose); }
   .kontakt-info .section-title { color: var(--white); }
@@ -222,7 +223,7 @@
   .footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
   @media (max-width: 900px) {
-    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-bg-img { object-position: 72% 12%; transform: scale(0.62); transform-origin: center 22%; } .hero-content { padding: 3.5rem 1.5rem; max-width: 100%; } section { padding: 5rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 5rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
+    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-bg-img { object-position: 72% 12%; transform: scale(0.62); transform-origin: center 22%; } .hero-content { padding: 3.5rem 1.5rem; max-width: 100%; } section { padding: 4rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 4rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
   }
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
@@ -284,7 +285,7 @@
   }
   /* ── Kraftvolle Stimme section ── */
   #kraftvolle-stimme { position: relative; }
-  #kraftvolle-stimme::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 5%, rgba(10,8,15,0.70) 94%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
+  #kraftvolle-stimme::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.40); z-index: 0; pointer-events: none; }
   #kraftvolle-stimme > * { position: relative; z-index: 1; }
   .ks-opener { padding-bottom: 5rem; margin-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .ks-opener .section-overline { color: var(--rose); }
@@ -320,6 +321,7 @@
 </head>
 <body>
 <div id="pageBg" aria-hidden="true"><img src="forest.jpg" alt="" fetchpriority="high"></div>
+<div id="pageDark" aria-hidden="true"></div>
 <div class="progress-bar" id="progressBar"></div>
 <nav class="main-nav">
   <a href="#" class="nav-logo">Dr. Stephanie Kurtenbach</a>
