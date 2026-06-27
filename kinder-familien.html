@@ -76,38 +76,37 @@
 
   /* ── Scene 1: Erkennst du das (dark) ── */
   #scene-erkennst { position: relative; padding: 9rem 5rem; }
-  #scene-erkennst::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
+  #scene-erkennst::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 100%); z-index: 0; pointer-events: none; }
   #scene-erkennst > * { position: relative; z-index: 1; }
   #scene-erkennst .section-overline { color: var(--rose); }
   #scene-erkennst .section-title { color: var(--white); }
-  .erkennst-statements { display: flex; flex-direction: column; gap: 0; margin-top: 3.5rem; max-width: 640px; }
-  .erkennst-statement { padding: 1.5rem 0; display: flex; gap: 1.25rem; align-items: flex-start; }
-  .erkennst-statement-num { display: inline-block; width: 16px; height: 1.5px; background: var(--rose); flex-shrink: 0; font-size: 0; line-height: 0; margin-top: 0.62rem; opacity: 0.85; }
-  .erkennst-statement-text { font-family: var(--font-sans); font-size: clamp(0.95rem, 1.25vw, 1.1rem); font-style: normal; font-weight: 400; color: rgba(255,255,255,0.88); line-height: 1.8; }
+  .erkennst-statements { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 3.5rem; max-width: 600px; }
+  .erkennst-statement { padding: 1.5rem 0 1.5rem 2rem; border-left: 1.5px solid rgba(184,114,138,0.45); }
+  .erkennst-statement-text { font-family: var(--font-sans); font-size: clamp(0.95rem, 1.25vw, 1.1rem); font-style: normal; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.8; }
 
   /* ── Scene 2: Mein Angebot (light) ── */
   #scene-angebot { position: relative; padding: 9rem 5rem; }
-  #scene-angebot::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(232,237,226,0) 0%, rgba(232,237,226,0.94) 5%, rgba(232,237,226,0.94) 94%, rgba(232,237,226,0) 100%); z-index: 0; pointer-events: none; }
+  #scene-angebot::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.97); z-index: 0; pointer-events: none; }
   #scene-angebot > * { position: relative; z-index: 1; }
   #scene-angebot .section-overline { color: var(--rose-dark); }
   #scene-angebot .section-title { color: var(--deep); }
   #scene-angebot .section-body { color: var(--mid); margin-bottom: 5rem; }
   .angebot-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
   .angebot-pillar { padding: 2.5rem; background: rgba(45,32,64,0.04); border-top: 2px solid var(--rose); }
-  .angebot-pillar-num { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); display: block; margin-bottom: 1.25rem; font-weight: 500; }
+  .angebot-pillar-num { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); display: block; margin-bottom: 1.25rem; font-weight: 600; }
   .angebot-pillar-title { font-family: var(--font-serif); font-size: 1.2rem; color: var(--deep); margin-bottom: 1rem; line-height: 1.3; }
   .angebot-pillar-body { font-size: 0.92rem; color: var(--mid); line-height: 1.85; }
   .angebot-pillar-list { list-style: none; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem; }
   .angebot-pillar-list li { font-size: 0.88rem; color: var(--mid); line-height: 1.7; padding-left: 1rem; position: relative; }
-  .angebot-pillar-list li::before { content: '·'; position: absolute; left: 0; color: var(--rose); }
+  .angebot-pillar-list li::before { content: '·'; position: absolute; left: 0; color: var(--rose-dark); }
 
   /* ── Scene 3: Zitat-Moment (split: Zitat links, Bild rechts — dunkles Gegenstück zu scene-material) ── */
   #scene-foto { position: relative; padding: 7rem 5rem; }
-  #scene-foto::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
+  #scene-foto::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-foto > * { position: relative; z-index: 1; }
   .scene-foto-block { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
   .scene-foto-visual { position: relative; overflow: hidden; border-radius: 2px; height: 520px; }
-  .scene-foto-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .scene-foto-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
   .scene-foto-quote { font-family: var(--font-serif); font-size: clamp(1.3rem, 1.9vw, 1.9rem); font-style: italic; color: var(--white); line-height: 1.65; margin-bottom: 1.5rem; }
   .scene-foto-cite { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-style: normal; }
 
@@ -118,7 +117,7 @@
 
   /* ── Scene 4: Mein Ziel (dark) ── */
   #scene-ziel { position: relative; padding: 9rem 5rem; }
-  #scene-ziel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
+  #scene-ziel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0.70) 0%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
   #scene-ziel > * { position: relative; z-index: 1; }
   #scene-ziel .section-overline { color: var(--rose); }
   #scene-ziel .section-title { color: var(--white); }
@@ -182,7 +181,6 @@
     .hero-left { padding: 3rem 1.5rem 4rem; }
     .hero-right { min-height: 70vw; }
     #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 6rem 1.5rem; }
-    .erkennst-statements { max-width: 100%; }
     .angebot-pillars { grid-template-columns: 1fr; gap: 1.5rem; }
     .scene-foto-block { grid-template-columns: 1fr; gap: 2.5rem; }
     .scene-foto-visual { height: 60vw; max-height: 380px; }
@@ -241,27 +239,21 @@
   <h2 class="section-title reveal" data-delay="1">Viele Familien erleben denselben Weg.</h2>
   <div class="erkennst-statements">
     <div class="erkennst-statement reveal">
-      <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Ihr Kind spricht wenig oder entwickelt seine Sprache langsamer als andere.</p>
     </div>
     <div class="erkennst-statement reveal" data-delay="1">
-      <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">In der Kita oder Schule gibt es immer wieder Schwierigkeiten.</p>
     </div>
     <div class="erkennst-statement reveal" data-delay="2">
-      <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Sie hören widersprüchliche Einschätzungen und wissen nicht, welcher Sie vertrauen sollen.</p>
     </div>
     <div class="erkennst-statement reveal" data-delay="3">
-      <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Niemand kann genau sagen, warum Ihr Kind diese Herausforderungen hat.</p>
     </div>
     <div class="erkennst-statement reveal" data-delay="4">
-      <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Es wird an einzelnen Symptomen gearbeitet, während die eigentlichen Ursachen unentdeckt bleiben.</p>
     </div>
     <div class="erkennst-statement reveal" data-delay="4">
-      <span class="erkennst-statement-num">—</span>
       <p class="erkennst-statement-text">Sie fragen sich, welche Unterstützung Ihr Kind wirklich braucht.</p>
     </div>
   </div>
@@ -356,7 +348,7 @@
   <div class="material-block reveal" data-delay="1">
     <div class="material-text">
       <h2 class="section-title">Ein Tag mit Teddy Pitt</h2>
-      <p>Ein Prolog-Materialband von Dr. Stephanie Kurtenbach — entwickelt für die therapeutische Praxis rund um kindliche Mundmotorik und Sprachentwicklung.</p>
+      <p>Ein Prolog-Materialband von Dr. Stephanie Kurtenbach, entwickelt für die therapeutische Praxis rund um kindliche Mundmotorik und Sprachentwicklung.</p>
       <a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/sprachentwicklungsstoerungen/mundmotorikmft/4060/ein-tag-mit-teddy-pitt" target="_blank" rel="noopener" class="material-link">
         Zum Prolog-Verlag →
       </a>
