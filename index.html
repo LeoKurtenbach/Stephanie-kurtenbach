@@ -158,6 +158,9 @@
   .bio-station-img { position: relative; aspect-ratio: 16/6; overflow: hidden; margin-bottom: 1.5rem; -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 100%); mask-image: radial-gradient(ellipse at center, black 55%, transparent 100%); }
   .bio-station-img::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(ellipse at center, transparent 45%, rgba(26,16,37,0.75) 100%); }
   .bio-station-img img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.88; filter: brightness(0.82) contrast(1.02) saturate(1.05); object-position: center center; }
+  /* Porträt-Fotos: Y-Wert einzeln pro Bild, Augen im oberen Drittel — ggf. Wert hier anpassen */
+  .bio-station:nth-child(1) .bio-station-img img { object-position: center 60%; } /* Bus-Foto (stephanie-portrait-1.jpg) */
+  .bio-station:nth-child(2) .bio-station-img img { object-position: center 55%; } /* Steg-Foto (stephanie-portrait-2.jpg) */
   .bio-station-name { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; color: white; display: block; margin-bottom: 0.85rem; padding: 2rem 0 0; line-height: 1.3; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
   .bio-station p { font-size: 1.05rem; color: rgba(255,255,255,0.92); line-height: 1.9; padding-bottom: 3rem; }
   .pub-link { color: var(--rose); border-bottom-color: var(--rose); }
@@ -547,12 +550,12 @@
   </div>
   <div class="bio-stations">
     <div class="bio-station">
-      <div class="bio-station-img"><img src="stephanie-portrait-1.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center top; transform: scale(1.08);"></div>
+      <div class="bio-station-img"><img src="stephanie-portrait-1.jpg" alt="" loading="lazy" style="object-fit: cover; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sprechwissenschaft</span>
       <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung. Das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
     <div class="bio-station">
-      <div class="bio-station-img"><img src="stephanie-portrait-2.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center top; transform: scale(1.08);"></div>
+      <div class="bio-station-img"><img src="stephanie-portrait-2.jpg" alt="" loading="lazy" style="object-fit: cover; transform: scale(1.08);"></div>
       <span class="bio-station-name">Sensorische Integrationstherapie</span>
       <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt, nicht die, die man ihm gibt.</p>
     </div>
