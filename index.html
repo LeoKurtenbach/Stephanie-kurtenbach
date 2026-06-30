@@ -44,21 +44,21 @@
   .nav-links a:hover::after { width: 100%; }
   .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic) !important; }
   .nav-cta:hover { background: var(--rose-dark) !important; }
-  #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; overflow: hidden; }
+  #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: stretch; padding-top: 80px; position: relative; overflow: hidden; }
   .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% 20%; display: block; z-index: 0; transform: scale(0.50); transform-origin: center 20%; }
   #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,0.71) 0%, rgba(10,8,15,0.54) 32%, rgba(10,8,15,0) 60%, rgba(10,8,15,0) 100%); z-index: 1; pointer-events: none; }
   #hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 14rem; background: linear-gradient(to bottom, transparent 0%, rgba(10,8,15,0.72) 100%); z-index: 1; pointer-events: none; }
-  .hero-content { position: relative; z-index: 2; max-width: 680px; padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .hero-content { position: relative; z-index: 2; max-width: 680px; padding: 6rem 5rem 3rem; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .hero-bottom { position: relative; z-index: 2; padding: 0 5rem 4.5rem; width: 100%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
   .hero-overline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 2.5rem; display: block; }
   .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--white); margin-bottom: 2.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-family: var(--font-serif); font-style: italic; color: var(--rose); }
   .hero-sub { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.85; max-width: 460px; margin-bottom: 3rem; }
-  .hero-tags { display: flex; gap: 0; margin-bottom: 2.5rem; align-items: center; justify-content: space-between; width: 100%; }
-  .tag { flex: 1; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.78); font-weight: 500; text-decoration: none; padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.22); display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; transition: color var(--dur-ui) var(--ease-organic); }
-  .tag:first-child { padding-left: 0; }
-  .tag:last-child { border-right: none; padding-right: 0; }
-  .tag:hover { color: var(--white); }
+  .hero-tags { display: flex; gap: 0; align-items: center; width: 100%; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .tag { flex: 1; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.72); font-weight: 500; text-decoration: none; padding: 1.1rem 1rem; border-right: 1px solid rgba(255,255,255,0.12); display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; transition: color var(--dur-ui) var(--ease-organic), background var(--dur-ui) var(--ease-organic); }
+  .tag:last-child { border-right: none; }
+  .tag:hover { color: var(--white); background: rgba(255,255,255,0.04); }
   .hero-actions { display: flex; gap: 0.85rem; align-items: stretch; width: 100%; }
   .btn-primary { flex: 1; display: inline-flex; align-items: center; justify-content: center; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; padding: 1.1rem 1.5rem; border-radius: 2px; min-height: 52px; text-align: center; transition: background var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 12px rgba(184,114,138,0.45), 0 1px 3px rgba(184,114,138,0.20); }
   .btn-primary:hover { background: var(--rose-dark); box-shadow: 0 6px 22px rgba(184,114,138,0.55); transform: translateY(-2px); }
@@ -234,7 +234,7 @@
   .footer-text { font-size: 0.82rem; color: rgba(255,255,255,0.72); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
   @media (max-width: 900px) {
-    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-bg-img { object-position: 72% 12%; transform: scale(0.62); transform-origin: center 22%; } .hero-content { padding: 3.5rem 1.5rem; max-width: 100%; } .hero-actions { flex-direction: column; } .btn-primary, .btn-secondary { flex: none; width: 100%; } .hero-tags { flex-wrap: wrap; gap: 0.6rem; } .tag { padding: 0.2rem 0; border-right: none; padding-right: 0; color: rgba(255,255,255,0.70); } .tag:first-child { padding-left: 0; } section { padding: 4rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 4rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
+    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-bg-img { object-position: 72% 12%; transform: scale(0.62); transform-origin: center 22%; } .hero-content { padding: 3.5rem 1.5rem 2rem; max-width: 100%; } .hero-bottom { padding: 0 1.5rem 3rem; } .hero-actions { flex-direction: column; } .btn-primary, .btn-secondary { flex: none; width: 100%; } .hero-tags { flex-wrap: nowrap; } .tag { font-size: 0.62rem; padding: 0.9rem 0.5rem; } section { padding: 4rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 4rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
   }
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.72); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
@@ -320,14 +320,16 @@
     <span class="hero-overline">Sprechwissenschaftlerin · Dozentin · Coach</span>
     <h1 class="hero-headline">Ich verändere die Art, wie Menschen auf <span class="hero-headline-sub">Kommunikation schauen.</span></h1>
     <p class="hero-sub">Ich gebe Orientierung und wirksame Handlungsstrategien, damit echte Verbindung entsteht: in Fortbildungen für Fachkräfte, im Stimm- und Kommunikationscoaching sowie in der Begleitung von Kindern und Familien.</p>
+    <div class="hero-quote">
+      <p>„Kommunikation ist dann erfolgreich, wenn Menschen sich auf den Augenblick einlassen."</p>
+      <cite>Dr. Stephanie Kurtenbach</cite>
+    </div>
+  </div>
+  <div class="hero-bottom">
     <div class="hero-tags"><a href="#kurse" class="tag">Fortbildungen</a><a href="#kraftvolle-stimme" class="tag">Kraftvolle Stimme</a><a href="kinder-familien.html" class="tag">Familienbegleitung</a></div>
     <div class="hero-actions">
       <a href="#angebote" class="btn-primary">Angebote entdecken</a>
       <a href="#ueber" class="btn-secondary">Mehr über mich</a>
-    </div>
-    <div class="hero-quote">
-      <p>„Kommunikation ist dann erfolgreich, wenn Menschen sich auf den Augenblick einlassen."</p>
-      <cite>Dr. Stephanie Kurtenbach</cite>
     </div>
   </div>
 </section>
