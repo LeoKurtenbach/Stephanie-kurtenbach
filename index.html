@@ -116,7 +116,7 @@
   .kurs-card:hover { transform: translateY(-2px); }
   /* perspective on parent, no preserve-3d, no backface-visibility — opacity crossfade makes overlap impossible */
   .kurs-card-inner { position: relative; perspective: 1200px; min-height: 280px; }
-  .kurs-card-front, .kurs-card-back { position: absolute; top: 0; left: 0; right: 0; background: rgba(10,8,15,0.75); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease; }
+  .kurs-card-front, .kurs-card-back { position: absolute; inset: 0; background: rgba(10,8,15,0.75); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease; }
   .kurs-card-front { transform: rotateY(0deg); opacity: 1; }
   .kurs-card-back { transform: rotateY(180deg); opacity: 0; pointer-events: none; }
   .kurs-card.flipped .kurs-card-front { transform: rotateY(-180deg); opacity: 0; pointer-events: none; }
@@ -660,15 +660,28 @@
   }
 
   function setKursHeights() {
-    document.querySelectorAll('.kurs-card').forEach(card => {
+    const cards = [...document.querySelectorAll('.kurs-card')];
+    // Pass 1: set each card's inner to max(front, back) natural content height
+    const heights = cards.map(card => {
       const inner = card.querySelector('.kurs-card-inner');
       const front = card.querySelector('.kurs-card-front');
-      const back = card.querySelector('.kurs-card-back');
-      // Clear min-height so positions reset, then measure scrollHeight
-      // (scrollHeight = natural content height regardless of absolute positioning)
+      const back  = card.querySelector('.kurs-card-back');
       inner.style.minHeight = '';
-      inner.style.minHeight = Math.max(front.scrollHeight, back.scrollHeight) + 'px';
+      const h = Math.max(front.scrollHeight, back.scrollHeight);
+      inner.style.minHeight = h + 'px';
+      return h;
     });
+    // Pass 2: equalize cards in the same row so the grid stays aligned
+    const grid = document.querySelector('.kurse-grid');
+    const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
+    if (cols >= 2) {
+      for (let i = 0; i < cards.length; i += cols) {
+        const rowMax = Math.max(...heights.slice(i, i + cols));
+        for (let j = i; j < Math.min(i + cols, cards.length); j++) {
+          cards[j].querySelector('.kurs-card-inner').style.minHeight = rowMax + 'px';
+        }
+      }
+    }
   }
   document.fonts.ready.then(setKursHeights);
   window.addEventListener('load', setKursHeights);
