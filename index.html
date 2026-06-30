@@ -64,7 +64,7 @@
   .btn-secondary:hover { color: var(--white); border-color: rgba(255,255,255,0.80); }
   .hero-quote { margin-top: 3rem; border-left: 2px solid rgba(184,114,138,0.55); padding: 0.65rem 1.4rem; max-width: 420px; }
   .hero-quote p { font-family: var(--font-quote); font-size: 0.95rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 0.5rem; }
-  .hero-quote cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.48); font-style: normal; }
+  .hero-quote cite { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.72); font-style: normal; }
   .stats-bar { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); padding: 3rem 5rem; }
   .stats-bar::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   .stats-bar > * { position: relative; z-index: 1; }
@@ -82,7 +82,7 @@
   #probleme .section-title { color: white; text-shadow: 0 2px 16px rgba(0,0,0,0.35); }
   #probleme .problem-audience { color: var(--rose); }
   #probleme .problem-quote { color: rgba(255,255,255,0.92); }
-  #probleme .problem-response { color: rgba(255,255,255,0.6); }
+  #probleme .problem-response { color: rgba(255,255,255,0.85); }
   #angebote { position: relative; }
   #angebote::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(232,237,226,0) 0%, rgba(232,237,226,0.94) 5%, rgba(232,237,226,0.94) 93%, rgba(232,237,226,0) 100%); z-index: 0; pointer-events: none; }
   #angebote > * { position: relative; z-index: 1; }
@@ -142,8 +142,8 @@
   .kurs-card-actions { display: flex; gap: 0.75rem; margin-top: auto; padding-top: 0.5rem; }
   .kurs-btn-primary { background: var(--rose); color: white; font-size: 0.8rem; padding: 0.65rem 1.35rem; border-radius: 2px; text-decoration: none; font-weight: 400; transition: background var(--dur-ui) var(--ease-organic); }
   .kurs-btn-primary:hover { background: var(--rose-dark); }
-  .kurs-toggle { background: transparent; color: rgba(255,255,255,0.68); font-family: var(--font-sans); font-size: 0.78rem; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.30); cursor: pointer; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic), background var(--dur-ui) var(--ease-organic); }
-  .kurs-toggle:hover { border-color: rgba(255,255,255,0.62); color: var(--white); background: rgba(255,255,255,0.06); }
+  .kurs-toggle { background: transparent; color: rgba(255,255,255,0.88); font-family: var(--font-sans); font-size: 0.85rem; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.48); cursor: pointer; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic), background var(--dur-ui) var(--ease-organic); }
+  .kurs-toggle:hover { border-color: rgba(255,255,255,0.80); color: var(--white); background: rgba(255,255,255,0.08); }
   #ueber { display: block; position: relative; }
   #ueber::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.40); z-index: 0; }
   #ueber > * { position: relative; z-index: 1; }
@@ -164,8 +164,8 @@
   .bio-station-name { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; color: white; display: block; margin-bottom: 0.85rem; padding: 2rem 0 0; line-height: 1.3; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
   .bio-station p { font-size: 1.05rem; color: rgba(255,255,255,0.92); line-height: 1.9; padding-bottom: 3rem; }
   .pub-link { color: var(--rose); border-bottom-color: var(--rose); }
-  .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: rgba(255,255,255,0.85); margin-bottom: 0.25rem; }
-  .ausbildung-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+  .ausbildung-title { font-size: 0.9rem; font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: 0.25rem; }
+  .ausbildung-desc { font-size: 0.85rem; color: rgba(255,255,255,0.78); line-height: 1.65; }
   .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; color: var(--rose); text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color var(--dur-ui) var(--ease-organic); }
   .pub-link:hover { border-color: var(--rose-dark); }
   #philosophie { position: relative; text-align: center; padding: 8rem 5rem; }
@@ -173,7 +173,7 @@
   #philosophie > * { position: relative; z-index: 1; }
   .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; text-shadow: 0 2px 20px rgba(184,114,138,0.2), 0 4px 40px rgba(0,0,0,0.3); }
   .philo-quote-main em { color: var(--rose); font-style: normal; }
-  .philo-attribution { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.70); margin-bottom: 6rem; display: block; }
+  .philo-attribution { font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-bottom: 6rem; display: block; }
   .philo-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; max-width: 920px; margin: 0 auto; }
   .philo-value { text-align: left; }
   .philo-value-title { font-family: var(--font-serif); font-size: 1.45rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
@@ -202,22 +202,22 @@
   #kontakt > * { position: relative; z-index: 1; }
   .kontakt-info .section-overline { color: var(--rose); }
   .kontakt-info .section-title { color: var(--white); }
-  .kontakt-info .section-body { color: rgba(255,255,255,0.78); }
+  .kontakt-info .section-body { color: rgba(255,255,255,0.92); }
   .kontakt-form { display: flex; flex-direction: column; gap: 1.5rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
   .form-group label:not(.dse-label) { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.80); }
   .form-group input, .form-group select, .form-group textarea { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 400; color: var(--white); background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.28); padding: 1rem 1.25rem; border-radius: 2px; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
-  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.45); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.60); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--rose); outline: none; }
   .form-group textarea { resize: vertical; min-height: 130px; }
   .form-submit { background: var(--rose); color: white; border: none; font-family: var(--font-sans); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.5rem; border-radius: 2px; cursor: pointer; align-self: flex-start; transition: background var(--dur-ui) var(--ease-organic); }
   .form-submit:hover { background: var(--rose-dark); }
   .form-group--dse { gap: 1rem; }
-  .dse-hinweis { font-size: 0.88rem; color: rgba(255,255,255,0.62); line-height: 1.7; }
-  .dse-hinweis a { color: rgba(255,255,255,0.52); text-decoration: underline; text-decoration-color: rgba(255,255,255,0.25); }
+  .dse-hinweis { font-size: 0.88rem; color: rgba(255,255,255,0.78); line-height: 1.7; }
+  .dse-hinweis a { color: var(--rose); text-decoration: underline; text-decoration-color: rgba(184,114,138,0.5); }
   .dse-label { display: flex; gap: 0.85rem; align-items: flex-start; font-size: 0.95rem; color: rgba(255,255,255,0.88); line-height: 1.65; cursor: pointer; text-transform: none; letter-spacing: normal; font-weight: 400; }
   .dse-label input[type="checkbox"] { display: none; }
-  .dse-check { flex-shrink: 0; width: 18px; height: 18px; border: 1.5px solid rgba(255,255,255,0.35); border-radius: 2px; margin-top: 0.18em; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, background 0.2s; background: transparent; }
+  .dse-check { flex-shrink: 0; width: 18px; height: 18px; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 2px; margin-top: 0.18em; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, background 0.2s; background: transparent; }
   .dse-label input[type="checkbox"]:checked + .dse-check { background: var(--rose); border-color: var(--rose); }
   .dse-label input[type="checkbox"]:checked + .dse-check::after { content: ''; display: block; width: 4px; height: 8px; border: 1.5px solid white; border-top: none; border-left: none; transform: rotate(45deg) translateY(-1px); }
   .dse-label:hover .dse-check { border-color: var(--rose); }
@@ -225,18 +225,18 @@
   .kontakt-details { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
   .kontakt-detail { display: grid; grid-template-columns: 1.5rem 1fr; gap: 1.25rem; align-items: start; }
   .kontakt-detail-icon { color: var(--rose); }
-  .kontakt-detail-text { font-size: 1rem; color: rgba(255,255,255,0.80); line-height: 1.9; }
-  .kontakt-detail-text strong { display: block; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.72); font-weight: 500; margin-bottom: 0.25rem; }
+  .kontakt-detail-text { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.9; }
+  .kontakt-detail-text strong { display: block; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.82); font-weight: 500; margin-bottom: 0.25rem; }
   footer { background: #120D1E; padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; }
-  .footer-logo { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.65); }
-  .footer-text { font-size: 0.82rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; }
+  .footer-logo { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); }
+  .footer-text { font-size: 0.82rem; color: rgba(255,255,255,0.72); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
   @media (max-width: 900px) {
     nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-bg-img { object-position: 72% 12%; transform: scale(0.62); transform-origin: center 22%; } .hero-content { padding: 3.5rem 1.5rem; max-width: 100%; } section { padding: 4rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 4rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
   }
   .footer-nav { display: flex; gap: 1.5rem; }
-  .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
-  .footer-nav a:hover { color: rgba(255,255,255,0.70); }
+  .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.72); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
+  .footer-nav a:hover { color: rgba(255,255,255,0.92); }
   /* ── CSS Scroll-Driven Animations ── */
   @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: scroll()) {
@@ -289,7 +289,7 @@
   .ks-module-icon { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.32; background-size: cover; background-position: center; background-repeat: no-repeat; pointer-events: none; z-index: 0; }
   .ks-module-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(155deg, rgba(10,8,15,0.95) 0%, rgba(10,8,15,0.85) 42%, rgba(10,8,15,0.48) 100%); z-index: 1; border-radius: 3px; pointer-events: none; }
   .ks-module-card h3 { font-family: var(--font-serif); font-size: 1.65rem; font-weight: 400; color: var(--white); margin-bottom: 1rem; line-height: 1.2; position: relative; z-index: 2; }
-  .ks-module-card p { font-size: 0.93rem; color: rgba(255,255,255,0.72); line-height: 1.8; position: relative; z-index: 2; margin: 0; }
+  .ks-module-card p { font-size: 0.95rem; color: rgba(255,255,255,0.88); line-height: 1.8; position: relative; z-index: 2; margin: 0; }
   .ks-result { text-align: center; }
   .ks-result-statement { font-family: var(--font-serif); font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.92); line-height: 1.55; max-width: 660px; margin: 0 auto 3rem; }
   .ks-result-cta { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
@@ -594,7 +594,7 @@
     <span class="section-overline">Kontakt</span>
     <h2 class="section-title">Ich freue mich auf deine Nachricht.</h2>
     <p class="section-body" style="margin-bottom:2rem;">Ich freue mich auf deine Nachricht. Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung – nimm gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
-    <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.78);">Lust auf ein erstes Beratungsgespräch? Kostenlos – schreib an <a href="mailto:hallo@stephaniekurtenbach.com" style="color:var(--rose)">hallo@stephaniekurtenbach.com</a></p>
+    <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.92);">Lust auf ein erstes Beratungsgespräch? Kostenlos – schreib an <a href="mailto:hallo@stephaniekurtenbach.com" style="color:var(--rose)">hallo@stephaniekurtenbach.com</a></p>
     <div class="kontakt-details">
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Standort</strong>Deutschsprachiger Raum · Online & Präsenz</div></div>
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Forschung & Publikationen</strong><a href="https://www.uni-erfurt.de/forschung/aktuelles/forschungsblog-wortmelder" target="_blank" rel="noopener" style="color:var(--rose)">Lehr- und ForschungsLab KOMPASS Sprache</a></div></div>
