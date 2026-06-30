@@ -115,19 +115,20 @@
   .kurs-card { border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); }
   .kurs-card:hover { transform: translateY(-2px); }
   /* perspective on parent, no preserve-3d, no backface-visibility — opacity crossfade makes overlap impossible */
-  .kurs-card-inner { position: relative; perspective: 1200px; min-height: 280px; }
-  .kurs-card-front, .kurs-card-back { position: absolute; inset: 0; background: rgba(10,8,15,0.75); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease; }
+  .kurs-card-inner { position: relative; perspective: 1200px; min-height: 200px; transition: min-height 0.65s cubic-bezier(0.4,0,0.2,1); }
+  .kurs-card-front, .kurs-card-back { position: absolute; inset: 0; background: rgba(10,8,15,0.75); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 1.75rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease; }
   .kurs-card-front { transform: rotateY(0deg); opacity: 1; }
   .kurs-card-back { transform: rotateY(180deg); opacity: 0; pointer-events: none; }
   .kurs-card.flipped .kurs-card-front { transform: rotateY(-180deg); opacity: 0; pointer-events: none; }
   .kurs-card.flipped .kurs-card-back { transform: rotateY(0deg); opacity: 1; pointer-events: auto; }
   @media (prefers-reduced-motion: reduce) {
+    .kurs-card-inner { transition: none; }
     .kurs-card-front, .kurs-card-back { transition: opacity 0.22s ease; transform: none !important; }
   }
   .kurs-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.16; background-size: cover; background-repeat: no-repeat; background-position: center; pointer-events: none; z-index: 0; -webkit-mask-image: radial-gradient(ellipse at 78% 22%, black 18%, transparent 68%); mask-image: radial-gradient(ellipse at 78% 22%, black 18%, transparent 68%); }
   .kurs-card-front > *:not(.kurs-card-bg), .kurs-card-back > *:not(.kurs-card-bg) { position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.92); border: 1px solid rgba(184,114,138,0.70); padding: 0.3rem 0.75rem; border-radius: 2px; width: fit-content; }
-  .kurs-title { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; color: var(--white); line-height: 1.3; }
+  .kurs-title { font-family: var(--font-serif); font-size: clamp(1.6rem, 2vw, 2rem); font-weight: 400; color: var(--white); line-height: 1.25; }
   .kurs-teaser { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.75; }
   .kurs-hook { font-family: var(--font-quote); font-size: 1.05rem; font-style: italic; color: rgba(255,255,255,0.95); line-height: 1.75; }
   .kurs-inhalte-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); opacity: 1; display: block; }
@@ -660,32 +661,38 @@
   });
 
   function flipKurs(btn) {
-    btn.closest('.kurs-card').classList.toggle('flipped');
+    const card = btn.closest('.kurs-card');
+    const inner = card.querySelector('.kurs-card-inner');
+    const isFlipped = card.classList.toggle('flipped');
+    inner.style.minHeight = (isFlipped ? inner.dataset.backH : inner.dataset.frontH) + 'px';
   }
 
   function setKursHeights() {
     const cards = [...document.querySelectorAll('.kurs-card')];
-    // Pass 1: set each card's inner to max(front, back) natural content height
-    const heights = cards.map(card => {
+    // Measure natural content heights (inner has no min-height during measurement)
+    const data = cards.map(card => {
       const inner = card.querySelector('.kurs-card-inner');
       const front = card.querySelector('.kurs-card-front');
       const back  = card.querySelector('.kurs-card-back');
       inner.style.minHeight = '';
-      const h = Math.max(front.scrollHeight, back.scrollHeight);
-      inner.style.minHeight = h + 'px';
-      return h;
+      return { card, inner, frontH: front.scrollHeight, backH: back.scrollHeight };
     });
-    // Pass 2: equalize cards in the same row so the grid stays aligned
+    // Equalize only FRONT heights per row — no forced back-face height at rest
     const grid = document.querySelector('.kurse-grid');
     const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
-    if (cols >= 2) {
-      for (let i = 0; i < cards.length; i += cols) {
-        const rowMax = Math.max(...heights.slice(i, i + cols));
-        for (let j = i; j < Math.min(i + cols, cards.length); j++) {
-          cards[j].querySelector('.kurs-card-inner').style.minHeight = rowMax + 'px';
-        }
+    for (let i = 0; i < data.length; i += cols) {
+      const rowFrontMax = Math.max(...data.slice(i, i + cols).map(d => d.frontH));
+      for (let j = i; j < Math.min(i + cols, data.length); j++) {
+        data[j].rowFrontH = rowFrontMax;
       }
     }
+    // Apply heights and cache on element for flipKurs
+    data.forEach(d => {
+      d.inner.dataset.frontH = d.rowFrontH;
+      d.inner.dataset.backH  = d.backH;
+      // Preserve current state if already flipped
+      d.inner.style.minHeight = (d.card.classList.contains('flipped') ? d.backH : d.rowFrontH) + 'px';
+    });
   }
   document.fonts.ready.then(setKursHeights);
   window.addEventListener('load', setKursHeights);
