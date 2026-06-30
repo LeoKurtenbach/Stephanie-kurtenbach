@@ -112,25 +112,23 @@
   .kurse-subsection { background: transparent; padding: 4rem 0 0 0; margin-top: 2rem; border-top: 1px solid rgba(45,32,64,0.12); }
   .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: start; margin-top: 3rem; }
-  .kurs-card { position: relative; border-radius: 4px; perspective: 1400px; transition: transform var(--dur-ui) var(--ease-organic); }
+  .kurs-card { border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); }
   .kurs-card:hover { transform: translateY(-2px); }
-  /* position:relative (not grid) + no border-radius here — both are required for backface-visibility:hidden to work */
-  .kurs-card-inner { position: relative; transform-style: preserve-3d; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1); }
-  .kurs-card.flipped .kurs-card-inner { transform: rotateY(180deg); }
-  /* no overflow:hidden on faces — it creates a stacking context that breaks backface-visibility */
-  .kurs-card-front, .kurs-card-back { backface-visibility: hidden; -webkit-backface-visibility: hidden; background: rgba(10,8,15,0.75); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; }
-  .kurs-card-back { position: absolute; top: 0; left: 0; right: 0; transform: rotateY(180deg); }
-  /* disable pointer events on whichever face is facing away */
-  .kurs-card:not(.flipped) .kurs-card-back { pointer-events: none; }
-  .kurs-card.flipped .kurs-card-front { pointer-events: none; }
+  /* perspective on parent, no preserve-3d, no backface-visibility — opacity crossfade makes overlap impossible */
+  .kurs-card-inner { position: relative; perspective: 1200px; min-height: 280px; }
+  .kurs-card-front, .kurs-card-back { position: absolute; top: 0; left: 0; right: 0; background: rgba(10,8,15,0.75); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease; }
+  .kurs-card-front { transform: rotateY(0deg); opacity: 1; }
+  .kurs-card-back { transform: rotateY(180deg); opacity: 0; pointer-events: none; }
+  .kurs-card.flipped .kurs-card-front { transform: rotateY(-180deg); opacity: 0; pointer-events: none; }
+  .kurs-card.flipped .kurs-card-back { transform: rotateY(0deg); opacity: 1; pointer-events: auto; }
+  @media (prefers-reduced-motion: reduce) {
+    .kurs-card-front, .kurs-card-back { transition: opacity 0.22s ease; transform: none !important; }
+  }
   .kurs-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.16; background-size: cover; background-repeat: no-repeat; background-position: center; pointer-events: none; z-index: 0; -webkit-mask-image: radial-gradient(ellipse at 78% 22%, black 18%, transparent 68%); mask-image: radial-gradient(ellipse at 78% 22%, black 18%, transparent 68%); }
   .kurs-card-front > *:not(.kurs-card-bg), .kurs-card-back > *:not(.kurs-card-bg) { position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.92); border: 1px solid rgba(184,114,138,0.70); padding: 0.3rem 0.75rem; border-radius: 2px; width: fit-content; }
   .kurs-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--white); line-height: 1.35; }
   .kurs-teaser { font-size: 0.9rem; color: rgba(255,255,255,0.80); line-height: 1.75; }
-  @media (prefers-reduced-motion: reduce) {
-    .kurs-card-inner { transition: none; }
-  }
   .kurs-hook { font-family: var(--font-quote); font-size: 0.95rem; font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.75; }
   .kurs-inhalte-label { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); opacity: 0.85; display: block; }
   .kurs-inhalte { list-style: none; }
@@ -664,18 +662,12 @@
   function setKursHeights() {
     document.querySelectorAll('.kurs-card').forEach(card => {
       const inner = card.querySelector('.kurs-card-inner');
+      const front = card.querySelector('.kurs-card-front');
       const back = card.querySelector('.kurs-card-back');
+      // Clear min-height so positions reset, then measure scrollHeight
+      // (scrollHeight = natural content height regardless of absolute positioning)
       inner.style.minHeight = '';
-      // Temporarily put back in flow to measure its natural height
-      back.style.position = 'relative';
-      back.style.transform = 'none';
-      back.style.visibility = 'hidden';
-      const backH = back.offsetHeight;
-      // Restore (inline clears → CSS rules re-apply)
-      back.style.position = '';
-      back.style.transform = '';
-      back.style.visibility = '';
-      inner.style.minHeight = Math.max(card.querySelector('.kurs-card-front').offsetHeight, backH) + 'px';
+      inner.style.minHeight = Math.max(front.scrollHeight, back.scrollHeight) + 'px';
     });
   }
   document.fonts.ready.then(setKursHeights);
