@@ -211,11 +211,15 @@
   .form-group textarea { resize: vertical; min-height: 130px; }
   .form-submit { background: var(--rose); color: white; border: none; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.5rem; border-radius: 2px; cursor: pointer; align-self: flex-start; transition: background var(--dur-ui) var(--ease-organic); }
   .form-submit:hover { background: var(--rose-dark); }
-  .form-group--dse { gap: 0.9rem; }
-  .dse-hinweis { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.65; font-style: normal; }
-  .dse-hinweis a { color: var(--rose); text-decoration: underline; text-decoration-color: rgba(184,114,138,0.4); }
-  .dse-label { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.82rem; color: rgba(255,255,255,0.72); line-height: 1.65; cursor: pointer; }
-  .dse-label input[type="checkbox"] { flex-shrink: 0; margin-top: 0.2rem; width: 16px; height: 16px; accent-color: var(--rose); cursor: pointer; }
+  .form-group--dse { gap: 1rem; }
+  .dse-hinweis { font-size: 0.8rem; color: rgba(255,255,255,0.52); line-height: 1.7; }
+  .dse-hinweis a { color: rgba(255,255,255,0.52); text-decoration: underline; text-decoration-color: rgba(255,255,255,0.25); }
+  .dse-label { display: flex; gap: 0.85rem; align-items: flex-start; font-size: 0.9rem; color: rgba(255,255,255,0.82); line-height: 1.65; cursor: pointer; text-transform: none; letter-spacing: normal; font-weight: 400; }
+  .dse-label input[type="checkbox"] { display: none; }
+  .dse-check { flex-shrink: 0; width: 18px; height: 18px; border: 1.5px solid rgba(255,255,255,0.35); border-radius: 2px; margin-top: 0.2rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, background 0.2s; background: transparent; }
+  .dse-label input[type="checkbox"]:checked + .dse-check { background: var(--rose); border-color: var(--rose); }
+  .dse-label input[type="checkbox"]:checked + .dse-check::after { content: ''; display: block; width: 4px; height: 8px; border: 1.5px solid white; border-top: none; border-left: none; transform: rotate(45deg) translateY(-1px); }
+  .dse-label:hover .dse-check { border-color: var(--rose); }
   .dse-label a { color: var(--rose); text-decoration: underline; text-decoration-color: rgba(184,114,138,0.4); }
   .kontakt-details { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
   .kontakt-detail { display: grid; grid-template-columns: 1.5rem 1fr; gap: 1.25rem; align-items: start; }
@@ -603,7 +607,7 @@
     <div class="form-group"><label>Nachricht</label><textarea placeholder="Dein Anliegen …"></textarea></div>
     <div class="form-group form-group--dse">
       <p class="dse-hinweis">Deine Angaben werden ausschließlich zur Bearbeitung deiner Anfrage genutzt und nicht an Dritte weitergegeben. Mehr Informationen in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
-      <label class="dse-label"><input type="checkbox" required name="dse" id="dse-checkbox"> Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.</label>
+      <label class="dse-label"><input type="checkbox" required name="dse" id="dse-checkbox"><span class="dse-check"></span><span>Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</span></label>
     </div>
     <button type="submit" class="form-submit">Nachricht senden</button>
   </form>
