@@ -176,7 +176,7 @@
   #philosophie > * { position: relative; z-index: 1; }
   .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; text-shadow: 0 2px 20px rgba(184,114,138,0.2), 0 4px 40px rgba(0,0,0,0.3); }
   .philo-quote-main em { color: var(--rose); font-style: normal; }
-  .philo-attribution { font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-bottom: 6rem; display: block; }
+  .philo-attribution { font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-bottom: 8rem; display: block; }
   .philo-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; max-width: 920px; margin: 0 auto; }
   .philo-value { text-align: left; }
   .philo-value-title { font-family: var(--font-serif); font-size: 1.45rem; font-weight: 400; color: var(--rose); margin-bottom: 1rem; display: block; }
@@ -254,6 +254,9 @@
     .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; }
     .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
     section { padding: 4rem 1.5rem; }
+    .philo-attribution { margin-bottom: 4rem; }
+    .problem-audience { margin-top: 3rem; margin-bottom: 0.4rem; }
+    .problem-card:first-child .problem-audience { margin-top: 0; }
     .problems-grid, .angebote-grid, .kurse-grid, .philo-values, .ks-modules-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .testimonial-card:nth-child(n) { grid-column: span 1; }
@@ -552,7 +555,7 @@
         <p>Kernaussagen auf den Punkt. Aufmerksamkeit gewinnen und halten.</p>
       </div>
       <div class="ks-module-card reveal" data-delay="4">
-        <div class="ks-module-icon" style="background-image:url('peony.png')"></div>
+        <div class="ks-module-icon" style="background-image:url('tools-alltag.jpg'); opacity:0.22; filter:blur(3px); transform:scale(1.05);"></div>
         <h3>Tools für den Alltag</h3>
         <p>5-Min-Warm-up, Übungen und Strategien für eine dauerhaft gesunde Stimme.</p>
       </div>
