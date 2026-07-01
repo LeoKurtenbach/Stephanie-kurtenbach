@@ -113,8 +113,10 @@
   .angebot-secondary-link { font-size: 0.86rem; color: var(--deep); text-decoration: none; letter-spacing: 0.02em; align-self: flex-start; position: relative; z-index: 2; margin-top: 0.75rem; border-bottom: 1px solid rgba(45,32,64,0.45); padding-bottom: 1px; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
   .angebot-secondary-link:hover { color: var(--rose-dark); border-color: var(--rose); }
   .anmelde-hint { display: none; }
-  .kurse-subsection { background: transparent; padding: 4rem 0 0 0; margin-top: 2rem; border-top: 1px solid rgba(45,32,64,0.12); }
-  .kurse-subsection .section-title { font-size: 2rem; margin-bottom: 0.75rem; }
+  .kurse-subsection { background: transparent; padding: 5rem 0 0 0; margin-top: 2rem; border-top: 1px solid rgba(45,32,64,0.12); }
+  .kurse-intro-head { margin-bottom: 5rem; }
+  .kurse-intro-title { font-family: var(--font-serif); font-size: clamp(4rem, 8vw, 8rem); font-weight: 400; color: var(--deep); line-height: 1.0; margin: 1.25rem 0 2.5rem; letter-spacing: -0.02em; }
+  .kurse-intro-sub { font-size: 1.1rem; color: var(--mid); line-height: 1.85; max-width: 540px; margin: 0; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: start; margin-top: 3rem; }
   .kurs-card { border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); }
   .kurs-card:hover { transform: translateY(-2px); }
@@ -273,6 +275,8 @@
     .testimonial-card:nth-child(n) { grid-column: span 1; }
     .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; }
     .angebote-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .kurse-intro-title { letter-spacing: -0.01em; margin-bottom: 1.75rem; }
+    .kurse-intro-head { margin-bottom: 3rem; }
     #ueber { padding: 4rem 1.5rem; }
     .ueber-top { grid-template-columns: 1fr; gap: 2rem; }
     .ueber-image img { max-width: 100%; height: auto; }
@@ -448,9 +452,11 @@
     </div>
   </div>
   <div class="kurse-subsection" id="kurse">
-    <span class="section-overline reveal">Fortbildungen im Detail</span>
-    <h3 class="section-title reveal" data-delay="1" style="font-size:2rem;">Aktuelle Kurse</h3>
-    <p class="section-body reveal" data-delay="2">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
+    <div class="kurse-intro-head">
+      <span class="section-overline reveal">Fortbildungen im Detail</span>
+      <h2 class="kurse-intro-title reveal" data-delay="1">Aktuelle<br>Kurse</h2>
+      <p class="kurse-intro-sub reveal" data-delay="2">Alle Kurse werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft.</p>
+    </div>
     <div class="kurse-grid">
       <div class="kurs-card reveal">
         <div class="kurs-card-inner">
