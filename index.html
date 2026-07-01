@@ -46,7 +46,7 @@
   #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: stretch; padding-top: 80px; position: relative; overflow: hidden; }
   .hero-portrait-img { max-width: 100%; height: auto; display: block; position: relative; z-index: 2; }
   #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,0.97) 0%, rgba(10,8,15,0.90) 30%, rgba(10,8,15,0.25) 52%, rgba(10,8,15,0) 68%); z-index: 1; pointer-events: none; }
-  #hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 42rem; background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(10,8,15,0.90) 100%); z-index: 1; pointer-events: none; }
+  #hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 42rem; background: linear-gradient(to bottom, transparent 0%, rgba(10,8,15,0.82) 42%, rgba(10,8,15,0.97) 100%); z-index: 1; pointer-events: none; }
   .hero-content { position: relative; z-index: 2; width: 100%; padding: 2.5rem 5rem 3rem; flex: 1; display: grid; grid-template-columns: minmax(0, 480px) 1fr; column-gap: 5rem; align-items: start; }
   .hero-photo-col { grid-column: 2; grid-row: 1; align-self: flex-start; display: flex; padding: 0; overflow: visible; margin-top: 3.5rem; margin-left: 2rem; }
   .hero-bottom { position: relative; z-index: 2; padding: 2.5rem 5rem 5.5rem; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.10); }
@@ -87,7 +87,8 @@
   #probleme .problem-quote { color: rgba(255,255,255,0.92); }
   #probleme .problem-response { color: rgba(255,255,255,0.85); }
   #angebote { position: relative; }
-  #angebote::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(232,237,226,0) 0%, rgba(232,237,226,0.94) 5%, rgba(232,237,226,0.94) 93%, rgba(232,237,226,0) 100%); z-index: 0; pointer-events: none; }
+  #angebote::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(232,237,226,0.94) 0%, rgba(232,237,226,0.94) 93%, rgba(232,237,226,0) 100%); z-index: 0; pointer-events: none; }
+  #angebote .section-overline { color: var(--rose-dark); }
   #angebote > * { position: relative; z-index: 1; }
   .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4rem; margin-top: 4rem; }
   .problem-card { background: none; padding: 0; }
@@ -270,6 +271,14 @@
     .bio-station:nth-child(even) { padding: 0; }
     #kontakt { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+    /* Performance: kill scroll-driven parallax — biggest mobile jank source */
+    #pageBg img { animation: none !important; transform: none !important; }
+    /* Performance: remove 3D perspective from kurs cards, use opacity-only flip */
+    .kurs-card-inner { perspective: none; }
+    .kurs-card-front, .kurs-card-back { transform: none !important; transition: opacity 0.22s ease; }
+    /* Performance: remove complex mask-image from bio stations */
+    .bio-station-img { -webkit-mask-image: none !important; mask-image: none !important; }
+    .bio-station-img::before { display: none; }
   }
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.72); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
@@ -433,7 +442,7 @@
           <div class="kurs-card-front">
             <div class="kurs-card-bg" style="background-image: url('passionflower.png');"></div>
             <span class="kurs-tag">Sensorische Integration</span>
-            <h3 class="kurs-title">SIKiT – Sensorische Integration in der Kindersprachtherapie</h3>
+            <h3 class="kurs-title">SIKiT: Sensorische Integration in der Kindersprachtherapie</h3>
             <p class="kurs-teaser">Warum greifen bewährte Methoden nicht, obwohl du sorgfältig planst? Häufig liegen sprachlichen Schwierigkeiten Entwicklungsprozesse zugrunde, die auf den ersten Blick nicht erkennbar sind.</p>
             <p style="margin-top:1.25rem;padding-top:0.85rem;border-top:1px solid rgba(255,255,255,0.12);font-size:0.82rem;letter-spacing:0.02em;"><a href="https://www.prolog-shop.de/shop/kindliche-sprachentwicklung-und-sprachentwicklungsstoerungen/fachliteraturratgeber-kindersprache/2022/sikit" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.45);padding-bottom:1px;">Zum Begleitbuch: SIKiT →</a></p>
             <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="flipKurs(this)">Details →</button></div>
@@ -453,7 +462,7 @@
           <div class="kurs-card-front">
             <div class="kurs-card-bg" style="background-image: url('peony.png');"></div>
             <span class="kurs-tag">Elterntraining</span>
-            <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" – Elterntrainingsprogramm</h3>
+            <h3 class="kurs-title">„Spielst Du mit mir sprechen 2.0?" Elterntrainingsprogramm</h3>
             <p class="kurs-teaser">Ein praxiserprobtes Therapieprogramm, das Eltern befähigt, die Sprachentwicklung ihres Kindes aktiv im Alltag zu unterstützen, inklusive aller Materialien.</p>
             <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="flipKurs(this)">Details →</button></div>
           </div>
@@ -472,7 +481,7 @@
           <div class="kurs-card-front">
             <div class="kurs-card-bg" style="background-image: url('wisteria.png');"></div>
             <span class="kurs-tag">Frühe Intervention</span>
-            <h3 class="kurs-title">Frühe Dialogtherapie – Anbahnung kommunikativer Basisfähigkeiten</h3>
+            <h3 class="kurs-title">Frühe Dialogtherapie: Anbahnung kommunikativer Basisfähigkeiten</h3>
             <p class="kurs-teaser">Wenn gängige Methoden nicht greifen, fehlt oft das Fundament: die kommunikativen Vorausläuferfähigkeiten. Dieser Kurs vermittelt ein systematisches Vorgehen für die frühe Intervention.</p>
             <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Anmelden →</a><button class="kurs-toggle" onclick="flipKurs(this)">Details →</button></div>
           </div>
@@ -480,7 +489,7 @@
             <div class="kurs-card-bg" style="background-image: url('wisteria.png');"></div>
             <p class="kurs-hook">„Hast du auch immer öfter Kinder in der Praxis, bei denen die gängigen Methoden nicht funktionieren? Vielleicht liegt es daran, dass diese Kinder noch nicht in der Lage sind, Sprache zu erwerben, weil bei ihnen ein wichtiges Fundament fehlt: die kommunikativen Vorausläuferfähigkeiten."</p>
             <span class="kurs-inhalte-label">Kursaufbau</span>
-            <ul class="kurs-inhalte"><li>Kommunikative Vorläuferfähigkeiten – das Fundament erfolgreicher Sprachentwicklung</li><li>Praxiserprobte Diagnostik zur Erfassung kommunikativer Vorläuferfähigkeiten</li><li>Wirksame therapeutische Konzepte für die frühe Intervention</li><li>Die Frühe Dialogtherapie: Struktur, Methodik und therapeutische Umsetzung</li></ul>
+            <ul class="kurs-inhalte"><li>Kommunikative Vorläuferfähigkeiten: das Fundament erfolgreicher Sprachentwicklung</li><li>Praxiserprobte Diagnostik zur Erfassung kommunikativer Vorläuferfähigkeiten</li><li>Wirksame therapeutische Konzepte für die frühe Intervention</li><li>Die Frühe Dialogtherapie: Struktur, Methodik und therapeutische Umsetzung</li></ul>
             <div class="kurs-outcome"><strong>Nach der Fortbildung</strong>Alle Kursbausteine werden durch authentische Videobeispiele ergänzt und in praxisnahen Übungen vertieft. Du kannst nach diesem Kurs deine Therapien konkret mit dieser Methode planen und durchführen.</div>
             <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Zur Anmeldung →</a><button class="kurs-toggle" onclick="flipKurs(this)">← Weniger</button></div>
           </div>
@@ -499,7 +508,7 @@
             <div class="kurs-card-bg" style="background-image: url('olive.png');"></div>
             <p class="kurs-hook">„Frühkindliche Reflexe sind genetisch angelegte Bewegungsmuster und bilden eine wichtige Grundlage für Haltung, Bewegung, Wahrnehmung, Lernen und Kommunikation. Verläuft der Integrationsprozess nicht vollständig, können Restreaktionen bestehen bleiben und verschiedene Entwicklungsbereiche beeinflussen, darunter Aufmerksamkeit, Motorik, Koordination, emotionale Regulation und Sprachentwicklung."</p>
             <span class="kurs-inhalte-label">Kursinhalte</span>
-            <ul class="kurs-inhalte"><li>Die Entwicklung und Funktion frühkindlicher Reflexe</li><li>Bedeutung für Wahrnehmung, Motorik, Lernen und Sprachentwicklung</li><li>Mögliche Folgen nicht vollständig integrierter Reflexe im Kindesalter</li><li>Zusammenhänge zwischen Reflexentwicklung, kommunikativen Vorläuferfähigkeiten und Sprachentwicklung</li><li>Reflexintegrationsprogramme – Grundlagen, Möglichkeiten und Grenzen</li><li>Überblick über die aktuelle Studienlage und wissenschaftliche Einordnung</li></ul>
+            <ul class="kurs-inhalte"><li>Die Entwicklung und Funktion frühkindlicher Reflexe</li><li>Bedeutung für Wahrnehmung, Motorik, Lernen und Sprachentwicklung</li><li>Mögliche Folgen nicht vollständig integrierter Reflexe im Kindesalter</li><li>Zusammenhänge zwischen Reflexentwicklung, kommunikativen Vorläuferfähigkeiten und Sprachentwicklung</li><li>Reflexintegrationsprogramme: Grundlagen, Möglichkeiten und Grenzen</li><li>Überblick über die aktuelle Studienlage und wissenschaftliche Einordnung</li></ul>
             <div class="kurs-outcome"><strong>Nach dem Webinar</strong>Du wirst die Rolle frühkindlicher Reflexe differenzierter betrachten können, erkennst mögliche Zusammenhänge im therapeutischen Alltag und gewinnst zusätzliche Perspektiven für die Begleitung von Kindern mit Entwicklungsauffälligkeiten.</div>
             <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Zur Anmeldung →</a><button class="kurs-toggle" onclick="flipKurs(this)">← Weniger</button></div>
           </div>
@@ -513,7 +522,7 @@
     <span class="section-overline reveal">Stimmcoaching</span>
     <h2 class="section-title reveal" data-delay="1">Kraftvolle Stimme</h2>
     <p class="ks-sub reveal" data-delay="2">Online-Stimmtraining für Coaches, Trainer, Speaker &amp; Business Professionals</p>
-    <p class="ks-lead reveal" data-delay="3">Deine Stimme ist dein wichtigstes Business-Tool — sie entscheidet, wie kompetent und präsent du wirkst.</p>
+    <p class="ks-lead reveal" data-delay="3">Deine Stimme ist dein wichtigstes Business-Tool. Sie entscheidet, wie kompetent und präsent du wirkst.</p>
   </div>
   <div class="ks-pain">
     <span class="section-overline reveal">Erkennst du dich?</span>
@@ -529,7 +538,7 @@
     <p class="ks-transition reveal">Das lässt sich <em>ändern.</em></p>
   </div>
   <div class="ks-statement">
-    <p class="ks-big-quote reveal">„Eine Stimme, die gesund, tragfähig und authentisch klingt — und eine Sprechweise, die deiner Kompetenz <em>Ausdruck verleiht.</em>"</p>
+    <p class="ks-big-quote reveal">„Eine Stimme, die gesund, tragfähig und authentisch klingt, und eine Sprechweise, die deiner Kompetenz <em>Ausdruck verleiht.</em>"</p>
   </div>
   <div class="ks-modules">
     <span class="section-overline reveal">Was dich erwartet</span>
@@ -542,7 +551,7 @@
       <div class="ks-module-card reveal" data-delay="1">
         <div class="ks-module-icon" style="background-image:url('peony.png')"></div>
         <h3>Resonanz &amp; Präsenz</h3>
-        <p>Voller klingen — mit weniger Anstrengung mehr Wirkung.</p>
+        <p>Voller klingen, mit weniger Anstrengung mehr Wirkung.</p>
       </div>
       <div class="ks-module-card reveal" data-delay="2">
         <div class="ks-module-icon" style="background-image:url('wisteria.png')"></div>
@@ -564,7 +573,7 @@
   <div class="ks-result">
     <p class="ks-result-statement reveal">Mehr Sicherheit, Präsenz, Resonanz und Wirkung. Eine Stimme, die Menschen erreicht.</p>
     <div class="ks-result-cta reveal" data-delay="1">
-      <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">Erstes Beratungsgespräch — kostenlos</a>
+      <a href="mailto:hallo@stephaniekurtenbach.com" class="btn-primary">Erstes Beratungsgespräch, kostenlos</a>
       <p class="ks-result-who">Für Coaches, Trainer, Speaker &amp; Business Professionals.</p>
     </div>
   </div>
@@ -582,17 +591,17 @@
   </div>
   <div class="bio-stations">
     <div class="bio-station reveal">
-      <div class="bio-station-img"><img src="bio-sprechwiss.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center 0%; transform: scale(1.0);"></div>
+      <div class="bio-station-img"><img src="bio-sprechwiss.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center 0%; transform: scale(1.08) translateY(-4%);"></div>
       <span class="bio-station-name">Sprechwissenschaft</span>
       <p>Phonetik, Rhetorik, Klinische Sprechwissenschaft, Sprechbildung. Das Studium in Halle war breit und trotzdem präzise. Es hat mir beigebracht, genau hinzuhören: auf Stimme, Sprechweise, den Raum zwischen Sprechen und Verstehen. Und es hat meine Neugier für das geweckt, was hinter kommunikativen Schwierigkeiten steckt.</p>
     </div>
     <div class="bio-station reveal" data-delay="1">
-      <div class="bio-station-img"><img src="bio-sensory-hand.png" alt="" loading="lazy" style="object-fit: cover; object-position: center 35%; transform: scale(1.0);"></div>
+      <div class="bio-station-img"><img src="bio-sensory-hand.png" alt="" loading="lazy" style="object-fit: cover; object-position: center center; transform: scale(1.0);"></div>
       <span class="bio-station-name">Sensorische Integrationstherapie</span>
       <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt, nicht die, die man ihm gibt.</p>
     </div>
     <div class="bio-station reveal" data-delay="2">
-      <div class="bio-station-img"><img src="stephanie-portrait-2.jpg" alt="" loading="lazy" style="object-fit: cover; object-position: center 20%; transform: scale(1.08);"></div>
+      <div class="bio-station-img"><img src="stephanie-portrait-2.jpg" alt="" loading="lazy" style="object-fit: contain; object-position: center center; transform: scale(1.0);"></div>
       <span class="bio-station-name">Systemische Beratung</span>
       <p>Systemisches Denken bedeutet: kein Mensch ist sein Problem. Diese Haltung trägt mich: in Fortbildungen, in Beratungen, in jedem Gespräch. Sie verändert, wie man zuhört. Und wie man antwortet.</p>
     </div>
@@ -636,8 +645,8 @@
   <div class="kontakt-info reveal">
     <span class="section-overline">Kontakt</span>
     <h2 class="section-title">Ich freue mich auf deine Nachricht.</h2>
-    <p class="section-body" style="margin-bottom:2rem;">Ich freue mich auf deine Nachricht. Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung – nimm gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
-    <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.92);">Lust auf ein erstes Beratungsgespräch? Kostenlos – schreib an <a href="mailto:hallo@stephaniekurtenbach.com" style="color:var(--rose)">hallo@stephaniekurtenbach.com</a></p>
+    <p class="section-body" style="margin-bottom:2rem;">Ich freue mich auf deine Nachricht. Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung: nimm gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
+    <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.92);">Lust auf ein erstes Beratungsgespräch? Kostenlos, schreib an <a href="mailto:hallo@stephaniekurtenbach.com" style="color:var(--rose)">hallo@stephaniekurtenbach.com</a></p>
     <div class="kontakt-details">
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Standort</strong>Deutschsprachiger Raum · Online & Präsenz</div></div>
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Forschung & Publikationen</strong><a href="https://www.uni-erfurt.de/forschung/aktuelles/forschungsblog-wortmelder" target="_blank" rel="noopener" style="color:var(--rose)">Lehr- und ForschungsLab KOMPASS Sprache</a></div></div>
