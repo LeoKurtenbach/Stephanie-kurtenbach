@@ -21,7 +21,6 @@
     --mid: #5A4A6A;
     --muted: #9080A0;
     --font-serif: 'Libre Baskerville', Georgia, serif;
-    --font-quote: 'Lora', Georgia, serif;
     --font-sans: 'DM Sans', sans-serif;
     --ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     --dur-ambient: 600ms;
@@ -67,7 +66,7 @@
   .btn-secondary { display: inline-flex; align-items: center; font-family: var(--font-sans); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; letter-spacing: 0.05em; padding: 1.1rem 3rem; border: 1px solid rgba(255,255,255,0.28); border-radius: 2px; min-height: 54px; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
   .btn-secondary:hover { color: var(--white); border-color: rgba(255,255,255,0.55); }
   .hero-quote { margin-top: 3rem; border-left: 2px solid rgba(184,114,138,0.55); padding: 0.65rem 1.4rem; max-width: 420px; }
-  .hero-quote p { font-family: var(--font-quote); font-size: 0.95rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 0.5rem; }
+  .hero-quote p { font-family: var(--font-serif); font-size: 0.95rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 0.5rem; }
   .hero-quote cite { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.72); font-style: normal; }
   .stats-bar { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); padding: 3rem 5rem; }
   .stats-bar::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
@@ -134,7 +133,7 @@
   .kurs-tag { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.92); border: 1px solid rgba(184,114,138,0.70); padding: 0.3rem 0.75rem; border-radius: 2px; width: fit-content; }
   .kurs-title { font-family: var(--font-serif); font-size: clamp(1.15rem, 1.4vw, 1.45rem); font-weight: 400; color: var(--white); line-height: 1.3; }
   .kurs-teaser { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.75; }
-  .kurs-hook { font-family: var(--font-quote); font-size: 1.05rem; font-style: italic; color: rgba(255,255,255,0.95); line-height: 1.75; }
+  .kurs-hook { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; color: rgba(255,255,255,0.95); line-height: 1.75; }
   .kurs-inhalte-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); opacity: 1; display: block; }
   .kurs-inhalte { list-style: none; }
   .kurs-inhalte li { font-size: 0.95rem; color: rgba(255,255,255,0.95); padding: 0.5rem 0 0.5rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; }
@@ -189,7 +188,7 @@
   #stimmen .section-title::after { content: ''; display: block; width: 2.5rem; height: 2px; background: var(--rose); border-radius: 1px; margin-top: 1.25rem; }
   .testimonials-featured { background: transparent; padding: 0 0 4rem 0; margin-bottom: 4rem; text-align: center; border-bottom: 1px solid rgba(45,32,64,0.12); }
   .featured-stars { margin-bottom: 2rem; display: block; color: var(--rose); }
-  .featured-quote { font-family: var(--font-quote); font-size: clamp(1.7rem, 2.5vw, 2.5rem); font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.85; max-width: 780px; margin: 0 auto; }
+  .featured-quote { font-family: var(--font-serif); font-size: clamp(1.7rem, 2.5vw, 2.5rem); font-style: italic; font-weight: 400; color: var(--deep); line-height: 1.85; max-width: 780px; margin: 0 auto; }
   .testimonials-grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 2rem; row-gap: 1.75rem; margin-top: 4rem; }
   .testimonial-card { background: rgba(255,255,255,0.68); border: 1px solid rgba(45,32,64,0.07); box-shadow: 0 2px 12px rgba(45,32,64,0.06), 0 1px 3px rgba(45,32,64,0.04); padding: 1.75rem 2rem 1.5rem; border-radius: 2px; }
   .testimonial-card:nth-child(1) { grid-column: span 7; }
@@ -198,7 +197,7 @@
   .testimonial-card:nth-child(4) { grid-column: span 5; }
   .testimonial-card:nth-child(5) { grid-column: span 3; }
   .testimonial-card:nth-child(6) { grid-column: span 8; }
-  .testimonial-text { font-family: var(--font-quote); font-size: 1.02rem; color: var(--deep); font-style: italic; font-weight: 400; line-height: 1.9; margin-bottom: 1.25rem; }
+  .testimonial-text { font-family: var(--font-serif); font-size: 1.02rem; color: var(--deep); font-style: italic; font-weight: 400; line-height: 1.9; margin-bottom: 1.25rem; }
   .testimonial-highlight { font-size: 0.78rem; color: var(--rose-dark); font-style: normal; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; border-top: 1px solid rgba(143,77,104,0.18); padding-top: 0.9rem; margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
   .testimonial-highlight::before { content: '·'; color: var(--rose); }
   #kontakt { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
@@ -236,10 +235,38 @@
   .footer-text { font-size: 0.82rem; color: rgba(255,255,255,0.72); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
   @media (max-width: 900px) {
-    nav.main-nav { padding: 1rem 1.5rem; } .nav-links { display: none; } #hero { min-height: 100svh; } .hero-content { flex-direction: column; gap: 2rem; padding: 3.5rem 1.5rem 2rem; }
- .hero-text-col { flex: none; width: 100%; }
- .hero-photo-col { width: 100%; }
- .hero-portrait-img { width: 80%; margin: 0 auto; } .hero-content { padding: 3.5rem 1.5rem 2rem; max-width: 100%; } .hero-bottom { padding: 2rem 1.5rem 4rem; gap: 1.75rem; } .hero-tags { gap: 0; } .tag { font-size: 0.65rem; padding: 0 1.5rem; letter-spacing: 0.15em; } .tag:first-child { padding-left: 0; } .hero-actions { flex-direction: column; width: 100%; } .btn-primary, .btn-secondary { width: 100%; justify-content: center; } section { padding: 4rem 1.5rem; } .problems-grid, .angebote-grid, .kurse-grid, .testimonials-grid, .philo-values { grid-template-columns: 1fr; } #ueber, #kontakt { grid-template-columns: 1fr; padding: 4rem 1.5rem; } .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; } .angebote-intro { grid-template-columns: 1fr; gap: 2rem; } footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; } .testimonial-card:nth-child(n) { grid-column: span 1; } .ueber-top { grid-template-columns: 1fr; gap: 2rem; } .ueber-image img { max-width: 100%; height: auto; } .bio-stations { grid-template-columns: 1fr; } .bio-station { padding: 0; } .bio-station:nth-child(even) { padding: 0; }
+    nav.main-nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { min-height: 100svh; }
+    #hero::before { background: rgba(10,8,15,0.80); }
+    .hero-content { grid-template-columns: 1fr; padding: 0; }
+    .hero-photo-col { grid-column: 1; grid-row: 1; margin-top: 0; margin-left: 0; width: 100%; }
+    .hero-portrait-img { width: 100% !important; height: auto; margin: 0 !important; display: block; }
+    .hero-text-col { padding: 1.75rem 1.5rem 0; }
+    .hero-headline { font-size: clamp(2rem, 7.5vw, 3rem); margin-bottom: 1rem; }
+    .hero-sub { margin-bottom: 1rem; max-width: 100%; }
+    .hero-quote { margin-top: 1rem; }
+    .hero-bottom { padding: 1.75rem 1.5rem 3.5rem; gap: 1.5rem; }
+    .hero-tags { gap: 0; }
+    .tag { font-size: 0.7rem; padding: 0 1.25rem; letter-spacing: 0.13em; }
+    .tag:first-child { padding-left: 0; }
+    .tag:last-child { border-right: none; padding-right: 0; }
+    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    section { padding: 4rem 1.5rem; }
+    .problems-grid, .angebote-grid, .kurse-grid, .philo-values, .ks-modules-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial-card:nth-child(n) { grid-column: span 1; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; }
+    .angebote-intro { grid-template-columns: 1fr; gap: 2rem; }
+    #ueber { padding: 4rem 1.5rem; }
+    .ueber-top { grid-template-columns: 1fr; gap: 2rem; }
+    .ueber-image img { max-width: 100%; height: auto; }
+    .bio-stations { grid-template-columns: 1fr; }
+    .bio-station { padding: 0; }
+    .bio-station:nth-child(even) { padding: 0; }
+    #kontakt { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
   }
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.82rem; color: rgba(255,255,255,0.72); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
@@ -590,7 +617,7 @@
     <div style="margin-bottom:2rem;">
       <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4 C16 4 18 10 22 12 C18 12 16 18 16 18 C16 18 14 12 10 12 C14 10 16 4 16 4Z" fill="#B8728A" opacity="0.7"/><path d="M16 14 C16 14 20 15 22 18 C19 17 16 20 16 20 C16 20 13 17 10 18 C12 15 16 14 16 14Z" fill="#B8728A" opacity="0.5"/><circle cx="16" cy="16" r="2" fill="#B8728A" opacity="0.9"/></svg>
     </div>
-    <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.65;color:var(--deep);margin-bottom:1.25rem;">„Wenn ich könnte, würde ich 10 Sterne vergeben. Die Atmosphäre war sehr persönlich und angenehm, der Inhalt wurde super anschaulich vermittelt und Fragen immer beantwortet. Man bekommt einen ganz neuen Blick auf die Kinder."</p>
+    <p style="font-family:var(--font-serif);font-style:italic;font-weight:400;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.65;color:var(--deep);margin-bottom:1.25rem;">„Wenn ich könnte, würde ich 10 Sterne vergeben. Die Atmosphäre war sehr persönlich und angenehm, der Inhalt wurde super anschaulich vermittelt und Fragen immer beantwortet. Man bekommt einen ganz neuen Blick auf die Kinder."</p>
     <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-dark);font-weight:500;">Kursteilnehmerin</span>
   </div>
   <div class="testimonials-grid">
