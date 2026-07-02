@@ -130,7 +130,7 @@
   .kurs-card:hover { transform: translateY(-2px); }
   /* perspective on parent, no preserve-3d, no backface-visibility, opacity crossfade makes overlap impossible */
   .kurs-card-inner { position: relative; perspective: 1200px; min-height: 200px; transition: min-height 0.65s cubic-bezier(0.4,0,0.2,1); }
-  .kurs-card-front, .kurs-card-back { position: absolute; inset: 0; background: rgba(10,8,15,0.75); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 1.75rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease; }
+  .kurs-card-front, .kurs-card-back { position: absolute; inset: 0; background: rgba(10,8,15,0.75); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 2.5rem 2.75rem; display: flex; flex-direction: column; gap: 1.5rem; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease; }
   .kurs-card-front { transform: rotateY(0deg); opacity: 1; }
   .kurs-card-back { transform: rotateY(180deg); opacity: 0; pointer-events: none; }
   .kurs-card.flipped .kurs-card-front { transform: rotateY(-180deg); opacity: 0; pointer-events: none; }
@@ -142,7 +142,7 @@
   .kurs-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.16; background-size: cover; background-repeat: no-repeat; background-position: center; pointer-events: none; z-index: 0; -webkit-mask-image: radial-gradient(ellipse at 78% 22%, black 18%, transparent 68%); mask-image: radial-gradient(ellipse at 78% 22%, black 18%, transparent 68%); }
   .kurs-card-front > *:not(.kurs-card-bg), .kurs-card-back > *:not(.kurs-card-bg) { position: relative; z-index: 1; }
   .kurs-tag { font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.96); border: 1px solid rgba(184,114,138,0.90); background: rgba(184,114,138,0.18); padding: 0.35rem 0.85rem; border-radius: 2px; width: fit-content; }
-  .kurs-title { font-family: var(--font-serif); font-size: clamp(1.15rem, 1.4vw, 1.45rem); font-weight: 400; color: var(--white); line-height: 1.3; }
+  .kurs-title { font-family: var(--font-serif); font-size: clamp(1.3rem, 1.6vw, 1.65rem); font-weight: 400; color: var(--white); line-height: 1.3; }
   .kurs-teaser { font-size: 1.18rem; color: rgba(255,255,255,0.97); line-height: 1.78; }
   .kurs-hook { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; color: rgba(255,255,255,0.95); line-height: 1.75; }
   .kurs-inhalte-label { font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); opacity: 1; display: block; }
@@ -153,7 +153,7 @@
   .kurs-outcome strong { display: block; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); font-weight: 500; opacity: 1; margin-bottom: 0.45rem; }
   .kurs-cta { display: inline-block; background: var(--rose); color: white; font-size: 0.82rem; letter-spacing: 0.06em; text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic); width: fit-content; }
   .kurs-cta:hover { background: var(--rose-dark); }
-  .kurs-card-actions { display: flex; gap: 0.75rem; margin-top: auto; padding-top: 0.5rem; }
+  .kurs-card-actions { display: flex; gap: 0.75rem; margin-top: auto; padding-top: 1.25rem; }
   .kurs-btn-primary { background: var(--rose); color: white; font-size: 0.9rem; padding: 0.65rem 1.35rem; border-radius: 2px; text-decoration: none; font-weight: 400; transition: background var(--dur-ui) var(--ease-organic); }
   .kurs-btn-primary:hover { background: var(--rose-dark); }
   .kurs-toggle { background: transparent; color: rgba(255,255,255,0.88); font-family: var(--font-sans); font-size: 0.92rem; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.48); cursor: pointer; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic), background var(--dur-ui) var(--ease-organic); }
