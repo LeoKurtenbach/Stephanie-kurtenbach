@@ -120,11 +120,11 @@
   .kurse-intro-left { flex: 1; min-width: 0; }
   .kurse-intro-title { font-family: var(--font-serif); font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 400; color: var(--deep); line-height: 1.1; margin: 1.25rem 0 2rem; letter-spacing: -0.01em; }
   .kurse-intro-sub { font-size: 1.38rem; color: var(--mid); line-height: 1.85; margin: 0; }
-  .sikit-book-box { display: flex; flex-direction: column; align-items: flex-start; padding: 1.5rem 2rem; background: rgba(247,238,242,0.80); border: 1px solid rgba(143,77,104,0.30); border-radius: 4px; text-decoration: none; flex-shrink: 0; align-self: flex-end; transition: background var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
-  .sikit-book-box:hover { background: rgba(247,238,242,1); border-color: rgba(143,77,104,0.55); }
-  .sikit-book-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 0.6rem; display: block; }
-  .sikit-book-name { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 400; color: var(--rose-dark); line-height: 1.2; }
-  .sikit-book-arrow { font-size: 0.78rem; letter-spacing: 0.06em; color: var(--rose); margin-top: 0.65rem; display: block; }
+  .sikit-book-box { display: flex; flex-direction: column; align-items: flex-start; padding: 2rem 2.5rem; background: rgba(247,238,242,0.88); border: 1px solid rgba(143,77,104,0.45); border-radius: 4px; text-decoration: none; flex-shrink: 0; align-self: flex-end; transition: background var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 12px rgba(143,77,104,0.10); }
+  .sikit-book-box:hover { background: rgba(247,238,242,1); border-color: rgba(143,77,104,0.70); box-shadow: 0 4px 20px rgba(143,77,104,0.18); }
+  .sikit-book-label { font-size: 0.76rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.75rem; display: block; }
+  .sikit-book-name { font-family: var(--font-serif); font-size: 1.75rem; font-weight: 400; color: var(--rose-dark); line-height: 1.15; }
+  .sikit-book-arrow { font-size: 0.9rem; letter-spacing: 0.08em; color: var(--rose); margin-top: 0.85rem; display: block; font-weight: 500; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: start; margin-top: 3rem; }
   .kurs-card { border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); }
   .kurs-card:hover { transform: translateY(-2px); }
@@ -167,8 +167,8 @@
   .ueber-image img { width: 100%; display: block; border-radius: 2px; box-shadow: 0 16px 60px rgba(0,0,0,0.5); }
   .ueber-text p { font-size: 1.12rem; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 1.4rem; }
   .bio-stations { display: flex; flex-direction: column; margin-top: 4rem; margin-left: -5rem; margin-right: -5rem; }
-  .bio-station { display: grid; grid-template-columns: 58% 42%; min-height: 36vh; position: relative; }
-  .bio-station:nth-child(even) { grid-template-columns: 42% 58%; }
+  .bio-station { display: grid; grid-template-columns: 50% 50%; height: 58vh; position: relative; overflow: hidden; }
+  .bio-station:nth-child(even) { grid-template-columns: 50% 50%; }
   .bio-station:nth-child(even) .bio-station-media { grid-column: 2; grid-row: 1; }
   .bio-station:nth-child(even) .bio-station-body { grid-column: 1; grid-row: 1; }
   .bio-station-media { position: relative; overflow: hidden; }
@@ -180,8 +180,6 @@
   .bio-station:nth-child(2) .bio-station-media::after { background: linear-gradient(to bottom, rgba(10,8,15,0.52) 0%, transparent 18%), linear-gradient(to top, rgba(10,8,15,0.52) 0%, transparent 18%); }
   .bio-station:nth-child(3) .bio-station-media::after { background: none; }
   .bio-station:nth-child(4) .bio-station-media::after { background: none; }
-  .bio-station:nth-child(1), .bio-station:nth-child(3) { grid-template-columns: 46% 54%; }
-  .bio-station:nth-child(2) { grid-template-columns: 46% 54%; }
   .bio-station-body { display: flex; flex-direction: column; justify-content: center; padding: 3.5rem 4rem; position: relative; }
   .bio-num { position: absolute; top: 2rem; right: 2.5rem; font-family: var(--font-serif); font-size: 7rem; color: white; opacity: 0.06; line-height: 1; user-select: none; pointer-events: none; letter-spacing: -0.02em; }
   .bio-station:nth-child(even) .bio-num { right: auto; left: 2.5rem; }
@@ -294,7 +292,7 @@
     #mission { padding: 5rem 1.5rem; }
     .mission-quote { font-size: clamp(1.4rem, 5vw, 1.8rem); }
     .bio-stations { margin-left: -1.5rem; margin-right: -1.5rem; }
-    .bio-station { grid-template-columns: 1fr; min-height: auto; }
+    .bio-station { grid-template-columns: 1fr; height: auto; min-height: auto; overflow: visible; }
     .bio-station:nth-child(even) { grid-template-columns: 1fr; }
     .bio-station-media { grid-column: 1 !important; grid-row: 1; aspect-ratio: 4/3; }
     .bio-station-body { grid-column: 1 !important; grid-row: 2; padding: 2.5rem 1.5rem; }
