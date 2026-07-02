@@ -277,10 +277,8 @@
     .problem-audience { margin-top: 3rem; margin-bottom: 0.4rem; }
     .problem-card:first-child .problem-audience { margin-top: 0; }
     .problems-grid, .angebote-grid, .kurse-grid, .philo-values { grid-template-columns: 1fr; }
-    .ks-module-card { grid-template-columns: 2.25rem 1fr; gap: 0 1.25rem; }
-    .ks-module-card h3 { grid-column: 2; grid-row: 1; }
-    .ks-module-card p { grid-column: 2; grid-row: 2; }
-    .ks-module-num { grid-row: 1 / span 2; align-self: start; padding-top: 0.1em; }
+    .ks-module-card { grid-template-columns: 2.5rem 1fr; gap: 0.25rem 1.25rem; padding: 2rem 0; }
+    .ks-module-num { font-size: 1.35rem; align-self: center; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .testimonial-card:nth-child(n) { grid-column: span 1; }
     .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; }
@@ -361,13 +359,13 @@
   .ks-modules { padding: 0 0 5rem; margin-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .ks-modules .section-overline { color: var(--rose); margin-bottom: 2.5rem; font-size: 1.05rem; letter-spacing: 0.16em; }
   .ks-modules-grid { display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.10); }
-  .ks-module-card { display: grid; grid-template-columns: 3rem 1fr 2fr; gap: 0 2.5rem; align-items: center; padding: 2.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; background: transparent; border-radius: 0; border-left: none; border-right: none; border-top: none; transition: background 220ms var(--ease-organic); overflow: hidden; }
+  .ks-module-card { display: grid; grid-template-columns: 5rem 1fr; gap: 0.35rem 3rem; align-items: start; padding: 2.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; background: transparent; transition: background 220ms var(--ease-organic); }
   @media (hover: hover) { .ks-module-card:hover { background: rgba(255,255,255,0.028); } }
-  .ks-module-num { font-family: var(--font-serif); font-size: 0.95rem; color: var(--rose); font-weight: 400; letter-spacing: 0.08em; }
+  .ks-module-num { font-family: var(--font-serif); font-size: 2rem; color: var(--rose); font-weight: 400; letter-spacing: 0.02em; line-height: 1; grid-column: 1; grid-row: 1 / span 2; align-self: center; }
   .ks-module-icon { display: none; }
   .ks-module-card::before { display: none; }
-  .ks-module-card h3 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; color: var(--white); margin: 0; line-height: 1.25; }
-  .ks-module-card p { font-size: 1.08rem; color: rgba(255,255,255,0.95); line-height: 1.78; margin: 0; }
+  .ks-module-card h3 { grid-column: 2; grid-row: 1; font-family: var(--font-serif); font-size: 1.38rem; font-weight: 400; color: var(--white); margin: 0; line-height: 1.25; }
+  .ks-module-card p { grid-column: 2; grid-row: 2; font-size: 1.1rem; color: rgba(255,255,255,0.88); line-height: 1.78; margin: 0; }
   .ks-result { text-align: center; }
   .ks-result-statement { font-family: var(--font-serif); font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.92); line-height: 1.55; max-width: 660px; margin: 0 auto 3rem; }
   .ks-result-cta { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
