@@ -334,7 +334,7 @@
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Progress bar: native scroll + rAF — no GSAP scrub listener on every pixel
+  // Progress bar: native scroll + rAF, no GSAP scrub listener on every pixel
   const _bar = document.getElementById('progressBar');
   let _rafPending = false;
   window.addEventListener('scroll', () => {
@@ -368,17 +368,17 @@
     gsap.from('.hero-actions',   { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.74 });
     gsap.from('.hero-quote',     { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.92 });
 
-    // Section titles — per-element trigger, not body
+    // Section titles, per-element trigger, not body
     document.querySelectorAll('.section-title').forEach(el => {
       gsap.from(el, { y: 18, opacity: 0, duration: 0.75, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true }});
     });
 
-    // Section overlines — per-element trigger, not global body trigger
+    // Section overlines, per-element trigger, not global body trigger
     document.querySelectorAll('.section-overline').forEach(el => {
       gsap.from(el, { y: 10, opacity: 0, duration: 0.55, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true }});
     });
 
-    // Scroll reveals — stagger ≤ 50ms, y ≤ 12px (no diagonal wave)
+    // Scroll reveals, stagger ≤ 50ms, y ≤ 12px (no diagonal wave)
     gsap.from('.problem-card',    { y: 12, opacity: 0, duration: 0.65, ease: 'power3.out', stagger: 0.05, scrollTrigger: { trigger: '.problems-grid',   start: 'top 85%', once: true }});
     gsap.from('.kurs-card',       { y: 12, opacity: 0, duration: 0.65, ease: 'power3.out', stagger: 0.05, scrollTrigger: { trigger: '.kurse-grid',      start: 'top 85%', once: true }});
     gsap.from('.bio-station',     { y: 12, opacity: 0, duration: 0.65, ease: 'power3.out', stagger: 0.05, scrollTrigger: { trigger: '.bio-stations',    start: 'top 82%', once: true }});
