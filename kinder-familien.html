@@ -120,12 +120,12 @@
   #scene-ziel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0.70) 0%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
   #scene-ziel > * { position: relative; z-index: 1; }
   #scene-ziel .section-overline { color: var(--rose); }
-  #scene-ziel .section-title { color: var(--white); }
+  #scene-ziel .section-title { color: var(--white); font-size: clamp(1.5rem, 2.2vw, 2.2rem); }
   .ziel-statements { margin-top: 4rem; display: flex; flex-direction: column; gap: 0; }
   .ziel-statement { display: flex; gap: 2rem; align-items: baseline; padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .ziel-statement:last-child { border-bottom: none; }
   .ziel-statement-num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--rose); opacity: 0.35; flex-shrink: 0; line-height: 1; min-width: 2rem; }
-  .ziel-statement-text { font-family: var(--font-serif); font-size: clamp(1.1rem, 1.6vw, 1.5rem); color: rgba(255,255,255,0.92); line-height: 1.55; }
+  .ziel-statement-text { font-family: var(--font-serif); font-size: 1.08rem; color: rgba(255,255,255,0.92); line-height: 1.65; }
 
   /* ── Scene 5: Fachmaterial (light) ── */
   #scene-material { position: relative; padding: 7rem 5rem; }
