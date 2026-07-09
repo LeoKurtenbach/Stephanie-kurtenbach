@@ -173,6 +173,20 @@
     .reveal, .reveal-bg { opacity: 1 !important; transform: none !important; transition: none !important; }
   }
 
+  /* ── Intermediate: 901–1300px (13"–14" laptops) ── */
+  @media (max-width: 1300px) and (min-width: 901px) {
+    nav.main-nav { padding: 1.5rem 3.5rem; }
+    .hero-left { padding: 4rem 3.5rem 5rem; }
+    .hero-headline { font-size: clamp(2.2rem, 3.2vw, 3.6rem); }
+    .hero-sub { margin-bottom: 2rem; font-size: 1rem; }
+    .hero-tags { row-gap: 0.5rem; margin-bottom: 2rem; }
+    .hero-quote { left: 3.5rem; max-width: 300px; }
+    #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 7rem 3.5rem; }
+    .scene-foto-visual { height: 400px; }
+    .ziel-inner { gap: 4rem; }
+    .material-block { gap: 4rem; }
+  }
+
   /* ── Mobile ── */
   @media (max-width: 900px) {
     nav.main-nav { padding: 1rem 1.5rem; }
