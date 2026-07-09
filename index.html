@@ -239,8 +239,10 @@
   .kontakt-form { display: flex; flex-direction: column; gap: 1.5rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
   .form-group label:not(.dse-label) { font-size: 0.88rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.90); }
-  .form-group input, .form-group select, .form-group textarea { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 400; color: var(--white); background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.28); padding: 1rem 1.25rem; border-radius: 2px; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+  .form-group input, .form-group select, .form-group textarea { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 400; color: var(--white); background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.28); padding: 1rem 1.25rem; border-radius: 2px; outline: none; transition: border-color 0.2s; -webkit-appearance: none; appearance: none; }
   .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.70); }
+  .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 4.5L11 1' stroke='rgba(255,255,255,0.65)' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1.1rem center; background-size: 12px; padding-right: 2.75rem; cursor: pointer; }
+  .form-group select option { background: #1c1428; color: rgba(255,255,255,0.90); }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--rose); outline: none; }
   .form-group textarea { resize: vertical; min-height: 130px; }
   .form-submit { background: var(--rose); color: white; border: none; font-family: var(--font-sans); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.5rem; border-radius: 2px; cursor: pointer; align-self: flex-start; transition: background var(--dur-ui) var(--ease-organic); }
@@ -269,6 +271,13 @@
   .footer-logo { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); }
   .footer-text { font-size: 0.86rem; color: rgba(255,255,255,0.82); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
+  /* ── Intermediate breakpoint: small desktop 901–1300px (13"–14" MacBook) ── */
+  @media (max-width: 1300px) and (min-width: 901px) {
+    .hero-content { grid-template-columns: 1fr 42%; gap: 3rem; padding: 3rem 3.5rem; }
+    .hero-bottom { padding: 1.75rem 3.5rem; }
+    nav.main-nav { padding: 1.5rem 3.5rem; }
+  }
+
   @media (max-width: 900px) {
     nav.main-nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -286,8 +295,9 @@
     .tag { font-size: 0.72rem; padding: 0 1.25rem; letter-spacing: 0.12em; }
     .tag:first-child { padding-left: 0; }
     .tag:last-child { border-right: none; padding-right: 0; }
-    /* Fix iOS scroll jitter: scroll fixed background with page in über-mich area */
-    #pageBg { position: absolute; height: 100vh; }
+    /* Fix iOS scroll jitter: absolute out of fixed compositing layer, fills full page */
+    html { position: relative; }
+    #pageBg { position: absolute; height: 100%; }
     section { padding: 4rem 1.5rem; }
     .philo-attribution { margin-bottom: 4rem; }
     .problem-audience { margin-top: 3rem; margin-bottom: 0.4rem; }
@@ -615,7 +625,7 @@
       </div>
       <div class="ks-module-card reveal" data-delay="2">
         <span class="ks-module-num">03</span>
-        <h3>Gesunde, belastbare Stimme</h3>
+        <h3>Gesunde, kraftvolle Stimme</h3>
         <p>Heiserkeit vorbeugen. Ökonomischer Einsatz. Mehr Ausdauer.</p>
         <div class="ks-module-icon" style="background-image:url('wisteria.png')"></div>
       </div>
@@ -628,7 +638,7 @@
       <div class="ks-module-card reveal" data-delay="4">
         <span class="ks-module-num">05</span>
         <h3>Tools für den Alltag</h3>
-        <p>5-Min-Warm-up, Übungen und Strategien für eine dauerhaft gesunde Stimme.</p>
+        <p>5-Min-Warm-up, Übungen und Strategien für eine dauerhaft kraftvolle, gesunde Stimme.</p>
         <div class="ks-module-icon" style="background-image:url('tools-alltag.jpg')"></div>
       </div>
     </div>
