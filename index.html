@@ -43,25 +43,33 @@
   .nav-links a:hover::after { width: 100%; }
   .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic) !important; }
   .nav-cta:hover { background: var(--rose-dark) !important; }
-  #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: stretch; padding-top: 80px; position: relative; overflow: hidden; }
-  .hero-portrait-img { max-width: 100%; height: auto; display: block; position: relative; z-index: 2; }
-  #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,0.82) 0%, rgba(10,8,15,0.52) 18%, rgba(10,8,15,0.05) 36%, rgba(10,8,15,0) 48%); z-index: 1; pointer-events: none; }
-  #hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 42rem; background: linear-gradient(to bottom, transparent 0%, rgba(10,8,15,0.65) 42%, rgba(10,8,15,0.82) 100%); z-index: 1; pointer-events: none; }
-  .hero-content { position: relative; z-index: 2; width: 100%; padding: 2.5rem 5rem 3rem; flex: 1; display: grid; grid-template-columns: minmax(0, 480px) 1fr; column-gap: 5rem; align-items: start; }
-  .hero-photo-col { grid-column: 2; grid-row: 1; align-self: flex-start; display: flex; padding: 0; overflow: visible; margin-top: 3.5rem; margin-left: 2rem; }
-  .hero-text-col { position: relative; z-index: 3; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
-  .hero-bottom { position: relative; z-index: 2; padding: 2.5rem 5rem 5.5rem; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.10); }
-  .hero-overline { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 2.5rem; display: block; }
-  .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--white); margin-bottom: 2.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  /* ── Hero ── */
+  #hero { min-height: 100vh; display: flex; flex-direction: column; position: relative; overflow: hidden; padding-top: 80px; }
+  /* Portrait anchored right, fills full hero height */
+  .hero-photo-col { position: absolute; right: 0; top: 0; bottom: 0; width: 46%; z-index: 1; overflow: hidden; }
+  .hero-portrait-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  /* Photo left-edge dissolves into the dark zone */
+  .hero-photo-col::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,1) 0%, rgba(10,8,15,0.55) 28%, rgba(10,8,15,0) 62%); pointer-events: none; }
+  /* Dark veil — heavy on text side, recedes toward portrait */
+  #hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,8,15,0.92) 0%, rgba(10,8,15,0.80) 36%, rgba(10,8,15,0.22) 54%, rgba(10,8,15,0) 68%); z-index: 2; pointer-events: none; }
+  /* Bottom vignette to merge into the next section */
+  #hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 14rem; background: linear-gradient(to bottom, transparent, rgba(10,8,15,0.65)); z-index: 2; pointer-events: none; }
+  /* Text layer */
+  .hero-content { position: relative; z-index: 3; flex: 1; display: flex; align-items: center; padding: 4rem 5rem 3rem; }
+  .hero-text-col { display: flex; flex-direction: column; max-width: 500px; }
+  .hero-overline { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 2.25rem; display: block; }
+  .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.8vw, 5.8rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--white); margin-bottom: 3rem; }
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-headline-sub { display: block; font-size: 0.65em; margin-top: 0.2em; font-family: var(--font-serif); font-style: normal; color: rgba(255,255,255,0.88); }
   .hero-sub { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.85; max-width: 460px; margin-bottom: 3rem; }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; }
+  /* Bottom navigation tags */
+  .hero-bottom { position: relative; z-index: 3; padding: 2rem 5rem; border-top: 1px solid rgba(255,255,255,0.10); display: flex; align-items: center; }
   .hero-tags { display: flex; gap: 0; align-items: center; }
   .tag { font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.90); font-weight: 500; text-decoration: none; padding: 0 2.75rem; border-right: 1px solid rgba(255,255,255,0.18); display: inline-flex; align-items: center; white-space: nowrap; transition: color var(--dur-ui) var(--ease-organic); }
   .tag:first-child { padding-left: 0; }
   .tag:last-child { border-right: none; padding-right: 0; }
   .tag:hover { color: var(--white); }
-  .hero-actions { display: flex; gap: 1rem; align-items: center; }
   .btn-primary { display: inline-flex; align-items: center; justify-content: center; background: var(--rose); color: white; font-family: var(--font-sans); font-size: 1rem; font-weight: 500; letter-spacing: 0.07em; text-decoration: none; padding: 1.1rem 3.5rem; border-radius: 2px; min-height: 54px; transition: background var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); box-shadow: 0 2px 16px rgba(184,114,138,0.40); }
   .btn-primary:hover { background: var(--rose-dark); box-shadow: 0 8px 28px rgba(184,114,138,0.52); transform: translateY(-2px); }
   .btn-secondary { display: inline-flex; align-items: center; font-family: var(--font-sans); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; letter-spacing: 0.05em; padding: 1.1rem 3rem; border: 1px solid rgba(255,255,255,0.28); border-radius: 2px; min-height: 54px; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
@@ -252,6 +260,11 @@
   .kontakt-detail-icon { color: var(--rose); }
   .kontakt-detail-text { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.9; }
   .kontakt-detail-text strong { display: block; font-size: 0.92rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.92); font-weight: 500; margin-bottom: 0.25rem; }
+  .kontakt-newsletter { margin-top: 0.5rem; padding: 1.5rem 1.75rem; background: rgba(184,114,138,0.09); border: 1px solid rgba(184,114,138,0.22); border-radius: 3px; display: flex; flex-direction: column; gap: 0.6rem; }
+  .kontakt-newsletter-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); font-weight: 600; }
+  .kontakt-newsletter-text { font-size: 0.96rem; color: rgba(255,255,255,0.88); line-height: 1.72; margin: 0; }
+  .kontakt-newsletter-link { font-size: 0.88rem; color: var(--rose); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid rgba(184,114,138,0.40); padding-bottom: 1px; align-self: flex-start; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
+  .kontakt-newsletter-link:hover { color: var(--white); border-color: rgba(255,255,255,0.38); }
   footer { background: #120D1E; padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); }
   .footer-text { font-size: 0.86rem; color: rgba(255,255,255,0.82); letter-spacing: 0.08em; }
@@ -260,21 +273,21 @@
     nav.main-nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     #hero { min-height: 100svh; }
-    #hero::before { background: rgba(10,8,15,0.80); }
-    .hero-content { grid-template-columns: 1fr; padding: 0; }
-    .hero-photo-col { grid-column: 1; grid-row: 1; margin-top: 0; margin-left: 0; width: 100%; }
-    .hero-portrait-img { width: 100% !important; height: auto; margin: 0 !important; display: block; }
-    .hero-text-col { padding: 1.75rem 1.5rem 0; }
-    .hero-headline { font-size: clamp(2rem, 7.5vw, 3rem); margin-bottom: 1rem; }
-    .hero-sub { margin-bottom: 1rem; max-width: 100%; }
-    .hero-quote { margin-top: 1rem; }
-    .hero-bottom { padding: 1.75rem 1.5rem 3.5rem; gap: 1.5rem; }
-    .hero-tags { gap: 0; }
-    .tag { font-size: 0.7rem; padding: 0 1.25rem; letter-spacing: 0.13em; }
-    .tag:first-child { padding-left: 0; }
-    .tag:last-child { border-right: none; padding-right: 0; }
+    /* Mobile: portrait becomes full-bleed background */
+    .hero-photo-col { position: absolute; inset: 0; width: 100%; overflow: hidden; }
+    .hero-photo-col::after { background: none; }
+    #hero::before { background: rgba(10,8,15,0.72); }
+    .hero-content { padding: 4rem 1.5rem 2rem; }
+    .hero-text-col { max-width: none; }
+    .hero-overline { margin-bottom: 1.5rem; }
+    .hero-headline { font-size: clamp(2.2rem, 8vw, 3.2rem); margin-bottom: 2rem; }
     .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; }
     .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    .hero-bottom { padding: 1.75rem 1.5rem; }
+    .hero-tags { flex-wrap: wrap; }
+    .tag { font-size: 0.72rem; padding: 0 1.25rem; letter-spacing: 0.12em; }
+    .tag:first-child { padding-left: 0; }
+    .tag:last-child { border-right: none; padding-right: 0; }
     section { padding: 4rem 1.5rem; }
     .philo-attribution { margin-bottom: 4rem; }
     .problem-audience { margin-top: 3rem; margin-bottom: 0.4rem; }
@@ -393,21 +406,21 @@
   </ul>
 </nav>
 <section id="hero">
+  <div class="hero-photo-col" aria-hidden="true">
+    <img src="stephanie_hero.jpg" class="hero-portrait-img" alt="" fetchpriority="high" loading="eager">
+  </div>
   <div class="hero-content">
     <div class="hero-text-col">
       <span class="hero-overline">Sprechwissenschaftlerin · Dozentin · Coach</span>
       <h1 class="hero-headline">Ich verändere die Art, wie Menschen auf Kommunikation schauen.</h1>
-    </div>
-    <div class="hero-photo-col">
-      <img src="stephanie_hero.jpg" class="hero-portrait-img" alt="" fetchpriority="high" loading="eager">
+      <div class="hero-actions">
+        <a href="#angebote" class="btn-primary">Angebote entdecken</a>
+        <a href="#ueber" class="btn-secondary">Mehr über mich</a>
+      </div>
     </div>
   </div>
   <div class="hero-bottom">
     <div class="hero-tags"><a href="#kurse" class="tag">Fortbildungen</a><a href="#kraftvolle-stimme" class="tag">Kraftvolle Stimme</a><a href="kinder-familien.html" class="tag">Familienbegleitung</a></div>
-    <div class="hero-actions">
-      <a href="#angebote" class="btn-primary">Angebote entdecken</a>
-      <a href="#ueber" class="btn-secondary">Mehr über mich</a>
-    </div>
   </div>
 </section>
 <section id="mission">
@@ -657,7 +670,7 @@
       <div class="bio-station-body">
         <span class="bio-num">02</span>
         <span class="bio-station-name">Sensorische Integrationstherapie</span>
-        <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt, nicht die, die man ihm gibt.</p>
+        <p>Diese Ausbildung hat verändert, wie ich Kinder wahrnehme. Nicht: Was kann das Kind noch nicht? Sondern: Was braucht es, um sich zu entfalten? Therapie, die sich das Kind holt, nicht die, die man ihm gibt.</p>
       </div>
     </div>
     <div class="bio-station reveal">
@@ -731,6 +744,11 @@
       <label class="dse-label"><input type="checkbox" required name="dse" id="dse-checkbox"><span class="dse-check"></span><span>Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</span></label>
     </div>
     <button type="submit" class="form-submit">Nachricht senden</button>
+    <div class="kontakt-newsletter">
+      <span class="kontakt-newsletter-label">Newsletter</span>
+      <p class="kontakt-newsletter-text">Bei Anmeldung zu meinem Newsletter bekommst du ein kostenloses E-Book zum Thema <strong>„SI zu kleinen Preisen"</strong>.</p>
+      <a href="mailto:hallo@stephaniekurtenbach.com?subject=Newsletter-Anmeldung" class="kontakt-newsletter-link">Newsletter abonnieren →</a>
+    </div>
   </form>
 </section>
 <footer>
@@ -771,6 +789,7 @@
 
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
     // Hero load sequence
+    gsap.fromTo('.hero-portrait-img', { scale: 1.06, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' });
     gsap.fromTo('.hero-overline',  { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.15 });
     gsap.fromTo('.hero-headline',  { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.3 });
     gsap.fromTo('.hero-sub',       { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.5 });
