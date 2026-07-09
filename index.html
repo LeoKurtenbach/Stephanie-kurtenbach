@@ -49,6 +49,7 @@
   #hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 42rem; background: linear-gradient(to bottom, transparent 0%, rgba(10,8,15,0.65) 42%, rgba(10,8,15,0.82) 100%); z-index: 1; pointer-events: none; }
   .hero-content { position: relative; z-index: 2; width: 100%; padding: 2.5rem 5rem 3rem; flex: 1; display: grid; grid-template-columns: minmax(0, 480px) 1fr; column-gap: 5rem; align-items: start; }
   .hero-photo-col { grid-column: 2; grid-row: 1; align-self: flex-start; display: flex; padding: 0; overflow: visible; margin-top: 3.5rem; margin-left: 2rem; }
+  .hero-text-col { position: relative; z-index: 3; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
   .hero-bottom { position: relative; z-index: 2; padding: 2.5rem 5rem 5.5rem; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.10); }
   .hero-overline { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 2.5rem; display: block; }
   .hero-headline { font-family: var(--font-serif); font-size: clamp(3rem, 4.5vw, 5.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; color: var(--white); margin-bottom: 2.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
@@ -126,6 +127,7 @@
   .sikit-book-name { font-family: var(--font-serif); font-size: 1.75rem; font-weight: 400; color: var(--rose-dark); line-height: 1.15; }
   .sikit-book-arrow { font-size: 0.9rem; letter-spacing: 0.08em; color: var(--rose); margin-top: 0.85rem; display: block; font-weight: 500; }
   .kurse-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: start; margin-top: 3rem; }
+  .kurse-tagline { font-family: var(--font-serif); font-size: clamp(1.05rem, 1.4vw, 1.3rem); font-style: italic; color: var(--mid); text-align: center; padding: 3.5rem 0 0.5rem; letter-spacing: 0.01em; line-height: 1.6; }
   .kurs-card { border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); }
   .kurs-card:hover { transform: translateY(-2px); }
   /* perspective on parent, no preserve-3d, no backface-visibility, opacity crossfade makes overlap impossible */
@@ -293,7 +295,8 @@
     #mission { padding: 5rem 1.5rem; }
     .mission-quote { font-size: clamp(1.4rem, 5vw, 1.8rem); }
     .bio-stations { margin-left: -1.5rem; margin-right: -1.5rem; }
-    .bio-station { grid-template-columns: 1fr; height: auto; min-height: auto; overflow: visible; }
+    .bio-station { grid-template-columns: 1fr; height: auto; min-height: auto; overflow: hidden; }
+    .bio-station-media img { filter: none; }
     .bio-station:nth-child(even) { grid-template-columns: 1fr; }
     .bio-station-media { grid-column: 1 !important; grid-row: 1; aspect-ratio: 4/3; }
     .bio-station-body { grid-column: 1 !important; grid-row: 2; padding: 2.5rem 1.5rem; }
@@ -423,9 +426,9 @@
   <span class="section-overline reveal">Erkennst du dich wieder?</span>
   <h2 class="section-title reveal" data-delay="1">Was Menschen zu mir führt</h2>
   <div class="problems-grid">
-    <div class="problem-card reveal"><span class="problem-audience">Therapeut*innen</span><p class="problem-quote">Immer mehr Kinder können sich nicht auf meine Methoden einlassen. Wie kann ich ursachenorientierter, erfolgreicher, mit mehr Freude arbeiten?</p><p class="problem-response">Wissenschaftlich fundiert. Praxisnah. Sofort umsetzbar.</p></div>
-    <div class="problem-card reveal" data-delay="1"><span class="problem-audience">Menschen mit Stimmproblemen</span><p class="problem-quote">Meine Stimme trägt mich nicht. Ich bin unsicher und habe Angst vor dem Sprechen vor Gruppen.</p><p class="problem-response">Individuelle Begleitung für Menschen mit Sprecherberufen.</p></div>
-    <div class="problem-card reveal" data-delay="2"><span class="problem-audience">Eltern & Familien</span><p class="problem-quote">Keiner weiß, was wirklich hinter den Problemen unseres Kindes steckt. Wir sind ratlos, und die Therapie kommt nicht voran.</p><p class="problem-response">Ursachen verstehen. Ressourcen stärken. Wege finden.</p></div>
+    <div class="problem-card reveal"><span class="problem-audience">Therapeut*innen</span><p class="problem-quote">„Immer mehr Kinder können sich nicht auf meine Methoden einlassen. Wie kann ich ursachenorientierter, erfolgreicher, mit mehr Freude arbeiten?"</p></div>
+    <div class="problem-card reveal" data-delay="1"><span class="problem-audience">Menschen mit Stimmproblemen</span><p class="problem-quote">„Meine Stimme trägt mich nicht. Ich bin unsicher und habe Angst vor dem Sprechen vor Gruppen."</p><p class="problem-response">Individuelle Begleitung für Menschen mit Sprecherberufen.</p></div>
+    <div class="problem-card reveal" data-delay="2"><span class="problem-audience">Eltern & Familien</span><p class="problem-quote">„Keiner weiß, was wirklich hinter den Problemen unseres Kindes steckt. Wir sind ratlos, und die Therapie kommt nicht voran."</p><p class="problem-response">Ursachen verstehen. Ressourcen stärken. Wege finden.</p></div>
   </div>
 </section>
 <section id="angebote">
@@ -556,6 +559,7 @@
         </div>
       </div>
     </div>
+    <p class="kurse-tagline reveal">Wissenschaftlich fundiert. Praxisnah. Sofort umsetzbar.</p>
   </div>
 </section>
 <section id="kraftvolle-stimme">
@@ -710,7 +714,7 @@
   <div class="kontakt-info reveal">
     <span class="section-overline">Kontakt</span>
     <h2 class="section-title">Ich freue mich auf deine Nachricht.</h2>
-    <p class="section-body" style="margin-bottom:2rem;">Ich freue mich auf deine Nachricht. Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung: nimm gerne Kontakt auf. Ich melde mich innerhalb von 2 Werktagen.</p>
+    <p class="section-body" style="margin-bottom:2rem;">Ich freue mich auf deine Nachricht. Ob Kursanmeldung, Coaching-Anfrage oder Fragen zur Familienbegleitung: nimm gerne Kontakt auf.</p>
     <p style="margin-top:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.92);">Lust auf ein erstes Beratungsgespräch? Kostenlos, schreib an <a href="mailto:hallo@stephaniekurtenbach.com" style="color:var(--rose)">hallo@stephaniekurtenbach.com</a></p>
     <div class="kontakt-details">
       <div class="kontakt-detail"><span class="kontakt-detail-icon">✦</span><div class="kontakt-detail-text"><strong>Standort</strong>Deutschsprachiger Raum · Online & Präsenz</div></div>
