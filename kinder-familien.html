@@ -68,7 +68,7 @@
   .hero-quote cite { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-style: normal; }
 
   /* ── Section base ── */
-  .section-overline { font-size: 0.94rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; display: block; }
+  .section-overline { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; margin-bottom: 2rem; display: block; }
   .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 2rem; }
   .section-body { font-size: 1.05rem; line-height: 1.9; max-width: 600px; }
   .back-link { display: inline-block; font-size: 0.92rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); text-decoration: none; font-weight: 500; margin-bottom: 3.5rem; }
@@ -78,11 +78,12 @@
   #scene-erkennst { position: relative; padding: 9rem 5rem; }
   #scene-erkennst::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 100%); z-index: 0; pointer-events: none; }
   #scene-erkennst > * { position: relative; z-index: 1; }
-  #scene-erkennst .section-overline { color: var(--rose); }
-  #scene-erkennst .section-title { color: var(--white); }
-  .erkennst-statements { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 3.5rem; max-width: 600px; }
-  .erkennst-statement { padding: 1.5rem 0 1.5rem 2rem; border-left: 1.5px solid rgba(184,114,138,0.45); }
-  .erkennst-statement-text { font-family: var(--font-sans); font-size: clamp(1.05rem, 1.4vw, 1.22rem); font-style: normal; font-weight: 400; color: rgba(255,255,255,0.95); line-height: 1.8; }
+  #scene-erkennst { text-align: center; }
+  #scene-erkennst .section-overline { color: var(--rose); margin-bottom: 2rem; }
+  #scene-erkennst .section-title { color: var(--white); max-width: 720px; margin-left: auto; margin-right: auto; }
+  .erkennst-statements { display: flex; flex-direction: column; gap: 0; margin: 4rem auto 0; max-width: 640px; }
+  .erkennst-statement { padding: 1.5rem 0; border-left: none; }
+  .erkennst-statement-text { font-family: var(--font-serif); font-size: clamp(1.08rem, 1.5vw, 1.3rem); font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.75; }
 
   /* ── Scene 2: Mein Angebot (light) ── */
   #scene-angebot { position: relative; padding: 9rem 5rem; }
