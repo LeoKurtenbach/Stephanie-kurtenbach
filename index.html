@@ -275,8 +275,12 @@
     .hero-overline { margin-bottom: 1rem; }
     .hero-headline { font-size: clamp(2rem, 8vw, 3rem); margin-bottom: 1.25rem; }
     .hero-sub { margin-bottom: 2rem; max-width: none; }
-    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 2rem; }
+    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 2.5rem; }
     .btn-primary { width: 100%; justify-content: center; }
+    .btn-secondary { width: 100%; text-align: center; border: 1px solid rgba(255,255,255,0.38); border-bottom: 1px solid rgba(255,255,255,0.38); padding: 0.9rem 1rem; border-radius: 2px; letter-spacing: 0.06em; color: rgba(255,255,255,0.90); display: block; }
+    .hero-tags { flex-direction: column; align-items: center; gap: 0.15rem; border-top: 1px solid rgba(255,255,255,0.16); padding-top: 1.75rem; width: 100%; }
+    .tag { font-size: 1.05rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.78); padding: 0.35rem 0; }
+    .tag + .tag::before { display: none; }
     /* Performance: hide background entirely on mobile, solid color is free */
     body { background-color: #0a080f; }
     #pageBg { display: none; }
