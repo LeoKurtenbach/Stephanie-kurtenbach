@@ -54,7 +54,7 @@
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-sub { font-size: 1.25rem; font-weight: 400; color: rgba(255,255,255,0.72); line-height: 1.78; max-width: 500px; margin-bottom: 2.75rem; }
   .hero-actions { display: flex; gap: 1.25rem; align-items: center; margin-bottom: 2.5rem; align-self: center; }
-  .hero-tags { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; align-self: center; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 1.5rem; width: 60%; }
+  .hero-tags { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; align-self: center; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 1.5rem; max-width: 640px; width: auto; }
   .tag { font-size: 1.05rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.72); font-weight: 500; text-decoration: none; transition: color var(--dur-ui) var(--ease-organic); }
   .tag:hover { color: rgba(255,255,255,0.85); }
   .tag + .tag::before { content: '·'; margin: 0 0.9rem; color: var(--rose); font-size: 1rem; }
@@ -260,6 +260,19 @@
   .footer-logo { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.85); }
   .footer-text { font-size: 0.86rem; color: rgba(255,255,255,0.82); letter-spacing: 0.08em; }
   .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--rose); z-index: 10000; width: 100%; transform: scaleX(0); transform-origin: left; }
+  /* ── Mobile nav overlay ── */
+  .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 6px; background: none; border: none; cursor: pointer; padding: 4px 2px; z-index: 200; position: relative; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--deep); transition: transform 0.28s var(--ease-organic), opacity 0.18s, transform 0.28s var(--ease-organic); border-radius: 1px; }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+  .nav-mobile-overlay { position: fixed; inset: 0; background: var(--off); z-index: 199; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.25rem; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease-organic); }
+  .nav-mobile-overlay.open { opacity: 1; pointer-events: auto; }
+  .nav-mobile-link { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 400; color: var(--deep); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; }
+  .nav-mobile-link:hover, .nav-mobile-link:active { color: var(--rose-dark); }
+  .nav-mobile-cta { margin-top: 0.75rem; background: var(--rose); color: var(--white) !important; font-family: var(--font-sans); font-size: 1rem; letter-spacing: 0.08em; padding: 0.9rem 2.75rem; border-radius: 2px; font-weight: 500; font-style: normal; transition: background 0.2s; }
+  .nav-mobile-cta:hover { background: var(--rose-dark) !important; }
+
   /* ── Intermediate breakpoint: small desktop 901–1300px (13"–14" MacBook) ── */
   @media (max-width: 1300px) and (min-width: 901px) {
     nav.main-nav { padding: 1.5rem 3.5rem; }
@@ -324,6 +337,37 @@
     .kurs-card.flipped .kurs-card-front { display: none; }
     .kurs-card.flipped .kurs-card-back { display: flex; pointer-events: auto; }
     .bio-station-name::before { margin-bottom: 1rem; }
+    /* ── Mobile nav ── */
+    .nav-hamburger { display: flex; }
+    /* ── Mission: 7rem gaps → readable mobile spacing ── */
+    .mission-statement { margin-bottom: 3rem; font-size: 1rem; }
+    .mission-quote { margin-bottom: 2rem; }
+    /* ── Stats bar: missing top padding + oversized CTA gap ── */
+    .stats-bar { padding-top: 3.5rem; }
+    .stats-cta { margin-top: 2.5rem !important; }
+    /* ── Probleme: missing top padding ── */
+    #probleme { padding: 4rem 1.5rem; }
+    /* ── Angebote: excessive bottom margin ── */
+    .angebote-grid { margin-bottom: 3rem; }
+    /* ── Kurs cards: reduce dense inner padding ── */
+    .kurs-card-front, .kurs-card-back { padding: 2rem 1.5rem; gap: 1rem; }
+    /* ── KS sections: scale down 5rem separators ── */
+    .ks-opener { margin-bottom: 3rem; }
+    .ks-pain { margin-bottom: 3rem; }
+    .ks-statement { margin-bottom: 3rem; }
+    .ks-modules { margin-bottom: 3rem; }
+    /* ── Testimonials: reduce featured quote bottom margin ── */
+    .stimmen-featured { margin-bottom: 2.5rem !important; }
+    /* ── Philo: tighten value cards gap ── */
+    .philo-values { gap: 2.5rem; }
+    /* ── Section overline consistent tight spacing on mobile ── */
+    .section-overline { margin-bottom: 1.25rem; }
+    /* ── KS module grid on mobile already overridden, just ensure sub padding ── */
+    .ks-sub { font-size: 1.1rem; margin: 1.75rem auto 1.5rem; }
+    .ks-lead { font-size: 1.05rem; }
+    /* ── Kontakt info / form vertical rhythm ── */
+    .kontakt-info .section-body { margin-bottom: 1.5rem; }
+    .kontakt-newsletter { margin-top: 1.25rem; }
   }
   .footer-nav { display: flex; gap: 1.5rem; }
   .footer-nav a { font-size: 0.86rem; color: rgba(255,255,255,0.82); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
@@ -403,7 +447,16 @@
     <li><a href="#stimmen">Stimmen</a></li>
     <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menü" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-overlay" id="navMobileOverlay" aria-hidden="true">
+  <a href="#angebote" class="nav-mobile-link">Angebote</a>
+  <a href="#ueber" class="nav-mobile-link">Über mich</a>
+  <a href="#stimmen" class="nav-mobile-link">Stimmen</a>
+  <a href="#kontakt" class="nav-mobile-link nav-mobile-cta">Kontakt</a>
+</div>
 <section id="hero">
   <div class="hero-photo-fill" aria-hidden="true">
     <img src="stephanie_hero.jpg" alt="" fetchpriority="high" loading="eager" width="1200" height="800">
@@ -431,7 +484,7 @@
   <div class="stat-item"><span class="stat-number" data-target="200" data-suffix="+">200+</span><span class="stat-label">Weiterbildungen</span></div>
   <div class="stat-item"><span class="stat-number" data-target="20" data-suffix="">20</span><span class="stat-label">Jahre Uni-Dozentin</span></div>
   <div class="stat-item"><span class="stat-number" data-target="4" data-suffix="">4</span><span class="stat-label">Fachausbildungen</span></div>
-  <div style="grid-column:1/-1;text-align:center;margin-top:5.5rem;"><a href="#kontakt" style="font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);text-decoration:none;border-bottom:1.5px solid var(--rose);padding-bottom:3px;font-weight:500;">Jetzt Kontakt aufnehmen →</a></div>
+  <div class="stats-cta" style="grid-column:1/-1;text-align:center;margin-top:5.5rem;"><a href="#kontakt" style="font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);text-decoration:none;border-bottom:1.5px solid var(--rose);padding-bottom:3px;font-weight:500;">Jetzt Kontakt aufnehmen →</a></div>
 </div>
 <section id="probleme">
   <span class="section-overline reveal">Erkennst du dich wieder?</span>
@@ -705,7 +758,7 @@
 <section id="stimmen">
   <span class="section-overline reveal">Kursteilnehmer*innen</span>
   <h2 class="section-title reveal" data-delay="1">Was Menschen sagen</h2>
-  <div class="reveal" data-delay="2" style="max-width:760px; margin: 0 0 5rem 0;">
+  <div class="stimmen-featured reveal" data-delay="2" style="max-width:760px; margin: 0 0 5rem 0;">
     <div style="margin-bottom:2rem;">
       <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4 C16 4 18 10 22 12 C18 12 16 18 16 18 C16 18 14 12 10 12 C14 10 16 4 16 4Z" fill="#B8728A" opacity="0.7"/><path d="M16 14 C16 14 20 15 22 18 C19 17 16 20 16 20 C16 20 13 17 10 18 C12 15 16 14 16 14Z" fill="#B8728A" opacity="0.5"/><circle cx="16" cy="16" r="2" fill="#B8728A" opacity="0.9"/></svg>
     </div>
@@ -858,6 +911,31 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
     els.forEach(function (el) { io.observe(el); });
+  }());
+
+  // Mobile hamburger nav
+  (function () {
+    var btn = document.getElementById('navHamburger');
+    var overlay = document.getElementById('navMobileOverlay');
+    if (!btn || !overlay) return;
+    function close() {
+      overlay.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    btn.addEventListener('click', function () {
+      var isOpen = overlay.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      overlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    overlay.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
+    });
   }());
 </script>
 </body>
