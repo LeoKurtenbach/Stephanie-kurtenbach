@@ -48,7 +48,7 @@
   .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 5rem 8rem; position: relative; z-index: 2; }
   .hero-left::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.92); z-index: 0; pointer-events: none; }
   .hero-left > * { position: relative; z-index: 1; }
-  .hero-overline { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 5rem; display: block; }
+  .hero-overline { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 2rem; display: block; }
   .hero-headline { font-family: var(--font-serif); font-size: clamp(2.8rem, 4.5vw, 5.2rem); font-weight: 400; line-height: 1.07; letter-spacing: -0.02em; color: var(--deep); margin-bottom: 2rem; }
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-sub { font-size: 1.12rem; font-weight: 400; color: var(--mid); line-height: 1.85; max-width: 400px; margin-bottom: 3rem; }
@@ -75,19 +75,20 @@
   .back-link:hover { color: var(--rose); }
 
   /* ── Scene 1: Erkennst du das (dark) ── */
-  #scene-erkennst { position: relative; padding: 9rem 5rem; }
-  #scene-erkennst::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.86); z-index: 0; pointer-events: none; }
+  #scene-erkennst { position: relative; padding: clamp(10rem,12vw,15rem) 5rem; }
+  #scene-erkennst::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-erkennst > * { position: relative; z-index: 1; }
   #scene-erkennst { text-align: center; }
   #scene-erkennst .section-overline { color: var(--rose); margin-bottom: 2rem; }
   #scene-erkennst .section-title { color: var(--white); max-width: 720px; margin-left: auto; margin-right: auto; }
-  .erkennst-statements { display: flex; flex-direction: column; gap: 0; margin: 4rem auto 0; max-width: 640px; }
-  .erkennst-statement { padding: 1.5rem 0; border-left: none; }
+  .erkennst-statements { display: flex; flex-direction: column; gap: 0; margin: 5rem auto 0; max-width: 640px; }
+  .erkennst-statement { padding: 2.25rem 0; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .erkennst-statement:last-child { border-bottom: none; }
   .erkennst-statement-text { font-family: var(--font-serif); font-size: clamp(1.08rem, 1.5vw, 1.3rem); font-style: italic; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.75; }
 
   /* ── Scene 2: Mein Angebot (light) ── */
-  #scene-angebot { position: relative; padding: 9rem 5rem; }
-  #scene-angebot::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.97); z-index: 0; pointer-events: none; }
+  #scene-angebot { position: relative; padding: clamp(10rem,12vw,15rem) 5rem; }
+  #scene-angebot::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
   #scene-angebot > * { position: relative; z-index: 1; }
   #scene-angebot .section-overline { color: var(--rose-dark); }
   #scene-angebot .section-title { color: var(--deep); }
@@ -102,7 +103,7 @@
   .angebot-pillar-list li::before { content: '·'; position: absolute; left: 0; color: var(--rose-dark); }
 
   /* ── Scene 3: Zitat-Moment (split: Zitat links, Bild rechts, dunkles Gegenstück zu scene-material) ── */
-  #scene-foto { position: relative; padding: 9rem 5rem; }
+  #scene-foto { position: relative; padding: clamp(10rem,12vw,15rem) 5rem; }
   #scene-foto::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-foto > * { position: relative; z-index: 1; }
   .scene-foto-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -117,7 +118,7 @@
   .ziel-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
 
   /* ── Scene 4: Mein Ziel (dark) ── */
-  #scene-ziel { position: relative; padding: 9rem 5rem; }
+  #scene-ziel { position: relative; padding: clamp(10rem,12vw,15rem) 5rem; }
   #scene-ziel::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-ziel > * { position: relative; z-index: 1; }
   #scene-ziel .section-overline { color: var(--rose); }
@@ -129,8 +130,8 @@
   .ziel-statement-text { font-family: var(--font-serif); font-size: 1.08rem; color: rgba(255,255,255,0.92); line-height: 1.65; }
 
   /* ── Scene 5: Fachmaterial (light) ── */
-  #scene-material { position: relative; padding: 9rem 5rem; }
-  #scene-material::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
+  #scene-material { position: relative; padding: clamp(10rem,12vw,15rem) 5rem; }
+  #scene-material::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
   #scene-material > * { position: relative; z-index: 1; }
   #scene-material .section-overline { color: var(--rose-dark); }
   .material-block { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
@@ -143,7 +144,7 @@
   .material-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
 
   /* ── CTA ── */
-  #scene-cta { position: relative; padding: 9rem 5rem; text-align: center; }
+  #scene-cta { position: relative; padding: clamp(10rem,12vw,15rem) 5rem; text-align: center; }
   #scene-cta::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-cta > * { position: relative; z-index: 1; }
   .cta-overline { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; display: block; margin-bottom: 1.5rem; }
@@ -178,12 +179,12 @@
   @media (max-width: 1300px) and (min-width: 901px) {
     nav.main-nav { padding: 1.5rem 3.5rem; }
     .hero-left { padding: 4rem 3.5rem 5rem; }
-    .hero-overline { margin-bottom: 4rem; }
+    .hero-overline { margin-bottom: 2rem; }
     .hero-headline { font-size: clamp(2.2rem, 3.2vw, 3.6rem); }
     .hero-sub { margin-bottom: 2rem; font-size: 1rem; }
     .hero-tags { row-gap: 0.5rem; margin-bottom: 2rem; }
     .hero-quote { left: 3.5rem; max-width: 300px; }
-    #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 7rem 3.5rem; }
+    #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 9rem 3.5rem; }
     .scene-foto-visual { height: 400px; }
     .ziel-inner { gap: 4rem; }
     .material-block { gap: 4rem; }
@@ -195,9 +196,9 @@
     .nav-links { display: none; }
     #hero { grid-template-columns: 1fr; }
     .hero-left { padding: 3rem 1.5rem 4rem; }
-    .hero-overline { margin-bottom: 3rem; }
+    .hero-overline { margin-bottom: 2rem; }
     .hero-right { min-height: 70vw; }
-    #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 6rem 1.5rem; }
+    #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 7rem 1.5rem; }
     .angebot-pillars { grid-template-columns: 1fr; gap: 1.5rem; }
     .scene-foto-block { grid-template-columns: 1fr; gap: 2.5rem; }
     .scene-foto-visual { height: 60vw; max-height: 380px; }
@@ -425,17 +426,17 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    }, { threshold: 0.08, rootMargin: '0px' });
     els.forEach(function (el) { io.observe(el); });
   }());
 
   gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    gsap.from('.hero-overline',  { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.15 });
-    gsap.from('.hero-headline',  { y: 20, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.3 });
-    gsap.from('.hero-sub',       { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.5 });
-    gsap.from('.hero-tags',      { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.62 });
-    gsap.from('.hero-actions',   { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.74 });
-    gsap.from('.hero-quote',     { y: 14, opacity: 0, duration: 0.7, ease: 'power3.out', delay: 0.92 });
+    gsap.fromTo('.hero-overline',  { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.15 });
+    gsap.fromTo('.hero-headline',  { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.3 });
+    gsap.fromTo('.hero-sub',       { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.5 });
+    gsap.fromTo('.hero-tags',      { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.62 });
+    gsap.fromTo('.hero-actions',   { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.74 });
+    gsap.fromTo('.hero-quote',     { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.92 });
   });
 </script>
 </body>
