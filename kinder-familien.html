@@ -45,10 +45,10 @@
 
   /* ── Hero ── */
   #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; padding-top: 80px; position: relative; }
-  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem 9rem; position: relative; z-index: 2; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 5rem 8rem; position: relative; z-index: 2; }
   .hero-left::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.92); z-index: 0; pointer-events: none; }
   .hero-left > * { position: relative; z-index: 1; }
-  .hero-overline { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 2.5rem; display: block; }
+  .hero-overline { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 5rem; display: block; }
   .hero-headline { font-family: var(--font-serif); font-size: clamp(2.8rem, 4.5vw, 5.2rem); font-weight: 400; line-height: 1.07; letter-spacing: -0.02em; color: var(--deep); margin-bottom: 2rem; }
   .hero-headline em { font-style: italic; color: var(--rose); }
   .hero-sub { font-size: 1.12rem; font-weight: 400; color: var(--mid); line-height: 1.85; max-width: 400px; margin-bottom: 3rem; }
@@ -68,15 +68,15 @@
   .hero-quote cite { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-style: normal; }
 
   /* ── Section base ── */
-  .section-overline { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; margin-bottom: 2rem; display: block; }
-  .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 2rem; }
+  .section-overline { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; margin-bottom: 2.5rem; display: block; }
+  .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 2.5rem; }
   .section-body { font-size: 1.05rem; line-height: 1.9; max-width: 600px; }
-  .back-link { display: inline-block; font-size: 0.92rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); text-decoration: none; font-weight: 500; margin-bottom: 3.5rem; }
+  .back-link { display: inline-block; font-size: 0.92rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); text-decoration: none; font-weight: 500; margin-bottom: 5rem; }
   .back-link:hover { color: var(--rose); }
 
   /* ── Scene 1: Erkennst du das (dark) ── */
   #scene-erkennst { position: relative; padding: 9rem 5rem; }
-  #scene-erkennst::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.86) 6%, rgba(10,8,15,0.86) 100%); z-index: 0; pointer-events: none; }
+  #scene-erkennst::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.86); z-index: 0; pointer-events: none; }
   #scene-erkennst > * { position: relative; z-index: 1; }
   #scene-erkennst { text-align: center; }
   #scene-erkennst .section-overline { color: var(--rose); margin-bottom: 2rem; }
@@ -102,7 +102,7 @@
   .angebot-pillar-list li::before { content: '·'; position: absolute; left: 0; color: var(--rose-dark); }
 
   /* ── Scene 3: Zitat-Moment (split: Zitat links, Bild rechts, dunkles Gegenstück zu scene-material) ── */
-  #scene-foto { position: relative; padding: 7rem 5rem 4.5rem; }
+  #scene-foto { position: relative; padding: 9rem 5rem; }
   #scene-foto::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-foto > * { position: relative; z-index: 1; }
   .scene-foto-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -117,8 +117,8 @@
   .ziel-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
 
   /* ── Scene 4: Mein Ziel (dark) ── */
-  #scene-ziel { position: relative; padding: 6rem 5rem 9rem; }
-  #scene-ziel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0.70) 0%, rgba(10,8,15,0.70) 93%, rgba(10,8,15,0) 100%); z-index: 0; pointer-events: none; }
+  #scene-ziel { position: relative; padding: 9rem 5rem; }
+  #scene-ziel::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-ziel > * { position: relative; z-index: 1; }
   #scene-ziel .section-overline { color: var(--rose); }
   #scene-ziel .section-title { color: var(--white); font-size: clamp(1.5rem, 2.2vw, 2.2rem); }
@@ -129,7 +129,7 @@
   .ziel-statement-text { font-family: var(--font-serif); font-size: 1.08rem; color: rgba(255,255,255,0.92); line-height: 1.65; }
 
   /* ── Scene 5: Fachmaterial (light) ── */
-  #scene-material { position: relative; padding: 7rem 5rem; }
+  #scene-material { position: relative; padding: 9rem 5rem; }
   #scene-material::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
   #scene-material > * { position: relative; z-index: 1; }
   #scene-material .section-overline { color: var(--rose-dark); }
@@ -143,8 +143,8 @@
   .material-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
 
   /* ── CTA ── */
-  #scene-cta { position: relative; padding: 8rem 5rem; text-align: center; }
-  #scene-cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,8,15,0) 0%, rgba(10,8,15,0.70) 6%, rgba(10,8,15,0.70) 100%); z-index: 0; pointer-events: none; }
+  #scene-cta { position: relative; padding: 9rem 5rem; text-align: center; }
+  #scene-cta::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-cta > * { position: relative; z-index: 1; }
   .cta-overline { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; display: block; margin-bottom: 1.5rem; }
   .cta-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 3rem); color: var(--white); margin-bottom: 1.25rem; line-height: 1.2; }
@@ -178,6 +178,7 @@
   @media (max-width: 1300px) and (min-width: 901px) {
     nav.main-nav { padding: 1.5rem 3.5rem; }
     .hero-left { padding: 4rem 3.5rem 5rem; }
+    .hero-overline { margin-bottom: 4rem; }
     .hero-headline { font-size: clamp(2.2rem, 3.2vw, 3.6rem); }
     .hero-sub { margin-bottom: 2rem; font-size: 1rem; }
     .hero-tags { row-gap: 0.5rem; margin-bottom: 2rem; }
@@ -194,6 +195,7 @@
     .nav-links { display: none; }
     #hero { grid-template-columns: 1fr; }
     .hero-left { padding: 3rem 1.5rem 4rem; }
+    .hero-overline { margin-bottom: 3rem; }
     .hero-right { min-height: 70vw; }
     #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 6rem 1.5rem; }
     .angebot-pillars { grid-template-columns: 1fr; gap: 1.5rem; }
