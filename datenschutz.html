@@ -3,142 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutzerklärung · Dr. Stephanie Kurtenbach</title>
-<link rel="stylesheet" href="/fonts/fonts.css">
-<!--
-  ════════════════════════════════════════════════════════════════════
-  DATENSCHUTZERKLÄRUNG, GENERATOR-HINWEISE FÜR LEO
-  ════════════════════════════════════════════════════════════════════
-  Empfohlene Generatoren: datenschutz.org, e-recht24.de, opr.vc
-
-  Im Generator folgendes angeben:
-  ─ Hosting: Vercel (Servers in den USA / Vercel Inc., San Francisco, CA)
-    → Auftragsverarbeitung / Data Processing Agreement mit Vercel abschließen
-    → In der DSE: Hinweis auf Drittland-Übertragung USA (Art. 46 DSGVO)
-  ─ Kontaktformular: Ja (aktuell nur mailto-Weiterleitung, keine Drittdienste)
-    → Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung)
-  ─ Server-Logfiles: Vercel speichert automatisch Server-Logs
-    → Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)
-  ─ Cookies: Keine Analytics-, Tracking- oder Marketing-Cookies
-    → Nur technisch notwendige Session-Cookies (falls vorhanden)
-    → Kein Cookie-Banner notwendig
-  ─ Schriftarten: Lokal gehostet (kein Google Fonts, kein Google-Request)
-  ─ Externe Skripte: GSAP von cdnjs.cloudflare.com (Cloudflare CDN)
-    → Ggf. als Auftragsverarbeiter angeben; Cloudflare hat EU-Rechenzentren
-  ════════════════════════════════════════════════════════════════════
--->
+<title>Datenschutzerklärung – Dr. Stephanie Kurtenbach</title>
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root {
     --white: #FFFFFF;
-    --off: #E8EDE2;
+    --off: #F9F7FA;
     --rose: #B8728A;
-    --rose-dark: #8F4D68;
     --deep: #2D2040;
     --mid: #5A4A6A;
     --muted: #9080A0;
-    --font-serif: 'Libre Baskerville', Georgia, serif;
+    --font-serif: 'DM Serif Display', 'Libre Baskerville', Georgia, serif;
     --font-sans: 'DM Sans', sans-serif;
-    --ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
-    --dur-ui: 220ms;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background-color: var(--off); color: var(--deep); font-family: var(--font-sans); font-size: 17px; line-height: 1.85; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-  :focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
-  #pageBg { position: fixed; inset: 0; z-index: -1; background-color: #0d1a0a; }
-  #pageBg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-  nav.main-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(232,237,226,0.96); border-bottom: 1px solid rgba(45,32,64,0.07); }
+  body { font-family: var(--font-sans); font-weight: 300; font-size: 17px; line-height: 1.85; color: var(--deep); background: var(--white); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5rem; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(45,32,64,0.08); }
   .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); text-decoration: none; }
-  .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
-  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--deep); text-decoration: none; letter-spacing: 0.06em; transition: color var(--dur-ui) var(--ease-organic); }
-  .nav-links a:hover { color: var(--rose); }
-  .nav-cta { color: var(--white) !important; background: var(--rose); padding: 0.6rem 1.4rem; border-radius: 2px; transition: background var(--dur-ui) var(--ease-organic) !important; }
-  .nav-cta:hover { background: var(--rose-dark) !important; }
-
-  /* ── Hero ── */
-  .page-hero { position: relative; min-height: 38vh; display: flex; align-items: flex-end; padding: 8rem 5rem 4rem; }
-  .page-hero::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.72); z-index: 0; pointer-events: none; }
-  .page-hero > * { position: relative; z-index: 1; }
-  .page-overline { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; display: block; margin-bottom: 1rem; }
-  .page-title { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3.8rem); font-weight: 400; color: var(--white); line-height: 1.1; }
-
-  /* ── Content ── */
-  .page-content { position: relative; padding: 6rem 5rem 8rem; }
-  .page-content::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.94); z-index: 0; pointer-events: none; }
-  .page-content > * { position: relative; z-index: 1; max-width: 760px; }
-  .back-link { display: inline-block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-dark); text-decoration: none; font-weight: 500; margin-bottom: 3.5rem; }
-  .back-link:hover { color: var(--rose); }
-  .page-content h2 { font-family: var(--font-serif); font-size: clamp(1.3rem, 2vw, 1.8rem); font-weight: 400; color: var(--deep); margin: 3rem 0 1rem; line-height: 1.25; }
-  .page-content h2:first-of-type { margin-top: 0; }
-  .page-content p { color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; font-size: 1rem; }
-  .page-content a { color: var(--rose-dark); }
-
-  /* ── Placeholder block ── */
-  .placeholder-block { background: rgba(184,114,138,0.07); border: 1.5px dashed rgba(184,114,138,0.40); border-radius: 2px; padding: 2rem 2.25rem; margin: 1.5rem 0; }
-  .placeholder-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; display: block; margin-bottom: 0.75rem; }
-  .placeholder-text { font-size: 0.92rem; color: var(--mid); line-height: 1.85; }
-
-  /* ── Footer ── */
-  footer { background: #120D1E; padding: 3rem 5rem; display: flex; justify-content: space-between; align-items: center; }
-  .footer-logo { font-family: var(--font-serif); font-size: 1rem; color: rgba(255,255,255,0.65); }
-  .footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; }
-  .footer-nav { display: flex; gap: 1.5rem; }
-  .footer-nav a { font-size: 0.72rem; color: rgba(255,255,255,0.42); text-decoration: none; letter-spacing: 0.05em; transition: color 220ms; }
-  .footer-nav a:hover { color: rgba(255,255,255,0.70); }
-
-  @media (max-width: 900px) {
-    nav.main-nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .page-hero { padding: 7rem 1.5rem 3rem; }
-    .page-content { padding: 4rem 1.5rem 6rem; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
-  }
+  .nav-back { font-size: 0.82rem; color: var(--rose); text-decoration: none; letter-spacing: 0.06em; }
+  .nav-back:hover { text-decoration: underline; }
+  main { max-width: 760px; margin: 0 auto; padding: 10rem 2rem 8rem; }
+  h1 { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; color: var(--deep); margin-bottom: 0.5rem; line-height: 1.15; }
+  .meta { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4rem; display: block; }
+  h2 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--deep); margin: 3rem 0 1rem; }
+  h3 { font-size: 1rem; font-weight: 400; color: var(--deep); margin: 2rem 0 0.75rem; }
+  p { color: var(--mid); margin-bottom: 1.25rem; }
+  a { color: var(--rose); }
+  ul { color: var(--mid); padding-left: 1.5rem; margin-bottom: 1.25rem; }
+  ul li { margin-bottom: 0.4rem; }
+  .highlight { background: var(--off); border-left: 2px solid var(--rose); padding: 1.25rem 1.5rem; margin: 2rem 0; }
+  footer { background: var(--deep); padding: 2.5rem 5rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-serif); font-size: 1rem; color: rgba(255,255,255,0.5); }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none; letter-spacing: 0.08em; }
+  .footer-links a:hover { color: var(--rose); }
+  @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } main { padding: 8rem 1.5rem 5rem; } footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.25rem; } }
 </style>
 </head>
 <body>
-<div id="pageBg" aria-hidden="true"><img src="forest.jpg" alt="" fetchpriority="high"></div>
-<nav class="main-nav">
+<nav>
   <a href="index.html" class="nav-logo">Dr. Stephanie Kurtenbach</a>
-  <ul class="nav-links">
-    <li><a href="index.html#angebote">Angebote</a></li>
-    <li><a href="index.html#ueber">Über mich</a></li>
-    <li><a href="index.html#stimmen">Stimmen</a></li>
-    <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
-  </ul>
+  <a href="index.html" class="nav-back">← Zurück zur Website</a>
 </nav>
+<main>
+  <h1>Datenschutzerklärung</h1>
+  <span class="meta">Stand: Juni 2025</span>
 
-<div class="page-hero">
-  <div>
-    <span class="page-overline">Rechtliches</span>
-    <h1 class="page-title">Datenschutz&shy;erklärung</h1>
+  <h2>1. Verantwortliche Person</h2>
+  <p>Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+  <div class="highlight">
+    <p><strong>Dr. Stephanie Kurtenbach</strong><br>
+    [ADRESSE HIER EINTRAGEN]<br>
+    E-Mail: [E-MAIL HIER EINTRAGEN]<br>
+    Telefon: [TELEFON HIER EINTRAGEN]</p>
   </div>
-</div>
 
-<div class="page-content">
-  <a href="index.html" class="back-link">← Zur Startseite</a>
+  <h2>2. Hosting — Vercel</h2>
+  <p>Diese Website wird gehostet bei der Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA. Beim Aufruf dieser Website werden durch den Browser automatisch Informationen an Vercel übermittelt und kurzzeitig in Server-Logfiles gespeichert. Erfasst werden dabei insbesondere IP-Adressen der Besucher.</p>
+  <p>Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und zuverlässigen Websitebetrieb). Die Auslieferung der Website erfolgt über europäische Serverstandorte. Mit Vercel besteht ein Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO. Als Grundlage für den Datentransfer in die USA verwendet Vercel Standardvertragsklauseln (SCCs) gemäß Art. 46 Abs. 2 lit. c DSGVO sowie das EU-US Data Privacy Framework.</p>
+  <p>Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank">https://vercel.com/legal/privacy-policy</a></p>
 
-  <div class="placeholder-block">
-    <span class="placeholder-label">⚠ Platzhalter: vollständige Datenschutzerklärung hier einfügen</span>
-    <p class="placeholder-text">
-      Bitte eine vollständige DSGVO-konforme Datenschutzerklärung aus einem seriösen Generator einfügen (z.&nbsp;B. datenschutz.org, e-recht24.de oder opr.vc) und den generierten Text an dieser Stelle einsetzen.<br><br>
-      Im Generator folgende Punkte angeben:<br>
-      · Hosting bei Vercel Inc. (USA), Hinweis auf Drittlandübertragung erforderlich<br>
-      · Kontaktformular auf der Website<br>
-      · Server-Logfiles durch Vercel<br>
-      · Keine Analytics- oder Tracking-Cookies<br>
-      · Schriftarten lokal gehostet (kein Google Fonts)<br>
-      · Externe Skripte: GSAP via cdnjs.cloudflare.com
-    </p>
+  <h2>3. Schriftarten (Selbst-gehostet)</h2>
+  <p>Diese Website verwendet Schriftarten (DM Sans, DM Serif Display, Libre Baskerville), die ausschließlich lokal auf unserem Server gehostet werden. Es findet keine Verbindung zu externen Servern statt, insbesondere keine Verbindung zu Google-Servern. Es werden dadurch keine personenbezogenen Daten an Dritte übertragen.</p>
+
+  <h2>4. Kontaktformular</h2>
+  <p>Wenn Sie uns über das Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail-Adresse, Interesse, Nachricht) zur Bearbeitung Ihrer Anfrage gespeichert. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+  <p>Ihre Daten werden nach abgeschlossener Bearbeitung der Anfrage gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Sie können jederzeit der Speicherung Ihrer Daten widersprechen.</p>
+  <p><strong>Hinweis:</strong> Das Kontaktformular auf dieser Website sendet Nachrichten per E-Mail. Es werden keine Formulardaten in einer Datenbank gespeichert.</p>
+
+  <h2>5. Keine Cookies, kein Tracking</h2>
+  <p>Diese Website verwendet keine Cookies und kein Tracking. Es werden keine Analyse- oder Marketing-Tools eingesetzt. Es findet keine Profilerstellung statt.</p>
+
+  <h2>6. Ihre Rechte als betroffene Person</h2>
+  <p>Sie haben nach der DSGVO folgende Rechte gegenüber uns hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
+  <ul>
+    <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+    <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+    <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+    <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+    <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+    <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+  </ul>
+  <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an die oben genannte verantwortliche Person.</p>
+
+  <h2>7. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+  <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Die zuständige Aufsichtsbehörde ist:</p>
+  <div class="highlight">
+    <p>Thüringer Landesbeauftragter für den Datenschutz und die Informationsfreiheit (TLfDI)<br>
+    Postfach 900455, 99107 Erfurt<br>
+    <a href="https://www.tlfdi.de" target="_blank">www.tlfdi.de</a></p>
   </div>
-</div>
 
+  <h2>8. Aktualität und Änderungen</h2>
+  <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Juni 2025. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.</p>
+</main>
 <footer>
   <p class="footer-logo">Dr. Stephanie Kurtenbach</p>
-  <p class="footer-text">© 2025 · Sprechwissenschaftlerin · Dozentin · Coach</p>
-  <nav class="footer-nav" aria-label="Footer navigation">
-    <a href="/impressum">Impressum</a>
-    <a href="/datenschutz">Datenschutz</a>
-  </nav>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
 </footer>
 </body>
 </html>
