@@ -197,9 +197,16 @@
     #hero { grid-template-columns: 1fr; }
     .hero-left { padding: 3rem 1.5rem 4rem; }
     .hero-overline { margin-bottom: 2rem; }
+    .hero-sub { max-width: none; }
     .hero-right { min-height: 70vw; }
+    .hero-right::after { display: none; }
+    .hero-tags { flex-direction: column; gap: 0.6rem; }
+    .tag + .tag::before { display: none; }
+    .section-overline { margin-bottom: 1.25rem; }
+    .back-link { margin-bottom: 2.5rem; }
     #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 7rem 1.5rem; }
     .angebot-pillars { grid-template-columns: 1fr; gap: 1.5rem; }
+    .angebot-pillar { padding: 2rem; }
     .scene-foto-block { grid-template-columns: 1fr; gap: 2.5rem; }
     .scene-foto-visual { height: 60vw; max-height: 380px; }
     .ziel-inner { grid-template-columns: 1fr; gap: 2.5rem; }
