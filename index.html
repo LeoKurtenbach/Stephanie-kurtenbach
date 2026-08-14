@@ -285,6 +285,7 @@
     #probleme { padding: clamp(6rem,9vw,10rem) 3.5rem; }
     #philosophie { padding: clamp(7rem,9vw,11rem) 3.5rem; }
     #kontakt { gap: 4rem; }
+    .stats-bar { padding-left: 3.5rem; padding-right: 3.5rem; }
     .bio-stations { margin-left: -3.5rem; margin-right: -3.5rem; }
     .bio-station { height: auto; min-height: 52vh; }
     .bio-station:nth-child(4) { height: auto; min-height: 60vh; }
@@ -301,11 +302,14 @@
   @media (max-width: 900px) {
     nav.main-nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .hero-text-col { padding: 0 1.5rem 4rem; max-width: none; }
+    /* Hero: anchor to top so overflow:hidden never clips content on short phones */
+    #hero { justify-content: flex-start; }
+    .hero-text-col { padding: 5.5rem 1.5rem 4rem; max-width: none; }
     #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.72) 0%, rgba(10,8,15,0.22) 28%, rgba(10,8,15,0.58) 65%, rgba(10,8,15,0.98) 100%); }
-    .hero-headline { font-size: clamp(2rem, 7.5vw, 3rem); margin-bottom: 1.25rem; }
-    .hero-sub { font-size: 1.1rem; margin-bottom: 2.25rem; max-width: none; }
-    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 3rem; }
+    .hero-overline { margin-bottom: 1.25rem; }
+    .hero-headline { font-size: clamp(2rem, 7.5vw, 3rem); margin-bottom: 1rem; }
+    .hero-sub { font-size: 1.1rem; margin-bottom: 1.75rem; max-width: none; }
+    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 2rem; }
     .btn-primary { width: 100%; justify-content: center; }
     .btn-secondary { width: 100%; text-align: center; border: 1px solid rgba(255,255,255,0.38); border-bottom: 1px solid rgba(255,255,255,0.38); padding: 0.9rem 1rem; border-radius: 2px; letter-spacing: 0.06em; color: rgba(255,255,255,0.90); display: block; }
     .hero-tags { flex-direction: column; align-items: center; gap: 0.5rem; border-top: 1px solid rgba(255,255,255,0.16); padding-top: 1.75rem; width: 100%; }
