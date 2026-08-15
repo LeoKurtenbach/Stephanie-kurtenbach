@@ -318,24 +318,26 @@
   @media (max-width: 900px) {
     nav.main-nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    /* Hero: flex-start anchors top so nothing clips; gradient covers ALL zones with proper depth */
+    /* Hero: flex-start, strong gradient throughout, each element its own moment */
     #hero { justify-content: flex-start; }
-    .hero-text-col { padding: 5rem 1.5rem 4.5rem; max-width: none; }
-    /* Gradient strong everywhere — no light window where photo bleeds through text */
-    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.78) 0%, rgba(10,8,15,0.52) 30%, rgba(10,8,15,0.72) 60%, rgba(10,8,15,0.97) 100%); }
-    /* Overline: crisp, readable, room below */
-    .hero-overline { font-size: 0.85rem; letter-spacing: 0.22em; margin-bottom: 1.5rem; }
-    /* Headline: bold, impactful, room to breathe */
-    .hero-headline { font-size: clamp(2.2rem, 7.5vw, 3rem); margin-bottom: 1.5rem; line-height: 1.13; }
-    /* Sub: comfortable reading size, genuine gap before CTA */
-    .hero-sub { font-size: 1.05rem; line-height: 1.72; margin-bottom: 2rem; max-width: none; }
-    /* CTA: full-width column, proper height, clear visual weight */
-    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 2rem; align-self: stretch; }
+    .hero-text-col { padding: 5rem 1.5rem 5rem; max-width: none; }
+    /* Gradient: no light window anywhere — minimum 60% dark throughout */
+    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.80) 0%, rgba(10,8,15,0.62) 32%, rgba(10,8,15,0.78) 62%, rgba(10,8,15,0.97) 100%); }
+    /* Hero photo: zoom out on mobile — show more face, less tight crop */
+    .hero-photo-fill img { object-position: center 5%; }
+    /* Overline: generous space below so it stands alone */
+    .hero-overline { font-size: 0.85rem; letter-spacing: 0.22em; margin-bottom: 2rem; text-shadow: 0 1px 14px rgba(0,0,0,0.80); }
+    /* Headline: impactful size, deep space below before sub */
+    .hero-headline { font-size: clamp(2.2rem, 7.5vw, 3rem); margin-bottom: 1.75rem; line-height: 1.13; text-shadow: 0 2px 12px rgba(0,0,0,0.70), 0 8px 40px rgba(0,0,0,0.45); }
+    /* Sub: clear contrast, real gap before CTA */
+    .hero-sub { font-size: 1.05rem; line-height: 1.72; margin-bottom: 2.5rem; max-width: none; text-shadow: 0 1px 14px rgba(0,0,0,0.80), 0 4px 28px rgba(0,0,0,0.55); }
+    /* CTA: full-width column, proper height */
+    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 2.75rem; align-self: stretch; }
     .btn-primary { width: 100%; justify-content: center; padding: 1rem 1.5rem; font-size: 0.95rem; white-space: nowrap; min-height: 54px; }
     .btn-secondary { width: 100%; text-align: center; border: 1px solid rgba(255,255,255,0.32); padding: 0.85rem 1rem; border-radius: 2px; letter-spacing: 0.04em; color: rgba(255,255,255,0.88); display: block; font-size: 0.9rem; }
-    /* Tags: generous gap, proper opacity so they read as navigation */
-    .hero-tags { flex-direction: column; align-items: center; gap: 0.5rem; border-top: 1px solid rgba(255,255,255,0.20); padding-top: 1.75rem; width: 100%; }
-    .tag { font-size: 0.92rem; letter-spacing: 0.16em; color: rgba(255,255,255,0.92); padding: 0.35rem 0; }
+    /* Tags: no separator line, each tag its own row with space */
+    .hero-tags { flex-direction: column; align-items: center; gap: 0.65rem; padding-top: 0; width: 100%; border-top: none; }
+    .tag { font-size: 0.92rem; letter-spacing: 0.16em; color: rgba(255,255,255,0.92); padding: 0.4rem 0; }
     .tag-sep { display: none !important; }
     /* Performance: hide background entirely on mobile, solid color is free */
     body { background-color: #0a080f; }
