@@ -318,18 +318,24 @@
   @media (max-width: 900px) {
     nav.main-nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    /* Hero: anchor top so overflow:hidden never clips on short phones; compact for one-screen fit */
+    /* Hero: flex-start anchors top so nothing clips; gradient covers ALL zones with proper depth */
     #hero { justify-content: flex-start; }
-    .hero-text-col { padding: 5.5rem 1.5rem 3rem; max-width: none; }
-    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.72) 0%, rgba(10,8,15,0.22) 28%, rgba(10,8,15,0.58) 65%, rgba(10,8,15,0.98) 100%); }
-    .hero-overline { font-size: 0.8rem; letter-spacing: 0.18em; margin-bottom: 0.85rem; }
-    .hero-headline { font-size: clamp(1.85rem, 6.8vw, 2.8rem); margin-bottom: 0.85rem; line-height: 1.15; }
-    .hero-sub { font-size: 1rem; line-height: 1.65; margin-bottom: 1.25rem; max-width: none; }
-    .hero-actions { flex-direction: column; width: 100%; gap: 0.6rem; margin-bottom: 1.25rem; align-self: stretch; }
-    .btn-primary { width: 100%; justify-content: center; padding: 0.9rem 1.5rem; font-size: 0.92rem; white-space: nowrap; min-height: 50px; }
-    .btn-secondary { width: 100%; text-align: center; border: 1px solid rgba(255,255,255,0.32); padding: 0.75rem 1rem; border-radius: 2px; letter-spacing: 0.04em; color: rgba(255,255,255,0.85); display: block; font-size: 0.9rem; }
-    .hero-tags { flex-direction: column; align-items: center; gap: 0.3rem; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 1.25rem; width: 100%; }
-    .tag { font-size: 0.88rem; letter-spacing: 0.14em; color: rgba(255,255,255,0.85); padding: 0.2rem 0; }
+    .hero-text-col { padding: 5rem 1.5rem 4.5rem; max-width: none; }
+    /* Gradient strong everywhere — no light window where photo bleeds through text */
+    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.78) 0%, rgba(10,8,15,0.52) 30%, rgba(10,8,15,0.72) 60%, rgba(10,8,15,0.97) 100%); }
+    /* Overline: crisp, readable, room below */
+    .hero-overline { font-size: 0.85rem; letter-spacing: 0.22em; margin-bottom: 1.5rem; }
+    /* Headline: bold, impactful, room to breathe */
+    .hero-headline { font-size: clamp(2.2rem, 7.5vw, 3rem); margin-bottom: 1.5rem; line-height: 1.13; }
+    /* Sub: comfortable reading size, genuine gap before CTA */
+    .hero-sub { font-size: 1.05rem; line-height: 1.72; margin-bottom: 2rem; max-width: none; }
+    /* CTA: full-width column, proper height, clear visual weight */
+    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 2rem; align-self: stretch; }
+    .btn-primary { width: 100%; justify-content: center; padding: 1rem 1.5rem; font-size: 0.95rem; white-space: nowrap; min-height: 54px; }
+    .btn-secondary { width: 100%; text-align: center; border: 1px solid rgba(255,255,255,0.32); padding: 0.85rem 1rem; border-radius: 2px; letter-spacing: 0.04em; color: rgba(255,255,255,0.88); display: block; font-size: 0.9rem; }
+    /* Tags: generous gap, proper opacity so they read as navigation */
+    .hero-tags { flex-direction: column; align-items: center; gap: 0.5rem; border-top: 1px solid rgba(255,255,255,0.20); padding-top: 1.75rem; width: 100%; }
+    .tag { font-size: 0.92rem; letter-spacing: 0.16em; color: rgba(255,255,255,0.92); padding: 0.35rem 0; }
     .tag-sep { display: none !important; }
     /* Performance: hide background entirely on mobile, solid color is free */
     body { background-color: #0a080f; }
