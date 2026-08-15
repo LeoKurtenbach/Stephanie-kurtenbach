@@ -170,7 +170,7 @@
   .ueber-image img { width: 100%; display: block; border-radius: 2px; box-shadow: 0 16px 60px rgba(0,0,0,0.5); }
   .ueber-text p { font-size: 1.12rem; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 1.4rem; }
   .bio-stations { display: flex; flex-direction: column; margin-top: 4rem; margin-left: -5rem; margin-right: -5rem; }
-  .bio-station { display: grid; grid-template-columns: 50% 50%; height: 58vh; position: relative; overflow: hidden; }
+  .bio-station { display: grid; grid-template-columns: 50% 50%; min-height: 58vh; position: relative; }
   .bio-station:nth-child(even) { grid-template-columns: 50% 50%; }
   .bio-station:nth-child(even) .bio-station-media { grid-column: 2; grid-row: 1; }
   .bio-station:nth-child(even) .bio-station-body { grid-column: 1; grid-row: 1; }
@@ -183,7 +183,7 @@
   .bio-station:nth-child(2) .bio-station-media::after { background: linear-gradient(to bottom, rgba(10,8,15,0.52) 0%, transparent 18%), linear-gradient(to top, rgba(10,8,15,0.52) 0%, transparent 18%); }
   .bio-station:nth-child(3) .bio-station-media::after { background: none; }
   .bio-station:nth-child(4) .bio-station-media::after { background: none; }
-  .bio-station:nth-child(4) { height: 68vh; }
+  .bio-station:nth-child(4) { min-height: 68vh; }
   .bio-station-body { display: flex; flex-direction: column; justify-content: center; padding: 3.5rem 4rem; position: relative; }
   .bio-num { position: absolute; top: 2rem; right: 2.5rem; font-family: var(--font-serif); font-size: 7rem; color: white; opacity: 0.06; line-height: 1; user-select: none; pointer-events: none; letter-spacing: -0.02em; }
   .bio-station:nth-child(even) .bio-num { right: auto; left: 2.5rem; }
@@ -287,8 +287,8 @@
     #kontakt { gap: 4rem; }
     .stats-bar { padding-left: 3.5rem; padding-right: 3.5rem; }
     .bio-stations { margin-left: -3.5rem; margin-right: -3.5rem; }
-    .bio-station { height: auto; min-height: 52vh; }
-    .bio-station:nth-child(4) { height: auto; min-height: 60vh; }
+    .bio-station { min-height: 52vh; }
+    .bio-station:nth-child(4) { min-height: 60vh; }
     .bio-station-body { padding: 3rem 3rem; }
     .bio-station-body p { max-width: none; }
     .ueber-top { gap: 4rem; }
@@ -342,8 +342,8 @@
     .bio-station { grid-template-columns: 1fr; height: auto; min-height: auto; overflow: hidden; }
     .bio-station-media img { filter: none; }
     .bio-station:nth-child(even) { grid-template-columns: 1fr; }
-    .bio-station-media { grid-column: 1 !important; grid-row: 1; aspect-ratio: 4/3; }
-    .bio-station-body { grid-column: 1 !important; grid-row: 2; padding: 2.5rem 1.5rem; }
+    .bio-station-media { grid-column: 1 !important; grid-row: 1 !important; aspect-ratio: 4/3; }
+    .bio-station-body { grid-column: 1 !important; grid-row: 2 !important; padding: 2.5rem 1.5rem; }
     .bio-station:nth-child(odd) .bio-station-media::after, .bio-station:nth-child(even) .bio-station-media::after { background: linear-gradient(to bottom, transparent 65%, rgba(10,8,15,0.85) 100%); }
     .bio-num { font-size: 3.5rem; top: 0.75rem; right: 1rem; }
     .bio-station:nth-child(even) .bio-num { left: 1rem; right: auto; }
