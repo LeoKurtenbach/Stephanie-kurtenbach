@@ -81,7 +81,7 @@
   .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--deep); margin-bottom: 2rem; text-shadow: 0 1px 4px rgba(45,32,64,0.08); }
   .section-body { font-size: 1rem; color: var(--mid); line-height: 1.9; max-width: 580px; }
   #probleme { position: relative; padding: clamp(8rem,10vw,13rem) 5rem; }
-  #probleme::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.58); z-index: 0; }
+  #probleme::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.68); z-index: 0; }
   #probleme > * { position: relative; z-index: 1; }
   #probleme .section-overline { color: var(--rose); text-align: center; }
   #probleme .section-title { color: white; text-shadow: 0 2px 16px rgba(0,0,0,0.35); text-align: center; }
@@ -119,7 +119,7 @@
   .materialien-band { position: relative; padding: clamp(6rem,9vw,11rem) 5rem; margin: clamp(5rem,7vw,9rem) -5rem; text-align: center; background: rgba(247,238,242,0.72); border-top: 1px solid rgba(184,114,138,0.14); border-bottom: 1px solid rgba(184,114,138,0.14); }
   .materialien-band .section-overline { color: var(--rose-dark) !important; }
   .materialien-band .section-title { color: var(--deep) !important; }
-  .materialien-band .section-body { color: var(--mid); max-width: 580px; margin: 0 auto 4rem; text-align: center; }
+  .materialien-band .section-body { color: var(--mid); max-width: 580px; margin: 0 auto 4rem; text-align: center; font-size: 1.15rem; }
   .material-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0; text-align: left; }
   .material-card { background: rgba(255,255,255,0.82); border: 1px solid rgba(45,32,64,0.07); box-shadow: 0 2px 12px rgba(45,32,64,0.06), 0 1px 3px rgba(45,32,64,0.04); border-radius: 4px; padding: 2rem 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; transition: background var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); }
   .material-card:hover { background: rgba(255,255,255,0.98); border-color: rgba(143,77,104,0.18); box-shadow: 0 6px 28px rgba(45,32,64,0.10); transform: translateY(-2px); }
@@ -175,7 +175,7 @@
   .kurs-toggle { background: transparent; color: rgba(255,255,255,0.88); font-family: var(--font-sans); font-size: 0.92rem; padding: 0.65rem 1.35rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.48); cursor: pointer; transition: border-color var(--dur-ui) var(--ease-organic), color var(--dur-ui) var(--ease-organic), background var(--dur-ui) var(--ease-organic); }
   .kurs-toggle:hover { border-color: rgba(255,255,255,0.80); color: var(--white); background: rgba(255,255,255,0.08); }
   #ueber { display: block; position: relative; }
-  #ueber::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.58); z-index: 0; }
+  #ueber::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.68); z-index: 0; }
   #ueber > * { position: relative; z-index: 1; }
   #ueber .section-overline { color: var(--rose); }
   #ueber .section-title { color: white; }
@@ -208,7 +208,7 @@
   .pub-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 400; letter-spacing: 0.06em; color: var(--rose); text-decoration: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; margin-top: 2.5rem; transition: border-color var(--dur-ui) var(--ease-organic); }
   .pub-link:hover { border-color: var(--rose-dark); }
   #philosophie { position: relative; text-align: center; padding: clamp(9rem,11vw,14rem) 5rem; }
-  #philosophie::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.58); z-index: 0; pointer-events: none; }
+  #philosophie::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.68); z-index: 0; pointer-events: none; }
   #philosophie > * { position: relative; z-index: 1; }
   .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; text-shadow: 0 2px 20px rgba(184,114,138,0.2), 0 4px 40px rgba(0,0,0,0.3); }
   .philo-quote-main em { color: var(--rose); font-style: normal; }
@@ -235,7 +235,7 @@
   .testimonial-text { font-family: var(--font-serif); font-size: 1.02rem; color: var(--deep); font-style: italic; font-weight: 400; line-height: 1.9; margin-bottom: 1.25rem; }
   .testimonial-highlight { font-size: 0.95rem; color: var(--mid); font-style: normal; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding-top: 1.1rem; margin-top: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
   #kontakt { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
-  #kontakt::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.58); z-index: 0; pointer-events: none; }
+  #kontakt::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.68); z-index: 0; pointer-events: none; }
   #kontakt > * { position: relative; z-index: 1; }
   .kontakt-info .section-overline { color: var(--rose); }
   .kontakt-info .section-title { color: var(--white); }
@@ -318,13 +318,14 @@
   @media (max-width: 900px) {
     nav.main-nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    /* Hero: flex-start, strong gradient throughout, each element its own moment */
-    #hero { justify-content: flex-start; }
-    .hero-text-col { padding: 5rem 1.5rem 5rem; max-width: none; }
-    /* Gradient: no light window anywhere — minimum 60% dark throughout */
-    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.80) 0%, rgba(10,8,15,0.62) 32%, rgba(10,8,15,0.78) 62%, rgba(10,8,15,0.97) 100%); }
-    /* Hero photo: zoom out on mobile — show more face, less tight crop */
-    .hero-photo-fill img { object-position: center 5%; }
+    /* Hero mobile: text first in flex column, portrait sits below — face never behind text */
+    #hero { justify-content: flex-start; align-items: stretch; height: auto; min-height: 100dvh; }
+    .hero-text-col { order: 1; padding: 5rem 1.5rem 3.5rem; max-width: none; }
+    /* Photo out of absolute — block element below text, face fully visible */
+    .hero-photo-fill { position: relative !important; inset: auto !important; order: 2; height: 58vh; overflow: hidden; }
+    .hero-photo-fill img { object-position: center top; }
+    /* Gradient: dark over text (0-55%), window opens for face (63-78%), seals at bottom */
+    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.84) 0%, rgba(10,8,15,0.66) 28%, rgba(10,8,15,0.80) 54%, rgba(10,8,15,0.30) 65%, rgba(10,8,15,0.52) 80%, rgba(10,8,15,0.92) 100%); }
     /* Overline: generous space below so it stands alone */
     .hero-overline { font-size: 0.85rem; letter-spacing: 0.22em; margin-bottom: 2rem; text-shadow: 0 1px 14px rgba(0,0,0,0.80); }
     /* Headline: impactful size, deep space below before sub */
@@ -449,7 +450,7 @@
   }
   /* ── Kraftvolle Stimme section ── */
   #kraftvolle-stimme { position: relative; }
-  #kraftvolle-stimme::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.58); z-index: 0; pointer-events: none; }
+  #kraftvolle-stimme::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.68); z-index: 0; pointer-events: none; }
   #kraftvolle-stimme > * { position: relative; z-index: 1; }
   .ks-opener { padding-bottom: 0; margin-bottom: 5rem; text-align: center; }
   .ks-opener .section-overline { color: var(--rose); margin-bottom: 2.5rem; }
@@ -584,9 +585,9 @@
     </div>
   </div>
   <div class="materialien-band" id="materialien">
-    <span class="section-overline reveal">Kostenlos für dich</span>
-    <h2 class="section-title reveal" data-delay="1">Kostenlose Materialien</h2>
-    <p class="section-body reveal" data-delay="2">Praxiserprobte Arbeitshilfen aus meiner täglichen Arbeit — kostenlos zum Download. Direkt einsetzbar.</p>
+    <span class="section-overline reveal">Für dich</span>
+    <h2 class="section-title reveal" data-delay="1">Kostenfreie Materialien</h2>
+    <p class="section-body reveal" data-delay="2">Praxiserprobte Arbeitshilfen aus meiner täglichen Arbeit. Direkt einsetzbar.</p>
     <div class="material-cards">
       <!-- Materialien werden im nächsten Schritt befüllt -->
     </div>
@@ -811,7 +812,7 @@
   <p class="philo-quote-main reveal">„Jenseits von richtig und falsch liegt ein Ort. <em>Dort treffen wir uns.</em>"</p>
   <span class="philo-attribution reveal" data-delay="1">Dschalāl ad-Dīn Muhammad Rūmī</span>
   <div class="philo-values">
-    <div class="philo-value reveal"><span class="philo-value-title">Augenhöhe</span><p class="philo-value-text">Jede Begegnung, ob mit Kind, Elternteil oder Fachkraft, entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen trägt.</p></div>
+    <div class="philo-value reveal"><span class="philo-value-title">Augenhöhe</span><p class="philo-value-text">Jede Begegnung, ob mit Kind, Eltern oder Fachkraft, entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen trägt.</p></div>
     <div class="philo-value reveal" data-delay="1"><span class="philo-value-title">Ursachenorientierung</span><p class="philo-value-text">Symptome zeigen, was sichtbar ist. Was wirklich zählt, liegt tiefer. Meine Arbeit beginnt immer mit dem Verstehen, bevor Handlungsstrategien folgen.</p></div>
     <div class="philo-value reveal" data-delay="2"><span class="philo-value-title">Selbstwirksamkeit</span><p class="philo-value-text">Das Ziel ist nie Abhängigkeit, sondern dass Menschen, Kinder und Familien in die Lage kommen, ihre eigene Entwicklung aktiv zu gestalten.</p></div>
   </div>
