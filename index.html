@@ -329,11 +329,11 @@
     /* Overline: generous space below so it stands alone */
     .hero-overline { font-size: 0.85rem; letter-spacing: 0.22em; margin-bottom: 2rem; text-shadow: 0 1px 14px rgba(0,0,0,0.80); }
     /* Headline: impactful size, deep space below before sub */
-    .hero-headline { font-size: clamp(2.2rem, 7.5vw, 3rem); margin-bottom: 1.75rem; line-height: 1.13; text-shadow: 0 2px 12px rgba(0,0,0,0.70), 0 8px 40px rgba(0,0,0,0.45); }
+    .hero-headline { font-size: clamp(2.2rem, 7.5vw, 3rem); margin-bottom: 2rem; line-height: 1.13; text-shadow: 0 2px 12px rgba(0,0,0,0.70), 0 8px 40px rgba(0,0,0,0.45); }
     /* Sub: clear contrast, real gap before CTA */
     .hero-sub { font-size: 1.05rem; line-height: 1.72; margin-bottom: 2.5rem; max-width: none; text-shadow: 0 1px 14px rgba(0,0,0,0.80), 0 4px 28px rgba(0,0,0,0.55); }
     /* CTA: full-width column, proper height */
-    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 2.75rem; align-self: stretch; }
+    .hero-actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-bottom: 2.5rem; align-self: stretch; }
     .btn-primary { width: 100%; justify-content: center; padding: 1rem 1.5rem; font-size: 0.95rem; white-space: nowrap; min-height: 54px; }
     .btn-secondary { width: 100%; text-align: center; border: 1px solid rgba(255,255,255,0.32); padding: 0.85rem 1rem; border-radius: 2px; letter-spacing: 0.04em; color: rgba(255,255,255,0.88); display: block; font-size: 0.9rem; }
     /* Tags: no separator line, each tag its own row with space */
@@ -344,7 +344,7 @@
     body { background-color: #0a080f; }
     #pageBg { display: none; }
     section { padding: 5.5rem 1.5rem; }
-    .philo-attribution { margin-bottom: 4rem; }
+    .philo-attribution { margin-bottom: 3rem; }
     .problem-audience { margin-top: 3rem; margin-bottom: 0.4rem; }
     .problem-card:first-child .problem-audience { margin-top: 0; }
     .problems-grid, .angebote-grid, .kurse-grid, .philo-values { grid-template-columns: 1fr; }
@@ -353,12 +353,12 @@
     .testimonials-grid { grid-template-columns: 1fr; }
     .testimonial-card:nth-child(n) { grid-column: span 1; }
     .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 4rem 1.5rem 5rem; }
-    .angebote-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .angebote-intro { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
     .kurse-intro-title { letter-spacing: -0.01em; margin-bottom: 1.75rem; }
     .kurse-intro-head { margin-bottom: 3rem; flex-direction: column; align-items: flex-start; gap: 2rem; }
     .sikit-book-box { align-self: flex-start; }
     #ueber { padding: 5.5rem 1.5rem; }
-    .ueber-top { grid-template-columns: 1fr; gap: 2rem; }
+    .ueber-top { grid-template-columns: 1fr; gap: 3rem; }
     .ueber-image img { max-width: 100%; height: auto; }
     #mission { padding: 5.5rem 1.5rem; }
     #probleme { padding: 0 1.5rem 5.5rem; }
@@ -370,7 +370,7 @@
     .bio-station-media img { filter: none; }
     .bio-station:nth-child(even) { grid-template-columns: 1fr; }
     /* Body (text) first, media (photo) second — text before image in editorial flow */
-    .bio-station-body { grid-column: 1 !important; grid-row: 1 !important; padding: 2.5rem 1.5rem 2rem; }
+    .bio-station-body { grid-column: 1 !important; grid-row: 1 !important; padding: 2.5rem 1.5rem; }
     .bio-station-media { grid-column: 1 !important; grid-row: 2 !important; aspect-ratio: 4/3; overflow: hidden; }
     .bio-station:nth-child(odd) .bio-station-media::after, .bio-station:nth-child(even) .bio-station-media::after { background: linear-gradient(to bottom, rgba(10,8,15,0.35) 0%, transparent 25%, transparent 75%, rgba(10,8,15,0.45) 100%); }
     .bio-num { font-size: 3rem; top: 0.75rem; right: 1rem; }
@@ -405,12 +405,12 @@
     .ks-pain { margin-bottom: 3rem; }
     .ks-statement { margin-bottom: 3rem; }
     .ks-modules { margin-bottom: 3rem; }
-    /* ── Testimonials: reduce featured quote bottom margin ── */
-    .stimmen-featured { margin-bottom: 2.5rem !important; }
+    /* ── Testimonials: featured quote aligned with 3rem sub-section standard ── */
+    .stimmen-featured { margin-bottom: 3rem !important; }
     /* ── Philo: tighten value cards gap ── */
     .philo-values { gap: 2.5rem; }
-    /* ── Section overline consistent tight spacing on mobile ── */
-    .section-overline { margin-bottom: 1.25rem; }
+    /* ── Section overline consistent spacing on mobile ── */
+    .section-overline { margin-bottom: 1.5rem; }
     /* ── KS module grid on mobile already overridden, just ensure sub padding ── */
     .ks-sub { font-size: 1.1rem; margin: 1.75rem auto 1.5rem; }
     .ks-lead { font-size: 1.05rem; }
