@@ -318,14 +318,13 @@
   @media (max-width: 900px) {
     nav.main-nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    /* Hero mobile: text first in flex column, portrait sits below — face never behind text */
+    /* Hero mobile: portrait FIRST (visible immediately), text scrolls below */
     #hero { justify-content: flex-start; align-items: stretch; height: auto; min-height: 100dvh; }
-    .hero-text-col { order: 1; padding: 5rem 1.5rem 3.5rem; max-width: none; }
-    /* Photo out of absolute — block element below text, face fully visible */
-    .hero-photo-fill { position: relative !important; inset: auto !important; order: 2; height: 58vh; overflow: hidden; }
-    .hero-photo-fill img { object-position: center top; }
-    /* Gradient: dark over text (0-53%), opens early so face is bright at photo top (~58%), reseals */
-    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.84) 0%, rgba(10,8,15,0.68) 26%, rgba(10,8,15,0.78) 52%, rgba(10,8,15,0.22) 60%, rgba(10,8,15,0.50) 76%, rgba(10,8,15,0.90) 100%); }
+    .hero-photo-fill { position: relative !important; inset: auto !important; order: 1; height: 52vh; overflow: hidden; }
+    .hero-photo-fill img { object-position: center 15%; }
+    .hero-text-col { order: 2; padding: 3.5rem 1.5rem 5.5rem; max-width: none; }
+    /* Gradient: subtle over photo (face visible), dark below at text area */
+    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.40) 0%, rgba(10,8,15,0.18) 35%, rgba(10,8,15,0.22) 48%, rgba(10,8,15,0.82) 58%, rgba(10,8,15,0.92) 100%); }
     /* Overline: generous space below so it stands alone */
     .hero-overline { font-size: 0.85rem; letter-spacing: 0.22em; margin-bottom: 2rem; text-shadow: 0 1px 14px rgba(0,0,0,0.80); }
     /* Headline: impactful size, deep space below before sub */
