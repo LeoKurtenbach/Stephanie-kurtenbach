@@ -324,8 +324,8 @@
     /* Photo out of absolute — block element below text, face fully visible */
     .hero-photo-fill { position: relative !important; inset: auto !important; order: 2; height: 58vh; overflow: hidden; }
     .hero-photo-fill img { object-position: center top; }
-    /* Gradient: dark over text (0-55%), window opens for face (63-78%), seals at bottom */
-    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.84) 0%, rgba(10,8,15,0.66) 28%, rgba(10,8,15,0.80) 54%, rgba(10,8,15,0.30) 65%, rgba(10,8,15,0.52) 80%, rgba(10,8,15,0.92) 100%); }
+    /* Gradient: dark over text (0-53%), opens early so face is bright at photo top (~58%), reseals */
+    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.84) 0%, rgba(10,8,15,0.68) 26%, rgba(10,8,15,0.78) 52%, rgba(10,8,15,0.22) 60%, rgba(10,8,15,0.50) 76%, rgba(10,8,15,0.90) 100%); }
     /* Overline: generous space below so it stands alone */
     .hero-overline { font-size: 0.85rem; letter-spacing: 0.22em; margin-bottom: 2rem; text-shadow: 0 1px 14px rgba(0,0,0,0.80); }
     /* Headline: impactful size, deep space below before sub */
@@ -550,7 +550,7 @@
 </section>
 <section id="angebote">
   <div class="angebote-intro reveal">
-    <div><h2 class="section-title">Meine Angebote</h2></div>
+    <h2 class="section-title">Meine Angebote</h2>
     <p class="section-body">In meiner Arbeit begegne ich Menschen auf Augenhöhe und schaffe einen vertrauensvollen Rahmen, in dem kommunikative Entwicklung entstehen kann.</p>
   </div>
   <div class="angebote-grid">
