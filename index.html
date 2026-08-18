@@ -120,14 +120,11 @@
   .materialien-band .section-overline { color: var(--rose-dark) !important; }
   .materialien-band .section-title { color: var(--deep) !important; }
   .materialien-band .section-body { color: var(--mid); max-width: 580px; margin: 0 auto 4rem; text-align: center; font-size: 1.15rem; }
-  .material-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0; text-align: left; }
-  .material-card { background: rgba(255,255,255,0.82); border: 1px solid rgba(45,32,64,0.07); box-shadow: 0 2px 12px rgba(45,32,64,0.06), 0 1px 3px rgba(45,32,64,0.04); border-radius: 4px; padding: 2rem 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; transition: background var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); }
-  .material-card:hover { background: rgba(255,255,255,0.98); border-color: rgba(143,77,104,0.18); box-shadow: 0 6px 28px rgba(45,32,64,0.10); transform: translateY(-2px); }
-  .material-card-tag { font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; }
-  .material-card-title { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--deep); line-height: 1.3; }
-  .material-card-desc { font-size: 0.95rem; color: var(--mid); line-height: 1.78; flex: 1; }
-  .material-card-dl { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.84rem; letter-spacing: 0.05em; color: var(--rose-dark); text-decoration: none; border-bottom: 1px solid rgba(143,77,104,0.35); padding-bottom: 1px; margin-top: 0.35rem; align-self: flex-start; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
-  .material-card-dl:hover { color: var(--deep); border-color: rgba(45,32,64,0.45); }
+  .material-preview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; text-align: left; }
+  .material-preview-card { background: rgba(255,255,255,0.55); border: 1px solid rgba(45,32,64,0.07); border-radius: 4px; padding: 1.5rem 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .material-preview-tag { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; }
+  .material-preview-title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); line-height: 1.3; }
+  .material-cta { margin-top: 0.5rem; }
   .kurse-subsection { background: transparent; padding: 5rem 0 0 0; margin-top: 4rem; }
   .kurse-intro-head { margin-bottom: 5rem; display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem; }
   .kurse-intro-left { flex: 1; min-width: 0; }
@@ -364,7 +361,7 @@
     .mission-quote { font-size: clamp(1.4rem, 5vw, 1.8rem); }
     .bio-stations { margin-left: -1.5rem; margin-right: -1.5rem; }
     .materialien-band { margin-left: -1.5rem; margin-right: -1.5rem; padding: 4.5rem 1.5rem; }
-    .material-cards { grid-template-columns: 1fr; gap: 1rem; }
+    .material-preview { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2.5rem; }
     .bio-station { grid-template-columns: 1fr; height: auto; min-height: auto; overflow: visible; }
     .bio-station-media img { filter: none; }
     .bio-station:nth-child(even) { grid-template-columns: 1fr; }
@@ -586,44 +583,33 @@
     <span class="section-overline reveal">Für dich</span>
     <h2 class="section-title reveal" data-delay="1">Kostenfreie Materialien</h2>
     <p class="section-body reveal" data-delay="2">Praxiserprobte Arbeitshilfen aus meiner täglichen Arbeit. Direkt einsetzbar.</p>
-    <div class="material-cards">
-      <div class="material-card reveal">
-        <span class="material-card-tag">Entwicklung</span>
-        <h3 class="material-card-title">Meilensteine frühkindlicher Entwicklung</h3>
-        <p class="material-card-desc">Übersichtliche Tabelle zu motorischen, sprachlichen und sozialen Entwicklungsschritten — ideal für Beratung und Elterngespräche.</p>
-        <a class="material-card-dl" href="materialien/Tabelle%20-%20Meilensteine%20fr%C3%BChkindlicher%20Entwicklung.pdf" download>↓ PDF herunterladen</a>
+    <div class="material-preview reveal" data-delay="2">
+      <div class="material-preview-card">
+        <span class="material-preview-tag">Entwicklung</span>
+        <span class="material-preview-title">Meilensteine frühkindlicher Entwicklung</span>
       </div>
-      <div class="material-card reveal">
-        <span class="material-card-tag">Sensorik</span>
-        <h3 class="material-card-title">Sensorische Hilfen für lebhafte Kinder</h3>
-        <p class="material-card-desc">Alltagsstrategien für Familien mit Kindern, die viel Bewegung und starke Reize brauchen. Konkret und direkt einsetzbar.</p>
-        <a class="material-card-dl" href="materialien/Sensorische%20Hilfen%20f%C3%BCr%20Familien-Lebhafte%20Kinder.pdf" download>↓ PDF herunterladen</a>
+      <div class="material-preview-card">
+        <span class="material-preview-tag">Sensorik</span>
+        <span class="material-preview-title">Sensorische Hilfen für lebhafte Kinder</span>
       </div>
-      <div class="material-card reveal">
-        <span class="material-card-tag">Sensorik</span>
-        <h3 class="material-card-title">Konzentration fördern</h3>
-        <p class="material-card-desc">Sensorische Strategien, die Kindern helfen, zur Ruhe zu kommen und fokussiert zu bleiben — für Alltag, Kita und Schule.</p>
-        <a class="material-card-dl" href="materialien/Sensorische%20Hilfen%20f%C3%BCr%20Familien-Konzentration%20f%C3%B6rdern.pdf" download>↓ PDF herunterladen</a>
+      <div class="material-preview-card">
+        <span class="material-preview-tag">Sensorik</span>
+        <span class="material-preview-title">Konzentration fördern</span>
       </div>
-      <div class="material-card reveal">
-        <span class="material-card-tag">Sensorik</span>
-        <h3 class="material-card-title">Mit Wut umgehen</h3>
-        <p class="material-card-desc">Ressourcenorientierte Hilfen für Kinder und Eltern im Umgang mit starken Emotionen und Impulsen im Alltag.</p>
-        <a class="material-card-dl" href="materialien/Sensorische%20Hilfen%20f%C3%BCr%20Familien-Mit%20Wut%20umgehen.pdf" download>↓ PDF herunterladen</a>
+      <div class="material-preview-card">
+        <span class="material-preview-tag">Sensorik</span>
+        <span class="material-preview-title">Mit Wut umgehen</span>
       </div>
-      <div class="material-card reveal">
-        <span class="material-card-tag">Poster</span>
-        <h3 class="material-card-title">„Sie spielen ja nur mit meinem Kind"</h3>
-        <p class="material-card-desc">Was therapeutisches Spielen wirklich bedeutet — zum Aufhängen in Praxis, Warteraum oder Elternabend.</p>
-        <a class="material-card-dl" href="materialien/Poster%20-%20Sie%20spielen%20ja%20nur%20mit%20meinem%20Kind.pdf" download>↓ PDF herunterladen</a>
+      <div class="material-preview-card">
+        <span class="material-preview-tag">Poster</span>
+        <span class="material-preview-title">„Sie spielen ja nur mit meinem Kind"</span>
       </div>
-      <div class="material-card reveal">
-        <span class="material-card-tag">Poster</span>
-        <h3 class="material-card-title">Über Gefühle sprechen lernen</h3>
-        <p class="material-card-desc">Sprachliches Begleitmaterial zur emotionalen Entwicklung — als Gesprächseinstieg mit Kindern und Eltern.</p>
-        <a class="material-card-dl" href="materialien/Poster%20-%20%C3%9Cber%20Gef%C3%BChle%20sprechen%20lernen.pdf" download>↓ PDF herunterladen</a>
+      <div class="material-preview-card">
+        <span class="material-preview-tag">Poster</span>
+        <span class="material-preview-title">Über Gefühle sprechen lernen</span>
       </div>
     </div>
+    <a href="materialien.html" class="btn-primary material-cta reveal" data-delay="3">Alle Materialien ansehen</a>
   </div>
   <div class="kurse-subsection" id="kurse">
     <div class="kurse-intro-head">
