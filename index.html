@@ -120,11 +120,11 @@
   .materialien-band .section-overline { color: var(--rose-dark) !important; }
   .materialien-band .section-title { color: var(--deep) !important; }
   .materialien-band .section-body { color: var(--mid); max-width: 580px; margin: 0 auto 4rem; text-align: center; font-size: 1.15rem; }
-  .material-preview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; text-align: left; }
-  .material-preview-card { background: rgba(255,255,255,0.55); border: 1px solid rgba(45,32,64,0.07); border-radius: 4px; padding: 1.5rem 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  .material-preview-tag { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; }
-  .material-preview-title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; color: var(--deep); line-height: 1.3; }
-  .material-cta { margin-top: 0.5rem; }
+  .material-collage { position: relative; height: 370px; max-width: 760px; margin: 0 auto 3rem; }
+  .material-thumb { position: absolute; width: 195px; background: #fff; padding: 7px 7px 26px; box-shadow: 0 4px 22px rgba(45,32,64,0.13), 0 1px 4px rgba(45,32,64,0.07); transform: rotate(var(--r)); left: var(--l); top: var(--t); z-index: var(--z); }
+  .material-thumb-inner { position: relative; overflow: hidden; height: 210px; }
+  .material-thumb-inner img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .material-thumb-inner::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 85px; background: linear-gradient(to bottom, transparent, #fff); pointer-events: none; }
   .kurse-subsection { background: transparent; padding: 5rem 0 0 0; margin-top: 4rem; }
   .kurse-intro-head { margin-bottom: 5rem; display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem; }
   .kurse-intro-left { flex: 1; min-width: 0; }
@@ -361,7 +361,13 @@
     .mission-quote { font-size: clamp(1.4rem, 5vw, 1.8rem); }
     .bio-stations { margin-left: -1.5rem; margin-right: -1.5rem; }
     .materialien-band { margin-left: -1.5rem; margin-right: -1.5rem; padding: 4.5rem 1.5rem; }
-    .material-preview { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2.5rem; }
+    .material-collage { height: 260px; margin-bottom: 2.5rem; }
+    .material-thumb { width: 132px; }
+    .material-thumb-inner { height: 148px; }
+    .material-thumb:nth-child(4) { display: none; }
+    .material-thumb:nth-child(1) { left: 1% !important; }
+    .material-thumb:nth-child(2) { left: 27% !important; }
+    .material-thumb:nth-child(3) { left: 54% !important; }
     .bio-station { grid-template-columns: 1fr; height: auto; min-height: auto; overflow: visible; }
     .bio-station-media img { filter: none; }
     .bio-station:nth-child(even) { grid-template-columns: 1fr; }
@@ -583,33 +589,29 @@
     <span class="section-overline reveal">Für dich</span>
     <h2 class="section-title reveal" data-delay="1">Kostenfreie Materialien</h2>
     <p class="section-body reveal" data-delay="2">Praxiserprobte Arbeitshilfen aus meiner täglichen Arbeit. Direkt einsetzbar.</p>
-    <div class="material-preview reveal" data-delay="2">
-      <div class="material-preview-card">
-        <span class="material-preview-tag">Entwicklung</span>
-        <span class="material-preview-title">Meilensteine frühkindlicher Entwicklung</span>
+    <div class="material-collage reveal" data-delay="2">
+      <div class="material-thumb" style="--r:-3.5deg;--l:0%;--t:12%;--z:2">
+        <div class="material-thumb-inner">
+          <img src="materialien/thumbs/poster-spielen.png" alt="Wir spielen mit Ihrem Kind, um zu therapieren" loading="lazy">
+        </div>
       </div>
-      <div class="material-preview-card">
-        <span class="material-preview-tag">Sensorik</span>
-        <span class="material-preview-title">Sensorische Hilfen für lebhafte Kinder</span>
+      <div class="material-thumb" style="--r:2.5deg;--l:22%;--t:3%;--z:1">
+        <div class="material-thumb-inner">
+          <img src="materialien/thumbs/sensorik-lebhafte.png" alt="Sensorische Hilfen für lebhafte Kinder" loading="lazy">
+        </div>
       </div>
-      <div class="material-preview-card">
-        <span class="material-preview-tag">Sensorik</span>
-        <span class="material-preview-title">Konzentration fördern</span>
+      <div class="material-thumb" style="--r:-2deg;--l:44%;--t:8%;--z:3">
+        <div class="material-thumb-inner">
+          <img src="materialien/thumbs/poster-gefuehle.png" alt="Über Gefühle sprechen lernen" loading="lazy">
+        </div>
       </div>
-      <div class="material-preview-card">
-        <span class="material-preview-tag">Sensorik</span>
-        <span class="material-preview-title">Mit Wut umgehen</span>
-      </div>
-      <div class="material-preview-card">
-        <span class="material-preview-tag">Poster</span>
-        <span class="material-preview-title">„Sie spielen ja nur mit meinem Kind"</span>
-      </div>
-      <div class="material-preview-card">
-        <span class="material-preview-tag">Poster</span>
-        <span class="material-preview-title">Über Gefühle sprechen lernen</span>
+      <div class="material-thumb" style="--r:4deg;--l:66%;--t:2%;--z:2">
+        <div class="material-thumb-inner">
+          <img src="materialien/thumbs/sensorik-wut.png" alt="Sensorische Hilfen – Mit Wut umgehen" loading="lazy">
+        </div>
       </div>
     </div>
-    <a href="materialien.html" class="btn-primary material-cta reveal" data-delay="3">Alle Materialien ansehen</a>
+    <a href="materialien.html" class="btn-primary reveal" data-delay="3">Alle Materialien ansehen</a>
   </div>
   <div class="kurse-subsection" id="kurse">
     <div class="kurse-intro-head">
