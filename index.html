@@ -323,11 +323,13 @@
     #hero { justify-content: flex-start; align-items: stretch; height: auto; min-height: 100dvh; padding: 0; overflow: visible; }
     .hero-overline-mobile { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 5.5rem 1.5rem 1.5rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); text-shadow: 0 1px 14px rgba(0,0,0,0.80); gap: 0.4rem; position: relative; z-index: 2; }
     .overline-sep { display: none; }
-    .hero-photo-fill { position: relative !important; inset: auto !important; order: 1; height: 52vh; overflow: hidden; }
+    .hero-photo-fill { position: relative !important; inset: auto !important; order: 1; height: 46vh; overflow: hidden; }
     .hero-photo-fill img { object-position: center 15%; }
-    .hero-text-col { order: 2; padding: 3rem 1.5rem 3rem; max-width: none; }
-    /* Gradient: lighter over face area, dark only at very bottom for text readability */
-    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.28) 0%, rgba(10,8,15,0.08) 28%, rgba(10,8,15,0.10) 50%, rgba(10,8,15,0.78) 60%, rgba(10,8,15,0.92) 100%); }
+    /* Bottom fade on photo itself — creates clear photo→text boundary, no bleed */
+    .hero-photo-fill::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 55%; background: linear-gradient(to bottom, transparent 0%, #0a080f 100%); pointer-events: none; z-index: 1; }
+    .hero-text-col { order: 2; padding: 3rem 1.5rem 3rem; max-width: none; background: #0a080f; }
+    /* Gradient: only covers overline area, photo bottom handled by photo::after */
+    #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.42) 0%, rgba(10,8,15,0.12) 20%, transparent 30%, transparent 100%); }
     /* Desktop overline hidden on mobile — shown via .hero-overline-mobile above */
     .hero-overline { display: none; }
     /* Headline: smaller min prevents orphan words like "auf" alone on a line */
