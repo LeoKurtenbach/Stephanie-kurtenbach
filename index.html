@@ -208,6 +208,7 @@
   #philosophie { position: relative; text-align: center; padding: clamp(9rem,11vw,14rem) 5rem; }
   #philosophie::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.68); z-index: 0; pointer-events: none; }
   #philosophie > * { position: relative; z-index: 1; }
+  .philo-section-title { font-family: var(--font-sans); font-size: clamp(0.88rem, 1.1vw, 1rem); font-weight: 600; color: var(--rose); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: clamp(3rem, 4vw, 4.5rem); }
   .philo-quote-main { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.35; max-width: 860px; margin: 0 auto 1.5rem; text-shadow: 0 2px 20px rgba(184,114,138,0.2), 0 4px 40px rgba(0,0,0,0.3); }
   .philo-quote-main em { color: var(--rose); font-style: normal; }
   .philo-attribution { font-size: 0.86rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.90); margin-bottom: clamp(8rem,10vw,13rem); display: block; }
@@ -855,7 +856,8 @@
   </div>
 </section>
 <section id="philosophie">
-  <p class="philo-quote-main reveal">„Jenseits von richtig und falsch liegt ein Ort. <em>Dort treffen wir uns.</em>"</p>
+  <h2 class="philo-section-title reveal">So arbeite ich.</h2>
+  <p class="philo-quote-main reveal" data-delay="1">„Jenseits von richtig und falsch liegt ein Ort. <em>Dort treffen wir uns.</em>"</p>
   <span class="philo-attribution reveal" data-delay="1">Dschalāl ad-Dīn Muhammad Rūmī</span>
   <div class="philo-values">
     <div class="philo-value reveal"><span class="philo-value-title">Augenhöhe</span><p class="philo-value-text">Jede Begegnung, ob mit Kindern, Eltern oder Fachkräften, entsteht aus echtem Respekt und der Überzeugung, dass jeder Mensch seine eigenen Ressourcen hat.</p></div>
