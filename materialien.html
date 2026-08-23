@@ -30,8 +30,11 @@
   h1 { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; color: var(--deep); margin-bottom: 0.5rem; line-height: 1.15; }
   .intro { font-size: 1.1rem; color: var(--mid); margin-bottom: 4rem; max-width: 600px; line-height: 1.78; }
   .material-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .material-card { background: var(--off); border: 1px solid rgba(45,32,64,0.07); box-shadow: 0 2px 12px rgba(45,32,64,0.05); border-radius: 4px; padding: 2rem 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; transition: background var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); }
+  .material-card { background: var(--off); border: 1px solid rgba(45,32,64,0.07); box-shadow: 0 2px 12px rgba(45,32,64,0.05); border-radius: 4px; padding: 2rem 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; transition: background var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); position: relative; overflow: hidden; }
   .material-card:hover { background: var(--white); border-color: rgba(143,77,104,0.20); box-shadow: 0 6px 28px rgba(45,32,64,0.10); transform: translateY(-2px); }
+  .card-botanical { position: absolute; top: -1rem; right: -1rem; width: 200px; height: 200px; background-size: contain; background-repeat: no-repeat; background-position: top right; opacity: 0.18; pointer-events: none; z-index: 0; transition: opacity var(--dur-ui) var(--ease-organic); -webkit-mask-image: radial-gradient(ellipse at 82% 18%, black 22%, transparent 64%); mask-image: radial-gradient(ellipse at 82% 18%, black 22%, transparent 64%); }
+  .material-card:hover .card-botanical { opacity: 0.30; }
+  .material-card-tag, .material-card-title, .material-card-desc, .material-card-dl { position: relative; z-index: 1; }
   .material-card-tag { font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; }
   .material-card-title { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--deep); line-height: 1.3; }
   .material-card-desc { font-size: 0.95rem; color: var(--mid); line-height: 1.78; flex: 1; }
@@ -62,36 +65,42 @@
   <p class="intro">Praxiserprobte Arbeitshilfen aus meiner täglichen Arbeit — direkt einsetzbar in Beratung, Therapie und Familienbegleitung.</p>
   <div class="material-cards">
     <div class="material-card">
+      <div class="card-botanical" aria-hidden="true" style="background-image: url('olive.png')"></div>
       <span class="material-card-tag">Entwicklung</span>
       <h2 class="material-card-title">Meilensteine frühkindlicher Entwicklung</h2>
       <p class="material-card-desc">Übersichtliche Tabelle zu motorischen, sprachlichen und sozialen Entwicklungsschritten — ideal für Beratung und Elterngespräche.</p>
       <a class="material-card-dl" href="materialien/Tabelle%20-%20Meilensteine%20fr%C3%BChkindlicher%20Entwicklung.pdf" download>↓ PDF herunterladen</a>
     </div>
     <div class="material-card">
+      <div class="card-botanical" aria-hidden="true" style="background-image: url('passionflower.png')"></div>
       <span class="material-card-tag">Sensorik</span>
       <h2 class="material-card-title">Sensorische Hilfen für lebhafte Kinder</h2>
       <p class="material-card-desc">Alltagsstrategien für Familien mit Kindern, die viel Bewegung und starke Reize brauchen. Konkret und direkt einsetzbar.</p>
       <a class="material-card-dl" href="materialien/Sensorische%20Hilfen%20f%C3%BCr%20Familien-Lebhafte%20Kinder.pdf" download>↓ PDF herunterladen</a>
     </div>
     <div class="material-card">
+      <div class="card-botanical" aria-hidden="true" style="background-image: url('wisteria.png')"></div>
       <span class="material-card-tag">Sensorik</span>
       <h2 class="material-card-title">Konzentration fördern</h2>
       <p class="material-card-desc">Sensorische Strategien, die Kindern helfen, zur Ruhe zu kommen und fokussiert zu bleiben — für Alltag, Kita und Schule.</p>
       <a class="material-card-dl" href="materialien/Sensorische%20Hilfen%20f%C3%BCr%20Familien-Konzentration%20f%C3%B6rdern.pdf" download>↓ PDF herunterladen</a>
     </div>
     <div class="material-card">
+      <div class="card-botanical" aria-hidden="true" style="background-image: url('peony.png')"></div>
       <span class="material-card-tag">Sensorik</span>
       <h2 class="material-card-title">Mit Wut umgehen</h2>
       <p class="material-card-desc">Ressourcenorientierte Hilfen für Kinder und Eltern im Umgang mit starken Emotionen und Impulsen im Alltag.</p>
       <a class="material-card-dl" href="materialien/Sensorische%20Hilfen%20f%C3%BCr%20Familien-Mit%20Wut%20umgehen.pdf" download>↓ PDF herunterladen</a>
     </div>
     <div class="material-card">
+      <div class="card-botanical" aria-hidden="true" style="background-image: url('wisteria.png')"></div>
       <span class="material-card-tag">Poster</span>
       <h2 class="material-card-title">„Sie spielen ja nur mit meinem Kind"</h2>
       <p class="material-card-desc">Was therapeutisches Spielen wirklich bedeutet — zum Aufhängen in Praxis, Warteraum oder Elternabend.</p>
       <a class="material-card-dl" href="materialien/Poster%20-%20Sie%20spielen%20ja%20nur%20mit%20meinem%20Kind.pdf" download>↓ PDF herunterladen</a>
     </div>
     <div class="material-card">
+      <div class="card-botanical" aria-hidden="true" style="background-image: url('passionflower.png')"></div>
       <span class="material-card-tag">Poster</span>
       <h2 class="material-card-title">Über Gefühle sprechen lernen</h2>
       <p class="material-card-desc">Sprachliches Begleitmaterial zur emotionalen Entwicklung — als Gesprächseinstieg mit Kindern und Eltern.</p>
