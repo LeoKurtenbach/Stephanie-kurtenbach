@@ -320,7 +320,7 @@
     nav.main-nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     /* Hero mobile: overline (order 0, DOM-first) → photo → text */
-    #hero { justify-content: flex-start; align-items: stretch; height: auto; min-height: 100dvh; padding: 0; }
+    #hero { justify-content: flex-start; align-items: stretch; height: auto; min-height: 100dvh; padding: 0; overflow: visible; }
     .hero-overline-mobile { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3.5rem 1.5rem 1.5rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); text-shadow: 0 1px 14px rgba(0,0,0,0.80); gap: 0.4rem; position: relative; z-index: 2; }
     .overline-sep { display: none; }
     .hero-photo-fill { position: relative !important; inset: auto !important; order: 1; height: 52vh; overflow: hidden; }
@@ -330,8 +330,8 @@
     #hero::before { background: linear-gradient(to bottom, rgba(10,8,15,0.28) 0%, rgba(10,8,15,0.08) 28%, rgba(10,8,15,0.10) 50%, rgba(10,8,15,0.78) 60%, rgba(10,8,15,0.92) 100%); }
     /* Desktop overline hidden on mobile — shown via .hero-overline-mobile above */
     .hero-overline { display: none; }
-    /* Headline: impactful size, deep space below before sub */
-    .hero-headline { font-size: clamp(2.2rem, 7.5vw, 3rem); margin-bottom: 2rem; line-height: 1.13; text-shadow: 0 2px 12px rgba(0,0,0,0.70), 0 8px 40px rgba(0,0,0,0.45); }
+    /* Headline: smaller min prevents orphan words like "auf" alone on a line */
+    .hero-headline { font-size: clamp(1.75rem, 6.5vw, 3rem); margin-bottom: 1.75rem; line-height: 1.15; text-shadow: 0 2px 12px rgba(0,0,0,0.70), 0 8px 40px rgba(0,0,0,0.45); }
     /* Sub: clear contrast, real gap before CTA */
     .hero-sub { font-size: 1.05rem; line-height: 1.72; margin-bottom: 2.5rem; max-width: none; text-shadow: 0 1px 14px rgba(0,0,0,0.80), 0 4px 28px rgba(0,0,0,0.55); }
     /* CTA: full-width column, proper height */
