@@ -282,11 +282,11 @@
   .nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
   .nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   .nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-  .nav-mobile-overlay { position: fixed; inset: 0; background: var(--off); z-index: 199; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.25rem; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease-organic); }
+  .nav-mobile-overlay { position: fixed; inset: 0; background: var(--off); z-index: 199; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease-organic); }
   .nav-mobile-overlay.open { opacity: 1; pointer-events: auto; }
   .nav-mobile-link { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 400; color: var(--deep); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; }
   .nav-mobile-link:hover, .nav-mobile-link:active { color: var(--rose-dark); }
-  .nav-mobile-cta { margin-top: 0.75rem; background: var(--rose); color: var(--white) !important; font-family: var(--font-sans); font-size: 1rem; letter-spacing: 0.08em; padding: 0.9rem 2.75rem; border-radius: 2px; font-weight: 500; font-style: normal; transition: background 0.2s; }
+  .nav-mobile-cta { margin-top: 1.75rem; background: var(--rose); color: var(--white) !important; font-family: var(--font-sans); font-size: 0.92rem; letter-spacing: 0.1em; padding: 0.85rem 2.5rem; border-radius: 2px; font-weight: 500; font-style: normal; transition: background 0.2s; }
   .nav-mobile-cta:hover { background: var(--rose-dark) !important; }
 
   /* ── Intermediate breakpoint: small desktop 901–1300px (13"–14" MacBook) ── */
@@ -420,8 +420,17 @@
     .stimmen-featured { margin-bottom: 3rem !important; }
     /* ── Philo: tighten value cards gap ── */
     .philo-values { gap: 2.5rem; }
-    /* ── Section overline consistent spacing on mobile ── */
-    .section-overline { margin-bottom: 1.5rem; }
+    /* ── Proximity hierarchy: label · heading · body are one semantic unit ── */
+    .section-overline { margin-bottom: 0.6rem; }
+    .section-title { margin-bottom: 0.9rem; }
+    .philo-section-title { margin-bottom: 1.5rem; }
+    /* ── Grid top margins: reduce desktop 4rem gaps ── */
+    .problems-grid { margin-top: 2rem; }
+    .bio-stations { margin-top: 2rem; }
+    .testimonials-grid { margin-top: 0; }
+    /* ── Stimmen featured block ── */
+    .testimonials-featured { padding-bottom: 2rem; margin-bottom: 2rem; }
+    .featured-stars { margin-bottom: 1rem; }
     /* ── KS module grid on mobile already overridden, just ensure sub padding ── */
     .ks-sub { font-size: 1.1rem; margin: 1.75rem auto 1.5rem; }
     .ks-lead { font-size: 1.05rem; }

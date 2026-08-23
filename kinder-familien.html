@@ -202,14 +202,22 @@
     .hero-right::after { display: none; }
     .hero-tags { flex-direction: column; gap: 0.6rem; }
     .tag + .tag::before { display: none; }
-    .section-overline { margin-bottom: 1.25rem; }
-    .section-title { margin-bottom: 1.5rem; }
-    .back-link { margin-bottom: 2.5rem; }
+    /* Proximity hierarchy: label · heading · body are one semantic unit */
+    .section-overline { margin-bottom: 0.6rem; }
+    .section-title { margin-bottom: 0.9rem; }
+    /* Erkennst: title goes straight to statement list — needs slightly more gap */
+    #scene-erkennst .section-title { margin-bottom: 1.75rem; }
+    .back-link { margin-bottom: 1.75rem; }
     #scene-erkennst, #scene-angebot, #scene-foto, #scene-ziel, #scene-material, #scene-cta { padding: 5rem 1.5rem; }
     /* Light section: tighten body → pillars gap; boost text contrast */
-    #scene-angebot .section-body { margin-bottom: 2rem; color: var(--deep); }
+    #scene-angebot .section-body { margin-bottom: 1rem; color: var(--deep); }
+    /* CTA: label and heading close together */
+    .cta-overline { margin-bottom: 0.6rem; }
+    .cta-title { margin-bottom: 0.9rem; }
     .angebot-pillars { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
     .angebot-pillar { padding: 1.75rem; }
+    .angebot-pillar-num { margin-bottom: 0.35rem; }
+    .angebot-pillar-title { margin-bottom: 0.6rem; }
     .angebot-pillar-body { color: var(--deep); }
     .angebot-pillar-list li { color: var(--deep); }
     /* scene-foto: tight gap so quote → cite → image feel connected */
