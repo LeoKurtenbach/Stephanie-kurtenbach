@@ -34,9 +34,10 @@
   .material-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .material-card { background: var(--off); border: 1px solid rgba(45,32,64,0.07); box-shadow: 0 2px 12px rgba(45,32,64,0.05); border-radius: 4px; display: flex; flex-direction: column; overflow: hidden; transition: border-color var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic), transform var(--dur-ui) var(--ease-organic); }
   .material-card:hover { border-color: rgba(143,77,104,0.20); box-shadow: 0 6px 28px rgba(45,32,64,0.10); transform: translateY(-2px); }
-  .material-card-img { width: 100%; aspect-ratio: 3/2; overflow: hidden; flex-shrink: 0; background: var(--off); }
-  .material-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform var(--dur-ambient) var(--ease-organic); }
-  .material-card:hover .material-card-img img { transform: scale(1.04); }
+  .material-card-img { position: relative; width: 100%; aspect-ratio: 3/2; overflow: hidden; flex-shrink: 0; background: var(--off); }
+  .material-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0.42; transition: transform var(--dur-ambient) var(--ease-organic), opacity var(--dur-ui) var(--ease-organic); }
+  .material-card:hover .material-card-img img { transform: scale(1.03); opacity: 0.58; }
+  .material-card-img::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 45%; background: linear-gradient(to bottom, transparent, var(--off)); pointer-events: none; }
   .material-card-body { padding: 1.5rem 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
   .material-card-tag { font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; }
   .material-card-title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--deep); line-height: 1.3; }
