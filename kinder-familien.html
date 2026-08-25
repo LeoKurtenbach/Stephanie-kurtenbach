@@ -27,6 +27,7 @@
     --dur-ui: 220ms;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  h1, h2, h3, h4, h5, h6 { font-weight: 400; }
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body { background-color: var(--off); color: var(--deep); font-family: var(--font-sans); font-weight: 400; font-size: 17px; line-height: 1.85; letter-spacing: 0.01em; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -109,7 +110,7 @@
   .scene-foto-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   .scene-foto-visual { position: relative; overflow: hidden; border-radius: 2px; height: 520px; }
   .scene-foto-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
-  .scene-foto-quote { font-family: var(--font-serif); font-size: clamp(1.3rem, 1.9vw, 1.9rem); font-style: italic; color: var(--white); line-height: 1.65; margin-bottom: 1.5rem; }
+  .scene-foto-quote { font-family: var(--font-serif); font-size: clamp(1.3rem, 1.9vw, 1.9rem); font-weight: 400; font-style: italic; color: var(--white); line-height: 1.65; margin-bottom: 1.5rem; }
   .scene-foto-cite { font-size: 0.86rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.88); font-style: normal; }
 
   /* ── Ziel: zweispaltig (Text links, Bild rechts) ── */
@@ -126,8 +127,8 @@
   .ziel-statements { margin-top: 4rem; display: flex; flex-direction: column; gap: 0; }
   .ziel-statement { display: flex; gap: 2rem; align-items: baseline; padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .ziel-statement:last-child { border-bottom: none; }
-  .ziel-statement-num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--rose); opacity: 0.35; flex-shrink: 0; line-height: 1; min-width: 2rem; }
-  .ziel-statement-text { font-family: var(--font-serif); font-size: 1.08rem; color: rgba(255,255,255,0.92); line-height: 1.65; }
+  .ziel-statement-num { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; color: var(--rose); opacity: 0.35; flex-shrink: 0; line-height: 1; min-width: 2rem; }
+  .ziel-statement-text { font-family: var(--font-serif); font-size: 1.08rem; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.65; }
 
   /* ── Scene 5: Fachmaterial (light) ── */
   #scene-material { position: relative; padding: clamp(10rem,12vw,15rem) 5rem; }
@@ -148,7 +149,7 @@
   #scene-cta::before { content: ''; position: absolute; inset: 0; background: rgba(10,8,15,0.70); z-index: 0; pointer-events: none; }
   #scene-cta > * { position: relative; z-index: 1; }
   .cta-overline { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 500; display: block; margin-bottom: 1.5rem; }
-  .cta-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 3rem); color: var(--white); margin-bottom: 1.25rem; line-height: 1.2; }
+  .cta-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 400; color: var(--white); margin-bottom: 1.25rem; line-height: 1.2; }
   .cta-body { font-size: 1.08rem; color: rgba(255,255,255,0.88); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.85; }
 
   /* ── Footer ── */
@@ -242,6 +243,7 @@
 
   /* ── Large desktop (16" +) — text clarity ── */
   @media (min-width: 1400px) {
+    .erkennst-statement-text { font-size: 1.5rem; }
     #scene-angebot .section-body { font-size: 1.15rem; color: var(--deep); }
     .angebot-pillar { padding: 3.5rem; }
     .angebot-pillar-title { font-size: 1.35rem; }
