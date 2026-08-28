@@ -267,8 +267,8 @@
   .kontakt-detail-icon { color: var(--rose); }
   .kontakt-detail-text { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.9; }
   .kontakt-detail-text strong { display: block; font-size: 0.92rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.92); font-weight: 500; margin-bottom: 0.25rem; }
-  .kontakt-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; }
-  .kontakt-newsletter, .kontakt-booking { padding: 1.5rem 1.75rem; background: rgba(184,114,138,0.09); border: 1px solid rgba(184,114,138,0.22); border-radius: 3px; display: flex; flex-direction: column; gap: 0.6rem; }
+  .kontakt-actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding-top: 4rem; border-top: 1px solid rgba(255,255,255,0.07); }
+  .kontakt-newsletter, .kontakt-booking { padding: 2rem 2.5rem; background: rgba(184,114,138,0.09); border: 1px solid rgba(184,114,138,0.22); border-radius: 3px; display: flex; flex-direction: column; gap: 0.75rem; }
   .kontakt-newsletter-label, .kontakt-booking-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose); font-weight: 600; }
   .kontakt-newsletter-text, .kontakt-booking-text { font-size: 0.96rem; color: rgba(255,255,255,0.88); line-height: 1.72; margin: 0; }
   .kontakt-newsletter-link, .kontakt-booking-link { font-size: 0.88rem; color: var(--rose); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid rgba(184,114,138,0.40); padding-bottom: 1px; align-self: flex-start; transition: color var(--dur-ui) var(--ease-organic), border-color var(--dur-ui) var(--ease-organic); }
@@ -437,7 +437,7 @@
     .ks-lead { font-size: 1.05rem; }
     /* ── Kontakt info / form vertical rhythm ── */
     .kontakt-info .section-body { margin-bottom: 1.5rem; }
-    .kontakt-actions { grid-template-columns: 1fr; margin-top: 1.25rem; }
+    .kontakt-actions { grid-template-columns: 1fr; padding-top: 2.5rem; }
     /* ── Mobile: kontakt before stimmen ── */
     .kontakt-stimmen-wrap { flex-direction: column-reverse; }
     /* ── Kontakt-reminder at end of page ── */
@@ -924,19 +924,19 @@
     </div>
     <button type="submit" class="form-submit">Nachricht senden</button>
     <p style="font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:1rem;line-height:1.6;">Mit dem Absenden stimmst du der Verarbeitung deiner Daten gemäß unserer <a href="datenschutz.html" style="color:rgba(255,255,255,0.5);">Datenschutzerklärung</a> zur Bearbeitung deiner Anfrage zu.</p>
-    <div class="kontakt-actions">
-      <div class="kontakt-newsletter">
-        <span class="kontakt-newsletter-label">Newsletter</span>
-        <p class="kontakt-newsletter-text">Bei Anmeldung zu meinem Newsletter bekommst du ein kostenloses E-Book zum Thema <strong>„SI zu kleinen Preisen"</strong>.</p>
-        <a href="mailto:hallo@stephaniekurtenbach.com?subject=Newsletter-Anmeldung" class="kontakt-newsletter-link">Newsletter abonnieren →</a>
-      </div>
-      <div class="kontakt-booking">
-        <span class="kontakt-booking-label">Erstgespräch</span>
-        <p class="kontakt-booking-text">Kostenlos und unverbindlich — trage dich direkt für ein erstes Beratungsgespräch ein.</p>
-        <a href="https://calendar.app.google/ZBMJhxoquke9jpo58" target="_blank" class="kontakt-booking-link">Termin buchen →</a>
-      </div>
-    </div>
   </form>
+  <div class="kontakt-actions">
+    <div class="kontakt-newsletter">
+      <span class="kontakt-newsletter-label">Newsletter</span>
+      <p class="kontakt-newsletter-text">Bei Anmeldung zu meinem Newsletter bekommst du ein kostenloses E-Book zum Thema <strong>„SI zu kleinen Preisen"</strong>.</p>
+      <a href="mailto:hallo@stephaniekurtenbach.com?subject=Newsletter-Anmeldung" class="kontakt-newsletter-link">Newsletter abonnieren →</a>
+    </div>
+    <div class="kontakt-booking">
+      <span class="kontakt-booking-label">Erstgespräch</span>
+      <p class="kontakt-booking-text">Kostenlos und unverbindlich — trage dich direkt für ein erstes Beratungsgespräch ein.</p>
+      <a href="https://calendar.app.google/ZBMJhxoquke9jpo58" target="_blank" class="kontakt-booking-link">Termin buchen →</a>
+    </div>
+  </div>
 </section>
 </div><!-- /.kontakt-stimmen-wrap -->
 <div class="kontakt-reminder">
