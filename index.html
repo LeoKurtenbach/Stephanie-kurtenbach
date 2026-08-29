@@ -100,7 +100,11 @@
   .problem-quote { font-family: var(--font-sans); font-size: 1.18rem; font-style: normal; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.85; margin-bottom: 1.5rem; }
   .problem-response { font-size: 1rem; color: rgba(255,255,255,0.90); font-weight: 400; }
   .angebote-intro { display: grid; grid-template-columns: 1fr; text-align: center; gap: 1.5rem; margin-bottom: 5rem; position: relative; z-index: 1; }
-  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; margin-bottom: clamp(7rem,9vw,11rem); }
+  .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; margin-bottom: clamp(5rem,7vw,9rem); }
+  .erstgespraech-band { display: flex; align-items: center; justify-content: space-between; gap: 3rem; padding: 2.5rem 3rem; background: rgba(184,114,138,0.07); border: 1px solid rgba(184,114,138,0.20); border-radius: 4px; }
+  .erstgespraech-band-text { display: flex; flex-direction: column; gap: 0.5rem; }
+  .erstgespraech-band-overline { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; }
+  .erstgespraech-band-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--deep); line-height: 1.3; margin: 0; }
   .angebot-card { display: flex; flex-direction: column; background: rgba(232,237,226,0.52); border-radius: 4px; transition: transform var(--dur-ui) var(--ease-organic); position: relative; cursor: pointer; }
   .angebot-card:hover { transform: translateY(-4px); }
   .angebot-stretch-link::after { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: 4px; }
@@ -410,6 +414,7 @@
     #probleme { padding: 5.5rem 1.5rem; }
     /* ── Angebote: excessive bottom margin ── */
     .angebote-grid { margin-bottom: 3rem; }
+    .erstgespraech-band { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 1.75rem 2rem; }
     /* ── Kurs cards: reduce dense inner padding ── */
     .kurs-card-front, .kurs-card-back { padding: 2rem 1.5rem; gap: 1rem; }
     /* ── KS sections: scale down 5rem separators ── */
@@ -614,8 +619,12 @@
       </div>
     </div>
   </div>
-  <div style="text-align:center; padding:5rem 0 1rem;">
-    <a href="https://calendar.app.google/ZBMJhxoquke9jpo58" target="_blank" style="font-size:1rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--rose-dark); text-decoration:none;">Kostenloses Erstgespräch buchen →</a>
+  <div class="erstgespraech-band reveal">
+    <div class="erstgespraech-band-text">
+      <span class="erstgespraech-band-overline">Kostenloses Erstgespräch</span>
+      <p class="erstgespraech-band-title">Ich nehme mir Zeit für dein Anliegen.</p>
+    </div>
+    <a href="https://calendar.app.google/ZBMJhxoquke9jpo58" target="_blank" class="btn-primary" style="flex-shrink:0; white-space:nowrap;">Termin buchen →</a>
   </div>
   <div class="materialien-band" id="materialien">
     <span class="section-overline reveal">Für dich</span>
