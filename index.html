@@ -77,6 +77,17 @@
   .stat-item { text-align: center; padding: 0 2rem 1.5rem; }
   .stat-number { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; color: var(--rose); display: block; line-height: 1; text-shadow: 0 0 28px rgba(184,114,138,0.35); }
   .stat-label { font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.90); margin-top: 0.5rem; display: block; }
+  .newsletter-band { position: relative; padding: clamp(6rem,8vw,10rem) 5rem; }
+  .newsletter-band::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
+  .newsletter-band > * { position: relative; z-index: 1; }
+  .newsletter-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 5rem; align-items: center; }
+  .newsletter-card { background: rgba(184,114,138,0.07); border: 1px solid rgba(184,114,138,0.20); border-radius: 4px; padding: 3rem; display: flex; flex-direction: column; gap: 0; }
+  .newsletter-card .section-overline { color: var(--rose-dark); margin-bottom: 1.25rem; }
+  .newsletter-card-title { font-family: var(--font-serif); font-size: clamp(1.4rem,2vw,1.9rem); font-weight: 400; color: var(--deep); line-height: 1.3; margin-bottom: 1.25rem; }
+  .newsletter-card-desc { font-size: 1rem; color: var(--mid); line-height: 1.82; margin-bottom: 1.5rem; }
+  .newsletter-card-ebook { font-size: 0.92rem; color: var(--mid); margin-bottom: 2rem; }
+  .newsletter-card-ebook strong { color: var(--deep); }
+  .newsletter-aside { font-size: 0.92rem; color: var(--mid); line-height: 1.82; }
   section { padding: clamp(7rem,10vw,12rem) 5rem; }
   .section-overline { font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 2.5rem; display: block; }
   .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--deep); margin-bottom: 2rem; text-shadow: 0 1px 4px rgba(45,32,64,0.08); }
@@ -362,6 +373,8 @@
     .testimonials-grid { grid-template-columns: 1fr; }
     .testimonial-card:nth-child(n) { grid-column: span 1; }
     .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 4rem 1.5rem 5rem; }
+    .newsletter-band { padding: 5rem 1.5rem; }
+    .newsletter-grid { grid-template-columns: 1fr; gap: 2rem; }
     .angebote-intro { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
     .kurse-intro-title { letter-spacing: -0.01em; margin-bottom: 1.75rem; }
     .kurse-intro-head { margin-bottom: 3rem; flex-direction: column; align-items: flex-start; gap: 2rem; }
@@ -575,6 +588,18 @@
   <div class="stat-item"><span class="stat-number" data-target="4" data-suffix="">4</span><span class="stat-label">Fachausbildungen</span></div>
   <div class="stats-cta" style="grid-column:1/-1;text-align:center;margin-top:5.5rem;"><a href="#kontakt" style="font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);text-decoration:none;border-bottom:1.5px solid var(--rose);padding-bottom:3px;font-weight:500;">Jetzt Kontakt aufnehmen →</a></div>
 </div>
+<section class="newsletter-band">
+  <div class="newsletter-grid">
+    <div class="newsletter-card reveal">
+      <span class="section-overline">Newsletter</span>
+      <h2 class="newsletter-card-title">Praxiswissen, das ich sonst nur in Seminaren teile.</h2>
+      <p class="newsletter-card-desc">Regelmäßige Impulse zu Sensorischer Integration, frühkindlicher Entwicklung und Familienbegleitung — für Fachkräfte und Eltern, die tiefer verstehen möchten.</p>
+      <p class="newsletter-card-ebook">Gratis bei Anmeldung: das E-Book <strong>„SI zu kleinen Preisen"</strong>.</p>
+      <a href="https://stephanie-kurtenbach.kit.com" target="_blank" rel="noopener" class="btn-primary" style="align-self:flex-start;">Jetzt anmelden →</a>
+    </div>
+    <p class="newsletter-aside reveal" data-delay="1">Inhalte aus jahrzehntelanger Praxis, für alle, die tiefer verstehen wollen — nicht nur reagieren. Kostenlos, mit echtem Tiefgang.</p>
+  </div>
+</section>
 <section id="probleme">
   <span class="section-overline reveal">Erkennst du dich wieder?</span>
   <h2 class="section-title reveal" data-delay="1">Was Menschen zu mir führt</h2>
