@@ -83,17 +83,9 @@
   .newsletter-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4.5rem; align-items: center; }
   .nl-preview-link { display: block; text-decoration: none; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(45,32,64,0.14), 0 2px 6px rgba(45,32,64,0.06); border: 1px solid rgba(45,32,64,0.09); transition: transform var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic); }
   .nl-preview-link:hover { transform: translateY(-2px); box-shadow: 0 14px 42px rgba(45,32,64,0.18), 0 3px 8px rgba(45,32,64,0.08); }
-  .nl-bar { background: var(--off); padding: 0.55rem 1rem; border-bottom: 1px solid rgba(45,32,64,0.07); display: flex; align-items: center; }
-  .nl-bar-url { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.02em; background: rgba(255,255,255,0.8); padding: 0.22rem 0.85rem; border-radius: 20px; border: 1px solid rgba(45,32,64,0.08); }
-  .nl-mock { background: var(--white); padding: 2.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.1rem; }
-  .nl-mock-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-dark); font-weight: 700; display: block; }
-  .nl-mock-name { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: var(--muted); margin: 0; }
-  .nl-mock-headline { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--deep); line-height: 1.2; margin: 0; }
-  .nl-mock-ebook { background: var(--rose-pale); border-left: 2px solid var(--rose); padding: 0.8rem 1rem; }
-  .nl-mock-ebook-label { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; display: block; margin-bottom: 0.2rem; }
-  .nl-mock-ebook-title { font-family: var(--font-serif); font-size: 0.88rem; color: var(--deep); font-style: italic; margin: 0; }
-  .nl-mock-input { background: var(--off); border: 1px solid rgba(45,32,64,0.14); border-radius: 2px; padding: 0.65rem 1rem; font-size: 0.8rem; color: var(--muted); }
-  .nl-mock-btn { background: var(--rose); color: var(--white); border-radius: 2px; padding: 0.65rem 1rem; font-size: 0.8rem; font-weight: 500; text-align: center; letter-spacing: 0.04em; }
+  .nl-viewport { position: relative; height: 380px; overflow: hidden; background: var(--white); }
+  .nl-viewport::after { content: ''; position: absolute; inset: 0; z-index: 2; cursor: pointer; }
+  .nl-iframe { display: block; width: 1200px; height: 1000px; border: none; transform-origin: top left; transform: scale(0.42); pointer-events: none; }
   .newsletter-text-col { display: flex; flex-direction: column; justify-content: center; gap: 1.75rem; }
   .newsletter-text-col .section-overline { color: var(--rose-dark); margin-bottom: 0; }
   .newsletter-text-col .section-title { font-size: clamp(1.8rem,2.6vw,2.6rem); margin-bottom: 0; }
@@ -601,25 +593,13 @@
 <section class="newsletter-band">
   <div class="newsletter-grid">
     <a href="https://stephanie-kurtenbach.kit.com" target="_blank" rel="noopener" class="nl-preview-link reveal">
-      <div class="nl-bar">
-        <span class="nl-bar-url">stephanie-kurtenbach.kit.com</span>
-      </div>
-      <div class="nl-mock">
-        <span class="nl-mock-label">Newsletter</span>
-        <p class="nl-mock-name">Dr. Stephanie Kurtenbach</p>
-        <p class="nl-mock-headline">Praxis. Wissen.<br>Weiterkommen.</p>
-        <div class="nl-mock-ebook">
-          <span class="nl-mock-ebook-label">Gratis bei Anmeldung</span>
-          <p class="nl-mock-ebook-title">E-Book: „SI zu kleinen Preisen"</p>
-        </div>
-        <div class="nl-mock-input">E-Mail-Adresse eingeben …</div>
-        <div class="nl-mock-btn">Jetzt anmelden</div>
+      <div class="nl-viewport">
+        <iframe src="https://stephanie-kurtenbach.kit.com" class="nl-iframe" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Newsletter Anmeldeseite"></iframe>
       </div>
     </a>
     <div class="newsletter-text-col reveal" data-delay="1">
       <span class="section-overline">Kostenloses E-Book &amp; Newsletter</span>
-      <h2 class="section-title">Praxiswissen direkt ins Postfach — das E-Book gibt es gratis dazu.</h2>
-      <p class="newsletter-sub">Regelmäßige Impulse zu Sensorischer Integration und frühkindlicher Entwicklung — kostenlos anmelden.</p>
+      <h2 class="section-title">Das E-Book <em>„SI zu kleinen Preisen"</em> — gratis bei Anmeldung.</h2>
       <a href="https://stephanie-kurtenbach.kit.com" target="_blank" rel="noopener" class="btn-primary">Jetzt anmelden →</a>
     </div>
   </div>
