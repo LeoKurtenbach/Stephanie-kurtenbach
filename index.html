@@ -83,19 +83,11 @@
   .newsletter-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4.5rem; align-items: center; }
   .nl-preview-link { display: block; text-decoration: none; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(45,32,64,0.14), 0 2px 6px rgba(45,32,64,0.06); border: 1px solid rgba(45,32,64,0.09); transition: transform var(--dur-ui) var(--ease-organic), box-shadow var(--dur-ui) var(--ease-organic); }
   .nl-preview-link:hover { transform: translateY(-2px); box-shadow: 0 14px 42px rgba(45,32,64,0.18), 0 3px 8px rgba(45,32,64,0.08); }
-  .nl-bar { background: rgba(232,237,226,0.95); padding: 0.6rem 1rem; display: flex; gap: 0.4rem; align-items: center; border-bottom: 1px solid rgba(45,32,64,0.07); }
-  .nl-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-  .nl-dot:nth-child(1) { background: #FF5F57; }
-  .nl-dot:nth-child(2) { background: #FFBD2E; }
-  .nl-dot:nth-child(3) { background: #28C840; }
-  .nl-body { padding: 2rem 2rem 2.5rem; background: var(--white); display: flex; flex-direction: column; gap: 0.8rem; }
-  .nl-body-overline { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; display: block; }
-  .nl-body-title { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400; color: var(--deep); line-height: 1.3; margin: 0; }
-  .nl-body-desc { font-size: 0.78rem; color: var(--mid); line-height: 1.65; margin: 0; }
-  .nl-body-ebook { background: var(--rose-pale); border: 1px solid rgba(184,114,138,0.20); border-radius: 3px; padding: 0.7rem 1rem; }
-  .nl-body-ebook-label { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose-dark); font-weight: 600; display: block; margin-bottom: 0.2rem; }
-  .nl-body-ebook-title { font-family: var(--font-serif); font-size: 0.88rem; color: var(--deep); font-style: italic; margin: 0; }
-  .nl-body-cta { display: inline-block; background: var(--rose); color: var(--white); font-size: 0.7rem; letter-spacing: 0.08em; padding: 0.55rem 1.1rem; border-radius: 2px; margin-top: 0.1rem; font-weight: 500; align-self: flex-start; }
+  .nl-bar { background: rgba(232,237,226,0.95); padding: 0.55rem 1.25rem; border-bottom: 1px solid rgba(45,32,64,0.07); display: flex; align-items: center; }
+  .nl-bar-url { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.03em; }
+  .nl-viewport { position: relative; height: 420px; overflow: hidden; }
+  .nl-viewport::after { content: ''; position: absolute; inset: 0; z-index: 2; cursor: pointer; }
+  .nl-iframe { display: block; width: 1100px; height: 1400px; border: none; zoom: 0.52; pointer-events: none; }
   .newsletter-text-col { display: flex; flex-direction: column; justify-content: center; gap: 1.75rem; }
   .newsletter-text-col .section-overline { color: var(--rose-dark); margin-bottom: 0; }
   .newsletter-text-col .section-title { font-size: clamp(1.8rem,2.6vw,2.6rem); margin-bottom: 0; }
@@ -604,19 +596,10 @@
   <div class="newsletter-grid">
     <a href="https://stephanie-kurtenbach.kit.com" target="_blank" rel="noopener" class="nl-preview-link reveal">
       <div class="nl-bar">
-        <span class="nl-dot"></span>
-        <span class="nl-dot"></span>
-        <span class="nl-dot"></span>
+        <span class="nl-bar-url">stephanie-kurtenbach.kit.com</span>
       </div>
-      <div class="nl-body">
-        <span class="nl-body-overline">Newsletter</span>
-        <p class="nl-body-title">Praxis. Wissen. Weiterkommen.</p>
-        <p class="nl-body-desc">Für Fachkräfte und Familien, die tiefer verstehen wollen — regelmäßig, kostenlos.</p>
-        <div class="nl-body-ebook">
-          <span class="nl-body-ebook-label">Gratis bei Anmeldung</span>
-          <p class="nl-body-ebook-title">„SI zu kleinen Preisen"</p>
-        </div>
-        <span class="nl-body-cta">Jetzt anmelden →</span>
+      <div class="nl-viewport">
+        <iframe src="https://stephanie-kurtenbach.kit.com" class="nl-iframe" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Newsletter Anmeldeseite"></iframe>
       </div>
     </a>
     <div class="newsletter-text-col reveal" data-delay="1">
