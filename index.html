@@ -77,6 +77,18 @@
   .stat-item { text-align: center; padding: 0 2rem 1.5rem; }
   .stat-number { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; color: var(--rose); display: block; line-height: 1; text-shadow: 0 0 28px rgba(184,114,138,0.35); }
   .stat-label { font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.90); margin-top: 0.5rem; display: block; }
+  /* ── Neues Kursformat (Startseiten-Hinweis) ── */
+  .kursformat-band { position: relative; padding: 5rem; border-bottom: 1px solid color-mix(in srgb, var(--deep) 8%, transparent); }
+  .kursformat-band::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
+  .kursformat-band > * { position: relative; z-index: 1; }
+  .kursformat-box { display: flex; align-items: center; justify-content: space-between; gap: 3rem; max-width: 1100px; margin: 0 auto; padding: 3rem 3.5rem; background: color-mix(in srgb, var(--rose-pale) 88%, transparent); border: 1px solid color-mix(in srgb, var(--rose-dark) 45%, transparent); border-radius: 4px; box-shadow: 0 2px 12px color-mix(in srgb, var(--rose-dark) 10%, transparent); }
+  .kursformat-text { display: flex; flex-direction: column; min-width: 0; }
+  .kursformat-text .section-overline { color: var(--rose-dark); margin-bottom: 1rem; }
+  .kursformat-title { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.4vw, 2.3rem); font-weight: 400; color: var(--deep); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 1rem; }
+  .kursformat-sub { font-size: 1.08rem; color: var(--mid); line-height: 1.75; max-width: 600px; }
+  .kursformat-price { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.04em; color: var(--rose-dark); margin-top: 1rem; }
+  .kursformat-box .btn-primary { flex-shrink: 0; white-space: nowrap; }
+  .kurs-card--featured .kurs-card-front, .kurs-card--featured .kurs-card-back { border-top: 2px solid var(--rose); }
   .newsletter-band { position: relative; padding: 5rem; }
   .newsletter-band::before { content: ''; position: absolute; inset: 0; background: rgba(232,237,226,0.82); z-index: 0; pointer-events: none; }
   .newsletter-band > * { position: relative; z-index: 1; }
@@ -376,6 +388,9 @@
     .testimonial-card:nth-child(n) { grid-column: span 1; }
     .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 4rem 1.5rem 5rem; }
     .newsletter-band { padding: 5rem 1.5rem; }
+    .kursformat-band { padding: 4rem 1.5rem; }
+    .kursformat-box { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 2rem 1.5rem; }
+    .kursformat-box .btn-primary { width: 100%; white-space: normal; }
     .newsletter-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .angebote-intro { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
     .kurse-intro-title { letter-spacing: -0.01em; margin-bottom: 1.75rem; }
@@ -590,6 +605,17 @@
   <div class="stat-item"><span class="stat-number" data-target="4" data-suffix="">4</span><span class="stat-label">Fachausbildungen</span></div>
   <div class="stats-cta" style="grid-column:1/-1;text-align:center;margin-top:5.5rem;"><a href="#kontakt" style="font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);text-decoration:none;border-bottom:1.5px solid var(--rose);padding-bottom:3px;font-weight:500;">Jetzt Kontakt aufnehmen →</a></div>
 </div>
+<section class="kursformat-band">
+  <div class="kursformat-box">
+    <div class="kursformat-text">
+      <span class="section-overline reveal">Neues Kursformat</span>
+      <h2 class="kursformat-title reveal" data-delay="1">Online-Kurs mit Live-Webinaren</h2>
+      <p class="kursformat-sub reveal" data-delay="2">Drei Wochen flexibel lernen und gemeinsam vertiefen — mit persönlicher Begleitung. Start 12. April 2027.</p>
+      <p class="kursformat-price reveal" data-delay="2">Frühbucherpreis 200 € bis 31.12.2026</p>
+    </div>
+    <a href="#kurse" class="btn-primary reveal" data-delay="3">Zum Kurs →</a>
+  </div>
+</section>
 <section class="newsletter-band">
   <div class="newsletter-grid">
     <a href="https://stephanie-kurtenbach.kit.com/dd5e3c075f" target="_blank" rel="noopener" class="nl-preview-link reveal">
@@ -697,6 +723,27 @@
       </a>
     </div>
     <div class="kurse-grid">
+      <div class="kurs-card kurs-card--featured reveal">
+        <div class="kurs-card-inner">
+          <div class="kurs-card-front">
+            <span class="kurs-tag">Neu · Online-Kurs</span>
+            <h3 class="kurs-title">Flexibel lernen, gemeinsam vertiefen</h3>
+            <p class="kurs-teaser">Drei Wochen, flexibel und persönlich begleitet: Videolektionen in deinem eigenen Tempo, wöchentliche Live-Webinare mit praktischen Videobeispielen und Austausch in unserer Kurs-Community.</p>
+            <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Frühbucherpreis sichern →</a><button class="kurs-toggle" onclick="flipKurs(this)">Details →</button></div>
+          </div>
+          <div class="kurs-card-back">
+            <span class="kurs-tag">Neu · Online-Kurs</span>
+            <h3 class="kurs-title">Flexibel lernen, gemeinsam vertiefen</h3>
+            <p class="kurs-hook">Du lernst nicht nur für dich allein. In wöchentlichen Live-Webinaren vertiefen wir die Inhalte gemeinsam anhand praktischer Videobeispiele — mit Raum für deine Fragen, fachlichen Austausch und die Reflexion deiner eigenen therapeutischen Arbeit.</p>
+            <span class="kurs-inhalte-label">Das erwartet dich</span>
+            <ul class="kurs-inhalte"><li>Videolektionen, zeitlich flexibel in deinem Tempo</li><li>Umfangreiches Begleitmaterial zum Nachlesen und Vertiefen</li><li>Wöchentliche Live-Webinare mit Videobeispielen und Raum für Fragen</li><li>Praxisnahe Übungsaufgaben zum direkten Anwenden</li><li>Austausch in unserer Kurs-Community</li></ul>
+            <span class="kurs-inhalte-label">Die Termine 2027</span>
+            <ul class="kurs-inhalte"><li>Kursstart: Montag, 12. April 2027</li><li>Live-Webinar: Montag, 19. April 2027, 18:00–19:30 Uhr</li><li>Live-Webinar: Montag, 26. April 2027, 18:00–19:30 Uhr</li><li>Live-Webinar: Montag, 3. Mai 2027, 18:00–19:30 Uhr</li></ul>
+            <div class="kurs-outcome"><strong>Deine Investition</strong>Frühbucherpreis 200 € bei Anmeldung bis 31. Dezember 2026 (du sparst 70 €). Regulär ab 1. Januar 2027: 270 €. Enthalten: alle Videolektionen, das umfangreiche Begleitmaterial, praxisnahe Übungsaufgaben, drei Live-Webinare à 90 Minuten sowie persönliche Begleitung und Austausch in der Kurs-Community.</div>
+            <div class="kurs-card-actions"><a href="#kontakt" class="kurs-btn-primary">Jetzt anmelden →</a><button class="kurs-toggle" onclick="flipKurs(this)">← Weniger</button></div>
+          </div>
+        </div>
+      </div>
       <div class="kurs-card reveal">
         <div class="kurs-card-inner">
           <div class="kurs-card-front">
